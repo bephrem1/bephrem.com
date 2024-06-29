@@ -42,7 +42,7 @@ const ProfessionalTimeline = () => {
   };
   const items = {
     '(June ’24 - )': (
-      <Text className="mb-1.5">Product Engineer @ The San Francisco Compute Company</Text>
+      <Text className="mb-1.5">product engineer @ The San Francisco Compute Company</Text>
     ),
     '(Sept ’23 - May ’24)': <Text className="mb-1.5">onsite.dev</Text>,
     '(Aug ’22 - Jan ’24)': <Text className="mb-1.5">founder @ interviewpen.com</Text>,
