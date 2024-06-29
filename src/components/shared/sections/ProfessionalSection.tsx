@@ -41,6 +41,9 @@ const ProfessionalTimeline = () => {
     return <p className={twMerge('text-neutral-300 text-sm', className)}>{children}</p>;
   };
   const items = {
+    '(June ’24 - )': (
+      <Text className="mb-1.5">Product Engineer @ The San Francisco Compute Company</Text>
+    ),
     '(Sept ’23 - May ’24)': <Text className="mb-1.5">onsite.dev</Text>,
     '(Aug ’22 - Jan ’24)': <Text className="mb-1.5">founder @ interviewpen.com</Text>,
     '(Jan ’22 - Aug ’22)': <Text className="text-neutral-400 mb-1.5">sabbatical</Text>,
