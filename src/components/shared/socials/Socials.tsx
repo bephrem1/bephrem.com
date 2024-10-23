@@ -1,7 +1,6 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { EXTERNAL_LINKS } from '../../../helpers/urls';
-import { EmptyObject } from '../../../types/empty';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FunctionComponent } from 'react';
 import Link from '../elements/Link';
