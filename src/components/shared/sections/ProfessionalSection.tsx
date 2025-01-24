@@ -1,8 +1,8 @@
+import { FunctionComponent } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { EXTERNAL_LINKS } from '../../../helpers/urls';
 import { EmptyObject } from '../../../types/empty';
-import { FunctionComponent } from 'react';
 import Link from '../elements/Link';
-import { twMerge } from 'tailwind-merge';
 
 const ProfessionalSection: FunctionComponent<EmptyObject> = () => {
   return (
@@ -197,9 +197,10 @@ const CareerSummaryItemOnsiteDev = () => {
           and stringing together 3 lossy stages of transcription, LLM inference, & text-to-speech.
         </p>
         <p className="text-neutral-400 text-sm mb-2">
-          Only in ~May ’24 did true audio-to-audio models get foundationally solved for with GPT-4o.
+          Only in ~May ’24 did true audio-to-audio models start getting to production (with audio-to-audio
+          GPT-4o).
         </p>
-        <p className="text-neutral-400 text-sm">
+        <p className="text-neutral-400 text-sm mb-2">
           My co-founder left the project that December (we did not see eye-to-eye on our respective
           long-term commitment/risk profile). I would stop working on the project in ~April/May ’24
           since I did not want to found a business alone (I knew how hard it was).

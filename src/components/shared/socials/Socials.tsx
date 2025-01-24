@@ -1,11 +1,11 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-import { EXTERNAL_LINKS } from '../../../helpers/urls';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FunctionComponent } from 'react';
-import Link from '../elements/Link';
-import XLogo from '../../../icons/lib/companies/XLogo';
 import clsx from 'clsx';
+import { FunctionComponent } from 'react';
+import { EXTERNAL_LINKS } from '../../../helpers/urls';
+import XLogo from '../../../icons/lib/companies/XLogo';
+import Link from '../elements/Link';
 
 interface Props {
   compressed?: boolean;
@@ -14,6 +14,7 @@ interface Props {
 const Socials: FunctionComponent<Props> = ({ compressed = false }) => {
   const socials = {
     twitter: EXTERNAL_LINKS.SOCIAL.TWITTER,
+    youtube: EXTERNAL_LINKS.SOCIAL.YOUTUBE,
     linkedin: EXTERNAL_LINKS.SOCIAL.LINKEDIN,
     github: EXTERNAL_LINKS.SOCIAL.GITHUB
   };
@@ -42,6 +43,17 @@ const SocialLink = ({ type, url, compressed }) => {
               'w-3 h-3': !compressed
             })}
             stroke="fill-white"
+          />
+        );
+      case 'youtube':
+        return (
+          <FontAwesomeIcon
+            icon={faYoutube}
+            className={clsx({
+              'text-neutral-400': true,
+              'w-3.5 h-3.5': compressed,
+              'w-4 h-4': !compressed
+            })}
           />
         );
       case 'linkedin':

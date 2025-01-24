@@ -1,14 +1,15 @@
 ---
 title: The Future of Online Dating Will Be Mostly Offline
-date: January 2025
+date: February 2025
 ---
 
-> I’m currently prototyping an offline-first dating service called [Bind](https://joinbind.com/). I share my
-thought process on ideating an approach to building in a notoriously difficult space.
+> <s>I’m currently prototyping an offline-first dating service called [Bind](https://joinbind.com/). I share my
+thought process on ideating an approach to building in a notoriously difficult space.</s> After some deliberation, as
+of Feb ’25, I have decided to not pursue this project. I walk through my thinking on the future of online dating below.
 
 I’ve become very curious about what the future of online dating will look like. This makes sense given
 that I’m a single male in my mid-20s who hasn’t had a great time on dating apps (for various reasons).
-I have a vested interest in understanding the problem & finding an optimal solution.
+I have an interest in understanding the problem & finding an optimal solution.
 
 In algorithm analysis, we constantly ask ourselves “is this the best we can do?”. We get a deep theoretical
 understanding of the problem, theorize an optimal performance given the constraints (not yet knowing the exact
@@ -21,7 +22,7 @@ In this case, the problem is that of finding a highly compatible longterm partne
 today is Hinge (maybe Bumble, not Tinder). We will try to understand what comes after these services (2025 & beyond),
 given the condition & desire of users today.
 
-Before we continue (since it is relevant to the credibility of this writing), this is what I look like:
+Before we continue (since it is relevant), this is what I look like:
 
 <Image
   src="/images/writing/dating/ben1.jpg"
@@ -47,10 +48,41 @@ We will draw a line between dissatisfaction:
 profile)
 - arising from other sources (causes we may or may not be able to change)
 
+But before we continue, we need to first understand the problem we are trying to solve.
+
+### Modeling the Problem
+
+#### Going for a Stroll
+
+Imagine it’s a sunny weekend and you decide to go for a stroll through a local farmer’s market nearby. You may pass 100-300 people
+if you are out for a few hours. Couples, friends, families of all ages & races — all at different points in life, with different interests, with
+different personalities.
+
+When you return home, a friend poses you a challenge: “Of all the people you saw today who may be single, could you guess who would
+make good romantic partners with whom?”. Essentially, could you act as a matchmaker to predict the largest and most correct set of
+couples-to-be (ideally better than random pairings taking into account basic compatibility measures)?
+
+This would be pretty hard. You could eyeball it, pairing people of similar age, physical attractiveness, similar interests (”they both
+looked outdoorsy”), etc — all taking into account rudimentary relationship science of what each gender & orientation prefers in their
+partners. And you’d get it right sometimes.
+
+The challenge is that there is a lot that you do not know about who you are pairing, or the emergent properties of pairings you are
+considering. People are obviously very complex creatures. You’d also need to be considerate of everyone equally, ensuring that no one
+gets less consideration than anyone else so you can create as many pairings as possible.
+
+What if your friend instead asked you about your immediate friends and social circle? Would you be able to do it? Probably. You may naturally
+have been speculating on who would be a good match for who all along anyway. This would be much more approachable.
+
+What if instead, you had a database of 23,000,000 people? Roughly 65% male, and 35% female<sup>[1]</sup>. 1,400,000 of them paying you to matchmake
+for them. This was Hinge’s job in 2023.
+
+This would be impossible for one person, or even a team of people to reason through. You’d need to formalize the problem and develop an
+algorithm to solve it.
+
 #### The Dating “Marketplace”
 
-Human mating operates as a two-sided competitive market. It is a bit clinical to use the term “market” here, but being precise will
-be important to us framing the problem correctly. It will give us tools to understand the nature of platforms & see into the future (more on this later).
+Mate selection operates as a two-sided competitive market. It’s a bit clinical to use the term “market” here, but being precise will be important
+to us framing the problem correctly. It will give us tools to understand the nature of platforms & see into the future (more on this later).
 
 Every individual has a goal, and a strategy to achieve that goal. Strategy can be consciously known to the individual, or
 completely subconscious.
@@ -63,10 +95,6 @@ users’ interests will be at contention with one another. It could mean giving 
 showing them to matches of relatively equal desirability, clustering their profile impressions to potential matches in  geographic regions
 close to them, etc.</Aside>
 
-<Aside>Most services will implement some form of [stable matching](https://en.wikipedia.org/wiki/Stable_marriage_problem) algorithm to propose
-stable pairings (see [Gale-Shapley](https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm)). Services must infer who would
-prefer whom.</Aside>
-
 A solution that is globally “fair” (one that aims to maximize the surface area under the “user satisfaction curve”) will not
 be a solution where every *individual* user is maximally satisfied.
 
@@ -77,22 +105,29 @@ given their strategy:
 - **partially succeed** in achieving their goals
 - **completely succeed** in achieving their goals
 
-Mate choice, by design, is not fair. Evolution has encoded within us the drive to favor some as mates, and disfavor others.
+Mate choice, by design, is not fair. Evolution has encoded within us the drive to favor some as mates, and disfavor others. Subtleties as minor
+as a person’s voice, gait, posture — can all cause us to disqualify a partner.
 
 No matter how fair or unfair the design of a dating service, this core of selectivity will exist. There will always be a set of individuals
-left selected out, or only able to attain a partially successful outcome, and subsequently dissatisfied in not meeting their goals.
+who cannot successfully be matched, and subsequently dissatisfied in not meeting their goals.
 
-According to Pew Research, over 50% of online dating users report somewhat negative, to very negative, experiences dating online<sup>[1]</sup>. Is
-this necessarily an actual problem? Is dating broken? Or are online platforms only surfacing data that has never been available to us before about
-human selectivity.
+<Aside>It is my personal belief that nearly everyone has someone out there who would be a suitable lifelong partner, but the search problem
+will be more or less difficult across individuals depending on physical attractiveness, race, geographic region, age, etc. These
+difficulties are real and we should acknowledge them.</Aside>
+
+According to Pew Research, over 50% of online dating users report somewhat negative, to very negative, experiences dating online<sup>[2]</sup>. Is
+this necessarily an actual problem that can be addressed? Is online dating broken? Or are online platforms only surfacing data that has never
+been available to us before about human selectivity. <Hint>(it’s a bit of everything)</Hint>
+
+
+People with a very positive experience are likely easy to match (many other users would select them as a partner). People with a very
+negative experience are likely very difficult to match (for whatever reason). There’s likely not much we can do to markedly change
+outcomes on these tail ends.
 
 What should be of most interest to us is the middle of the distribution. Partially satisfied users and partially dissatisfied users who could experience
-better matchmaking (or a better user experience). This is where there are things to be done.
+better matchmaking (or a better user experience). This is where there is opportunity to reshape user success.
 
-In financial markets, different market microstructures result in different distributions of participant success. To move the dating success
-distribution, you have to fundamentally rethink the user experience that sets the distribution.
-
-### Today’s Options
+### The Present
 
 To understand where we’re going, it’s important to understand where we’re currently at. If you decided that you wanted to find your partner online
 in 2025, what choices would you have?
@@ -112,7 +147,7 @@ roughly like this (founding date added for context):
   - The League (~2% — f. 2014)
   - BLK (~1% — f. 2017)
   - BlackPeopleMeet (~1% — f. 2002)
-  - ... and the list goes on
+  - <Hint>... and the list goes on</Hint>
 
 Only Bumble & Grindr remain independent & are not owned by Match Group. Match Group controls ~70% of the U.S. online dating market.
 
@@ -123,7 +158,7 @@ their portfolio. Hinge, proving itself as the “relationship app”, was acquir
 for $30M in 2022, 8 years after it’s founding. Companies trying new models that die, disappear, those that live long enough end up being acquired
 by Match Group.</Aside>
 
-Is Match Group a monopoly? Is there anything anti-competitive going on here? According to the FTC website<sup>[2]</sup>:
+Is Match Group a monopoly? Is there anything anti-competitive going on here? According to the FTC website<sup>[3]</sup>:
 
 <Quote>As a first step, courts ask if the firm has “monopoly power” in any market. This requires in-depth study of the products sold by the leading firm,
 and any alternative products consumers may turn to if the firm attempted to raise prices. Then courts ask if that leading position was gained or
@@ -143,7 +178,7 @@ One of the most important characteristics of any market is abundance of choice. 
 You’ve likely heard the term “liquidity” in financial markets. Usually we think of it in one direction, the ease of selling an asset to convert it
 back into fungible currency. But it goes both ways, those wanting to buy a certain allotment hope for ease in completing their transaction as well.
 
-Larry Harris in “Trading & Exchanges” offers a simple definition<sup>[3]</sup>:
+Larry Harris in “Trading & Exchanges” offers a simple definition<sup>[4]</sup>:
 
 <Quote>Liquidity is the ability to trade when you want to trade. Some orders *offer liquidity* by presenting other traders with trading
 opportunities. Other orders take liquidity by seizing those opportunities. Traders decisions to offer or take liquidity therefore affect market
@@ -165,36 +200,14 @@ to form CME Group, Inc.</Aside>
 
 Markets that cannot gain enough momentum either fail, or end up merging into a larger entity to gain the density needed to solve the search problem.
 
-#### Most of the Jobs Are Done
+##### The Opportunity Window
 
 So what does this have to do with online dating? The largest online dating platforms hold the most options, and the services with the most dating options
 will create a natural pull for users to transition to them to better solve their search problem.
 
-Hinge is “the relationship app”, with intentional design choices (like making it a first-class UI concern to send a message on prompts or photos) made to
-slow down the user experience and make it more deliberate. Tinder is “the hookup app” (whether they want to call it that or not), with a much faster
-experience of rapidly swiping through photos (to the point only physical attraction is considered).
-
-American academic Clayton Christensen formalizes this in the Jobs to Be Done (JTBD) framework, stating that the unit on which to assess consumer choice is
-not their concrete demographics (age, race, gender, etc), but rather “jobs to be done” in their lives.
-
-In a talk at Google<sup>[4]</sup> he says:
-
-<Quote>
-... I have all kinds of other characteristics and attributes, as you can see. But none of my characteristics or attributes have yet caused me to buy
-The New York Times today. There might be a correlation between the propensity that I will buy the The New York Times. But my characteristics don’t cause
-me to buy it. ... And yet, almost all of the work that we do in assessing market potential, we look at the characteristics or attributes of the potential
-customers. <Highlight>And a better way to think of [consumer choices], we decided, is that...darn it. Everyday, stuff happens to us. Jobs arise in our life.
-And when these jobs arise, we need to find some way to get the jobs done.</Highlight> And some of the jobs are simple incremental things that happen regularly.
-Others are dramatic and important breakthrough problems. But whenever we have a job to do, we have to find something and *pull* it into our lives in order
-to get the job done. <Highlight>And what we decided is understanding the job is the critical key to develop products that we can predictably make and find the customers
-to buy.</Highlight>
-</Quote>
-
-A mistake many entrepreneurs will make building new dating platforms is that they will propose incremental improvements to the user experience,
-without understanding the underlying job users are hiring them to solve.
-
-Markets usually progress in “windows of opportunity”, some macro change happens (a technological breakthrough, a new social norm, etc), then there is
-fertile ground for certain kinds of companies to take root & grow. Then after 2, 3, 4 years — the window slowly closes, competition means:
+Markets usually progress in “windows of opportunity”, some “big picture” change happens (a technological breakthrough, a new social norm,
+etc), then there exists fertile ground for certain kinds of companies to take root & grow. Then after 2, 3, 4 years — the window slowly
+closes, competition means:
 - customers have many choices, the bar on features goes higher
 - cost of entry to reach feature parity goes up
 - employees become harder to hire
@@ -202,16 +215,15 @@ fertile ground for certain kinds of companies to take root & grow. Then after 2,
 - crafting unique marketing messaging becomes harder
 
 In the early 2010s (recall Tinder was founded in 2012, Hinge 2011, Bumble 2014), mobile phones presented such a window. Since people took their phone everywhere,
-users could join & be active on services in record numbers. Throughout the decade, users began to “hire” different services to solve problems they were
-now more capable of solving.
+users could join & be active on services in record numbers.
 
 Tinder popularized the “double opt-in” model of matching where both individuals in a match had to mutually “like” each other before a match was made. Most
 of the 2010s would be various startups building different permutations of this model, in different geographies, for different demographics.
 
-The final result, with the dust fully settled from the 2010s, was Hinge, Bumble, & Tinder owning 85% of the U.S. online dating market.
+The longer this profile → double opt-in match → message experince existed, the less likely it was that a new service could appear unless it
+was markedly different. Even then, by the late 2010s, the power law had already taken hold. The market started to calcify.
 
-The gravitational pull of these largest services finally formed, & the core jobs to be done mostly filled, left little room to substantiate the existence
-of other services. So the late 2010s, & early 2020s saw little to no innovation.
+The final result, with the dust fully settled from the 2010s, was Hinge, Bumble, & Tinder owning 85% of the U.S. online dating market.
 
 ##### Credit Cards in the 1960s
 
@@ -220,7 +232,7 @@ A similar industry shakeout occurred in the U.S. credit card industry in the lat
 Before credit cards, payments would either be done by cash or check. This presented issues for merchants because they would have to take on the credit
 risk of each of their customers directly. If a customer provided a check that bounced, the merchant risked losing the payment.
 
-Credit card companies would take on the payment risk of each customer directly, extending a credit line to them. The credit card company would gaurantee
+Credit card companies would take on the payment risk of each customer directly, extending a credit line to them. The credit card company would guarantee
 payments to merchants for a small “interchange fee” (usually 1-3%). The customer would become indebited to the credit card company, & later pay down their
 account.
 
@@ -233,159 +245,628 @@ BankAmericard (now Visa), & American Express (f. 1850, but released their own ch
 Payment networks experienced the same runaway consolidation that we see in other matching markets. The more merchant banks a payment network partnered
 with, the more merchants accepted their payments, the more valuable a card became to cardholders (you could pay in more places with the same card).
 
-By 2023, marketshare in the U.S. by purchase volume<sup>[5]</sup> looked like this:
+By 2023, marketshare in the U.S. by purchase volume<sup>[6]</sup> looked like this:
 - Visa (~52.2% — f. 1958)
 - Mastercard (~24.13% — f. 1966)
 - American Express (~19.78% — charge card, f. 1958)
 - Discover (~3.87% — f. 1985)
 
-No major payment networks aside from the handful started around this time exist today. 
+No major payment networks aside from the handful started around this time exist today.
 
-##### Attempts to Innovate
+#### Evolution of Desire
 
-When customers have hired enough services to solve their jobs, an equilibrium is quietly reached. This steady state may not look pleasant, and could be
-far from perfect, but it is the best the market can possible yield given incumbent lock-in.
+Before we look at the problems that bringing dating online creates, it’s essential we touch on (the touchy subject of) what men & women really want
+in a partner. We won’t go too deep down the evolutionary psychology rabbit hole, but we actually have well-researched, definitive answers to this
+question.
 
-There has to be a strong, visceral, shift in consumer preference for a new service to substantiate it’s existence. If this is not present, services
-will just fizzle out after an initial enthusiastic burst of growth (later followed by a slow demise).
+It’s important to note that these desires act in complex combination with one another. Imagine a painter’s palette, with distinct colors that
+are mixed to form new colors. Regardless of everyone having a messy palette when finished painting, we all still start with the same colors
+(the same core biological drives).
 
-What probably happened to any companies attempting to innovate in the late 2010s, early 2020s, is they would start with the premise that “online dating
-today is broken”, then launch an app with some incremental user experience change:
-- longer-form profiles
-- scheduling a time & place for a date upon matching
-- orient around a game-like experience
+Desires differ greatly between when we are looking for a short-term vs. long-term (or life) partner. In ”The Evolution of Desire“ David M. Buss
+mentions<sup>[7]</sup>:
 
-What will happen is that many people will get excited and there will be an initial burst of enthusiasm that this new service will hold the solution to
-all of their online dating woes (whatever the cause).
+<Quote>People do not always desire the commitment required of long-term mating. Men and women sometimes deliberately pursue a short-term sexual
+strategy — a brief fling, a one-night hookup, a weekend liaison, or a casual affair. **And when they do, their preferences shift, sometimes dramatically.**
+One of the crucial decisions for humans in selecting a mate is whether they are seeking a short-term mate or long-term partner,
+**a partner in whom they invest little or a partner to whom they commit a lot.** The sexual strategies pursued hinge on this
+decision.</Quote>
 
-Since everyone will have this problem, and many will be single, there will be a rush of tens of thousands of users in the first year or so.
+It’s easy to overstate the evolutionary lens. We will only use it as a foundational tool for later discussion, not as our total understanding.
 
-But what will happen is that, as the months go by, users will start to churn. The same endemic problems that arose in other online services will
-slowly germinate from a seed & take root.
+<Aside>Where relevant we will draw the distinction. We will mostly focus our discussion on heterosexual (”straight“) long-term partnership, but research
+shows that homosexual men & women actually have similar desires in a partner to those of their heterosexual counterparts.</Aside>
 
-Even if the service somehow reaches a critical mass of users, the same systemic biases & hyperselectivity will arise once again. Eventually users will
-start deciding to leave for existing services. The ones with the most options, hoping that something will have changed in the time they were away.
+##### What Men Want
 
-Roughly 64% of dating app users have only 1 app installed on their phone & 17% have 2 (meaning ~81% have at most 2 apps installed). This leaves very
-little room for patience with alternatives.
+Much of male attraction is physically based. Buss lists the attributes men most desire in women as youth, physical beauty, body shape, and chastity
+& fidelity.
 
+The evolutionary explanation is that men use these easily observable cues to quickly judge fertility. Should they commit their resources to a mate,
+they must ensure their partner has strong reproductive potential.
 
+Chastity & fidelity are important for the guarantee of paternity. Should a man commit his resources to a partner to raise young, he has to make sure
+they are his and not another’s. Thus, purity, knowing that your partner is your & yours alone is paramount.
 
-{/* If the job that a user hires your new online dating site to solve is “Hinge & Bumble didn’t work for me”, then you’re on shaky ground. */}
+Buss says:
 
+<Quote>Like women, men want committed partners who are intelligent, kind, dependable, emotionally stable, and healthy. For men as well as for women,
+these qualities are linked with mates who will make excellent partners, excellent allies, and excellent parents. <Hint>...</Hint> <Highlight>But men
+face an adaptive problem not faced by women, at least not as poignantly — choosing a fertile partner.</Highlight> To be reproductively successful,
+the most obvious criterion would be a woman’s ability to bear children. <Hint>...</Hint> Men need some basis, however, on which to judge a woman’s
+reproductive capacity. <Hint>...</Hint> Ancestral men evolved mechanisms to sense cues to a woman’s underlying reproductive value, and
+<Highlight>two obvious and observable cues were youth and health</Highlight>.</Quote>
 
+As a man I can empirically confirm that physical attractiveness is a strong component of male attraction. Within 1-2 seconds of entering a room, a
+bus ride home, etc — consciously or subconsciously, men will scan their surroundings for attractive women, determine who is most interesting, & keep
+an index in the back of their mind. Sometimes it happens in less than a second. Men almost always know who the most attractive women are in a room,
+whether they are aware of this process or not.
 
+It’s very easy to oversimplify this and assume men only want the most physically attractive women. A host of other intangible factors like
+intelligence, agreeableness, emotional stability, and personality also play a key role, altering perception of physical attractiveness.
 
-{/* ---
+In a 2023 study of 201 heterosexual couples in Alberta, Canada, researchers at Burman University found objective physical attractiveness (OPA)
+was weakly correlated with (partner assessed) percieved physical attractiveness (PPA), underscoring the role of subjective perception and
+non-physical factors in attraction between partners<sup>[8]</sup>.
 
-The next generation of online dating won’t look like the last. Most of the jobs in the traditional model of online dating are done. */}
+There is conflicting research on whether percieved physical attractiveness between partners actually predicts relationship quality. In a 2008 study
+amongst 82 newlyweds, researchers at the University of Tennessee found that there was no correlation between either partner’s physical attractiveness
+and rated relationship quality<sup>[9]</sup>.
 
-{/* If the job that a user hires your new online dating site to solve is “Hinge & Bumble didn’t work for me”, then you’re on shaky ground. */}
+The 2023 Canadian study mentioned before disagrees, finding that the PPA of women was more strongly linked to both their own and their male partner’s
+relational satisfaction compared to the PPA of men (men’s percieved physical attractiveness influenced their partner’s relationship quality to a lesser
+extent — with men’s self-esteem and social skills being major predictors of RQ). 101 couples in the study were married or cohabiting.
 
-{/* Usually these “improvements” just move endemic problems around. */}
+##### What Women Want
 
+For women physical attractiveness in a partner is important, but the capability to provision resources (social, financial, etc) and satisfy emotional
+needs take a central role. Buss says:
 
+<Quote>What women actually want in a mate has puzzled both scientists and most men for centuries, for good reason. It is not androcentric to propose
+that women’s preferences in a partner are more complex and enigmatic than the mate preferences of either sex of any other species. <Hint>...</Hint>
+One reason women are often more choosy about mates stems from the most basic fact of reproductive biology <Hint>...</Hint> One act of sexual intercourse,
+which requires minimal male investment, can produce an obligatory and energy-consuming nine-month investment by the women that forecloses other mating
+opportunities. <Hint>...</Hint> a calorically intensive investment that may last as long as three or four years.</Quote>
 
+Buss lists the attributes women most desire in men as:
+1. Resource Potential
+2. Social Status
+3. Age (2-3 years older)
+4. Ambition and Industriousness
+5. Dependability and Stability
+6. Intelligence
+7. Compatibility
+8. Size, Strength, V-Shaped Torso
+9. Good Health, Symmetry, and Masculinity
+10. Love, Kindness, and Commitment
 
-{/* Usually companies start out with their own concept of the problem they are solving, then over time customers mold the company (which is still very much
-like clay) into the actual problem they want solved. It is a constant loop of setting internal vision, releasing, & external molding. */}
+Despite having a longer preference list than men, I could not locate any research studies verifying if women had a higher variance in what they desire in
+their partners than men. In a 2022 podcast with Lex Fridman, Buss mentions<sup>[10]</sup>:
 
+<Quote>I teach a course in human sexuality at University of Texas at Austin. This was back in the days when there were chalkboards and you taught
+with a piece of chalk and wrote things on the board. And what I would do is I would ask the class [I was teaching], this was a large class,
+one to 200. I'd say, what do women want? Tell me all the things women want — in a long-term mate. And so I would start at one end of the
+blackboard, there were like five blackboards, and they said well I want a mate who’s kind, who’s understanding, who’s intelligent, who’s healthy,
+who’s got a good sense of humor, who shares my values. **And I just go and fill five blackboards, and then run out of space.** <Hint>...</Hint>
+When I turned to the men, and I said “well what do men want”? **I run out of space after about a blackboard and a half because they can’t think
+of anything else.**</Quote>
 
+Women value physical attractiveness in a partner more than popular culture would have us assume (though I think in the past few years public opinion
+has caught up a bit).
 
+In a 2017 study by Fugere et al<sup>[11]</sup>, researchers found that a minimum level of physical attractiveness was a necessity
+in mate selection for both women & their mothers. The study demonstrated that attractive and moderately attractive men were
+consistently preferred over unattractive men, even when unattractive men had the most desirable personality traits.
 
-{/*
+The study also found that women and their mothers associated attractiveness with positive personality characteristics, suggesting an implicit bias in
+mate selection. While women placed a stronger emphasis on attractiveness than their mothers, mothers still required a minimum level of attractiveness
+before prioritizing other traits. These findings suggest that when individuals claim to prioritize personality over looks, they may implicitly assume a
+potential mate already meets a basic attractiveness threshold.
 
-##### A Quiet Decade */}
+<Dots />
 
-{/* ---
+Now with a very high-level understanding of what each gender desires in a partner, we can look at problems created when these desires are pursued in
+a purely online context.
 
+#### New Problems
 
+There is no setting, online or offline, in which dating is not difficult. When selective pressure meets selective pressure in such a delicate part of our
+lives, there is bound to be heartbreak & disappointment.
 
-Those who wish to compete will usually start a service, gain tens of thousands of users in year 1, then eventually fizzle out when the fail to retain
-users. The users will eventually transition over to a Match Group service.
+But there are some problems unique to profile-based online dating that are introduced by the medium itself. We will look at them now.
 
-There are actually great synergies to building a holding company around online dating services. Each company is solving the same problem in
-different geographies, for different demographics (age, race, etc), so having a single company with a large repository of data, proprietary algorithms
-determined from years of testing & observation, and the marketing power to cross-pollinate between sites offers consumers a better end-product.
+##### Losing Information
 
-It is not in the public’s interest, or in each company’s interest, to operate separate databases of singles who all have the same objective.
+**The amount of information an online dating service collects from it’s users during onboarding will always be at contention with how large the userbase
+can grow.** You cannot scale to a userbase of 20,000,000+ users (within a reasonable amount of years, within reasonable cost) with 100+ question onboarding
+surveys.
 
+You must get to a critical mass within any given geographic area to produce matches. Every user that joins increases the likelihood that the next user
+will have a match somewhere in the dating pool. So you must decide what information you absolutely need, and what information you can do without.
 
+Hinge was designed to be light & fun to use, accepting only 6 photos and 3 prompts from users. This was an intentional design decision. The
+founder of Hinge Justin McLeod says in a 2024 interview<sup>[12]</sup>:
 
+<Quote>The pitch was that, people were not using these services [match.com]. It was like clearly not a saturated market. <Hint>...</Hint>
+People my age were not really using online dating, because usually it was on desktop websites, and most of the services cost a lot of money. And you’d fill
+out these really long intimate profiles about yourself. It felt like you were waving the white flag on your dating life. That you had trouble meeting
+people. And, people didn’t want to admit they had trouble meeting people, especially in their 20s, when they’re theoretically around a lot of other friends.
+<Highlight>So I wanted to create something that was simple and easy and fun and approachable that people like me would want to use to find a partner.</Highlight></Quote>
 
+While well intentioned in the early 2010s (and the correct product design decision given the market), this would prove to be an insidious design pattern that
+would permiate the next decade of mobile dating.
 
-Each dating service solving the same cold-start
-problem
+While some users would write thoughtful prompts that allow the service to learn more about them, many low-effort profiles (often from appealing users) contained
+mindnumbingly simple-minded prompts, a few examples (from personal observation):
+- “I bet you can’t” → “beat me at mario kart.”
+- “Typical Sunday” → “the local farmer’s market.”
+- “What I order for the table” → “aperol spritz.”
+- “The best way to ask me out is by” → “asking me out.”
+- “Change my mind about” → “men.”
 
+###### Recommendation Woes
 
+To create a formal algorithm, services have to model users as a set of discrete pieces of information. This is a very lossy conversion, with no ideal continuous data
+flywheel for the internal datamodel to self-correct to truly learn who the person is.
 
+YouTube generates remarkable recommendations based on observing user watch time. A home feed is generated, with predicted watch times per video,
+then YouTube observes the user’s actual watch time (if they even click on a video) to learn how to improve the model<sup>[13]</sup>. YouTube videos are hotbeds for data extraction
+(image, audio, text), and the wide array of topics on the service allows for a very rich model to be trained.
 
+Instagram promoted product recommendations have been similarly exceptional in recent years, with the shop feature becoming a first-class tab in the app (later replaced by
+the “Reels” tab).
 
+The consistent pattern — lots of data, lots of user activity, lots of direct feedback on user success. For YouTube, success is a user watching a lot of a video of relevance to
+them, for Instagram it is a user purchasing a product of relevance to them. **These are observable & easy to collect data on.** So the recommendation algorithms get very good.
 
+Despite having enough data to do basic matchmaking, most online services will be missing a lot of information core to creating an exceptional algorithm to matchmake amongst
+millions of users.
 
+There is only so much information you can extract about someone from 6 photos, 3 prompts, various biographical information, and dating preferences. Though, it’s likely
+“good enough” to make matches happen (since people of similar physical attractiveness, intelligence, and personality are usually attracted to each other) — services never
+get to truly “know the real you”.
 
-While Match Group does have dominant market share, it actually doesn’t need to maintain it through anti-competitive means. The nature of markets protect
+<Aside>Hinge constantly encourages users to cycle through their photos & prompts, I imagine to train models without explicit input: “is he/she into
+biking?”, “are they emotionally expressive?” (facial expression analysis), “do they like to travel?”, etc. Collecting data while staying within the constraint of
+demanding little additional data input.</Aside>
 
+Collecting data on how dates went is difficult. Users rarely check the app & aren’t very willing to fill out extensive surveys on how dates went. Many male (or female)
+users may never even go on a single date. So the most valuable data event happens infrequently for the users who need the most tailored matchmaking (those harder to match).
 
+<Dots />
 
+But now you might say “But services *do* have data on who you like, it comes from the feed. You can recommend more of whoever the user liked.” This goes hand-in-hand with
+the next problem, hyperselectivity.
 
-Is Match Group a monopoly? Is there is anything anti-competitive going on here? I’m not an anti-trust lawyer, so I consulted the Federal Trade Commission’s
-website:
+##### Exacerbating Hyperselectivity
 
-There are actually a lot of synergies to building a holding company around online dating services.
- */}
+Physical attractiveness is the most important factor when dating online. This is also the case in real life, but to a far lesser degree. There is a lot of information you
+can communicate in real life that you can never do so digitally.
 
+Left to our own devices, scrolling through endless profiles from the comfort of our homes, we can be remarkably selective — perhaps too selective. This detachment from
+reality allows us to maintain impossibly high standards, far more stringent than we'd apply in real-life encounters.
 
+I could not find a reputable study on the distribution of linger time per profile, but from personal experience and observing male friends, it is less than a few seconds.
+Only enough time to see the first photo and bio information.
 
+Women are markedly more selective than men <Hint>(this would be the case online & offline)</Hint>. In a 2019 study by Brecht Neyt et al<sup>[14]</sup>, researchers
+conducted a field experiment on Tinder finding that male users swiped right (liked profiles) 61.9% of the time, whereas female users only swiped right 4.5% of the time.
+
+A 2022 survey by Statista<sup>[15]</sup> on Bumble users found that while over 60% of women were interested in dating men over 6 feet tall, only 15% of women were
+interested in men shorter than 5’8”. This is in stark contrast to the actual distribution of male height in the general population, where ~85% of men are below 6’ tall
+(male height distribution for the US is shown in the 2nd image below).
+
+<Image
+  width="600px"
+  src="/images/writing/dating/bumble-height-preferences.png"
+  alt="Bumble height preferences among female users"
+  caption="Bumble height preferences among female users, 2022."
+/>
+
+<Image
+  width="600px"
+  src="/images/writing/dating/usa-male-height-distribution.png"
+  alt="Male height distribution in the US"
+  caption="Male height distribution in the US (~early 2020s)."
+/>
+
+While I could not find research on the average physical attractiveness of profiles men swipe on, I imagine it is even more particular than women’s preferences.
+
+<Dots />
+
+In reality, compatability is rarely a checklist (aside from avoiding fundamental incompatibilities like different timelines for having children, agreeing on religion
+for the kids, etc). We’re all capable of being delightfully surprised on who we’d hit it off with.
+
+When you have little context on who you’re swiping on, you risk overlooking countless meaningful connections with people who, despite not fitting an idealized checklist,
+could have been wonderful partners.
+
+The convenience of profile-based dating has paradoxically made us less open to the beautiful imperfections and surprising chemistry that often spark genuine relationships.
+
+##### Cold Intros
+
+The most ideal way to meet a partner would be through just naturally living your life. Setups from your friends, connecting over shared interests, meeting at work, etc.
+
+When you decide to create an organized service for people to meet a partner, you begin making matches in very disparate social circles. You get farther and farther
+from how actual relationships form.
+
+The best kind of date is a “setup” from friends, where you are essentially “warm intro’d” to someone. Years of filtering & a distillation of qualities is implicit in the
+recommendation. Your friend group decided to continue to talk to this person after countless decision points where they could have abandoned the relationship.
+
+<Aside>Any matching scenario dealing with relationships will be primarily driven by warm introductions. This is why in startups and venture capital a warm intro is so
+important — time,  money, & reputation is on the line.</Aside>
+
+Instead, online dating services (usually) match you with strangers, who you have no context on, then are asked to chat with over a DM. The courting process was never
+destined to initiate over a DM conversation.
+
+We struggle to figure out what to say because we don’t know this person. Conversations fizzle out because it’s a high-effort process, and we’re one click away from
+hundreds of more options.
+
+##### Impacts on Self-Esteem
+
+Recall that online services have to generate matches among millions of users. The only way to do this is with some sort of algorithm.
+
+That algorithm has to be fair, in the context of a selection process that is very unfair, and market dynamics that are unfavorable to users (~70% of online dating
+users are men, each gender is hyperselective beyond normal, etc).
+
+Most (well designed) services will implement some form of [stable matching](https://en.wikipedia.org/wiki/Stable_marriage_problem) algorithm to propose
+stable pairings (see [Gale-Shapley](https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm)). Services must infer who would
+prefer whom from:
+- profile data (images, prompts)
+- user activity (who likes who, total messages in DM, who messages first, etc)
+- user feedback (feedback after dates, etc)
+- other data that can be gathered from public sources (likely)
+
+About a year into using Hinge in my final year of college I noticed that the attractiveness of profiles in my feed began to increase or decrease based on how “well” I
+was doing on the app (did I match with someone desirable and message back-and-forth recently? have I gone a month without a single match? etc).
+
+Research on online dating’s impact on self-esteem and body image is mixed, but I personally found that in my early years of college my self-esteem was negatively
+impacted by using Tinder. This turns into a self-perpetuating cycle, where you present less confidently online (& in real life), which results in less dates, and so on.
+
+<Aside>It is nearly impossible to measure these negative externalities, but they are significant. Online dating services are fond of showcasing their success stories
+(which are inevitable when you create a service dedicated to creating relationships), but rarely do they mention metrics on the effectiveness of their service (what % of
+users end up in fulfilling relationships? does this beat the distribution acheieved just living life naturally?).</Aside>
+
+The problem is when the algorithms and market dynamics skew against you, such that your true desirability in real life is not reflected in the profiles you are shown. If
+both modeled online & offline desirability were always perfectly the same, there would be no problem.
+
+A lot of people would be greatly benefitted from not having an online dating algorithm continuously setting their self-esteem.
+
+##### Misaligned Incentives
+
+Charlie Munger is famously quoted as saying “Show me the incentive and I'll show you the outcome”. Digging through the transcript for his 1995 Harvard speech “The
+Psychology of Human Misjudgement,” it turns out he never said those exact words.
+
+But of the “24 Standard Causes of Human Misjudgment” he would list, this was the first:
+
+<Quote>**#1) Under-recognition of the power of what psychologists call reinforcement
+and economists call incentives.** Well, you can say, “Everybody knows that.” Well, I think I’ve been in the top 5% of my age cohort all my life in understanding the
+power of incentives, and all my life I’ve underestimated it. And never a year passes [where I don’t] get some surprise that pushes my limit a little farther.</Quote>
+
+Online dating services have to make money, and ideally users would only pay when they are successful. The problem is that if users only paid when they got married,
+got into a relationship, or even when they went on a date — then the service would never make money.
+
+Many users never see these success events, and if they were priced, they would be appalled at the price. Economist Alvin Roth calls a market “repugnant” when some
+people would like to participate, but others seek to prevent them from doing so, even if all transactions are voluntary.
+
+Putting a price on relationships is a repugnant market setup that would not only be a weaker business model, but would struggle to see widespread social adoption, even
+if it would perfectly align incentives between users and the service.
+
+So the next best thing is selling a software subscription. But the problem is that the customers with the highest lifetime value (LTV) are the ones who are the least
+successful. When users get what they want, the service loses 2 paying users at once.
+
+So what is the outcome? A lot of paying users who get nothing (whether it is their fault or not). Some back-of-napkin reasoning:
+- In 2023 Hinge had 23,000,000 users, ~1.3 million paying.
+- Of paying users, about ~65% are men (men are 1.4x as likely to pay as women<sup>[2]</sup>).
+- Of the 845,000 paying men, I would guess that &lt;50% will ever go on a date, & maybe &lt;20% will ever get into a relationship (there is no public data on these numbers).
+- Assuming the average LTV of a paying Hinge user is ~$100 over a few years (drastically oversimplifying things, could be higher)
+- 422,500 * $100 = <Highlight>**$42.25 million** in revenue</Highlight> that never results in any valuable outcome for users <Hint>(not even a single date)</Hint>
+- 676,000 * $100 = <Highlight>**$67.6 million** in revenue</Highlight> that never results in a relationship
+
+This only estimates the financial costs on unsuccessful usage, we can also estimate lost time.
+
+On average users who use online dating do so for 6-10 hours a week<sup>[16]</sup>. So for the 422,500 male users in 2023 who never went on a date, 2,535,000-4,225,000
+cumulative hours were lost scrolling a feed (105,625-175,854 cumulative days, or 289-481 cumulative years).
+
+<Dots />
+
+In a 2024 interview with Bloomberg, Founder of Bumble Whitney Wolfe Herd said:
+
+<Quote><Hint>...</Hint> I'm looking at Gen Z now and I'm looking at the insanely large TAM of singles around the world. Loneliness is, on the rise. It is actually one of
+the biggest issues that humanity is facing. I mean, according to the Surgeon General and top doctors, loneliness is actually killing us. And social media, while it has its
+benefits — it is not social media. It is anti-social media. And so I think there's something really powerful about the technology that we're building to really connect us,
+<Highlight>go online, to get offline</Highlight>. And that is going to be absolutely critical for the next generation, the current generation, and for bringing us closer
+together.</Quote>
+
+The phrase “go online, to get offline” struck me as odd. It sounds like the same charter every dating app in the early 2010s started with, before failing to deliver on
+a future where we would be happier and more connected.
+
+Unsuccessful recommendation algorithms & a hyperselective environment is what keeps otherwise matchable people on dating apps. To make users more successful, we need less
+technology in the loop, not more.
+
+##### Overuse
+
+One of my best friends had an old dog who passed away a few years ago named Zeke. Zeke always loved eating bananas. You could feed him banana after banana, and he would
+keep eating them.
+
+Eventually my friend would have to slap my wrist and tell me to stop feeding him. He’d say, “Don’t you know, if you keep giving dogs food they’ll just keep eating it. They
+won’t stop by themselves”.
+
+When you give people seemingly endless romantic options at the opening of an app, with one of the most powerful motivating forces within us driving usage (finding a
+romantic partner, 2nd to accumulating a lot of money), you’re going to get a lot of addicted users.
+
+Dating app burnout is at an all-time high. While I couldn’t find reputable research on this, some informal surveys by various media outlets estimate that 70-80% of users
+are feeling some degree of burnout from years of dating app usage<sup>[18]</sup>.
+
+In the middle of 2024, dating app Hinge released “Your Turn Limits” to encourage users to keep conversations going<sup>[19]</sup>:
+
+<Quote>In a recent study conducted by Hinge researchers, 44% of daters cite lack of responsiveness as a top dating challenge. Inspired by this insight, Hinge is testing a
+limit on the number of "Your Turn" messages a dater can have with the goal of setting up more dates with conversations that are heating up, and giving daters clarity with
+those that are cooling down. As a result, Hinge users with eight or more people waiting for their response will have a decision to make: reply, or end the chat in order to
+continue sending and receiving additional likes.</Quote>
+
+How did it take a company founded in 2011 over a decade to implement basic throttling in message inboxes? Well, incentives — in the 2010s companies were incentivized to
+deliver more matches than their competitors, not to minimize burnout.
+
+Under mounting pressure to address a health crisis among users, companies like Apple released operating system level features like “Screen Time” (in 2018) to promote digital
+well-being and device usage awareness.
+
+Very successful online dating services have the same responsibility. Now that burnout is becoming a real problem, there is incentive for companies to fix it to keep users from
+leaving their service.
+
+## The Future
+
+### Why Things Are Bad
+
+Things don’t get better in the world until financial incentives arise for talented entrepreneurs to take on risk to create better solutions.
+
+I think we are at a special point in time where people silently want something better, and are willing to pay for it. This was not as much the case in the late 2010s, it
+is very much more the case now in 2025.
+
+The good opportunities arise silently. Usually no one shouts “I really want this company to exist, please go build this”. People tuned into a problem space & familiar with
+it’s characteristics notice the gaps.
+
+In ”The Creative Act: A Way of Being”, Rick Rubin says<sup>[20]</sup>:
+
+<Quote>Often art arrives in movements. Bauhaus architecture, abstract expressionism, French New Wave cinema, Beat poetry, punk rock to name a few from recent history. These
+movements appear like a wave; some artists are able to read the culture and position themselves to ride that swell. Others might see the wave and choose to swim against the current.
+<Highlight>We are all antennae for creative thought. Some transmissions come on strong, others are more faint. If your antenna isn’t sensitively tuned, you’re likely to lose the data in the
+noise.</Highlight></Quote>
+
+But there are barriers and risks that make this a particularly harder business to start & fund than run-of-the-mill B2B Saas.
+
+#### No Soft Landing
+
+There is no “soft landing” for an online (or offline) dating company. If you are a founder starting, or an investor considering funding, a company of this sort, your only paths to
+liquidity are generating profits (at the compromise of growth), or getting acquired in 4-8 years.
+
+There is no ability to “merge” with other dating services (although it would be in the company & users’ best interest), since users trust you with sensitive personal data &
+their participation is tied to a heavy branding component.
+
+Match Group has hacked this by creating a holding company that acquires online dating companies when they reach a critical point in growth. They then unlock synergies between their
+portfolio items without dissolving or merging individual brands.
+
+On top of this, it is very expensive to get to a critical mass where the product is useful. Remember that every user that joins gives subsequent users a higher chance to find their
+best (or any) match.
+
+So you will spend 2-3 years shoveling in & burning money, as Hinge, Bumble, & Tinder slowly drain your userbase away. Unless you are doing something markedly different to
+avoid this “brain drain”, it will slowly kill the business.
+
+#### Weak Business Model
+
+When you actually get users what they want, which is a loving partner, you lose 2 paying users. This should make us curious how other successful marketplaces handle this churn
+problem — one I can immediately think of is real estate sales.
+
+Traditionally, real estate agents (in the US) earn a percentage (typically 5-6% total, split between buying and selling agents) of the final sale price of a home as a one-time fee,
+rather than charging clients a subscription for their time spent in the market.
+
+The incentive is to get clients into a home as soon as possible, so they can earn their commission (ideally at a higher price). The counterbalance: clients have a budget, and referrals
+are a major component of how agents grow their business. So there is a counter-incentive to please clients by finding the best home possible, for the best price.
+
+This model acknowledges and embraces the transactional nature of the business — success means facilitating a match that takes customers out of the market.
+
+Online dating platforms cannot align incentives this perfectly. To do so would be to put a price on the formation of some of the most intimate relationships in our lives. As we discussed
+before, this would be a repugnant market setup many would protest (but many would happily participate in as well).
+
+If you can’t directly make money off successfully pairing people, you only have a few other options:
+1) charge to join the service
+2) charge to actively use the service
+3) charge for premium features in the service
+4) charge for events <Hint>(offline)</Hint>
+
+**#1)** Hinge tried to charge all users a flat subscription fee (no free tier) [in 2018](https://techcrunch.com/2016/10/11/the-new-hinge-focused-exclusively-on-real-relationships-now-costs-7month)
+and that was later reverted after it hurt growth (which is critical to a service’s value). This would be impractical for any large-scale general-purpose service, but may work for a smaller elite
+matchmaking service.
+
+**#2)** Charging users a subscription for their time in a service is the best revenue model that has proven a practical success at scale today. This creates a massive waste amongst users who are
+difficult to match as they will be forced to pay for a service they are unlikely to find value in.
+
+Because the drive to find a partner is so strong, downloading an app and filling out a profile is so easy, and the cost of subscription is not very high, this proves an accessible entry
+point for many users willing to pay.
+
+**#3)** Features like “roses” & “super likes” in various services allow users to send “special” messages to users they are especially interested in. I could not find public data on what percentage
+of revenue comes from these features, but I predict these constitute &lt;10-15% of total revenue.
+
+The least successful users will likely be the ones using this feature, & it will likely be most ineffective on the most appealing users (unless they were going to be a match anyway). From reading online
+forums over the years, they seem to be a waste of money for most users.
+
+**#4)** Charging for events can work, but will never grow into a material revenue source (enough to build an investment-grade service). Event businesses can reach single digit millions in revenue, but
+are very difficult to scale beyond that.
+
+<Dots />
+
+Given the above, your core focus will shift to building a subscription business. But in the first 1-3 years your dating service will be nearly worthless, as it will have to expand to different geographies
+and build up enough density to generate matches.
+
+So you face a multi-year chasm where you won’t be making very much money, burning a lot of money, taxing unsuccessful users, while your customers are being plied from your grasp.
+
+If you are an investor, you’d recognize this is taking on more risk than necessary to get an equivalent return elsewhere in the software world. The chance of success is markedly lower than that of any
+other regular software business.
+
+#### Lack of Career Interest
+
+Some of the smartest engineers & scientists in the world are in Silicon Valley. Relationships are among the most important things in our lives (especially romantic relationships). So why are we not
+obsessed with getting this right? Why are more brilliant people not working on this problem?
+
+Highly technical people are generally uninterested in the touchy-feely aspects of relationships. They want to work on robotics, AI, and other things that are more tangible, easier to talk about.
+
+In my personal contemplation of whether or not to work on this problem, I have come to realize that I feel the same way. I would rather work on a problem that is highly technical and concrete, that
+delves less into the vulnerable parts of ourselves.
+
+People in Silicon Valley don’t want to talk about love, they want to talk about the next technological advancement that can get them an edge in a conversation. There is no professional power to be gained
+in being publicly vulnerable by working on helping people find love.
+
+<Aside>In the area of our personal lives it is the opposite, we unlock the most personal power & happiness when we find connection while being vulnerable. When we “wear our heart on our sleeve” in
+secure relationships.</Aside>
+
+Diverting one’s career in traditional software engineering to found an online dating startup would be a significant risk. Even working for a new dating startup moves one’s career down a path they might
+not want to follow in a few years.
+
+<Dots />
+
+Above all, merely being *interested* in this problem space is a red flag. It brings about questions like “What’s wrong with that person? What could they not figure out that has them so interested in starting
+something new in dating? There must be something wrong with them.”
+
+The other day I was at a party for a major software project’s launch, and when I explained to a male acquaintance that I was interested in working on this problem, he just looked at me deadpan
+and said ”Is there actually a problem?” <Hint>(he was good looking & well connected, so I imagine did well online & offline)</Hint>
+
+When you have a problem where interest itself is taboo, and the most talented technologists won’t touch it, it would be hard to expect much innovation!
+
+#### Most Jobs Are Done
+
+Hinge is “the relationship app”, with intentional design choices (like making it a first-class UI concern to send a message on prompts or photos) made to
+slow down the user experience and make it more deliberate. Tinder is “the hookup app” <Hint>(whether they want to call it that or not)</Hint>, with a much faster
+experience of rapidly swiping through photos (to the point only physical attraction is considered).
+
+Each service fills some functional need people seek a solution for. American academic Clayton Christensen formalizes this in the Jobs to Be Done (JTBD) framework,
+stating that the unit on which to assess consumer choice is not their concrete demographics (age, race, gender, etc), but rather “jobs to be done” in their lives.
+
+In a talk at Google<sup>[21]</sup> he says:
+
+<Quote>
+... I have all kinds of other characteristics and attributes, as you can see. But none of my characteristics or attributes have yet caused me to buy
+The New York Times today. There might be a correlation between the propensity that I will buy the The New York Times. But my characteristics don’t cause
+me to buy it. ... And yet, almost all of the work that we do in assessing market potential, we look at the characteristics or attributes of the potential
+customers. <Highlight>And a better way to think of [consumer choices], we decided, is that...darn it. Everyday, stuff happens to us. Jobs arise in our life.
+And when these jobs arise, we need to find some way to get the jobs done.</Highlight> And some of the jobs are simple incremental things that happen regularly.
+Others are dramatic and important breakthrough problems. But whenever we have a job to do, we have to find something and *pull* it into our lives in order
+to get the job done. <Highlight>And what we decided is understanding the job is the critical key to develop products that we can predictably make and find the customers
+to buy.</Highlight>
+</Quote>
+
+<Aside>Usually companies start out with their own concept of the problem they are solving, then over time customers mold the company (which is still very much
+like clay) into the actual problem they want solved. It is a constant loop of setting internal vision, releasing, & external molding.</Aside>
+
+A mistake many creating new services will make is that they will propose incremental improvements to the user experience, without understanding the underlying job users are hiring
+them to solve.
+
+There will be an initial influx of people who are looking to hire a service for the job of “Hinge & Bumble did not work for me, so I want to try out a 3rd app”. In the first year, tens of
+thousands will join in hopes that this new service will be somehow different for them.
+
+But the adverse market dynamics that existed in other services will replay themselves in this new service over time. Even if the service somehow reaches a critical mass of users, the same
+systemic biases & hyperselectivity will arise once again.
+
+Eventually users will start deciding to leave for existing services. Leaving to services like Hinge & Bumble, hoping that something will have changed in the time they were away.
+
+<Aside>Roughly 64% of dating app users have only 1 app installed on their phone & 17% have 2 (meaning ~81% have at most 2 apps installed). This leaves very
+little room for patience with alternatives.</Aside>
+
+And we will begin the cycle of “dating is broken” once again.
+
+##### Moving the Problem Around
+
+Some services will think they are solving a novel job users want to hire them for, but in reality they will just be moving the problem around without solving it.
+
+A prominent dating app called “Soon” launched in San Francisco in 2023. The focus of the app was around getting users offline & going on dates in real life as soon as possible.
+
+Dating apps around the time struggled to get users to be more intentional about setting up dates in real life. Instead, many DM conversations would drag on with neither participant
+taking much initiative to meet up in real life.
+
+<Image
+  src="/images/writing/dating/soon.png"
+  alt="Soon flyer"
+  caption="A flyer from Soon, mid-2023."
+/>
+
+The app featured a schedule-on-match feature where matches would come with a time & place to meet up. Users would enter their availability beforehand.
+
+<Image
+  src="/images/writing/dating/soon-schedule.png"
+  alt="Soon scheduling feature"
+  caption="Filling out your availability in Soon."
+/>
+
+Early on, the app accumulated thousands in waitlist sign-ups. I was an early user of the app as well (only briefly using it). The organizers also hosted in-person events for users to
+meet each other offline.
+
+Recently, I was talking to a female acquaintance who was using the app and she mentioned she had a bad experience. I always had a positive impression of the app (although I never went on a
+date through it), so I wondered what the hitch could have been.
+
+She explained that on one occasion she matched with a guy who later while texting turned out not to be a great match. Upon matching, a time and place was already set for the date, and she
+didn’t want to cancel on him, so she went on the date anyway.
+
+It turned out not to be a great fit, so she ended up on a 2 1/2 hour date with a guy she wasn't interested in.
+
+While Soon solved the problem of intention in DMs, it created another by delaying the “vibe check” process, which also happens in DMs before a date. The selectivity, innate to the nature of
+the problem, just got moved further down the funnel.
+
+#### Matchmaking Is Hard
+
+Making romantic matches is incredibly difficult. When I first launched the waitlist for [Bind](https://joinbind.com/) <Hint>(link may or may not work)</Hint>, I got ~100 signups after about
+a week with the help of some flyers around the city.
+
+<Image
+width={1000}
+  src="/images/writing/dating/bind-waitlist.png"
+  alt="About 30 rows from the bind waitlist"
+  caption="~30 rows from the Bind waitlist."
+/>
+
+I only collected basic information like age, gender, email, phone — and entries went into a Google Spreadsheet. Imagine the above, except 1,000,000 rows, and maybe 80 more columns, for various
+free-form and multiple choice survey questions.
+
+This is the complexity matchmakers deal with. How do you decide who is a good match for who, while being fair to everyone? Can you “just use AI to matchmake”?
+
+It must be harder than just looking for similarities to form responses with an LLM. There is a lot of information you wish you could collect as well. But all you have to go off of is what
+users have provided you.
+
+**The real bottleneck in solving the matching problem is relationship science.** The underlying patterns we have to predict good romantic matches given discrete data points today is not strong
+(at least public research & literature I’ve read) enough to reliably predict variance in relationship outcomes.
+
+The best way we have to beat the “market” is matchmaking based on “vibes”, using the eye of a (usually female) matchmaker who is sharp with people. With large general-purpose services,
+many otherwise matchable people fall through the cracks.
+
+{/* ### Market Landscape
+
+The next generation of online dating won’t look like the last. Most of the jobs in the traditional model of online dating are done.
+
+### Opportunities
+
+Lorem Ipsum. */}
 
 
 <br />
 <br />
+<br />
 
-#### References
+### References
 
-1. Vogels, Emily A., and Colleen McClain. “Key Findings about Online Dating in the U.S.” Pew Research Center, 2 Feb. 2023, [www.pewresearch.org/short-reads/2023/02/02/key-findings-about-online-dating-in-the-u-s/](https://pewresearch.org/short-reads/2023/02/02/key-findings-about-online-dating-in-the-u-s/).
-2. Lamb, Brad Albert and Hannah, and Stephanie T. Nguyen. “Monopolization Defined.” Federal Trade Commission, 4 Mar. 2022, [www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/single-firm-conduct/monopolization-defined](https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/single-firm-conduct/monopolization-defined).
-3. Harris, Larry. Trading and Exchanges: Market Microstructure for Practitioners. Oxford University Press, 2003.
-4. “Where Does Growth Come From? | Clayton Christensen | Talks at Google.” YouTube, Talks at Google, 8 Aug. 2016, [www.youtube.com/watch?v=rHdS_4GsKmg](https://youtu.be/rHdS_4GsKmg?si=BrrAoF0LcQ-YOnZ5&t=569).
-5. Thangavelu, Poonkulali. “Credit Card Market Share Statistics.” Bankrate, 7 July 2023, [www.bankrate.com/credit-cards/news/credit-card-market-share-statistics](www.bankrate.com/credit-cards/news/credit-card-market-share-statistics).
-
-{/*
-
-{/* Notice how concentrated the market is around 3 key players, there is a reason for this. Drawing a parallel back to U.S. equity markets,
-the following  */}
-
-
-
-
-
-
-{/* [Game theory](https://en.wikipedia.org/wiki/Game_theory) models strategic problems like this. */}
-
-{/* Different market microstructures will result in different distributions of success.
-
-### Online Dating Will Change
-
-As a primer, here is the stock price of Match Group
-
----
----
----
-
-Men tend to underestimate how picky women can be in their dating preferences, women tend to underestimate how liberal men
-can be in their dating preferences.
-
-### Prior Art */}
-
-{/* Hinge, Bumble, & Tinder control 73.85% marketshare cumulatively
-
-, but really just Hinge for serious relationships)
-
-
-### Taboo
-
-This is a problem people in Silicon Valley don’t really want to touch.
-
-### Existential Barriers to Innovation
-
-Lorem */}
+1. Benson, John M., “The Public and Online Dating in 2024.” SSRS, 14 Feb. 2024, [ssrs.com/insights/the-public-and-online-dating-in-2024/](https://ssrs.com/insights/the-public-and-online-dating-in-2024/).
+2. Vogels, Emily A., and Colleen McClain. “Key Findings about Online Dating in the U.S.” Pew Research Center, 2 Feb. 2023, [www.pewresearch.org/short-reads/2023/02/02/key-findings-about-online-dating-in-the-u-s/](https://pewresearch.org/short-reads/2023/02/02/key-findings-about-online-dating-in-the-u-s/).
+3. Lamb, Brad Albert and Hannah, and Stephanie T. Nguyen. “Monopolization Defined.” Federal Trade Commission, 4 Mar. 2022, [www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/single-firm-conduct/monopolization-defined](https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/single-firm-conduct/monopolization-defined).
+4. Harris, Larry. Trading and Exchanges: Market Microstructure for Practitioners. Oxford University Press, 2003.
+6. Thangavelu, Poonkulali. “Credit Card Market Share Statistics.” Bankrate, 7 July 2023, [www.bankrate.com/credit-cards/news/credit-card-market-share-statistics](www.bankrate.com/credit-cards/news/credit-card-market-share-statistics).
+7. Buss, David M. The Evolution of Desire: Strategies of Human Mating. 4th ed., Basic Books, 2016.
+8. Darren M. George, Dadria Lewis, Shayla Wilson, Jair Van Putten and Takudzwa Nengomasha (2023). The Direct and Mediated Influence of Perceptual Variables on Physical Attractiveness and Relational Satisfaction in Romantically Involved Heterosexual Couples. *Psychology & Psychological Research International Journal.* [medwinpublishers.com/PPRIJ/the-direct-and-mediated-influence-of-perceptual-variables-on-physical-attractiveness-and-relational-satisfaction-in-romantically-involved-heterosexual-couples.pdf](https://medwinpublishers.com/PPRIJ/the-direct-and-mediated-influence-of-perceptual-variables-on-physical-attractiveness-and-relational-satisfaction-in-romantically-involved-heterosexual-couples.pdf)
+9. McNulty, J. K., Neff, L. A., & Karney, B. R. (2008). Beyond initial attraction: Physical attractiveness in newlywed marriage. Journal of Family Psychology, 22(1), 135–143. [doi.org/10.1037/0893-3200.22.1.135](https://doi.org/10.1037/0893-3200.22.1.135)
+10. “David Buss: Sex, Dating, Relationships, and Sex Differences | Lex Fridman Podcast #282.” YouTube, Lex Fridman, 4 May 2022, [youtu.be/sndW9hzX-wA?si=qKyey1sebz3pOz_7&t=1736](https://youtu.be/sndW9hzX-wA?si=qKyey1sebz3pOz_7&t=1736).
+11. Fugere, Madeleine & Chabot, Caitlynn & Doucette, Kaitlyn & Cousins, Alita. (2017). The Importance of Physical Attractiveness to the Mate Choices of Women and Their Mothers. Evolutionary Psychological Science. 3. 10.1007/s40806-017-0092-x.
+12. “Hinge’s Makeover: The New Era For Dating Apps.” YouTube, CNBC Make It, 31 Jan. 2024, [youtu.be/MC4WRNAv1bg?si=hG8sKEY0omnPTY2V&t=291](https://youtu.be/MC4WRNAv1bg?si=hG8sKEY0omnPTY2V&t=291).
+13. Covington, Paul, et al. Deep Neural Networks for YouTube Recommendations, Google Research, 7 Sept. 2016, [static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf).
+14. Brecht Neyt, et al. “Are Men Intimidated by Highly Educated Women? Undercover on Tinder.” Economics of Education Review, Pergamon, 22 July 2019, [sciencedirect.com/science/article/pii/S0272775719301104](https://www.sciencedirect.com/science/article/pii/S0272775719301104).
+15. Florio, Gina. “Only 15% of Women Show Interest in 5’8" Men on Dating Apps, According to Survey.” Evie Magazine, https://www.datocms-assets.com/109366/1698967220-evie-logo.png, 6 Nov. 2023, [eviemagazine.com/post/only-15-women-interest-58-men-dating-apps-according-survey](https://www.eviemagazine.com/post/only-15-women-interest-58-men-dating-apps-according-survey).
+16. *(tbd)*
+17. “Bumble’s Herd on the Next Chapter of Growth.” YouTube, Bloomberg Live, 5 May 2024, [youtu.be/Y95T58DSREU?si=GMHrvxuu-tXlphaE&t=239](https://youtu.be/Y95T58DSREU?si=GMHrvxuu-tXlphaE&t=239).
+18. What’s Driving Dating App Fatigue In 2024—And What Relationship Experts Want You To Do About It, Women’s Health, 12 Sept. 2024, [womenshealthmag.com/relationships/a62081332/dating-app-fatigue-burnout/](www.womenshealthmag.com/relationships/a62081332/dating-app-fatigue-burnout/).
+19. “Hinge Tests Limiting Unanswered Messages to Reduce Dating Burnout.” Hinge, 14 May 2024, [hinge.co/press/your-turn-limits-test](https://hinge.co/press/your-turn-limits-test).
+20. Rubin, Rick, and Neil Strauss. The Creative Act: A Way of Being. Penguin Press, 2023.
+21. “Where Does Growth Come From? | Clayton Christensen | Talks at Google.” YouTube, Talks at Google, 8 Aug. 2016, [www.youtube.com/watch?v=rHdS_4GsKmg](https://youtu.be/rHdS_4GsKmg?si=BrrAoF0LcQ-YOnZ5&t=569).
