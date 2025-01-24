@@ -6,13 +6,13 @@ import { FunctionComponent } from "react";
 import { twMerge } from "tailwind-merge";
 import { isEmpty } from "../../../helpers/empty";
 import { EXTERNAL_LINKS } from "../../../helpers/urls";
+import QuoteIcon from "../../../icons/lib/QuoteIcon";
 import { WritingData } from "../../../pages/[writingId]";
 import Link from "../../shared/elements/Link";
 import SiteLayout from "../../shared/layout/SiteLayout";
 import Navbar from "../../shared/navigation/Navbar";
-import QuoteIcon from "../../../icons/lib/QuoteIcon";
-import TableOfContents from "./TableOfContents";
 import ProgressLine from "./ProgressLine";
+import TableOfContents from "./TableOfContents";
 
 interface Props {
   mdxSource: any;
@@ -28,13 +28,13 @@ const Writing: FunctionComponent<Props> = ({ mdxSource, mdxData }) => {
       <Navbar />
 
       <div className="pt-3.5 sm:pt-9 pb-16">
-        <div className="relative max-w-[1400px] mx-auto">
+        <div className="relative sm:w-full sm:max-w-[1400px] mx-auto">
           <div className="flex">
-            <div className="flex-1">
+            <div className="w-full sm:flex-1">
               <Header className="mb-4 sm:mb-6" title={title} date={date} />
               <Contents mdxSource={mdxSource} />
             </div>
-            <TableOfContents className="fixed top-24 left-[max(0px,calc(50%-700px+24px))]" />
+            <TableOfContents className="hidden 2xl:block fixed top-24 left-[max(0px,calc(50%-700px+24px))]" />
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ const components = {
   h3: (props: any) => <h3 id={hid(props)} className="text-neutral-200 text-xl font-semibold mb-2.5" {...props} />,
   h4: (props: any) => <h4 id={hid(props)} className="text-neutral-200 text-lg font-semibold mb-2.5" {...props} />,
   h5: (props: any) => <h5 id={hid(props)} className="text-neutral-200 text-base font-semibold mb-2.5" {...props} />,
-  h6: (props: any) => <h6 id={hid(props)} className="text-neutral-200 text-sm font-semibold mb-2.5" {...props} />,
+  h6: (props: any) => <h6 id={hid(props)} className="text-neutral-200 text-base font-semibold mb-2.5" {...props} />,
   p: (props: any) => (
     <p
       className="text-neutral-100 mb-3 [&>sup]:text-neutral-400 [&>sup]:text-xs [&>sup]:relative"
@@ -70,9 +70,15 @@ const components = {
       </a>
     );
   },
+  Hint: (props: any) => (
+    <span
+      className="text-neutral-400"
+      {...props}
+    />
+  ),
 
-  ul: (props: any) => <ul className="list-disc mb-2.5" {...props} />,
-  ol: (props: any) => <ol className="list-decimal mb-2.5" {...props} />,
+  ul: (props: any) => <ul className="list-disc mb-3.5" {...props} />,
+  ol: (props: any) => <ol className="list-decimal mb-3.5" {...props} />,
   li: (props: any) => <li className="text-neutral-100 ml-8 mt-2" {...props} />,
 
   hr: (props: any) => <hr className="border-neutral-600 my-5" {...props} />,
@@ -90,7 +96,7 @@ const components = {
   },
   Aside: (props: any) => {
     return <aside
-      className="border-l border-neutral-500 pl-4 mb-5"
+      className="border-l border-neutral-500 pl-4 mb-4"
       style={{ borderLeftWidth: "0.5px" }}
     >
       <div className="text-neutral-400 italic mb-1.5 [&>p]:text-neutral-500 [&>p]:italic [&>p]:mb-1.5">
@@ -100,7 +106,7 @@ const components = {
   },
   Quote: (props: any) => {
     return <div className="flex pb-4 rounded-lg">
-      <QuoteIcon className="h-6 w-6 flex-shrink-0 fill-neutral-100 mr-4" />
+      <QuoteIcon className="h-6 w-6 shrink-0 fill-neutral-100 mr-4" />
       <div className="text-neutral-200 mt-0.5 italic">{props.children}</div>
     </div>
   },
@@ -109,34 +115,39 @@ const components = {
   },
   Dots: () => {
     return <div className="flex flex-row gap-1 justify-center pt-4 pb-6">
-      <div className="h-1 w-1 bg-neutral-500 rounded-full" />
-      <div className="h-1 w-1 bg-neutral-500 rounded-full" />
-      <div className="h-1 w-1 bg-neutral-500 rounded-full" />
+      <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
+      <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
+      <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
     </div>
   },
 
   Image: (props: any) => {
     const hasCaption = !isEmpty(props.caption);
+    const hasCustomDimensions = props.width || props.height;
 
     const imageClassName = clsx({
-      "w-full sm:max-w-[450px]": true,
+      "w-full": !hasCustomDimensions,
       "mb-2": hasCaption,
       "rounded-sm": true,
     });
 
     return (
       <figure className="flex flex-col w-full items-center my-6">
-        <img
-          className={imageClassName}
-          src={props.src}
-          alt={props.alt}
-          draggable="false"
-        />
-        {hasCaption && (
-          <figcaption className="w-full sm:max-w-[450px]">
-            <p className="text-neutral-400 text-sm">{props.caption}</p>
-          </figcaption>
-        )}
+        <div className={`w-full ${!hasCustomDimensions ? "sm:max-w-[450px]" : ""}`}>
+          <img
+            className={imageClassName}
+            src={props.src}
+            alt={props.alt}
+            width={props.width}
+            height={props.height}
+            draggable="false"
+          />
+          {hasCaption && (
+            <figcaption>
+              <p className="text-neutral-400 text-sm">{props.caption}</p>
+            </figcaption>
+          )}
+        </div>
       </figure>
     );
   },

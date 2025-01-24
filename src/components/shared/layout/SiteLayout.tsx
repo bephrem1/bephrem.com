@@ -1,9 +1,9 @@
 import { EXTERNAL_LINKS, INTERNAL_LINKS } from '../../../helpers/urls';
 
 import { FunctionComponent } from 'react';
+import { useIsOnPath } from '../../../hooks/urls';
 import Link from '../elements/Link';
 import Socials from '../socials/Socials';
-import { useIsOnPath } from '../../../hooks/urls';
 
 interface Props {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ interface Props {
 const SiteLayout: FunctionComponent<Props> = ({ children }) => {
   return (
     <div className="flex flex-col w-full min-h-svh items-center bg-neutral-900">
-      <div className="flex flex-col w-full sm:w-[700px] px-6 sm:px-0 min-h-svh">{children}</div>
+      <div className="flex flex-col w-full sm:w-[700px] px-4 sm:px-0 min-h-svh">{children}</div>
 
       <UniversalFooter />
     </div>
