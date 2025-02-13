@@ -7,10 +7,11 @@ export const INTERNAL_LINKS = {
 
 export const EXTERNAL_LINKS = {
   SOCIAL: {
+    TWITTER: 'https://twitter.com/notbenyam',
+    YOUTUBE: 'https://www.youtube.com/@bephrem',
+    LINKEDIN: 'https://linkedin.com/in/bephrem',
     GITHUB: 'https://github.com/bephrem1',
     INSTAGRAM: 'https://www.instagram.com/bephrem_',
-    LINKEDIN: 'https://linkedin.com/in/bephrem',
-    TWITTER: 'https://twitter.com/notbenyam'
   },
   VIDEOGRAPHY: {
     HOME: 'https://bephrem.studio'
