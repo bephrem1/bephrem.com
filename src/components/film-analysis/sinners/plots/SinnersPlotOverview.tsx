@@ -74,7 +74,7 @@ const styles = `
 
 interface Props { }
 
-const PlotOverview: FunctionComponent<Props> = () => {
+const SinnersPlotOverview: FunctionComponent<Props> = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [approachingMarkers, setApproachingMarkers] = useState<Set<string>>(new Set());
   const [peakMarkers, setPeakMarkers] = useState<Set<string>>(new Set());
@@ -499,4 +499,4 @@ const PlotOverview: FunctionComponent<Props> = () => {
   );
 };
 
-export default PlotOverview;
+export default SinnersPlotOverview;

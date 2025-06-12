@@ -2,6 +2,8 @@ import { clsx } from "clsx";
 import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
+import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
@@ -9,51 +11,97 @@ import QuoteIcon from "../icons/lib/QuoteIcon";
 
 const SinnersFilmAnalysisPage = () => {
   return <div className="flex flex-col w-full min-h-svh items-center bg-neutral-50">
-    <div className="flex flex-col w-full sm:w-[700px] px-4 sm:px-2 sm:pr-12 min-h-svh border-r border-r-neutral-300">
-      <Contents />
+    <div className="flex w-full max-w-[1400px]">
+      {/* Left fixed column */}
+      <div className="hidden sm:block w-[250px] fixed top-16 left-4 p-2">
+        <LeftColumnContents />
+      </div>
+
+      {/* Main content */}
+      <div className="flex flex-col w-full sm:w-[700px] sm:ml-[330px] min-h-svh border-r border-r-neutral-300">
+        <Contents />
+      </div>
     </div>
   </div>;
 };
 
+const LeftColumnContents = () => {
+  return (
+    <div>
+      <div>
+        <Image
+          path="/film-analysis/films/sinners/promo/sinners-poster"
+          alt="Sinners movie poster"
+          width="175"
+          ext="jpg"
+          style={{
+            borderRadius: "4px",
+            boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)"
+          }}
+          optimize={false}
+          inspectable
+        />
+        <a href="https://www.imdb.com/title/tt31193180/fullcredits/" target="_blank" rel="noopener noreferrer" className="block mt-1.5">
+          <p className="text-neutral-500 text-sm">full cast & crew <span className="text-neutral-400"> — IMDB</span></p>
+        </a>
+      </div>
+    </div>
+  )
+}
+
 const Contents = () => {
   return (
     <div className="pt-16">
-      <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-14" />
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-14" />
 
-      <HiddenAside title="Personal Preface" defaultOpen>
-        <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has <i>rocked my world</i>. As a filmmaker (not that I consider myself one yet), sometimes you watch things
-          that move you so deeply, that you say "<i>That</i>. <b>That's it</b>. That's what this is all about."</p>
-        <p className="leading-5 text-neutral-500 text-justify">
-          Albeit, Sinners is a $90M blockbuster with hundreds of craftspeople involved, & working relationships spanning decades — and I make videos where the
-          primary production expenses are $10 Uber rides. There is still an internal recognition when you're watching something <s className="mr-1">great</s>
-          timeless. Something that has maximized the power of its <span className="text-neutral-400">(incredibly challenging)</span> medium.
-        </p>
-        <p className="leading-5 text-neutral-500 text-justify mt-2">Growing up I didn't watch many movies. When I did, I enjoyed them, but nothing deeply resonated within me. My sister
-          would watch "Entertainment Tonight" downstairs and my eyes would glaze over as the latest star with lip surgery crossed the red carpet.
-          "Why did they matter? Why were we idolizing regular and flawed people, just like us?" I saw movies as entertainment, and entertainment was
-          a waste of time.</p>
-        <p className="leading-5 text-neutral-500 text-justify mt-2">I was upstairs programming. Making apps for Android phones, then running them downstairs to show my parents.
-          Programming and striving to be the best engineer was all I knew. It has constituted the past 10 years of my work. I've been loosely interested in video
-          and visual art, but I've never looked into that interest very seriously.</p>
-        <p className="leading-5 text-neutral-500 text-justify mt-2"> One day in early April, <a href="https://www.youtube.com/watch?v=78Ru62uFM0s" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">this video from Kodak</a> popped
-          up in my YouTube feed. I watched it and decided to buy a ticket for the first IMAX showing (on April 18th). I would watch the film 2 more times that weekend.
-          Then 2 times the next week. Then 3 the next.</p>
-        <p className="leading-5 text-neutral-500 text-justify mt-2">This eventually gave way to an obsession. Any free evening I’d get, I would try to see the movie
-          in 70mm at Grand Lake Theater in Oakland, CA <span className="text-neutral-400">(Ryan Coogler’s hometown theater)</span>, or at AMC Metreon 16  <span className="text-neutral-400">(the film inevitably returned to IMAX for a week)</span>.
-        </p>
-        <p className="leading-5 text-neutral-500 text-justify mt-2"> For a few weeks I was following <a href="https://www.usatoday.com/story/entertainment/movies/2025/05/01/clarksdale-mississippi-sinners-movie-theaters-cast-visit/83387768007/" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">the story</a> that
-          they might be screening the film in the town of Clarksdale, Mississippi <span className="text-neutral-400">(where the film took place)</span>. The town has no local movie theater in operation, the closest theater being 1 1/2 hrs away in Memphis, TN.
-          Later, when I saw it was <a href="https://www.mpbonline.org/blogs/news/ryan-coogler-is-bringing-sinners-home-to-clarksdale-for-a-series-of-screenings-qa/" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">confirmed</a>, I <i>had</i> to book a flight to Mississippi.
-          To see where the film took place & understand how the story was constructed.
-        </p>
-        <p className="leading-5 text-neutral-500 text-justify mt-2">
-          At the time of this writing I have watched the film 20 times, I will probably watch it many more times in my lifetime, but at this point content-wise it is etched
-          into my mind.
-        </p>
-        <p className="leading-5 text-neutral-500 text-justify mt-2">
-          The following is a technical breakdown of the film, with a focus on story, structure, and meaning.
-        </p>
-      </HiddenAside>
+        <HiddenAside title="Personal Preface" defaultOpen>
+          <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has <i>rocked my world</i>. As a filmmaker (not that I consider myself one yet), sometimes you watch things
+            that move you so deeply, that you say "<i>That</i>. <b>That's it</b>. That's what this is all about."</p>
+          <p className="leading-5 text-neutral-500 text-justify">
+            Albeit, Sinners is a $90M blockbuster with hundreds of craftspeople involved, & working relationships spanning decades — and I make videos where the
+            primary production expenses are $10 Uber rides. There is still an internal recognition when you're watching something <s className="mr-1">great</s>
+            timeless. Something that has maximized the power of its <span className="text-neutral-400">(incredibly challenging)</span> medium.
+          </p>
+          <p className="leading-5 text-neutral-500 text-justify mt-2">Growing up I didn't watch many movies. When I did, I enjoyed them, but nothing deeply resonated within me. My sister
+            would watch "Entertainment Tonight" downstairs and my eyes would glaze over as the latest star with lip surgery crossed the red carpet.
+            "Why did they matter? Why were we idolizing regular and flawed people, just like us?" I saw movies as entertainment, and entertainment was
+            a waste of time.</p>
+          <p className="leading-5 text-neutral-500 text-justify mt-2">At 16 I was upstairs programming. Making apps for Android phones, then running them downstairs to show my parents.
+            Programming and striving to be the best engineer was all I knew. It has constituted the past 10 years of my work. I've been loosely interested in video
+            and visual art, but I've never looked into that interest very seriously.</p>
+          <p className="leading-5 text-neutral-500 text-justify mt-2"> One day in early April, <a href="https://www.youtube.com/watch?v=78Ru62uFM0s" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">this video from Kodak</a> popped
+            up in my YouTube feed. I watched it and decided to buy a ticket for the first IMAX showing (on April 18th). I would watch the film 2 more times that weekend.
+            Then 2 times the next week. Then 3 the next.</p>
+          <p className="leading-5 text-neutral-500 text-justify mt-2">This eventually gave way to an obsession. Any free evening I'd get, I would try to see the movie
+            in 70mm at Grand Lake Theater in Oakland, CA <span className="text-neutral-400">(Ryan Coogler's hometown theater)</span>, or at AMC Metreon 16 in San Francisco, CA <span className="text-neutral-400">(the film inevitably returned to IMAX for a week)</span>.
+          </p>
+          <p className="leading-5 text-neutral-500 text-justify mt-2"> For a few weeks I was following <a href="https://www.usatoday.com/story/entertainment/movies/2025/05/01/clarksdale-mississippi-sinners-movie-theaters-cast-visit/83387768007/" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">the story</a> that
+            they might be screening the film in the town of Clarksdale, Mississippi <span className="text-neutral-400">(where the film took place)</span>. The town has no local movie theater in operation, the closest theater being 1 1/2 hrs away in Memphis, TN.
+            Later, when I saw it was <a href="https://www.mpbonline.org/blogs/news/ryan-coogler-is-bringing-sinners-home-to-clarksdale-for-a-series-of-screenings-qa/" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">confirmed</a>, I <i>had</i> to book a flight to Mississippi.
+            To see where the film took place & understand how the story was constructed.
+          </p>
+          <p className="leading-5 text-neutral-500 text-justify mt-2">
+            At the time of this writing I have watched the film ~20 times, I will probably watch it many more times in my lifetime, but at this point content-wise it is etched
+            into my mind.
+          </p>
+          <p className="leading-5 text-neutral-500 text-justify mt-2">
+            The following is a technical breakdown of the film, with a focus on story, structure, and meaning.
+          </p>
+        </HiddenAside>
+      </div>
+
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <P>The following is a breakdown of the film “Sinners” by writer/director Ryan Coogler. This is not a review, but rather a technical analysis of the
+          film — with a focus on story, structure, and meaning. Blocking of scenes, score & sound design, cinematography, & editing will be covered where appropriate.</P>
+        <P>This is best read after watching the film, or during subsequent rewatches, as I will be referencing very specific moments in certain scenes (most of which I cannot display a still frame for, for copyright reasons).</P>
+        <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
+          remarks will be from cursory Internet searches, and findings I personally found surprising.</P>
+        <P>When referencing specific moments, I will write a timecode form the digital master like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
+          also describe the moment so we can quickly get on the same page.</P>
+      </div>
+
+      <SinnersPlotOverview />
     </div>
   )
 }
@@ -154,12 +202,12 @@ const Dots = () => {
 interface ImageProps {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
   caption?: string;
 }
 
-const Image = ({ src, alt, width, height, caption }: ImageProps) => {
+const ImageWithCaption = ({ src, alt, width, height, caption }: ImageProps) => {
   const hasCaption = !isEmpty(caption);
   const hasCustomDimensions = width || height;
 
