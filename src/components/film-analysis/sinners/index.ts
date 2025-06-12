@@ -3,33 +3,33 @@ import type { CastItem } from "../../shared/film-analysis/cast/CastMembers";
 const Hogwood: CastItem = {
 	character: {
 		name: "Hogwood",
-		imagePath: "/characters/sinners/hogwood",
+		imagePath: "/film-analysis/films/sinners/characters/hogwood",
 	},
 	actor: {
 		name: "David Maldonado",
-		imagePath: "/actors/david-maldonado",
+		imagePath: "/film-analysis/actors/david-maldonado",
 	},
 };
 
 const ReverendMoore: CastItem = {
 	character: {
 		name: "Reverend Moore",
-		imagePath: "/characters/sinners/reverend-moore",
+		imagePath: "/film-analysis/films/sinners/characters/reverend-moore",
 	},
 	actor: {
 		name: "Saul Williams",
-		imagePath: "/actors/saul-williams",
+		imagePath: "/film-analysis/actors/saul-williams",
 	},
 };
 
 const LisaChow: CastItem = {
 	character: {
 		name: "Lisa Chow (Lil’ Lisa)",
-		imagePath: "/characters/sinners/lisa-chow",
+		imagePath: "/film-analysis/films/sinners/characters/lisa-chow",
 	},
 	actor: {
 		name: "Helena Hu",
-		imagePath: "/actors/helena-hu",
+		imagePath: "/film-analysis/actors/helena-hu",
 	},
 };
 
