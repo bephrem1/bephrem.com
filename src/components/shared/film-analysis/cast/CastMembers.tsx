@@ -20,9 +20,10 @@ export type CastItem = {
 
 interface Props {
   cast: Array<CastItem>;
+  avatarSize?: number;
 }
 
-const CastMembers: FunctionComponent<Props> = ({ cast: items }) => {
+const CastMembers: FunctionComponent<Props> = ({ cast: items, avatarSize = 75 }) => {
   const [isActorSideUpValues, setIsActorSideUpValues] = useState<boolean[]>(Array(items.length).fill(false));
   const [isAllFlipped, setIsAllFlipped] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>();
@@ -74,20 +75,22 @@ const CastMembers: FunctionComponent<Props> = ({ cast: items }) => {
     }
   };
 
-  return <div className="w-full relative -ml-2">
-    <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 relative gap-x-0 gap-y-4">
+  return <div className="w-full relative">
+    <div className="flex flex-row gap-4 items-end">
       {items.map(({ character, actor }, index) => (
-        <CastMember
-          key={character.name}
-          characterName={character.name}
-          characterImagePath={character.imagePath}
-          actorName={actor.name}
-          actorImagePath={actor.imagePath}
-          isActorSideUp={isActorSideUpValues[index]}
-          setIsActorSideUp={(value) => handleSetIsActorSideUp(index, value)}
-        />
+        <div key={character.name} className="flex flex-col items-start">
+          <CastMember
+            size={50}
+            characterName={character.name}
+            characterImagePath={character.imagePath}
+            actorName={actor.name}
+            actorImagePath={actor.imagePath}
+            isActorSideUp={isActorSideUpValues[index]}
+            setIsActorSideUp={(value) => handleSetIsActorSideUp(index, value)}
+          />
+        </div>
       ))}
-      <div className="absolute bottom-0 right-0 translate-x-[24px]">
+      <div className="flex items-center">
         <Tooltip>
           <TooltipTrigger asChild>
             <Button

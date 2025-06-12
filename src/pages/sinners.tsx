@@ -2,9 +2,11 @@ import { clsx } from "clsx";
 import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import { SinnersCast } from "../components/film-analysis/sinners";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
+import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
 import QuoteIcon from "../icons/lib/QuoteIcon";
@@ -28,21 +30,27 @@ const SinnersFilmAnalysisPage = () => {
 const LeftColumnContents = () => {
   return (
     <div>
-      <div>
-        <Image
-          path="/film-analysis/films/sinners/promo/sinners-poster"
-          alt="Sinners movie poster"
-          width="175"
-          ext="jpg"
-          style={{
-            borderRadius: "4px",
-            boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)"
-          }}
-          optimize={false}
-          inspectable
-        />
-        <a href="https://www.imdb.com/title/tt31193180/fullcredits/" target="_blank" rel="noopener noreferrer" className="block mt-1.5">
-          <p className="text-neutral-500 text-sm">full cast & crew <span className="text-neutral-400"> — IMDB</span></p>
+      <Image
+        path="/film-analysis/films/sinners/promo/sinners-poster"
+        alt="Sinners movie poster"
+        width="175"
+        ext="jpg"
+        style={{
+          borderRadius: "4px",
+          boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)"
+        }}
+        optimize={false}
+        inspectable
+      />
+      <div className="mt-4">
+        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): “asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf.”</p>
+      </div>
+      <div className="mt-4">
+        <p className="text-neutral-500 text-xs mb-2.5"><b>Protagonists</b></p>
+        <CastMembers cast={SinnersCast.Supporting} avatarSize={50} />
+
+        <a href="https://www.imdb.com/title/tt31193180/fullcredits/" target="_blank" rel="noopener noreferrer" className="block mt-8">
+          <p className="text-neutral-400 text-xs">full cast & crew <span className="text-neutral-400"> — IMDB ↗</span></p>
         </a>
       </div>
     </div>
@@ -56,7 +64,7 @@ const Contents = () => {
         <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-14" />
 
         <HiddenAside title="Personal Preface" defaultOpen>
-          <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has <i>rocked my world</i>. As a filmmaker (not that I consider myself one yet), sometimes you watch things
+          <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As a filmmaker (not that I consider myself one yet), sometimes you watch things
             that move you so deeply, that you say "<i>That</i>. <b>That's it</b>. That's what this is all about."</p>
           <p className="leading-5 text-neutral-500 text-justify">
             Albeit, Sinners is a $90M blockbuster with hundreds of craftspeople involved, & working relationships spanning decades — and I make videos where the
@@ -91,14 +99,33 @@ const Contents = () => {
         </HiddenAside>
       </div>
 
-      <div className="px-4 sm:px-2 sm:pr-12">
-        <P>The following is a breakdown of the film “Sinners” by writer/director Ryan Coogler. This is not a review, but rather a technical analysis of the
+      <div className="px-4 sm:px-2 sm:pr-12 pb-1.5">
+        <P>The following is a breakdown of the film "Sinners" by writer/director Ryan Coogler. This is not a review, but rather a technical analysis of the
           film — with a focus on story, structure, and meaning. Blocking of scenes, score & sound design, cinematography, & editing will be covered where appropriate.</P>
         <P>This is best read after watching the film, or during subsequent rewatches, as I will be referencing very specific moments in certain scenes (most of which I cannot display a still frame for, for copyright reasons).</P>
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
           remarks will be from cursory Internet searches, and findings I personally found surprising.</P>
-        <P>When referencing specific moments, I will write a timecode form the digital master like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
+        <P>When referencing specific moments, I will write a timecode from the digital master like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
           also describe the moment so we can quickly get on the same page.</P>
+      </div>
+
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H2>Story Structure</H2>
+        <Aside>
+          Much of my commentary throughout will be working from ideas presented by Robert McKee in his book <i className="font-medium">“Story: Substance, Structure, Style, and the Principles of Screenwriting”</i>.
+        </Aside>
+        <P>Stories are vehicles for meaning. They are how we make sense of how and why things happen in the world. We observe a <b>character</b> navigate <b>conflict</b>,
+          ultimately <b>changing</b> in a revelatory way. New stories lead to new meanings, new meanings lead to new realities.</P>
+        <P>In his book “Story”, Robert McKee says:</P>
+        <Quote>
+          STORYTELLING is the <b>creative demonstration of truth</b>. A
+          story is the living proof of an idea, the conversion of
+          idea to action. A story's event structure is the means
+          by which you first express, then prove your idea ...
+          without explanation.
+        </Quote>
+
+        <P>Every moment in the final master of the film is imbued with meaning. Nothing is by chance. Everything scene serves a central theme (or “Controlling Idea”). No moment goes wasted.</P>
       </div>
 
       <SinnersPlotOverview />
@@ -174,7 +201,7 @@ const Aside = ({ children }: { children: React.ReactNode }) => {
     className="border-l border-neutral-500 pl-4 mb-4"
     style={{ borderLeftWidth: "0.5px" }}
   >
-    <div className="text-neutral-400 italic mb-1.5 [&>p]:text-neutral-500 [&>p]:italic [&>p]:mb-1.5">
+    <div className="text-neutral-400 mb-1.5 [&>p]:text-neutral-500 [&>p]:italic [&>p]:mb-1.5">
       {children}
     </div>
   </aside>
@@ -182,8 +209,8 @@ const Aside = ({ children }: { children: React.ReactNode }) => {
 
 const Quote = ({ children }: { children: React.ReactNode }) => {
   return <div className="flex pb-4 rounded-lg">
-    <QuoteIcon className="h-6 w-6 shrink-0 fill-neutral-100 mr-4" />
-    <div className="text-neutral-200 mt-0.5 italic">{children}</div>
+    <QuoteIcon className="h-6 w-6 shrink-0 fill-neutral-700 mr-4" />
+    <div className="text-neutral-800 mt-0.5 italic">{children}</div>
   </div>
 }
 
