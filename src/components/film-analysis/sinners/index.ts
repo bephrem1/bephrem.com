@@ -201,6 +201,8 @@ export const SinnersCast = {
 	GraceChow,
 	Joan,
 	LisaChow,
+	Mary,
+	Pearline,
 	ReverendMoore,
 	SammieMoore,
 	Smoke,

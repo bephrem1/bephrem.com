@@ -65,7 +65,7 @@ const LeftColumnContents = () => {
 
 const Contents = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-16 pb-80">
       <div className="px-4 sm:px-2 sm:pr-12">
         <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-14" />
 
@@ -151,17 +151,20 @@ const Contents = () => {
         <div className="mb-6">
           <CastMembers cast={[SinnersCast.SammieMoore, SinnersCast.Smoke, SinnersCast.Stack]} avatarSize={50} />
         </div>
-        <P>Sinners is organized into 5 acts along it’s main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & Smoke.</P>
+        <P>Sinners is organized into 5 acts along it’s main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & the Smoke-Stack Twins.</P>
         <P>Both are seeking freedom in some regard. The Smoke-Stack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father’s wishes).</P>
-        <P>These are 3 people, so why only 2 protagonists? Although Stack is Smoke’s brother, and both share the same desire to open a juke club — they functionally act as 1 single narritive unit, delivering 1 moral to the story.</P>
-        <P>This is made clear by the following diagram, marking the major <b>turning points</b> for central plot and subplots:</P>
+        <P>The following diagram marks major <b>turning points</b> (“points of no return”) which separate acts for central plot and subplots:</P>
       </div>
       <SinnersPlotOverview />
       <div className="px-4 sm:px-2 sm:pr-12">
-        <P>In addition, there are 3 “Love Story subplots, which all contribute narritive force, elevating the Controlling Idea.</P>
+        <div className="mb-6">
+          <CastMembers cast={[SinnersCast.Annie, SinnersCast.Mary, SinnersCast.Pearline]} avatarSize={50} />
+        </div>
+
+        <P>In addition, there are 3 “Love Story” subplots, which all contribute narritive force, elevating the Controlling Idea.</P>
       </div>
 
-      <div className="px-4 sm:px-2 sm:pr-12">
+      <div className="px-4 sm:px-2 sm:pr-12 pb-2">
         <H3>Controlling Idea</H3>
         <P>Stories are vehicles for meaning. They are how we make sense of how and why things happen in the world. We observe a <b>character</b> navigate <b>conflict</b>,
           ultimately <b>changing</b> in a revelatory way. New stories lead to new meanings, new meanings lead to new realities.</P>
@@ -176,17 +179,16 @@ const Contents = () => {
         <P>Every moment in the final master of the film is imbued with meaning. Nothing is left in by chance. Every moment in every scene serves a central
           theme (or "Controlling Idea"). We will take an educated guess at what that idea is, and center our analysis of every scene around it.</P>
         <P>But first, we need to know who the acting forces are in this story. Who are the protagonists? What are the forces of antagonism?</P>
-
-        <H3>Protagonists</H3>
-        <P>Smoke, Stack, & Sammie Moore are the protagonists of the story. Remmick & Hogwood are the antagonists.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
-        <H2>Scene Analysis</H2>
+        <H2>Scene-by-Scene Analysis</H2>
         <Aside>
           When referencing specific moments, I will write a timecode from the digital master like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
           also describe the moment so we can quickly get on the same page.
         </Aside>
+        <H3>Scene 1: Sammie’s Goes to Church (Flash-Forward)</H3>
+        <P>asdf</P>
       </div>
     </div>
   )
