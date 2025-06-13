@@ -47,7 +47,7 @@ const LeftColumnContents = () => {
         inspectable
       />
       <div className="mt-4">
-        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): “Greed and hunger for power destroys communities. Culture and it’s expression can never be destroyed.”</p>
+        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): “Greed and hunger for power destroys community. Culture and it’s expression can never be destroyed.”</p>
       </div>
       <div className="mt-4">
         <p className="text-neutral-500 text-xs mb-2.5"><b>Main Protagonists</b></p>
@@ -139,10 +139,10 @@ const Contents = () => {
           in a swirling mess of internal conflict, as he tightly grips his shattered guitar neck.</P>
         <P>We hear Reverend Moore finally say “<i>Let it go Sammie.</i> <i>Put it down.</i>”, before cutting to black.</P>
         <P>This dramatic introduction leaves us with many dramatic questions. Who is this boy? Who is the reverend? Why is he yelling at him? What were those
-          dark monsters the editor cut to? Why is this happening in a church? <b><i>What’s going to happen next?</i></b>
+          dark monsters the editor cut to? Why is the guitar broken? Why is this happening in a church? <b><i>What’s going to happen next?</i></b>
         </P>
         <Dots />
-        <P>This is the <b>Inciting Incident</b> for our narrative about Sammie, where we become aware that he <i>wants something</i>, but something powerful
+        <P>This is the <b>Inciting Incident</b> for our narrative on Sammie, where we become aware that he <i>wants something</i>, but something powerful
           is in his way. It frames him early as our main protagonist.</P>
         <P>Having watched the film, we already know why Sammie is crying and in tatters. He just narrowly avoided being killed by a supernatural demon. Everyone he knows and loves is dead. He did not obey his father the day before,
           he <i>“kept dancin’ with the devil”</i> and it <i>“followed him home”</i>.</P>
@@ -161,7 +161,7 @@ const Contents = () => {
           <CastMembers cast={[SinnersCast.Annie, SinnersCast.Mary, SinnersCast.Pearline]} avatarSize={50} />
         </div>
 
-        <P>In addition, there are 3 “Love Story” subplots, which all contribute narritive force, elevating the Controlling Idea.</P>
+        <P>In addition, there are 3 “Love Story” subplots, which all contribute narritive force to the Controlling Idea.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12 pb-2">
