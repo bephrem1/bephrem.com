@@ -352,12 +352,17 @@ const Contents = () => {
           outcome="Sammie breaks down in deep internal conflict, he now has a choice to make."
           storyContribution="This scene foreshadows the supernatural elements that will come into play later in the film, as well as our protagonists eventual ruin."
         />
-        <P>Ryan Coogler is a master of contrast and pacing. Taking watchers on an emotional rollercoaster through expectation and reality.</P>
-        <P>When Sammie walks up to a beautifully painted white church, nestled in a
+        <H5>Shocking the Audience to Attention</H5>
+        <P>Ryan Coogler is a master of emotional contrast and pacing. Tastefully taking watchers on a rollercoaster between expectation and reality.</P>
+        <P>When Sammie walks up to a beautifully painted white church, nestled in a quiet green field, with children heard singing as he walks up, we expect peace and quiet.</P>
+        <P>But then we notice Sammie’s clothes are tattered, he has a large scar on his face, and his guitar is shattered. As he walks up, we begin to feel 2 emotional extremes, only slightly developed.</P>
+        <P>Sammie enters, and Reverend Moore yells “Sammie!”. The church falls silent. We realize something is seriously wrong. The reverend begins his incantation and we can’t tell if the reverend is going to hurt him or help him.</P>
 
-
-          with children singing, we expect a serene encounter with
-          whatever is on the other side.</P>
+        <H5>Sound As Emotion</H5>
+        <P>Sammie does not say a single word in this scene. Instead his emotional turmoil is conveyed through the score & <A href="https://en.wikipedia.org/wiki/Non-diegetic_insert">non-diegetic</A> sound effects
+          (climaxing the turmoil with a bass wobble at <FilmTimecode timecode="3:21" /> — <ScoreTimecode timecode="2:07" scoreItem={SinnersScore.FilídhFireKeepersAndGriots} /> in score).</P>
+        <P><TurningPointTimecode timecode="3:18" /> marks a turning point where Sammie realizes he won’t get the consolation from his father that he wants. At his deepeest point of internal conflict, he clutches his
+          shattered guitar as his hand shakes, then the scene cuts to black.</P>
 
         <H3>Act I: Getting the Band Together</H3>
         <P>Lorem.</P>
