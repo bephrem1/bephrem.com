@@ -289,11 +289,14 @@ const Contents = () => {
 
       <div className="px-4 sm:px-2 sm:pr-12">
         <H2>Scene-by-Scene Analysis</H2>
+        <Aside brighter><i>Housekeeping:</i> The score for the film can be found in 2 places on Spotify. The <A href="https://open.spotify.com/album/0zjAqh1Fr7XQWy1SlzGhMn">official Sinners Movie album</A>,
+          and <A href="https://open.spotify.com/album/6PQXsiHd4AjrAqhWLd5HyT">Ludwig Göransson’s album</A>. The former contains tracks from key, memorable moments in the film, Ludwig’s album contains
+          the full score (including general sounds design used to enhance the film).</Aside>
         <Aside>
-          When referencing specific moments, I will write a timecode from the digital master like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
+          When referencing specific moments in the film or score pieces, I will write a timecode like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
           also describe the moment so we can quickly get on the same page.
         </Aside>
-        <H3>Scene 1: Sammie’s Goes to Church (Flash-Forward)</H3>
+        <H4>Scene 1: Sammie’s Goes to Church (Flash-Forward)</H4>
         <P>asdf</P>
       </div>
     </div>
@@ -363,12 +366,12 @@ const BlockQuote = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-const Aside = ({ children }: { children: React.ReactNode }) => {
+const Aside = ({ children, brighter }: { children: React.ReactNode, brighter?: boolean }) => {
   return <aside
     className="border-l border-neutral-500 pl-4 mb-4"
     style={{ borderLeftWidth: "0.5px" }}
   >
-    <div className="text-neutral-400 mb-1.5 [&>p]:text-neutral-500 [&>p]:italic [&>p]:mb-1.5">
+    <div className={`mb-1.5 ${brighter ? 'text-neutral-600' : 'text-neutral-400'} [&>p]:italic [&>p]:mb-1.5 ${brighter ? '[&>p]:text-neutral-600' : '[&>p]:text-neutral-500'}`}>
       {children}
     </div>
   </aside>
