@@ -204,8 +204,8 @@ const Contents = () => {
           <CastMembers cast={[SinnersCast.Smoke, SinnersCast.Hogwood, SinnersCast.Annie]} avatarSize={50} />
         </div>
         <P>Smoke spends most of the film using power, money, and violence to bend the world to his will. He returns to his wife Annie’s home, where he spends a sentimental moment mourning at
-          the grave of his passed son Elijah.</P>
-        <P>In the very last moments of Act V, he dies from a gunshot wound suffered in his shootout with the KKK. Annie appears from heaven to present him with Elijah. He pauses, before deciding
+          the grave of his passed son.</P>
+        <P>In the very last moments of Act V, he dies from a gunshot wound suffered in his shootout with the KKK. Annie appears from heaven to present him with his son. He pauses, before deciding
           to take the baby in his arms.</P>
         <P>In an ”on the nose“ line, Ryan Coogler scripts Hogwood to say <i>“Hey...I’ve got money”</i>, offering money to Smoke, then Smoke sends a flurry of bullets his way.</P>
         <P>This is a moment of irreversible change for Smoke, and <i>ironic</i> as well, because he has now finally become what he always wanted to be: <b>a father</b>. But due
@@ -225,8 +225,10 @@ const Contents = () => {
         <P>Sammie’s moment of crisis comes not when Remmick is about to kill him (at the end of Act IV), because no choice was made there. It comes the next day, Sunday
           morning, when he stumbles into church and Reverend Moore’s yell burns through him with religious fervor.
         </P>
-        <P>Sammie makes the choice to leave Clarksdale to pursue music, as we see in the scene right after Smoke’s death. Later he is played by Buddy Guy (in Chicago).
+        <P>Sammie makes the choice to defy his father and leave Clarksdale to pursue music, as we see in the scene right after Smoke’s death. Later, his older self is
+          played by Buddy Guy (in Chicago).
         </P>
+        <Aside>It’s also important to note Sammie was the only survivor after the weekend concluded.</Aside>
 
         <H5>Stack’s Character-Defining Choices</H5>
         <div className="mb-4">
@@ -240,6 +242,27 @@ const Contents = () => {
           His moment of crisis comes in the juke when he finally has to confront those feelings and admit to Mary that he still loves her. They later make love, and
           Mary kills him in the Act II climax.
         </P>
+
+        <H4>Controlling Idea(s)</H4>
+        <P>So the film’s main set of messages, through the protagonists, are:</P>
+        <UnorderedList>
+          <ListItem>Excessive greed for money and power will destory family, community, and self.</ListItem>
+          <ListItem>Culture is immortal, it will always find a way to survive attack.</ListItem>
+        </UnorderedList>
+        <P>There are also strong historical notes on ownership & racism, Ryan Coogler in <A href="https://youtu.be/0mU_2VWpsmQ?si=vZNmPtdGcGTFDXah&t=431">this interview with Hanna Flint</A> comments:</P>
+        <Quote>What if the vampires didn’t show up, what happens to those people? ... The reality is...everybody at that juke was gonna be dead anyway. ... The was f***ed essentially the moment they bought the mill.</Quote>
+        <P>Which is a reference to the slew of laws and regulations at the time that disadvantaged blacks from owning and retaining property, & truly having a path to real freedom. It was always
+          a losing battle in a game you didn’t control the rules to.</P>
+        <P>Ryan Coogler also makes a direct comment on his personal tie to the idea of fatherhood in a <A href="https://youtu.be/1lRAnlyj5YM?si=GhZ7b0_Kj5vvSqR0&t=2905">7PM in Brooklyn podcast episode</A>:</P>
+        <Quote>
+          Making this movie as a father...I put a lot of myself into it. ... I went through these characters and I tried to define, like, what are these guys? If you held them
+          by the shoulders, what would they tell you they were if you asked them what they were? And what is the lie? What do they think they are inside that they’re too afraid
+          to say? ... And for Smoke, what he would say he is, ... he would tell you <i>“hey, I’m a soldier”</i>. <b>But deep down, what he is, is a father.</b>
+        </Quote>
+        <Dots />
+        <P>The controlling idea<span className="text-neutral-400">(s)</span> form the backbone of every second in the film. Every writing, directing, cinematography,
+          sound design, editing, art direction decision — <i>everything</i>, is in service of elevating & effectively conveying these ideas.</P>
+        <P>With these in-hand, we can go scene by scene to see how characters develop & change against them.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
