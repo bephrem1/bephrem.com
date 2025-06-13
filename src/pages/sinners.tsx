@@ -165,9 +165,12 @@ const Contents = () => {
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12 pb-2">
-        <H3>Controlling Idea</H3>
+        <H3>Story, Meaning, & Controlling Idea</H3>
         <P>Stories are vehicles for meaning. They are how we make sense of how and why things happen in the world. We observe a <b>character</b> navigate <b>conflict</b>,
-          ultimately <b>changing</b> in a revelatory way. New stories lead to new meanings, new meanings lead to new realities.</P>
+          ultimately <b>changing</b> in a revelatory way.</P>
+        <P>We empathize with the character (identify with & see ourselves in them), reason about how and why that change happened, then internalize
+          the lesson to our own model of truth about the world.</P>
+        <P>New stories lead to new meanings, new meanings lead to new realities.</P>
         <P>In his book "Story", Robert McKee says:</P>
         <Quote>
           STORYTELLING is the <b>creative demonstration of truth</b>. A
@@ -177,8 +180,66 @@ const Contents = () => {
           without explanation.
         </Quote>
         <P>Every moment in the final master of the film is imbued with meaning. Nothing is left in by chance. Every moment in every scene serves a central
-          theme (or "Controlling Idea"). We will take an educated guess at what that idea is, and center our analysis of every scene around it.</P>
-        <P>But first, we need to know who the acting forces are in this story. Who are the protagonists? What are the forces of antagonism?</P>
+          theme (or "Controlling Idea").</P>
+
+        <H4>Finding Controlling Idea (Jumping to the End)</H4>
+        <P>To discover a director’s hidden message to us in a film, we need to find the point at which their protagonists are making the <b>highest-stakes decisions</b> in moments of <b>crisis</b> & highest pressure. <i>These (usually) come at the end of a story.</i></P>
+        <P>In these moments, true character is revealed. We see who the protagonists really are, rather than who they pretend to be (the entire film will show characters moving closer, then farther, then closer to who they really are).</P>
+        <P><b>True character is only revealed through choice.</b> Robert McKee puts it like this:</P>
+        <Quote>
+          <b>Characterization</b> is the sum of all observable qualities of a human
+          being, everything knowable through careful scrutiny: age and IQ; sex
+          and sexuality; style of speech and gesture; choices of home, car, and
+          dress; education and occupation; personality and nervosity; values
+          and attitudes-all aspects of humanity we could know by taking
+          notes on someone day in and day out. ... <b>TRUE CHARACTER</b> is revealed in
+          the choices a human being makes under pressure-the greater the pressure,
+          the deeper the revelation, the truer the choice to the
+          character's essential nature.
+        </Quote>
+        <P>So what choices do our protagonists make? What crisis do they face?</P>
+
+        <H5>Smoke’s Character-Defining Choices</H5>
+        <div className="mb-6">
+          <CastMembers cast={[SinnersCast.Smoke, SinnersCast.Hogwood, SinnersCast.Annie]} avatarSize={50} />
+        </div>
+        <P>Smoke spends most of the film using power, money, and violence to bend the world to his will. He returns to his wife Annie’s home, where he spends a sentimental moment mourning at
+          the grave of his passed son Elijah.</P>
+        <P>In the very last moments of Act V, he dies from a gunshot wound suffered in his shootout with the KKK. Annie appears from heaven to present him with Elijah. He pauses, before deciding
+          to take the baby in his arms.</P>
+        <P>In an ”on the nose“ line, Ryan Coogler scripts Hogwood to say <i>“Hey...I’ve got money”</i>, offering money to Smoke, then Smoke sends a flurry of bullets his way.</P>
+        <P>This is a moment of irreversible change for Smoke, and <i>ironic</i> as well, because he has now finally become what he always wanted to be: <b>a father</b>. But due
+          to his past actions, his greed cost him the lives of everyone he loved, as well as his own.
+        </P>
+
+        <H5>Sammie’s Character-Defining Choices</H5>
+        <div className="mb-11">
+          <CastMembers cast={[SinnersCast.SammieMoore, SinnersCast.ReverendMoore, SinnersCast.DeltaSlim, SinnersCast.Pearline, SinnersCast.SammieMooreOlder]} avatarSize={50} />
+        </div>
+        <P>Sammie is a youthful figure endeared and mentored by those around him. Stack gives him tips on being better in bed & advocates for his talents, Smoke
+          advises him on how the world really works outside of the Delta, and Delta Slim acts as a guardian and Blues mentor.
+        </P>
+        <P>Throughout the film, Sammie presents as a modest, deferential character. As the night wears on, he slowly transforms into a charismatic and confident character.
+          After his performance that “conjurs the spirits of the past and future”, he eventually “tries something” with Pearline.
+        </P>
+        <P>Sammie’s moment of crisis comes not when Remmick is about to kill him (at the end of Act IV), because no choice was made there. It comes the next day, Sunday
+          morning, when he stumbles into church and Reverend Moore’s yell burns through him with religious fervor.
+        </P>
+        <P>Sammie makes the choice to leave Clarksdale to pursue music, as we see in the scene right after Smoke’s death. Later he is played by Buddy Guy (in Chicago).
+        </P>
+
+        <H5>Stack’s Character-Defining Choices</H5>
+        <div className="mb-4">
+          <CastMembers cast={[SinnersCast.Stack, SinnersCast.Mary]} avatarSize={50} />
+        </div>
+        <P>Stack is very similar to Smoke in that he uses power and money to coerce people, but to a less intense degree. He relies more on his wit and charm to
+          get what he wants.
+        </P>
+        <P>Like his brother Smoke, he is also very avoidant of emotional responsibility. He spends most of the film avoiding confrontations with his past lover Mary.</P>
+        <P>
+          His moment of crisis comes in the juke when he finally has to confront those feelings and admit to Mary that he still loves her. They later make love, and
+          Mary kills him in the Act II climax.
+        </P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">

@@ -187,6 +187,17 @@ const LisaChow: CastItem = {
 	},
 };
 
+const SammieMooreOlder: CastItem = {
+	character: {
+		name: "Sammie Moore (Older)",
+		imagePath: "/film-analysis/films/sinners/characters/sammie-moore-older",
+	},
+	actor: {
+		name: "Buddy Guy",
+		imagePath: "/film-analysis/actors/buddy-guy",
+	},
+};
+
 export const SinnersCast = {
 	Protagonists: [SammieMoore, Smoke, Stack],
 	Antagonists: [Remmick, Hogwood, ReverendMoore],
@@ -199,12 +210,14 @@ export const SinnersCast = {
 	Cornbread,
 	DeltaSlim,
 	GraceChow,
+	Hogwood,
 	Joan,
 	LisaChow,
 	Mary,
 	Pearline,
 	ReverendMoore,
 	SammieMoore,
+	SammieMooreOlder,
 	Smoke,
 	Stack,
 };
