@@ -364,6 +364,23 @@ const Contents = () => {
         <P><TurningPointTimecode timecode="3:18" /> marks a turning point where Sammie realizes he won’t get the consolation from his father that he wants. At his deepeest point of internal conflict, he clutches his
           shattered guitar as his hand shakes, then the scene cuts to black.</P>
 
+        <H5>Precise Direction On Movements</H5>
+        <P>Ryan Coogler is also a master of giving his actors direction on timing and pace of actions for viewer comprehension and emotional impact.</P>
+        <P>This scene features 2 elements that would have required precise direction and forethought to materialize:</P>
+        <OrderedList>
+          <ListItem>The pacing of Sammie entering the church (to hear the children singing)</ListItem>
+          <ListItem>The match cuts to Sammie’s final stand with Remmick during Reverend Moore’s incantation</ListItem>
+        </OrderedList>
+
+        <P>For the first, Sammie’s pacing of action looks like this:</P>
+        <UnorderedList>
+          <ListItem><FilmTimecode timecode="1:52" /> Stops the car. <span className="text-neutral-500 text-sm">(audience thinks: “wow it’s so peaceful and quiet here. nature.”)</span></ListItem>
+          <ListItem><FilmTimecode timecode="1:57" /> Opens the car door. <span className="text-neutral-500 text-sm">(audience thinks: “what happened to him?”)</span></ListItem>
+          <ListItem><FilmTimecode timecode="2:16" /> Waits at the church door. <span className="text-neutral-500 text-sm">(audience gets a chance to hear the children singing)</span></ListItem>
+          <ListItem><FilmTimecode timecode="2:20" /> Opens the church door.</ListItem>
+        </UnorderedList>
+        <P>This emotional landscaping had to have been planned for, either implicitly or explicitly (unless there was great luck in the cutting room).</P>
+
         <H3>Act I: Getting the Band Together</H3>
         <P>Lorem.</P>
       </div>
