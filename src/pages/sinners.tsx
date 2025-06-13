@@ -310,8 +310,10 @@ const Contents = () => {
           score pieces I will write a timecode like this: <ScoreTimecode timecode="0:54" scoreItem={SinnersScore.GrandClosin} /> or <ScoreTimecode timecode="1:23" />.
         </Aside>
 
-        <H4>Scene 1: Sammie's Goes to Church (Flash-Forward)</H4>
+        <H4>Opening Scene: Sunday Morning Service (Flash-Forward)</H4>
         <SceneOverview
+          startTimecode="1:35"
+          turningPointTimecode="2:45"
           synopsis="A flash-forward to Sunday morning shows Sammie Moore entering his father's church, broken and distraught, clutching the neck of his shattered guitar."
           objectives={[
             {
@@ -344,22 +346,22 @@ const Contents = () => {
 /* formatting (cleanup with .mdx later) */
 
 const H1 = ({ children }: { children: React.ReactNode }) => {
-  return <h1 className="text-neutral-800 text-3xl font-semibold text-justify mb-2.5">{children}</h1>
+  return <h1 className="text-neutral-800 text-3xl font-semibold mb-2.5">{children}</h1>
 }
 const H2 = ({ children }: { children: React.ReactNode }) => {
-  return <h2 className="text-neutral-800 text-2xl font-semibold text-justify mb-2.5">{children}</h2>
+  return <h2 className="text-neutral-800 text-2xl font-semibold mb-2.5">{children}</h2>
 }
 const H3 = ({ children }: { children: React.ReactNode }) => {
-  return <h3 className="text-neutral-800 text-xl font-semibold text-justify mb-2.5">{children}</h3>
+  return <h3 className="text-neutral-800 text-xl font-semibold mb-2.5">{children}</h3>
 }
 const H4 = ({ children }: { children: React.ReactNode }) => {
-  return <h4 className="text-neutral-800 text-lg font-semibold text-justify mb-2.5">{children}</h4>
+  return <h4 className="text-neutral-800 text-lg font-semibold mb-2.5">{children}</h4>
 }
 const H5 = ({ children }: { children: React.ReactNode }) => {
-  return <h5 className="text-neutral-800 text-base font-semibold text-justify mb-2.5">{children}</h5>
+  return <h5 className="text-neutral-800 text-base font-semibold mb-2.5">{children}</h5>
 }
 const H6 = ({ children }: { children: React.ReactNode }) => {
-  return <h6 className="text-neutral-800 text-base font-semibold text-justify mb-2.5">{children}</h6>
+  return <h6 className="text-neutral-800 text-base font-semibold mb-2.5">{children}</h6>
 }
 const P = ({ children }: { children: React.ReactNode }) => {
   return <p className="text-neutral-950 text-justify mb-3 [&>sup]:text-neutral-400 [&>sup]:text-xs [&>sup]:relative">{children}</p>
