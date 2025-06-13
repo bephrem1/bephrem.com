@@ -314,32 +314,40 @@ const Contents = () => {
         <SceneOverview
           className="my-4"
           startTimecode="1:35"
-          turningPointTimecode="2:45"
-          synopsis="A flash-forward to Sunday morning shows Sammie Moore entering his father's church, broken and distraught, clutching the neck of his shattered guitar."
+          turningPointTimecode="3:18"
+          endTimecode="3:40"
+          synopsis="A flash-forward to Sunday morning shows Sammie Moore entering his father's church, in tatters and distraught, clutching the neck of his shattered guitar."
           objectives={[
             {
               character: SinnersCast.SammieMoore,
-              explicit: "He wants to leave without getting caught",
-              subtext: "He's afraid of his father's reaction"
+              explicit: "I need to attend Sunday morning service & be present so my father can see me.",
+              subtext: "I want my father to console me and tell me it’s ok to pursue my dreams as a musician."
             },
             {
               character: SinnersCast.ReverendMoore,
-              explicit: "He wants to leave without getting",
-              subtext: "He's afraid of his father's"
+              explicit: "I need to console my son who is clearly distraught.",
+              subtext: "I need to protect my faith and my church. I need to keep Sammie from leaving and threatening that."
             },
           ]}
-          conflict="The father's religious beliefs clash with Sammie's desire for freedom"
+          conflict="Sammie wants to go to Chicago to pursue music, his father wants him to stay and serve the church."
           tactics={[
             {
               character: SinnersCast.SammieMoore,
-              tactic: "Tries to sneak out quietly"
-            }
+              tactic: "Quietly walks in to face his father. Eventually realizes he won’t get the consolation he wants, sobs to himself."
+            },
+            {
+              character: SinnersCast.ReverendMoore,
+              tactic: "Barks a prayer at Sammie, then embraces him."
+            },
           ]}
           turningPoint="The father catches him and begins his incantation"
-          outcome="Sammie breaks down, gripping his shattered guitar"
-          storyContribution="This scene serves as the film's inciting incident, establishing the central conflict between religious tradition and artistic expression. It also sets up the supernatural elements that will drive the story forward."
+          outcome="Sammie breaks down in deep internal conflict, he now has a choice to make."
+          storyContribution="This scene foreshadows the supernatural elements that will come into play later in the film, as well as our protagonists eventual ruin."
         />
-        <P>asdf</P>
+        <P>Actions speak louder than words. Actions are how the cinematic medium delivers its messages to an audience, and actions are how true character of our protagonists is revealed.</P>
+
+        <H3>Act I: Getting the Band Together</H3>
+        <P>Lorem.</P>
       </div>
     </div>
   )

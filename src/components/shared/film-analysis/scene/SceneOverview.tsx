@@ -24,6 +24,7 @@ interface Props {
   storyContribution: string;
   startTimecode?: string;
   turningPointTimecode?: string;
+  endTimecode?: string;
   className?: string;
 }
 
@@ -73,6 +74,19 @@ const TurningPointTimecode = ({ timecode }: { timecode: string }) => {
   );
 };
 
+// Helper to parse timecode (e.g., "1:35" or "3:18") to seconds
+function parseTimecodeToSeconds(tc?: string): number | null {
+  if (!tc) return null;
+  const parts = tc.split(":").map(Number);
+  if (parts.length === 2) {
+    return parts[0] * 60 + parts[1];
+  }
+  if (parts.length === 3) {
+    return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  }
+  return null;
+}
+
 const SceneOverview: FunctionComponent<Props> = ({
   synopsis,
   objectives,
@@ -83,8 +97,19 @@ const SceneOverview: FunctionComponent<Props> = ({
   storyContribution,
   startTimecode,
   turningPointTimecode,
+  endTimecode,
   className,
 }) => {
+  // Timeline logic
+  const startSec = parseTimecodeToSeconds(startTimecode);
+  const turningSec = parseTimecodeToSeconds(turningPointTimecode);
+  const endSec = parseTimecodeToSeconds(endTimecode);
+  let turningPercent = 0;
+  if (startSec !== null && turningSec !== null && endSec !== null && endSec > startSec) {
+    turningPercent = ((turningSec - startSec) / (endSec - startSec)) * 100;
+    turningPercent = Math.max(0, Math.min(100, turningPercent));
+  }
+
   return (
     <div className={twMerge("w-full overflow-x-auto", className)}>
       <table className="w-full border-collapse border border-solid border-neutral-200" style={{ borderCollapse: 'collapse', borderWidth: 1, borderColor: '#e5e7eb', borderStyle: 'solid' }}>
@@ -100,7 +125,7 @@ const SceneOverview: FunctionComponent<Props> = ({
             <td className="w-[120px] py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-sm font-medium text-neutral-800 text-left align-top" style={borderStyle} rowSpan={objectives.length + 1}>Scene Objective</td>
             <th className="py-2.5 px-3 align-top bg-neutral-100 border border-solid border-neutral-200 text-xs font-medium text-neutral-400 text-center w-[56px]" style={borderStyle} />
             <th className="py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-xs font-medium text-neutral-500 text-left" style={borderStyle}>Explicit</th>
-            <th className="py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-xs font-medium text-neutral-500 text-left" style={borderStyle}>Subtext</th>
+            <th className="py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-xs font-medium text-neutral-500 text-left" style={borderStyle}>Subtext <span className="text-neutral-400">(true desires)</span></th>
           </tr>
           {objectives.map((objective) => (
             <tr key={objective.character.character.name}>
@@ -133,7 +158,10 @@ const SceneOverview: FunctionComponent<Props> = ({
           {tactics.map((tactic, idx) => (
             <tr key={tactic.character.character.name}>
               {idx === 0 ? (
-                <td className="w-[120px] py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-sm font-medium text-neutral-800 text-left align-top" style={borderStyle} rowSpan={tactics.length}>Tactics</td>
+                <td className="w-[120px] py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-sm font-medium text-neutral-800 text-left align-top" style={borderStyle} rowSpan={tactics.length}>
+                  <p>Tactics</p>
+                  <p className="text-neutral-400 text-xs font-light mt-1 select-none">how do characters resolve conflict?</p>
+                </td>
               ) : null}
               <td className="py-4 px-4 align-top border border-solid border-neutral-200 w-[56px]" style={borderStyle}>
                 <div className="flex items-center justify-center">
@@ -142,7 +170,7 @@ const SceneOverview: FunctionComponent<Props> = ({
                     characterImagePath={tactic.character.character.imagePath}
                     actorName={tactic.character.actor.name}
                     actorImagePath={tactic.character.actor.imagePath}
-                    size={48}
+                    size={40}
                     isActorSideUp={false}
                     setIsActorSideUp={() => { }}
                     hideLabel
@@ -167,18 +195,37 @@ const SceneOverview: FunctionComponent<Props> = ({
 
           {/* Timecode Row (last) */}
           <tr>
-            <td className="w-[120px] py-1 h-[40px] px-3 align-middle bg-neutral-100 border border-solid border-neutral-200 text-xs font-medium text-neutral-500" style={borderStyle}>Starts At</td>
-            <td className="py-1 h-[40px] px-3 align-middle border border-solid border-neutral-200" style={borderStyle}>
-              {startTimecode && <FilmTimecode timecode={startTimecode} />}
-            </td>
-            <td className="py-1 h-[40px] px-3 align-middle bg-neutral-100 border border-solid border-neutral-200 text-xs font-medium text-neutral-500" style={borderStyle}>Turning Point</td>
-            <td className="py-1 h-[40px] px-3 align-middle border border-solid border-neutral-200" style={borderStyle}>
-              {turningPointTimecode && <TurningPointTimecode timecode={turningPointTimecode} />}
+            <td colSpan={4} className="py-1 h-[40px] px-3 align-middle border border-solid border-neutral-200" style={borderStyle}>
+              {startTimecode && endTimecode ? (
+                <div className="relative w-full flex items-center" style={{ minHeight: 40 }}>
+                  {/* Line */}
+                  <div className="absolute left-0 right-0 top-1/2 h-1 bg-neutral-200 rounded-full" style={{ zIndex: 0, transform: 'translateY(-50%)' }} />
+                  {/* Start pill */}
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
+                    <FilmTimecode timecode={startTimecode} />
+                  </div>
+                  {/* End pill */}
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
+                    <FilmTimecode timecode={endTimecode} />
+                  </div>
+                  {/* Turning point pill, if present and valid */}
+                  {turningPointTimecode && startSec !== null && endSec !== null && turningSec !== null && (
+                    <div
+                      className="absolute top-1/2 -translate-y-1/2 z-20"
+                      style={{ left: `calc(${turningPercent}% - 48px * ${turningPercent / 100})` }}
+                    >
+                      <TurningPointTimecode timecode={turningPointTimecode} />
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <span className="text-neutral-400 text-xs">No timeline data</span>
+              )}
             </td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </div >
   );
 };
 
