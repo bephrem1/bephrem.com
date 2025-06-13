@@ -312,6 +312,7 @@ const Contents = () => {
 
         <H4>Opening Scene: Sunday Morning Service (Flash-Forward)</H4>
         <SceneOverview
+          className="my-4"
           startTimecode="1:35"
           turningPointTimecode="2:45"
           synopsis="A flash-forward to Sunday morning shows Sammie Moore entering his father's church, broken and distraught, clutching the neck of his shattered guitar."
@@ -338,6 +339,7 @@ const Contents = () => {
           outcome="Sammie breaks down, gripping his shattered guitar"
           storyContribution="This scene serves as the film's inciting incident, establishing the central conflict between religious tradition and artistic expression. It also sets up the supernatural elements that will drive the story forward."
         />
+        <P>asdf</P>
       </div>
     </div>
   )
