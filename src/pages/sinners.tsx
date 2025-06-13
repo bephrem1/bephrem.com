@@ -289,13 +289,15 @@ const Contents = () => {
 
       <div className="px-4 sm:px-2 sm:pr-12">
         <H2>Scene-by-Scene Analysis</H2>
-        <Aside brighter><i>Housekeeping:</i> The score for the film can be found in 2 places on Spotify. The <A href="https://open.spotify.com/album/0zjAqh1Fr7XQWy1SlzGhMn">official Sinners Movie album</A>,
+        <H5>Housekeeping</H5>
+        <P>The score for the film can be found in 2 places on Spotify. The <A href="https://open.spotify.com/album/0zjAqh1Fr7XQWy1SlzGhMn">official Sinners Movie album</A>,
           and <A href="https://open.spotify.com/album/6PQXsiHd4AjrAqhWLd5HyT">Ludwig Göransson’s album</A>. The former contains tracks from key, memorable moments in the film, Ludwig’s album contains
-          the full score (including general sounds design used to enhance the film).</Aside>
-        <Aside>
-          When referencing specific moments in the film or score pieces, I will write a timecode like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
-          also describe the moment so we can quickly get on the same page.
-        </Aside>
+          the full score (including general sound design used to enhance the film).</P>
+        <P>A digital copy of the film itself can be found on <A href="https://athome.fandango.com/content/browse/details/Sinners/4020075">Fandango at Home</A> (owned by Warner Brothers), <A href="https://www.amazon.com/gp/video/detail/amzn1.dv.gti.cf9ab498-91f9-4f94-80fd-ba46ac6aabd7">Amazon Prime Video</A>,
+          {" "}<A href="https://tv.apple.com/us/movie/sinners/umc.cmc.tl0hc0j1vx7nrrz89gxzxsx9">Apple TV</A>, <A href="https://www.youtube.com/watch?v=_5SDkR1gX8g">YouTube Movies</A>, and etc.</P>
+        <P>When referencing specific moments in the digital master I will write a timecode like this: <FilmTimecode timecode="52:00" /> or <FilmTimecode timecode="1:23:45" />. For
+          score pieces I will write a timecode like this: <ScoreTimecode timecode="52:00" /> or <ScoreTimecode timecode="1:23:45" />.</P>
+
         <H4>Scene 1: Sammie’s Goes to Church (Flash-Forward)</H4>
         <P>asdf</P>
       </div>
@@ -535,6 +537,13 @@ const HiddenAside = ({
     </div>
   );
 };
+
+const FilmTimecode = ({ timecode }: { timecode: string }) => {
+  return <span className="text-gray-600 font-semibold">{timecode}</span>
+}
+const ScoreTimecode = ({ timecode }: { timecode: string }) => {
+  return <span className="text-emerald-600 font-semibold">{timecode}</span>
+}
 
 const Header = ({
   title,
