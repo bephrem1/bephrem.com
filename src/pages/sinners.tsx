@@ -10,6 +10,7 @@ import SinnersScoreOverview from "../components/film-analysis/sinners/score/Sinn
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
+import SceneOverview from "../components/shared/film-analysis/scene/SceneOverview";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
 import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
@@ -305,11 +306,36 @@ const Contents = () => {
         <P>A digital copy of the film itself can be found on <A href="https://athome.fandango.com/content/browse/details/Sinners/4020075">Fandango at Home</A> (owned by Warner Brothers), <A href="https://www.amazon.com/gp/video/detail/amzn1.dv.gti.cf9ab498-91f9-4f94-80fd-ba46ac6aabd7">Amazon Prime Video</A>,
           {" "}<A href="https://tv.apple.com/us/movie/sinners/umc.cmc.tl0hc0j1vx7nrrz89gxzxsx9">Apple TV</A>, <A href="https://www.youtube.com/watch?v=_5SDkR1gX8g">YouTube Movies</A>, <A href="https://play.google.com/store/movies/details?id=_M5ZE9vu_MM.P">Google Play Movies</A>, etc.</P>
         <Aside brighter>
-          When referencing specific moments in the digital master I will write a timecode like this: <FilmTimecode timecode="52:00" /> or <FilmTimecode timecode="1:23:45" />. For
-          score pieces I will write a timecode like this: <ScoreTimecode timecode="52:00" /> or <ScoreTimecode timecode="1:23:45" />.
+          When referencing specific moments in the digital master I will write a timecode like this: <FilmTimecode timecode="52:00" /> or <FilmTimecode timecode="1:23:45" /> or <TurningPointTimecode timecode="52:00" /> <span className="text-neutral-500">(for turning points)</span>. For
+          score pieces I will write a timecode like this: <ScoreTimecode timecode="0:54" scoreItem={SinnersScore.GrandClosin} /> or <ScoreTimecode timecode="1:23" />.
         </Aside>
 
         <H4>Scene 1: Sammie's Goes to Church (Flash-Forward)</H4>
+        <SceneOverview
+          synopsis="A flash-forward to Sunday morning shows Sammie Moore entering his father's church, broken and distraught, clutching the neck of his shattered guitar."
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "He wants to leave without getting caught",
+              subtext: "He's afraid of his father's reaction"
+            },
+            {
+              character: SinnersCast.ReverendMoore,
+              explicit: "He wants to leave without getting",
+              subtext: "He's afraid of his father's"
+            },
+          ]}
+          conflict="The father's religious beliefs clash with Sammie's desire for freedom"
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: "Tries to sneak out quietly"
+            }
+          ]}
+          turningPoint="The father catches him and begins his incantation"
+          outcome="Sammie breaks down, gripping his shattered guitar"
+          storyContribution="This scene serves as the film's inciting incident, establishing the central conflict between religious tradition and artistic expression. It also sets up the supernatural elements that will drive the story forward."
+        />
       </div>
     </div>
   )
@@ -600,6 +626,44 @@ const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: 
 
   return (
     <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm whitespace-nowrap">
+      {pillContent}
+    </span>
+  );
+};
+
+const TurningPointTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: ScoreItem }) => {
+  const pillContent = (
+    <>
+      <div className="w-4 h-4 rounded-full bg-orange-600 flex items-center justify-center">
+        <svg
+          viewBox="0 0 24 24"
+          fill="white"
+          className="w-2.5 h-2.5"
+          aria-hidden="true"
+        >
+          <title>Turning Point</title>
+          <path d="M12 2L8 6h3v4H5l-3 3 3 3h6v4h3l4-4h-3v-4h6l3-3-3-3h-6V6h3L12 2z" />
+        </svg>
+      </div>
+      {timecode}
+    </>
+  );
+
+  if (scoreItem) {
+    return (
+      <a
+        href={scoreItem.spotifyLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-sm whitespace-nowrap hover:bg-orange-100 transition-colors"
+      >
+        {pillContent}
+      </a>
+    );
+  }
+
+  return (
+    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-sm whitespace-nowrap">
       {pillContent}
     </span>
   );
