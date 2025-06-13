@@ -158,7 +158,7 @@ const Contents = () => {
       </div>
       <SinnersPlotOverview />
       <div className="px-4 sm:px-2 sm:pr-12">
-        <P>In addition, there are 3 “Love Story subplots, which all contribute narritive force to the story.</P>
+        <P>In addition, there are 3 “Love Story subplots, which all contribute narritive force, elevating the Controlling Idea.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
