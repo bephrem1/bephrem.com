@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
 import React from "react";
+import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { SinnersCast } from "../components/film-analysis/sinners";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
@@ -9,9 +10,12 @@ import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
+import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
 import QuoteIcon from "../icons/lib/QuoteIcon";
 
 const SinnersFilmAnalysisPage = () => {
+  useRestoreScrollPosition();
+
   return <div className="flex flex-col w-full min-h-svh items-center bg-neutral-50">
     <div className="flex w-full max-w-[1400px]">
       {/* Left fixed column */}
@@ -43,14 +47,16 @@ const LeftColumnContents = () => {
         inspectable
       />
       <div className="mt-4">
-        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): “asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf.”</p>
+        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): “Greed and hunger for power destroys communities. Culture and it’s expression can never be destroyed.”</p>
       </div>
       <div className="mt-4">
-        <p className="text-neutral-500 text-xs mb-2.5"><b>Protagonists</b></p>
-        <CastMembers cast={SinnersCast.Supporting} avatarSize={50} />
+        <p className="text-neutral-500 text-xs mb-2.5"><b>Main Protagonists</b></p>
+        <CastMembers cast={SinnersCast.Protagonists} avatarSize={50} />
+        <p className="text-neutral-500 text-xs mb-2.5 mt-8"><b>Main Antagonists</b></p>
+        <CastMembers cast={SinnersCast.Antagonists} avatarSize={50} />
 
         <a href="https://www.imdb.com/title/tt31193180/fullcredits/" target="_blank" rel="noopener noreferrer" className="block mt-8">
-          <p className="text-neutral-400 text-xs">full cast & crew <span className="text-neutral-400"> — IMDB ↗</span></p>
+          <p className="text-neutral-400 text-xs">full cast & crew — IMDB ↗</p>
         </a>
       </div>
     </div>
@@ -100,23 +106,49 @@ const Contents = () => {
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12 pb-1.5">
-        <P>The following is a breakdown of the film "Sinners" by writer/director Ryan Coogler. This is not a review, but rather a technical analysis of the
-          film — with a focus on story, structure, and meaning. Blocking of scenes, score & sound design, cinematography, & editing will be covered where appropriate.</P>
-        <P>This is best read after watching the film, or during subsequent rewatches, as I will be referencing very specific moments in certain scenes (most of which I cannot display a still frame for, for copyright reasons).</P>
+        <P>The following is a breakdown of the film "Sinners" by writer/director Ryan Coogler. This is a technical analysis of the
+          film that will cover story, blocking of scenes, score & sound design, cinematography, editing, and more.</P>
+        <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display a still frame for, for copyright reasons).</P>
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
           remarks will be from cursory Internet searches, and findings I personally found surprising.</P>
-        <P>When referencing specific moments, I will write a timecode from the digital master like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
-          also describe the moment so we can quickly get on the same page.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
         <H2>Story Structure</H2>
         <Aside>
-          Much of my commentary throughout will be working from ideas presented by Robert McKee in his book <i className="font-medium">“Story: Substance, Structure, Style, and the Principles of Screenwriting”</i>.
+          Much of my commentary throughout will be working from ideas presented by Robert McKee in his book <i className="font-medium">"Story: Substance, Structure, Style, and the Principles of Screenwriting"</i>.
         </Aside>
+        <P>To avoid recreating a hollowed-out recap of the plot, here is a full plot summary from Wikipedia:</P>
+        <a
+          href="https://en.wikipedia.org/wiki/Sinners_(2025_film)#Plot"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full my-4 rounded-md bg-neutral-100 hover:bg-neutral-200 transition-colors border border-neutral-300 shadow-sm px-4 py-3 text-base font-medium text-neutral-700 flex items-center justify-between gap-3"
+        >
+          <span>Plot Summary <span className="text-neutral-400 text-sm">(primer)</span></span>
+          <ArrowUpRightIcon className="w-5 h-5 text-neutral-400" />
+        </a>
+
+        <H3>Narrative Structure</H3>
+        <P>The film takes in Clarksdale, Mississippi over 2 days in October 1932 — the 15th (Saturday) & 16th (Sunday). After a priming voiceover by Annie
+          to start the film, we a</P>
+      </div>
+      <SinnersPlotOverview />
+
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>Protagonists</H3>
+        <P>Lorem.</P>
+
+        <H3>Antagonists</H3>
+        <P>Lorem.</P>
+
+        <H3>Act Structure</H3>
+        <P>Lorem.</P>
+
+        <H3>Controlling Idea</H3>
         <P>Stories are vehicles for meaning. They are how we make sense of how and why things happen in the world. We observe a <b>character</b> navigate <b>conflict</b>,
           ultimately <b>changing</b> in a revelatory way. New stories lead to new meanings, new meanings lead to new realities.</P>
-        <P>In his book “Story”, Robert McKee says:</P>
+        <P>In his book "Story", Robert McKee says:</P>
         <Quote>
           STORYTELLING is the <b>creative demonstration of truth</b>. A
           story is the living proof of an idea, the conversion of
@@ -124,11 +156,21 @@ const Contents = () => {
           by which you first express, then prove your idea ...
           without explanation.
         </Quote>
+        <P>Every moment in the final master of the film is imbued with meaning. Nothing is left in by chance. Every moment in every scene serves a central
+          theme (or "Controlling Idea"). We will take an educated guess at what that idea is, and center our analysis of every scene around it.</P>
+        <P>But first, we need to know who the acting forces are in this story. Who are the protagonists? What are the forces of antagonism?</P>
 
-        <P>Every moment in the final master of the film is imbued with meaning. Nothing is by chance. Everything scene serves a central theme (or “Controlling Idea”). No moment goes wasted.</P>
+        <H3>Protagonists</H3>
+        <P>Smoke, Stack, & Sammie Moore are the protagonists of the story. Remmick & Hogwood are the antagonists.</P>
       </div>
 
-      <SinnersPlotOverview />
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H2>Scene Analysis</H2>
+        <Aside>
+          When referencing specific moments, I will write a timecode from the digital master like this: <span className="text-neutral-500">[52:00]</span> or <span className="text-neutral-500">[1:23:45]</span>. I will
+          also describe the moment so we can quickly get on the same page.
+        </Aside>
+      </div>
     </div>
   )
 }
@@ -432,5 +474,23 @@ const formatDateToRelative = ({ date: dateStr }: { date: string }) => {
 
   return `${relativeTime} ago`;
 };
+
+function useRestoreScrollPosition() {
+  useEffect(() => {
+    if (window) {
+      // save scroll position before page refresh/navigation
+      window.onbeforeunload = () => {
+        sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+      };
+
+      // restore scroll position after page loads
+      const savedPosition = sessionStorage.getItem("scrollPosition");
+      if (savedPosition) {
+        window.scrollTo(0, Number.parseInt(savedPosition));
+        sessionStorage.removeItem("scrollPosition");
+      }
+    }
+  }, []);
+}
 
 export default SinnersFilmAnalysisPage;
