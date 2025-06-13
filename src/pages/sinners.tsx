@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { SinnersCast } from "../components/film-analysis/sinners/cast";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
+import SinnersScoreOverview from "../components/film-analysis/sinners/score/SinnersScoreOverview";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
@@ -293,6 +294,11 @@ const Contents = () => {
         <P>The score for the film can be found in 2 places on Spotify. The <A href="https://open.spotify.com/album/0zjAqh1Fr7XQWy1SlzGhMn">official Sinners Movie album</A>,
           and <A href="https://open.spotify.com/album/6PQXsiHd4AjrAqhWLd5HyT">Ludwig Göransson’s album</A>. The former contains tracks from key, memorable moments in the film, Ludwig’s album contains
           the full score (including general sound design used to enhance the film).</P>
+        <P>Great films start with the story, then <A href="https://filmsound.org/articles/designing_for_sound.htm">design a sound language</A>, <i>then</i> think about
+          perfecting visuals. Sound is primal & primary.</P>
+        <P>Here is an overview of the score, and where each piece of music can be found in the film:</P>
+        <SinnersScoreOverview className="mt-4 mb-4" />
+        <P>Just by looking at all the original music above, you can see how explosively creative this film is.</P>
 
         <H5>Housekeeping <span className="text-neutral-500">(Digital Viewing)</span></H5>
         <P>A digital copy of the film itself can be found on <A href="https://athome.fandango.com/content/browse/details/Sinners/4020075">Fandango at Home</A> (owned by Warner Brothers), <A href="https://www.amazon.com/gp/video/detail/amzn1.dv.gti.cf9ab498-91f9-4f94-80fd-ba46ac6aabd7">Amazon Prime Video</A>,

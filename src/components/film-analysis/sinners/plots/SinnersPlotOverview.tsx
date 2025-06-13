@@ -252,7 +252,7 @@ const SinnersPlotOverview: FunctionComponent<Props> = () => {
                     <path d="M0 0H13V18L6.5 24L0 18V0Z" fill="rgb(82 82 82)" />
                   </svg>
                 </div>
-                <div className="absolute -translate-y-1/2 left-1/2 -translate-x-1/2 text-sm px-3 py-1.5 bg-[radial-gradient(closest-side,rgb(250_250_250/0.95),rgb(250_250_250/0.9),transparent)] select-none">79</div>
+                <div className="absolute -translate-y-1/2 left-1/2 -translate-x-1/2 text-sm px-3 py-1.5 bg-[radial-gradient(closest-side,rgb(250_250_250/0.95),rgb(250_250_250/0.9),transparent)] select-none">106</div>
               </div>
 
               {/* Act IV */}
