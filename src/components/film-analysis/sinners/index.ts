@@ -188,7 +188,7 @@ const LisaChow: CastItem = {
 };
 
 export const SinnersCast = {
-	Protagonists: [SammieMoore, Smoke, Stack],
+	Protagonists: [SammieMoore, Smoke],
 	Antagonists: [Remmick, Hogwood, ReverendMoore],
 
 	// individual cast members

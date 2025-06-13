@@ -174,7 +174,7 @@ const SinnersPlotOverview: FunctionComponent<Props> = () => {
   };
 
   return (
-    <div className="w-full py-8">
+    <div className="w-full py-4">
       {/* Add the style tag */}
       <style>{styles}</style>
 

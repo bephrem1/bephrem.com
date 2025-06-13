@@ -108,9 +108,9 @@ const Contents = () => {
       <div className="px-4 sm:px-2 sm:pr-12 pb-1.5">
         <P>The following is a breakdown of the film "Sinners" by writer/director Ryan Coogler. This is a technical analysis of the
           film that will cover story, blocking of scenes, score & sound design, cinematography, editing, and more.</P>
-        <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display a still frame for, for copyright reasons).</P>
+        <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
-          remarks will be from cursory Internet searches, and findings I personally found surprising.</P>
+          remarks will be from cursory Internet searches.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
@@ -118,7 +118,7 @@ const Contents = () => {
         <Aside>
           Much of my commentary throughout will be working from ideas presented by Robert McKee in his book <i className="font-medium">"Story: Substance, Structure, Style, and the Principles of Screenwriting"</i>.
         </Aside>
-        <P>To avoid recreating a hollowed-out recap of the plot, here is a full plot summary from Wikipedia:</P>
+        <P>To avoid re-creating a hollowed-out recap of the plot, here is a full plot summary from Wikipedia:</P>
         <a
           href="https://en.wikipedia.org/wiki/Sinners_(2025_film)#Plot"
           target="_blank"
@@ -130,21 +130,38 @@ const Contents = () => {
         </a>
 
         <H3>Narrative Structure</H3>
-        <P>The film takes in Clarksdale, Mississippi over 2 days in October 1932 — the 15th (Saturday) & 16th (Sunday). After a priming voiceover by Annie
-          to start the film, we a</P>
+        <div className="mb-6">
+          <CastMembers cast={[SinnersCast.Annie, SinnersCast.SammieMoore, SinnersCast.ReverendMoore]} avatarSize={50} />
+        </div>
+        <P>The film takes place in Clarksdale, Mississippi over 2 days in October 1932 — the 15th (Saturday) & 16th (Sunday). It begins with a voiceover from Annie, then a <A href="https://en.wikipedia.org/wiki/Flashforward" >flash-forward</A> to
+          Sunday morning, where the first scene shows Sammie driving up to a church.</P>
+        <P>Sammie enters the church, crying for some reason. His father, Reverend Moore, begins a jolting incantation of prayer for his son. Sammie continues to break down,
+          in a swirling mess of internal conflict, as he tightly grips his shattered guitar neck.</P>
+        <P>We hear Reverend Moore finally say “<i>Let it go Sammie.</i> <i>Put it down.</i>”, before cutting to black.</P>
+        <P>This dramatic introduction leaves us with many dramatic questions. Who is this boy? Who is the reverend? Why is he yelling at him? What were those
+          dark monsters the editor cut to? Why is this happening in a church? <b><i>What’s going to happen next?</i></b>
+        </P>
+        <Dots />
+        <P>This is the <b>Inciting Incident</b> for our narrative about Sammie, where we become aware that he <i>wants something</i>, but something powerful
+          is in his way. It frames him early as our main protagonist.</P>
+        <P>Having watched the film, we already know why Sammie is crying and in tatters. He just narrowly avoided being killed by a supernatural demon. Everyone he knows and loves is dead. He did not obey his father the day before,
+          he <i>“kept dancin’ with the devil”</i> and it <i>“followed him home”</i>.</P>
+
+        <H4>Five Act Structure</H4>
+        <div className="mb-6">
+          <CastMembers cast={[SinnersCast.SammieMoore, SinnersCast.Smoke, SinnersCast.Stack]} avatarSize={50} />
+        </div>
+        <P>Sinners is organized into 5 acts along it’s main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & Smoke.</P>
+        <P>Both are seeking freedom in some regard. The Smoke-Stack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father’s wishes).</P>
+        <P>These are 3 people, so why only 2 protagonists? Although Stack is Smoke’s brother, and both share the same desire to open a juke club — they functionally act as 1 single narritive unit, delivering 1 moral to the story.</P>
+        <P>This is made clear by the following diagram, marking the major <b>turning points</b> for central plot and subplots:</P>
       </div>
       <SinnersPlotOverview />
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <P>In addition, there are 3 “Love Story subplots, which all contribute narritive force to the story.</P>
+      </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
-        <H3>Protagonists</H3>
-        <P>Lorem.</P>
-
-        <H3>Antagonists</H3>
-        <P>Lorem.</P>
-
-        <H3>Act Structure</H3>
-        <P>Lorem.</P>
-
         <H3>Controlling Idea</H3>
         <P>Stories are vehicles for meaning. They are how we make sense of how and why things happen in the world. We observe a <b>character</b> navigate <b>conflict</b>,
           ultimately <b>changing</b> in a revelatory way. New stories lead to new meanings, new meanings lead to new realities.</P>
@@ -200,7 +217,7 @@ const P = ({ children }: { children: React.ReactNode }) => {
 }
 const A = ({ children, href }: { children: React.ReactNode, href: string }) => {
   return <a
-    className="text-amber-400 hover:text-amber-300 visited:text-amber-300"
+    className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400"
     href={href}
     target="_blank"
     rel="noopener noreferrer"
@@ -261,7 +278,7 @@ const Highlight = ({ children }: { children: React.ReactNode }) => {
 }
 
 const Dots = () => {
-  return <div className="flex flex-row gap-1 justify-center pt-4 pb-6">
+  return <div className="flex flex-row gap-1 justify-center pt-2 pb-6">
     <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
     <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
     <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
