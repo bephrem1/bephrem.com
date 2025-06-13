@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { SinnersCast } from "../components/film-analysis/sinners/cast";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
+import { type ScoreItem, SinnersScore } from "../components/film-analysis/sinners/score";
 import SinnersScoreOverview from "../components/film-analysis/sinners/score/SinnersScoreOverview";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
@@ -48,7 +49,7 @@ const LeftColumnContents = () => {
         inspectable
       />
       <div className="mt-4">
-        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): “Greed and hunger for power destroys community. Culture and it’s expression can never be destroyed.”</p>
+        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): "Greed and hunger for power destroys community. Culture and it's expression can never be destroyed."</p>
       </div>
       <div className="mt-4">
         <p className="text-neutral-500 text-xs mb-2.5"><b>Main Protagonists</b></p>
@@ -70,7 +71,7 @@ const Contents = () => {
       <div className="px-4 sm:px-2 sm:pr-12">
         <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-14" />
 
-        <HiddenAside title="Personal Preface" defaultOpen>
+        <HiddenAside title="Personal Preface" defaultOpen={false}>
           <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As a filmmaker (not that I consider myself one yet), sometimes you watch things
             that move you so deeply, that you say "<i>That</i>. <b>That's it</b>. That's what this is all about."</p>
           <p className="leading-5 text-neutral-500 text-justify">
@@ -113,9 +114,9 @@ const Contents = () => {
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
           remarks will be from cursory Internet searches.</P>
 
-        <H3>What’s All the Fuss About?</H3>
-        <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it’s a lot of things. <i>A lot, of things.</i></P>
-        <P>Too much to really cover here, but I’ll list a few things that come to mind that make this film head-and-shoulders remarkable:</P>
+        <H3>What's All the Fuss About?</H3>
+        <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it's a lot of things. <i>A lot, of things.</i></P>
+        <P>Too much to really cover here, but I'll list a few things that come to mind that make this film head-and-shoulders remarkable:</P>
         <UnorderedList>
           <ListItem>One of the best film composers in the world, Ludwig Göransson, put down the most ambitious score of his life.</ListItem>
           <ListItem>One of the best directors in the world, Ryan Coogler, releases the first original movie of his 5 feature-length film career.</ListItem>
@@ -126,14 +127,14 @@ const Contents = () => {
           <ListItem>If features a stellar cast, most of which can act, sing, and dance.</ListItem>
           <ListItem>It <s>is breaking</s> broke <A href="https://www.the-numbers.com/movie/Sinners-(2025)">box office</A> records (soon to be #5 <A href="https://www.the-numbers.com/box-office-records/worldwide/all-movies/genres/horror">highest grossing horror</A> film
             of <i>all time</i>) — all with a Southern American-tied plotline (weaker worldwide appeal)</ListItem>
-          <ListItem>...after Variety & the New York Times <A href="https://www.nytimes.com/2025/04/20/business/media/sinners-box-office.html">raised doubts</A> over it’s ability to even breakeven.</ListItem>
+          <ListItem>...after Variety & the New York Times <A href="https://www.nytimes.com/2025/04/20/business/media/sinners-box-office.html">raised doubts</A> over it's ability to even breakeven.</ListItem>
           <ListItem>Ryan Coogler secured a deal with Warner Brothers for first-dollar gross, final cut, and rights reversion after 25 years. Which is unheard of.</ListItem>
-          <ListItem>Ryan Coogler films <A href="https://www.youtube.com/watch?v=78Ru62uFM0s">promo video with Kodak</A> where he’s just your homie schooling you on theater projection formats, it goes viral.</ListItem>
+          <ListItem>Ryan Coogler films <A href="https://www.youtube.com/watch?v=78Ru62uFM0s">promo video with Kodak</A> where he's just your homie schooling you on theater projection formats, it goes viral.</ListItem>
           <ListItem>It is single-handedly breathing life into a dying theater industry. (I literally joined AMC A-List and go every weekend after watching it)</ListItem>
-          <ListItem>It’s the first film to use Ultra Panavision 70 and IMAX 65mm in the same film.</ListItem>
+          <ListItem>It's the first film to use Ultra Panavision 70 and IMAX 65mm in the same film.</ListItem>
         </UnorderedList>
-        <P>Great works of art like this come once every few decades. It’s so incredibly rare, because it’s nearly impossible to align talent and history like this.</P>
-        <P>Let’s begin talking about the story.</P>
+        <P>Great works of art like this come once every few decades. It's so incredibly rare, because it's nearly impossible to align talent and history like this.</P>
+        <P>Let's begin talking about the story.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
@@ -160,22 +161,22 @@ const Contents = () => {
           Sunday morning, where the first scene shows Sammie driving up to a church.</P>
         <P>Sammie enters the church, crying for some reason. His father, Reverend Moore, begins a jolting incantation of prayer for his son. Sammie continues to break down,
           in a swirling mess of internal conflict, as he tightly grips his shattered guitar neck.</P>
-        <P>We hear Reverend Moore finally say “<i>Let it go Sammie.</i> <i>Put it down.</i>”, before cutting to black.</P>
+        <P>We hear Reverend Moore finally say "<i>Let it go Sammie.</i> <i>Put it down.</i>", before cutting to black.</P>
         <P>This dramatic introduction leaves us with many dramatic questions. Who is this boy? Who is the reverend? Why is he yelling at him? What were those
-          dark monsters the editor cut to? Why is the guitar broken? Why is this happening in a church? <b><i>What’s going to happen next?</i></b>
+          dark monsters the editor cut to? Why is the guitar broken? Why is this happening in a church? <b><i>What's going to happen next?</i></b>
         </P>
         <Dots />
         <P>This is the <b>Inciting Incident</b> for our narrative on Sammie, where we become aware that he <i>wants something</i>, but something powerful
           is in his way. It frames him early as our main protagonist.</P>
         <P>Having watched the film, we already know why Sammie is crying and in tatters. He just narrowly avoided being killed by a supernatural demon. Everyone he knows and loves is dead. He did not obey his father the day before,
-          he <i>“kept dancin’ with the devil”</i> and it <i>“followed him home”</i>.</P>
+          he "kept dancin' with the devil" and it "followed him home".</P>
 
         <H4>Five Act Structure</H4>
         <div className="mb-6">
           <CastMembers cast={[SinnersCast.SammieMoore, SinnersCast.Smoke, SinnersCast.Stack]} avatarSize={50} />
         </div>
-        <P>Sinners is organized into 5 acts along it’s main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & the Smoke-Stack Twins.</P>
-        <P>Both are seeking freedom in some regard. The Smoke-Stack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father’s wishes).</P>
+        <P>Sinners is organized into 5 acts along it's main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & the Smoke-Stack Twins.</P>
+        <P>Both are seeking freedom in some regard. The Smoke-Stack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father's wishes).</P>
         <P>The following diagram marks major <b>turning points</b> (“points of no return”) which separate acts for central plot and subplots:</P>
       </div>
       <SinnersPlotOverview />
@@ -184,7 +185,7 @@ const Contents = () => {
           <CastMembers cast={[SinnersCast.Annie, SinnersCast.Mary, SinnersCast.Pearline]} avatarSize={50} />
         </div>
 
-        <P>In addition, there are 3 “Love Story” subplots, which all contribute narritive force to the Controlling Idea.</P>
+        <P>In addition, there are 3 "Love Story" subplots, which all contribute narritive force to the Controlling Idea.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12 pb-2">
@@ -206,7 +207,7 @@ const Contents = () => {
           theme (or "Controlling Idea").</P>
 
         <H4>Finding Controlling Idea (Jumping to the End)</H4>
-        <P>To discover a director’s hidden message to us in a film, we need to find the point at which their protagonists are making the <b>highest-stakes decisions</b> in moments of <b>crisis</b> & highest pressure. <i>These (usually) come at the end of a story.</i></P>
+        <P>To discover a director's hidden message to us in a film, we need to find the point at which their protagonists are making the <b>highest-stakes decisions</b> in moments of <b>crisis</b> & highest pressure. <i>These (usually) come at the end of a story.</i></P>
         <P>In these moments, true character is revealed. We see who the protagonists really are, rather than who they pretend to be (the entire film will show characters moving closer, then farther, then closer to who they really are).</P>
         <P><b>True character is only revealed through choice.</b> Robert McKee puts it like this:</P>
         <Quote>
@@ -222,20 +223,20 @@ const Contents = () => {
         </Quote>
         <P>So what choices do our protagonists make? What crisis do they face?</P>
 
-        <H5>Smoke’s Character-Defining Choices</H5>
+        <H5>Smoke's Character-Defining Choices</H5>
         <div className="mb-6">
           <CastMembers cast={[SinnersCast.Smoke, SinnersCast.Hogwood, SinnersCast.Annie]} avatarSize={50} />
         </div>
-        <P>Smoke spends most of the film using power, money, and violence to bend the world to his will. He returns to his wife Annie’s home, where he spends a sentimental moment mourning at
+        <P>Smoke spends most of the film using power, money, and violence to bend the world to his will. He returns to his wife Annie's home, where he spends a sentimental moment mourning at
           the grave of his passed son.</P>
         <P>In the very last moments of Act V, he dies from a gunshot wound suffered in his shootout with the KKK. Annie appears from heaven to present him with his son. He pauses, before deciding
           to take the baby in his arms.</P>
-        <P>In an ”on the nose“ line, Ryan Coogler scripts Hogwood to say <i>“Hey...I’ve got money”</i>, offering money to Smoke, then Smoke sends a flurry of bullets his way.</P>
-        <P>This is a moment of irreversible change for Smoke, and <i>ironic</i> as well, because he has now finally become what he always wanted to be: <b>a father</b>. But due
+        <P>In an "on the nose" line, Ryan Coogler scripts Hogwood to say "Hey...I've got money", offering money to Smoke, then Smoke sends a flurry of bullets his way.</P>
+        <P>This is a moment of irreversible change for Smoke, and ironic as well, because he has now finally become what he always wanted to be: <b>a father</b>. But due
           to his past actions, his greed cost him the lives of everyone he loved, as well as his own.
         </P>
 
-        <H5>Sammie’s Character-Defining Choices</H5>
+        <H5>Sammie's Character-Defining Choices</H5>
         <div className="mb-11">
           <CastMembers cast={[SinnersCast.SammieMoore, SinnersCast.ReverendMoore, SinnersCast.DeltaSlim, SinnersCast.Pearline, SinnersCast.SammieMooreOlder]} avatarSize={50} />
         </div>
@@ -243,17 +244,17 @@ const Contents = () => {
           advises him on how the world really works outside of the Delta, and Delta Slim acts as a guardian and Blues mentor.
         </P>
         <P>Throughout the film, Sammie presents as a modest, deferential character. As the night wears on, he slowly transforms into a charismatic and confident character.
-          After his performance that “conjurs the spirits of the past and future”, he eventually “tries something” with Pearline.
+          After his performance that "conjurs the spirits of the past and future", he eventually "tries something" with Pearline.
         </P>
-        <P>Sammie’s moment of crisis comes not when Remmick is about to kill him (at the end of Act IV), because no choice was made there. It comes the next day, Sunday
-          morning, when he stumbles into church and Reverend Moore’s yell burns through him with religious fervor.
+        <P>Sammie's moment of crisis comes not when Remmick is about to kill him (at the end of Act IV), because no choice was made there. It comes the next day, Sunday
+          morning, when he stumbles into church and Reverend Moore's yell burns through him with religious fervor.
         </P>
-        <P>Sammie makes the choice to defy his father and leave Clarksdale to pursue music, as we see in the scene right after Smoke’s death. Later, his older self is
+        <P>Sammie makes the choice to defy his father and leave Clarksdale to pursue music, as we see in the scene right after Smoke's death. Later, his older self is
           played by Buddy Guy (in Chicago).
         </P>
-        <Aside>It’s also important to note Sammie was the only survivor after the weekend concluded.</Aside>
+        <Aside>It's also important to note Sammie was the only survivor after the weekend concluded.</Aside>
 
-        <H5>Stack’s Character-Defining Choices</H5>
+        <H5>Stack's Character-Defining Choices</H5>
         <div className="mb-4">
           <CastMembers cast={[SinnersCast.Stack, SinnersCast.Mary]} avatarSize={50} />
         </div>
@@ -267,20 +268,20 @@ const Contents = () => {
         </P>
 
         <H4>Controlling Idea(s)</H4>
-        <P>So the film’s main set of messages, through the protagonists, are:</P>
+        <P>So the film's main set of messages, through the protagonists, are:</P>
         <UnorderedList>
           <ListItem>Excessive greed for money and power will destory family, community, and self.</ListItem>
           <ListItem>Culture is immortal, it will always find a way to survive attack.</ListItem>
         </UnorderedList>
         <P>There are also strong historical notes on ownership & racism, Ryan Coogler in <A href="https://youtu.be/0mU_2VWpsmQ?si=vZNmPtdGcGTFDXah&t=431">this interview with Hanna Flint</A> comments:</P>
-        <Quote>What if the vampires didn’t show up, what happens to those people? ... The reality is...everybody at that juke was gonna be dead anyway. ... The was f***ed essentially the moment they bought the mill.</Quote>
+        <Quote>What if the vampires didn't show up, what happens to those people? ... The reality is...everybody at that juke was gonna be dead anyway. ... The was f***ed essentially the moment they bought the mill.</Quote>
         <P>Which is a reference to the slew of laws and regulations at the time that disadvantaged blacks from owning and retaining property, & truly having a path to real freedom. It was always
-          a losing battle in a game you didn’t control the rules to.</P>
+          a losing battle in a game you didn't control the rules to.</P>
         <P>Ryan Coogler also makes a direct comment on his personal tie to the idea of fatherhood in a <A href="https://youtu.be/1lRAnlyj5YM?si=GhZ7b0_Kj5vvSqR0&t=2905">7PM in Brooklyn podcast episode</A>:</P>
         <Quote>
           Making this movie as a father...I put a lot of myself into it. ... I went through these characters and I tried to define, like, what are these guys? If you held them
-          by the shoulders, what would they tell you they were if you asked them what they were? And what is the lie? What do they think they are inside that they’re too afraid
-          to say? ... And for Smoke, what he would say he is, ... he would tell you <i>“hey, I’m a soldier”</i>. <b>But deep down, what he is, is a father.</b>
+          by the shoulders, what would they tell you they were if you asked them what they were? And what is the lie? What do they think they are inside that they're too afraid
+          to say? ... And for Smoke, what he would say he is, ... he would tell you "hey, I'm a soldier". <b>But deep down, what he is, is a father.</b>
         </Quote>
         <Dots />
         <P>The controlling idea<span className="text-neutral-400">(s)</span> form the backbone of every second in the film. Every writing, directing, cinematography,
@@ -292,13 +293,13 @@ const Contents = () => {
         <H2>Scene-by-Scene Analysis</H2>
         <H5>Housekeeping <span className="text-neutral-500">(Score)</span></H5>
         <P>The score for the film can be found in 2 places on Spotify. The <A href="https://open.spotify.com/album/0zjAqh1Fr7XQWy1SlzGhMn">official Sinners Movie album</A>,
-          and <A href="https://open.spotify.com/album/6PQXsiHd4AjrAqhWLd5HyT">Ludwig Göransson’s album</A>. The former contains tracks from key, memorable moments in the film, Ludwig’s album contains
+          and <A href="https://open.spotify.com/album/6PQXsiHd4AjrAqhWLd5HyT">Ludwig Göransson's album</A>. The former contains tracks from key, memorable moments in the film, Ludwig's album contains
           the full score (including general sound design used to enhance the film).</P>
         <P>Great films start with the story, then <A href="https://filmsound.org/articles/designing_for_sound.htm">design a sound language</A>, <i>then</i> think about
           perfecting visuals. Sound is primal & primary.</P>
         <P>Here is an overview of the score, and where each piece of music can be found in the film:</P>
         <SinnersScoreOverview className="mt-4 mb-4" />
-        <P>Just by looking at all the original music above, you can see how explosively creative this film is.</P>
+        <P>Just by looking at all the original (and reinterpreted) music above, you can see how explosively creative this film is.</P>
 
         <H5>Housekeeping <span className="text-neutral-500">(Digital Viewing)</span></H5>
         <P>A digital copy of the film itself can be found on <A href="https://athome.fandango.com/content/browse/details/Sinners/4020075">Fandango at Home</A> (owned by Warner Brothers), <A href="https://www.amazon.com/gp/video/detail/amzn1.dv.gti.cf9ab498-91f9-4f94-80fd-ba46ac6aabd7">Amazon Prime Video</A>,
@@ -308,7 +309,7 @@ const Contents = () => {
           score pieces I will write a timecode like this: <ScoreTimecode timecode="52:00" /> or <ScoreTimecode timecode="1:23:45" />.
         </Aside>
 
-        <H4>Scene 1: Sammie’s Goes to Church (Flash-Forward)</H4>
+        <H4>Scene 1: Sammie's Goes to Church (Flash-Forward)</H4>
       </div>
     </div>
   )
@@ -548,11 +549,61 @@ const HiddenAside = ({
 };
 
 const FilmTimecode = ({ timecode }: { timecode: string }) => {
-  return <span className="text-gray-600 font-semibold">{timecode}</span>
-}
-const ScoreTimecode = ({ timecode }: { timecode: string }) => {
-  return <span className="text-emerald-600 font-semibold">{timecode}</span>
-}
+  return (
+    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-neutral-100 text-neutral-600 rounded-full text-sm whitespace-nowrap">
+      <div className="w-4 h-4 rounded-full bg-neutral-600 flex items-center justify-center">
+        <svg
+          viewBox="0 0 24 24"
+          fill="white"
+          className="w-2.5 h-2.5"
+          aria-hidden="true"
+        >
+          <title>Film</title>
+          <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z" />
+        </svg>
+      </div>
+      {timecode}
+    </span>
+  );
+};
+
+const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: ScoreItem }) => {
+  const pillContent = (
+    <>
+      <div className="w-4 h-4 rounded-full bg-emerald-600 flex items-center justify-center">
+        <svg
+          viewBox="0 0 24 24"
+          fill="white"
+          className="w-2.5 h-2.5"
+          aria-hidden="true"
+        >
+          <title>Music</title>
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+        </svg>
+      </div>
+      {timecode}
+    </>
+  );
+
+  if (scoreItem) {
+    return (
+      <a
+        href={scoreItem.spotifyLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm whitespace-nowrap hover:bg-emerald-100 transition-colors"
+      >
+        {pillContent}
+      </a>
+    );
+  }
+
+  return (
+    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm whitespace-nowrap">
+      {pillContent}
+    </span>
+  );
+};
 
 const Header = ({
   title,
