@@ -311,6 +311,14 @@ const Contents = () => {
         </Aside>
 
         <H4>Opening Scene: Sunday Morning Service (Flash-Forward)</H4>
+        <Image
+          path="/film-analysis/films/sinners/stills/sunday-morning-service"
+          ext="jpg"
+          alt="Opening scene in Sinners, Sammie Moore entering his father's church, in tatters and distraught, clutching the neck of his shattered guitar."
+          width="100%"
+          optimize={false}
+          inspectable
+        />
         <SceneOverview
           className="my-4"
           startTimecode="1:35"
@@ -344,7 +352,12 @@ const Contents = () => {
           outcome="Sammie breaks down in deep internal conflict, he now has a choice to make."
           storyContribution="This scene foreshadows the supernatural elements that will come into play later in the film, as well as our protagonists eventual ruin."
         />
-        <P>Actions speak louder than words. Actions are how the cinematic medium delivers its messages to an audience, and actions are how true character of our protagonists is revealed.</P>
+        <P>Ryan Coogler is a master of contrast and pacing. Taking watchers on an emotional rollercoaster through expectation and reality.</P>
+        <P>When Sammie walks up to a beautifully painted white church, nestled in a
+
+
+          with children singing, we expect a serene encounter with
+          whatever is on the other side.</P>
 
         <H3>Act I: Getting the Band Together</H3>
         <P>Lorem.</P>
