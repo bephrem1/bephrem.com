@@ -3,7 +3,7 @@ import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
 import React from "react";
 import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
-import { SinnersCast } from "../components/film-analysis/sinners";
+import { SinnersCast } from "../components/film-analysis/sinners/cast";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
@@ -119,9 +119,9 @@ const Contents = () => {
           <ListItem>One of the best film composers in the world, Ludwig Göransson, put down the most ambitious score of his life.</ListItem>
           <ListItem>One of the best directors in the world, Ryan Coogler, releases the first original movie of his 5 feature-length film career.</ListItem>
           <ListItem>Michael B. Jordan plays <i>2 characters</i>, through a slew of acting & technical complications.</ListItem>
-          <ListItem>The cinematography is breathtaking, and <A href="https://www.autumndurald.com/">Autumn Durald Arkapaw</A> makes history as the first woman to shoot a film in large-format IMAX 65mm.</ListItem>
+          <ListItem>The cinematography is breathtaking, every frame is memorable. <A href="https://www.autumndurald.com/">Autumn Durald Arkapaw</A> makes history as the first woman to shoot a film in large-format IMAX 65mm.</ListItem>
           <ListItem>Ryan Coogler makes history as the first black director to shoot in large-format IMAX 65mm.</ListItem>
-          <ListItem>The writing and story are incredibly layered and original, avoiding cinema tropes and clichés left & right.</ListItem>
+          <ListItem>The writing and story are incredibly layered, original, and historically accurate — avoiding cinema tropes and clichés left & right. The film crosses genre boundaries of Supernatural Horror, Love Story, Drama, Musical, Comedy, & Western. </ListItem>
           <ListItem>If features a stellar cast, most of which can act, sing, and dance.</ListItem>
           <ListItem>It <s>is breaking</s> broke <A href="https://www.the-numbers.com/movie/Sinners-(2025)">box office</A> records (soon to be #5 <A href="https://www.the-numbers.com/box-office-records/worldwide/all-movies/genres/horror">highest grossing horror</A> film
             of <i>all time</i>) — all with a Southern American-tied plotline (weaker worldwide appeal)</ListItem>
@@ -289,17 +289,20 @@ const Contents = () => {
 
       <div className="px-4 sm:px-2 sm:pr-12">
         <H2>Scene-by-Scene Analysis</H2>
-        <H5>Housekeeping</H5>
+        <H5>Housekeeping <span className="text-neutral-500">(Score)</span></H5>
         <P>The score for the film can be found in 2 places on Spotify. The <A href="https://open.spotify.com/album/0zjAqh1Fr7XQWy1SlzGhMn">official Sinners Movie album</A>,
           and <A href="https://open.spotify.com/album/6PQXsiHd4AjrAqhWLd5HyT">Ludwig Göransson’s album</A>. The former contains tracks from key, memorable moments in the film, Ludwig’s album contains
           the full score (including general sound design used to enhance the film).</P>
+
+        <H5>Housekeeping <span className="text-neutral-500">(Digital Viewing)</span></H5>
         <P>A digital copy of the film itself can be found on <A href="https://athome.fandango.com/content/browse/details/Sinners/4020075">Fandango at Home</A> (owned by Warner Brothers), <A href="https://www.amazon.com/gp/video/detail/amzn1.dv.gti.cf9ab498-91f9-4f94-80fd-ba46ac6aabd7">Amazon Prime Video</A>,
-          {" "}<A href="https://tv.apple.com/us/movie/sinners/umc.cmc.tl0hc0j1vx7nrrz89gxzxsx9">Apple TV</A>, <A href="https://www.youtube.com/watch?v=_5SDkR1gX8g">YouTube Movies</A>, and etc.</P>
-        <P>When referencing specific moments in the digital master I will write a timecode like this: <FilmTimecode timecode="52:00" /> or <FilmTimecode timecode="1:23:45" />. For
-          score pieces I will write a timecode like this: <ScoreTimecode timecode="52:00" /> or <ScoreTimecode timecode="1:23:45" />.</P>
+          {" "}<A href="https://tv.apple.com/us/movie/sinners/umc.cmc.tl0hc0j1vx7nrrz89gxzxsx9">Apple TV</A>, <A href="https://www.youtube.com/watch?v=_5SDkR1gX8g">YouTube Movies</A>, <A href="https://play.google.com/store/movies/details?id=_M5ZE9vu_MM.P">Google Play Movies</A>, etc.</P>
+        <Aside brighter>
+          When referencing specific moments in the digital master I will write a timecode like this: <FilmTimecode timecode="52:00" /> or <FilmTimecode timecode="1:23:45" />. For
+          score pieces I will write a timecode like this: <ScoreTimecode timecode="52:00" /> or <ScoreTimecode timecode="1:23:45" />.
+        </Aside>
 
         <H4>Scene 1: Sammie’s Goes to Church (Flash-Forward)</H4>
-        <P>asdf</P>
       </div>
     </div>
   )

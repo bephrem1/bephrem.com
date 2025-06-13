@@ -1,4 +1,5 @@
 import { type FunctionComponent, useEffect, useRef, useState } from "react";
+import type { CastItem } from "../../../film-analysis/sinners/cast";
 import { Button } from "../../shadcn/components/ui/button";
 import {
   Tooltip,
@@ -6,17 +7,6 @@ import {
   TooltipTrigger,
 } from "../../shadcn/components/ui/tooltip";
 import CastMember from "./CastMember";
-
-export type CastItem = {
-  character: {
-    name: string;
-    imagePath: string;
-  }
-  actor: {
-    name: string;
-    imagePath: string;
-  }
-}
 
 interface Props {
   cast: Array<CastItem>;

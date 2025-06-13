@@ -1,4 +1,13 @@
-import type { CastItem } from "../../shared/film-analysis/cast/CastMembers";
+export type CastItem = {
+	character: {
+		name: string;
+		imagePath: string;
+	};
+	actor: {
+		name: string;
+		imagePath: string;
+	};
+};
 
 const SammieMoore: CastItem = {
 	character: {
