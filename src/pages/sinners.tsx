@@ -12,6 +12,7 @@ import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
 import PlotTimeline from "../components/shared/film-analysis/plot/PlotTimeline";
 import SceneOverview from "../components/shared/film-analysis/scene/SceneOverview";
+import { ImageCarousel } from "../components/shared/images/ImageCarousel";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
 import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
@@ -269,8 +270,62 @@ const Contents = () => {
           Mary kills him in the Act II climax.
         </P>
 
+        <H4>Changing Image System</H4>
+        <P>
+          A film can also hint at its controlling idea subconsciously through a changing <b>image system</b>. Robert McKee defines this as:
+        </P>
+        <Quote>
+          An <b>IMAGE SYSTEM</b> is a strategy of motifs, a category of
+          imagery embedded in the film that repeats in sight and
+          sound from beginning to end with persistence and great
+          variation, but with equally great subtlety, as a subliminal
+          communication to increase the depth and complexity of
+          aesthetic emotion.
+        </Quote>
+        <P>Our protagonists change greatly over the course of the film, and if we take a closer look, so do the images we see them within. What are they wearing? How are they acting? Does the framing change? Do colors change?</P>
+        <P>And most of all, <i>why does this change happen?</i> Our Controlling Idea sits behind this question.</P>
+
+        <H5>Smoke & Stack’s Visual Change</H5>
+        <P>The Smoke-Stack twins begin the film in crispy 3-piece suits, with a sharp, clean look. It’s daylight and they’re brimming with confidence to pursue their juke joint venture.</P>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/stills/smoke-and-stack-image-system-start",
+            "/film-analysis/films/sinners/stills/smoke-image-system-end"
+          ]}
+          imageExts={["jpg", "jpg"]}
+          captions={["Smoke & Stack begin in tailored suits.", "Smoke ends sitting alone, rusting away at sunrise in a tank top."]}
+          height={400}
+          showArrows={true}
+          squareCrop={true}
+        />
+        <P>But what happens by the end? Well Stack ends up dead on the floor shirtless in the juke club at the end of Act II. Smoke ends up completely alone, almost everyone he loves dead, in front of a rusted sawmill,
+          in a rust-colored and oily tank top, rolling a cigarette with shaking hands. The composition central and wide to frame his isolation.</P>
+
+        <H4>Sammie’s Visual Change</H4>
+        <P>
+          Sammie begins the film with wide-eyed idealism and a sense of purpose. He’s on a mission to pursue his music dreams, and he’s full of hope and optimism.
+        </P>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/stills/sammie-before-1",
+            "/film-analysis/films/sinners/stills/sammie-before-2",
+            "/film-analysis/films/sinners/stills/sammie-end"
+          ]}
+          imageExts={["jpg", "jpg", "jpg"]}
+          captions={[
+            "Sammie looks out onto the cotton fields with determination.",
+            "Sammie in a clean outfit.",
+            "Sammie ends torn and in tatters."
+          ]}
+          height={400}
+          showArrows={true}
+          squareCrop={true}
+        />
+        <P>By the end, Sammie’s clothing is torn to shreds, his guitar is shattered, and he has a large scar on his face. He sheepishly stumbles into church, seeking his father’s comfort <span className="text-neutral-500">(which he does not get)</span>.</P>
+        <P>In the 2nd to last shot of the film he drives off, crying and clutching his shattered guitar to his chest. The only survivor of the weekend.</P>
+
         <H4>Controlling Idea(s)</H4>
-        <P>So the film's main set of messages, through the protagonists, are:</P>
+        <P>Combining major protagonist choices, with the conditions they ultimately end up in, we can estimate Controlling Idea<span className="text-neutral-500">(s)</span> as:</P>
         <UnorderedList>
           <ListItem>Excessive greed for money and power will destory family, community, and self.</ListItem>
           <ListItem>Culture is immortal, it will always find a way to survive attack.</ListItem>
