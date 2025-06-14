@@ -162,6 +162,7 @@ const scoreSections: ScoreSection[] = [
   },
   {
     description: "Remmick's Irish Jig",
+    subtext: "This is my favorite musical track & scene.",
     scoreItems: [SinnersScore.RockyRoadToDublin],
   },
   {

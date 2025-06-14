@@ -964,6 +964,99 @@ const Contents = () => {
         <H4>Negotiation Truncated</H4>
         <P>I watched this scene Thursday April 17th (opening weekend) and there were 1-2 more rounds of back-and-forth in the negotiation between Smoke and the young girl.</P>
         <P>The editors must have cut it out because we get the same character impact later when Smoke does a negotiation with Grace Chow in Bo’s shop.</P>
+
+        <H4>Lingering on the Truck</H4>
+        <P>It’s important to notice that the camera gives 2 more seconds on the truck (<FilmTimecode timecode="15:24" />) as Smoke walks away. This allows the audience to subconsciously absorb that the truck will have dramatic importance later.</P>
+
+        <H4>Bo’s Shop <span className="text-neutral-500">(“You Not Lil’ Lisa, Is You?”)</span></H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="15:26"
+          turningPointTimecode={["15:50", "16:16"]}
+          endTimecode="16:16"
+          synopsis="Smoke meets his old friend, shop owner Bo Chow. He hears the horn of his truck outside, indicating that someone is trying to rob it."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "",
+              subtext: ""
+            },
+            {
+              character: SinnersCast.BoChow,
+              explicit: "",
+              subtext: ""
+            },
+            {
+              character: SinnersCast.LisaChow,
+              explicit: "Not Smoke again. Looks like he wants to talk to my Dad.",
+              subtext: "I need to keep an eye on him and protect my Dad."
+            },
+          ]}
+          conflict=""
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: ""
+            },
+            {
+              character: SinnersCast.BoChow,
+              tactic: ""
+            },
+            {
+              character: SinnersCast.LisaChow,
+              tactic: ""
+            }
+          ]}
+          turningPoint=""
+          outcome=""
+          storyContribution=""
+        />
+        <H4>“Bo Chow!”</H4>
+        <P>Instead of having Smoke labor through robotic dialog like <i>“Good seeing you my old friend! It’s been a long time Bo!”</i>... Ryan Coogler writes a simple <i>“Bo Chow!”</i>, a long pause after Bo comes out of the door, and a <i>big</i> hug.</P>
+        <P>More brilliant visual storytelling. We immediately understand they’ve known each other for a long time, and that they have a close relationship that goes way back, with no additional dialog needed.</P>
+
+        <H4>Catfish</H4>
+        <P>Smoke says <i>“I need catfish, for 100 people”</i>. During my visit to Clarksdale, I didn’t remember this line, until someone recommended that I go eat some catfish <A href="https://maps.app.goo.gl/zHB42QnAoNtAhGRR9">by the crossroads</A>.</P>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/clarksdale/catfish-1",
+            "/film-analysis/films/sinners/clarksdale/catfish-2",
+            "/film-analysis/films/sinners/clarksdale/catfish-3",
+            "/film-analysis/films/sinners/clarksdale/catfish-4",
+          ]}
+          imageExts={["jpg", "jpg", "jpg", "jpg"]}
+          captions={["Catfish on toast.", "Crossroads Catfish, next to “The Blues Crossroads”.", " Crossroads Catfish interior.", "My table."]}
+          height={400}
+          showArrows={true}
+          squareCrop={true}
+        />
+        <P>Catfish, it turns out, has long been a staple of southern black and white working-class cuisine (though it wasn’t widely commercialized until the late 1950s/early 1960s, 30 years after this film takes place).</P>
+
+        {/* <H4>Truck Robbers Outside</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="16:20"
+          turningPointTimecode="15:50"
+          endTimecode="16:16"
+          synopsis="Smoke meets his old friend, shop owner Bo Chow. He hears the horn of his truck outside, indicating that someone is trying to rob it."
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "",
+              subtext: ""
+            },
+          ]}
+          conflict=""
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: ""
+            }
+          ]}
+          turningPoint=""
+          outcome=""
+          storyContribution=""
+        /> */}
       </div>
 
       {/* <SceneOverview

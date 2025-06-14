@@ -23,7 +23,7 @@ interface Props {
   outcome: string;
   storyContribution: string;
   startTimecode?: string;
-  turningPointTimecode?: string;
+  turningPointTimecode?: string | string[];
   endTimecode?: string;
   className?: string;
 }
@@ -102,13 +102,24 @@ const SceneOverview: FunctionComponent<Props> = ({
 }) => {
   // Timeline logic
   const startSec = parseTimecodeToSeconds(startTimecode);
-  const turningSec = parseTimecodeToSeconds(turningPointTimecode);
   const endSec = parseTimecodeToSeconds(endTimecode);
-  let turningPercent = 0;
-  if (startSec !== null && turningSec !== null && endSec !== null && endSec > startSec) {
-    turningPercent = ((turningSec - startSec) / (endSec - startSec)) * 100;
-    turningPercent = Math.max(0, Math.min(100, turningPercent));
-  }
+
+  // Convert turningPointTimecode to array if it's a single string
+  const turningPointTimecodes = Array.isArray(turningPointTimecode)
+    ? turningPointTimecode
+    : turningPointTimecode
+      ? [turningPointTimecode]
+      : [];
+
+  // Calculate turning point percentages
+  const turningPointPercentages = turningPointTimecodes.map(tc => {
+    const turningSec = parseTimecodeToSeconds(tc);
+    if (startSec !== null && turningSec !== null && endSec !== null && endSec > startSec) {
+      const percent = ((turningSec - startSec) / (endSec - startSec)) * 100;
+      return Math.max(0, Math.min(100, percent));
+    }
+    return 0;
+  });
 
   return (
     <div className={twMerge("w-full overflow-x-auto", className)}>
@@ -210,19 +221,29 @@ const SceneOverview: FunctionComponent<Props> = ({
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
                     <FilmTimecode timecode={startTimecode} />
                   </div>
-                  {/* End pill */}
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
-                    <FilmTimecode timecode={endTimecode} />
-                  </div>
-                  {/* Turning point pill, if present and valid */}
-                  {turningPointTimecode && startSec !== null && endSec !== null && turningSec !== null && (
-                    <div
-                      className="absolute top-1/2 -translate-y-1/2 z-20"
-                      style={{ left: `calc(${turningPercent}% - 48px * ${turningPercent / 100})` }}
-                    >
-                      <TurningPointTimecode timecode={turningPointTimecode} />
+                  {/* End pill (only if not duplicated by a turning point) */}
+                  {!(turningPointTimecodes.includes(endTimecode ?? "")) && (
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
+                      <FilmTimecode timecode={endTimecode} />
                     </div>
                   )}
+                  {/* Turning point pills */}
+                  {turningPointTimecodes.map((timecode, index) => {
+                    // If this turning point is at the end, use the same position as the end pill
+                    const isAtEnd = timecode === endTimecode;
+                    const leftStyle = isAtEnd
+                      ? 'right: 0;'
+                      : `left: calc(${turningPointPercentages[index]}% - 48px * ${turningPointPercentages[index] / 100})`;
+                    return (
+                      <div
+                        key={timecode}
+                        className="absolute top-1/2 -translate-y-1/2 z-20"
+                        style={isAtEnd ? { right: 0 } : { left: `calc(${turningPointPercentages[index]}% - 48px * ${turningPointPercentages[index] / 100})` }}
+                      >
+                        <TurningPointTimecode timecode={timecode} />
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
                 <span className="text-neutral-400 text-xs">No timeline data</span>
