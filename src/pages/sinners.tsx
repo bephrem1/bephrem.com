@@ -479,6 +479,33 @@ const Contents = () => {
           outcome="Sammie now has time to pursue music."
           storyContribution="We get an introduction to the sprawling flat land of the Mississippi Delta, the poverty of sharecroppers (bare feet), and charm of Sammie."
         />
+        <P>TODO: (add notes about sprawling fields & bare feet.)</P>
+
+        <H4>Sammie Picking Cotton in The Morning</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="4:24"
+          turningPointTimecode="4:16"
+          endTimecode="4:24"
+          synopsis="Sammie picks cotton early in the morning at his plantation. He finishes meeting his quota as others arrive to begin working."
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "I want to finish picking my quota of cotton early. Exchange kind words with Beatrice.",
+              subtext: "I want to create room for my pursuit of music. Conceal this desire from Beatrice to keep my father from hearing. Protect my passions."
+            },
+          ]}
+          conflict="Sammie has to meet his quota to have time to pursue music. Beatrice pokes fun with him about his music."
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: "Meets his quota early, has a polite exchange with Beatrice."
+            }
+          ]}
+          turningPoint="The father catches him and begins his incantation"
+          outcome="Sammie now has time to pursue music."
+          storyContribution="We get an introduction to the sprawling flat land of the Mississippi Delta, the poverty of sharecroppers (bare feet), and charm of Sammie."
+        />
       </div>
     </div>
   )
