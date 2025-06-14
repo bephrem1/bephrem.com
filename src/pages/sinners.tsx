@@ -133,9 +133,9 @@ const Contents = () => {
           <ListItem>...after Variety & the New York Times <A href="https://www.nytimes.com/2025/04/20/business/media/sinners-box-office.html">raised doubts</A> over it's ability to even breakeven.</ListItem>
           <ListItem>Ryan Coogler secured a deal with Warner Brothers for first-dollar gross, final cut, and rights reversion after 25 years. Which is unheard of.</ListItem>
           <ListItem>Ryan Coogler films <A href="https://www.youtube.com/watch?v=78Ru62uFM0s">promo video with Kodak</A> where he's just your homie schooling you on theater projection formats, it goes viral.</ListItem>
-          <ListItem>It is single-handedly breathing life into a dying theater industry. (I literally joined AMC A-List and go every weekend after watching it)</ListItem>
+          <ListItem>It is single-handedly breathing life into a dying theater industry. (I joined AMC A-List and go every weekend after watching it)</ListItem>
           <ListItem>It's the first film to use Ultra Panavision 70 and IMAX 65mm in the same film.</ListItem>
-          <ListItem>Miles Caton has never acted in a feature film before. He even <A href="https://youtu.be/ExF7t5jrT3o?si=0TSo2IMzZUk4WHZn&t=18">learned the guitar</A> for the leading role.</ListItem>
+          <ListItem>Miles Caton has never acted in a feature-length film before. He even <A href="https://youtu.be/ExF7t5jrT3o?si=0TSo2IMzZUk4WHZn&t=18">learned the guitar</A> for the leading role.</ListItem>
         </UnorderedList>
         <P>Great works of art like this come once every few decades. It's so incredibly rare, because it's nearly impossible to align talent and history like this.</P>
         <P>Let's begin talking about the story.</P>
@@ -663,7 +663,7 @@ const Contents = () => {
         />
         <H5>Speak With Actions, Not Words</H5>
         <P>Ryan Coogler is also a master of bringing life to his characters with actions, not words. Revealing their true character in a visceral way.</P>
-        <P>When asked of his name, Hogwood spits in front of the twins, an action that makes the crowd wince at such great disrespect.</P>
+        <P>When asked of his name, Hogwood spits in front of the twins, an action that makes the crowd wince.</P>
         <P>We also begin to distinguish how the twins handle tense situations. Smoke takes a more serious tone, while Stack turns to witty humor. Michael B. Jordan <A href="https://youtu.be/s72cBC-v6UE?si=pc4miaJujRCv23NT&t=108">comments on the distinction</A>:</P>
         <Quote>
           <b>Smoke</b> wore his trauma differently, he kind of closed up a bit. And <b>Stack</b> was a lot lighter, he’d smile through his pain. He’d smile through his trauma.
@@ -800,30 +800,170 @@ const Contents = () => {
           objectives={[
             {
               character: SinnersCast.SammieMoore,
-              explicit: "",
-              subtext: ""
+              explicit: "I want to catch up with my older cousins, I haven’t seen them in years.",
+              subtext: "I want to know if Chicago is as promising as I once thought."
             },
             {
               character: SinnersCast.Smoke,
-              explicit: "",
-              subtext: ""
+              explicit: "I want to catch up with my younger cousin, I haven’t seen him in years.",
+              subtext: "I want to reinforce my disillusionment about Chicago to Sammie."
             },
           ]}
-          conflict=""
+          conflict="Sammie wants to go to Chicago to pursue his music dreams, Smoke wants to educate Sammie that Chicago is not as promising as he imagines it may be."
           tactics={[
             {
               character: SinnersCast.SammieMoore,
-              tactic: ""
+              tactic: "Asks his cousin a question, then quietly listens to him speaking."
             },
             {
               character: SinnersCast.Smoke,
-              tactic: ""
+              tactic: "Answers his cousin’s question firmly."
             },
           ]}
-          turningPoint=""
+          turningPoint="Smoke tells Sammie that Chicago is not as promising as he once thought. Sammie takes this to heart, but still doesn’t want to believe it."
           outcome="Sammie gets a sense that Chicago may not be as welcoming a place as he once thought."
           storyContribution="We get an initial taste of why the Smoke-Stack Twins are back, there are some lingering tensions they hold about Chicago. We also continue to see Sammie as a figure who receives mentorship from those around him."
         />
+        <H5>Writing From Characters’ Inner World</H5>
+        <P>
+          Throughout the film, you’ll find scenes rich with authentic character interaction and dialogue. Interactions that could only have been conceived if the writer <span className="text-neutral-500">(Ryan Coogler in this case)</span> had a deep and
+          complete understanding for the characters and their world.
+        </P>
+        <P>If you saw your younger cousin after years away from home, what would that conversation look like? Would it be playful? You’d probably be curious about their life, and things that may still be troubling them.</P>
+        <P>Smoke asks Sammie if his father has been <i>“putting his hands on him”</i> <span className="text-neutral-500"> (beating him)</span>. We subconsciously begin to identify with the characters, <i>“Yeah...I have siblings too. This is how
+          I’d be talking to them.”</i>. But we don’t consciously register this empathy-building process.</P>
+
+        <H4>A Snake Jumps Out</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="10:56"
+          turningPointTimecode="11:34"
+          endTimecode="12:04"
+          synopsis="The group move through underbrush to the back of a truck they have arrived to pick up. A snake jumps out and Smoke impales it, then rips it’s head off."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I need to get to my truck so I can go to town. I need to kill this snake that’s in the way.",
+              subtext: "I am powerful, nothing will stand in my way."
+            },
+            {
+              character: SinnersCast.Stack,
+              explicit: "I need to help Smoke kill this snake so we can get to the truck.",
+              subtext: "I am always by my brother’s side to support him."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "I need to follow my cousins to the truck.",
+              subtext: "I want my cousins’ mentorship and protection."
+            },
+          ]}
+          conflict="A snake pops out from the back of the truck."
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Impales the snake with his knife without hesitation."
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: "Tosses his brother a knife."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: "Backs away and lets his brothers handle the situation."
+            }
+          ]}
+          turningPoint="A snake jumps out and Smoke impales it with his knife."
+          outcome="The group can now access the back of the truck."
+          storyContribution="We strengthen the idea that Smoke and Stack move as one unit, inseparable. We gain an understanding of Smoke’s tolerance for violence. We deepen the understanding that Sammie looks up to his older cousins for guidance and protection."
+        />
+        <H5>More Than a Jump Scare</H5>
+        <P>
+          Ryan Coogler as also excellent at mixing entertainment with function. Aside from jump-scaring us to attention, the snake jumping out is a strong character development moment.
+        </P>
+        <P>We notice:</P>
+        <UnorderedList>
+          <ListItem><b>Smoke Is Quick To Violence:</b> We observe Smoke’s propensity for violence. He is more vicious than a vicious rattlesnake.</ListItem>
+          <ListItem><b>Sammie Yields:</b> We see Sammie yield to his cousins for protection.</ListItem>
+          <ListItem><b>The Twins Move as One:</b> We see how the cousins move as a unit, without speaking or hesitating.</ListItem>
+        </UnorderedList>
+        <P>During the scene, the audience is thinking: <i>“That’s definitely not how I would have handled a rattlesnake popping out at me. I would have paused and used a branch, or just run away.”</i></P>
+
+        <H4>The Twins Bicker <span className="text-neutral-500">(“We Been Gone a Long Time Stack”)</span></H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="12:05"
+          turningPointTimecode="12:22"
+          endTimecode="13:08"
+          synopsis="Smoke and Stack exchange words behind the truck. Smoke has apprehensions about opening that night, and Stack convinces him today’s the day. Sammie looks on."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I want to convince Stack that we’re running out of time and should open next weekend.",
+              subtext: "I need to protect my business interests."
+            },
+            {
+              character: SinnersCast.Stack,
+              explicit: "I need to convince Smoke that we’re going to open tonight.",
+              subtext: "I want to support my brother."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "I need to listen to my cousins.",
+              subtext: "I want my cousins’ protection & guidance."
+            },
+          ]}
+          conflict="Apprehensive, Smoke wants to open next weekend. Stack wants to convince him that they should open tonight."
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Initially hesitant, then agrees with Stack."
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: "Charmingly convinces Smoke that they should open tonight."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: "Quietly listens."
+            }
+          ]}
+          turningPoint="Smoke gives in to Stack’s convincing to open that night."
+          outcome="The twins will open the juke that night. They prepare to go to town."
+          storyContribution="This is the strongest scene where the twins’ bond is solidified, as well as each twin distinguished in character. Ending in a hug and a “love you,” as Sammie looks on."
+        />
+        <H5>Bring Them Together, Then Tear Them Apart</H5>
+        <P>Part of the ingenious design of this story, is that the twins <i>need</i> each other. This acts as an engine for drama because later, Ryan Coogler will tear them apart, to teach us a lesson.</P>
+        <P>Because they are so close and interdependent, it offers constant fuel for drama and meaning-making in the story. We also see this tactic employed in the Stack-Mary, Smoke-Annie, Sammie-Pearline romance subplots.</P>
+        <P>Characters that need each other keep banging heads to get what they want, but it just doesn’t happen the way they expect it to. More on this concept <A href="https://youtu.be/esO2C0V12jI?si=AgCBGNIFehDaD2ta&t=150">here</A>.</P>
+
+        <H4>Watch My Truck</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="13:40"
+          turningPointTimecode="14:50"
+          endTimecode="15:26"
+          synopsis="Smoke pays a young girl in the town to watch his truck."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I need someone to watch my truck while I go talk to the Chows.",
+              subtext: "I need to teach this young girl how the world works. By power and negotiation."
+            },
+          ]}
+          conflict="The young girl is initially hesitant to talk to Smoke."
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Smoke uses money to motivate the young girl to watch his truck. He encourages her to negotiate a better fee."
+            }
+          ]}
+          turningPoint="The young girl perks up when Smoke offers to pay her 10¢/minute to watch his truck."
+          outcome="The young girl agrees to watch the truck."
+          storyContribution="We learn that Smoke has a feared reputation with those in town. We also get a first taste of his inclination to use money and negotiation to get what he wants."
+        />
+        <H4>Negotiation Truncated</H4>
+        <P>I watched this scene Thursday April 17th (opening weekend) and there were 1-2 more rounds of back-and-forth in the negotiation between Smoke and the young girl.</P>
+        <P>The editors must have cut it out because we get the same character impact later when Smoke does a negotiation with Grace Chow in Bo’s shop.</P>
       </div>
 
       {/* <SceneOverview
