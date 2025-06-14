@@ -349,8 +349,8 @@ const Contents = () => {
               tactic: "Barks a prayer at Sammie, then embraces him."
             },
           ]}
-          turningPoint="The father catches him and begins his incantation"
-          outcome="Sammie breaks down in deep internal conflict, he now has a choice to make."
+          turningPoint="Sammie realizes that is father won’t give in one bit. He will have to make a choice, and is internally conflicted."
+          outcome="Sammie has to make a choice on leaving to pursue music or staying. (but we don’t know this is the choice yet)"
           storyContribution="This scene foreshadows the supernatural elements that will come into play later in the film, as well as our protagonists eventual ruin."
         />
         <H5>Shocking the Audience to Attention</H5>
@@ -475,38 +475,170 @@ const Contents = () => {
               tactic: "Meets his quota early, has a polite exchange with Beatrice."
             }
           ]}
-          turningPoint="The father catches him and begins his incantation"
+          turningPoint="Sammie acknowledges Beatrice's comment, and goes his own way."
           outcome="Sammie now has time to pursue music."
           storyContribution="We get an introduction to the sprawling flat land of the Mississippi Delta, the poverty of sharecroppers (bare feet), and charm of Sammie."
         />
-        <P>TODO: (add notes about sprawling fields & bare feet.)</P>
+        <H5>Vast Expanses and Isolation</H5>
+        <P>The Mississippi Delta is very flat. In <A href="https://youtu.be/itAQolHej2k?si=Sp1jBa30thtwcQKO&t=480">a conversation</A> with his Director of Photography Autumn Durald Arkapaw, Ryan Coogler says:</P>
+        <Quote>
+          One of the visual themes of the film we talked about is <b>isolation</b>. ... You’ll drive for what seems like hours before you get to the next building. And you’re driving through all this agricultural landscape.
+          There’s a cotton farm, a pecan farm. And you might not see a car, [or] another person for a long time. ... And just that experience of, seeing these characters, on these massive expanses of isolated landscapes.
+          It just clicked that this would be the way. <b>And also how big the sky can feel out there.</b> And [in] that 1.43:1, full-frame, ratio.
+        </Quote>
 
-        <H4>Sammie Picking Cotton in The Morning</H4>
+        <H5>Cycles of Poverty</H5>
+        <P>Shots of Sammie’s bare feet are displayed to communicate the poverty that sharecroppers lived in, farming land they would never own.</P>
+        <P>Shots of workers feet also appear a 2nd time in the scene when Stack goes to recruit Cornbread to join the juke staff.</P>
+
+        <H4>Sammie Goes to His Cabin</H4>
         <SceneOverview
           className="my-4"
           startTimecode="4:24"
-          turningPointTimecode="4:16"
-          endTimecode="4:24"
-          synopsis="Sammie picks cotton early in the morning at his plantation. He finishes meeting his quota as others arrive to begin working."
+          turningPointTimecode="5:10"
+          endTimecode="5:21"
+          synopsis="Sammie walks back to his cabin in the sharecropper’s village. He wakes up his siblings in his cabin, then looks out at the vast expanses of the Mississippi Delta. He searches for something under his bed."
           objectives={[
             {
               character: SinnersCast.SammieMoore,
-              explicit: "I want to finish picking my quota of cotton early. Exchange kind words with Beatrice.",
-              subtext: "I want to create room for my pursuit of music. Conceal this desire from Beatrice to keep my father from hearing. Protect my passions."
+              explicit: "I need to go back to my cabin and grab my guitar.",
+              subtext: "I am getting ready to pursue my dreams."
             },
           ]}
-          conflict="Sammie has to meet his quota to have time to pursue music. Beatrice pokes fun with him about his music."
+          conflict="Sammie initially is reluctant to decide to pursue his love of music, but he looks out to the fields and decides today’s the day he’s going to make it happen."
           tactics={[
             {
               character: SinnersCast.SammieMoore,
-              tactic: "Meets his quota early, has a polite exchange with Beatrice."
+              tactic: "Sammie playfully splashes a lady washing clothing with water, he playfully wakes up his siblings, and he calmly looks out at the fields."
             }
           ]}
-          turningPoint="The father catches him and begins his incantation"
-          outcome="Sammie now has time to pursue music."
-          storyContribution="We get an introduction to the sprawling flat land of the Mississippi Delta, the poverty of sharecroppers (bare feet), and charm of Sammie."
+          turningPoint="Sammie goes from neutral, to determined and hopeful as he looks out at the fields."
+          outcome="Sammie realizes his guitar is missing."
+          storyContribution="We get more of a taste of Sammie’s playful personality, the vast expanses of land, and sense that Sammie is hopeful for something."
         />
+
+        <H4>Smoke and Stack Wait for Hogwood</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="5:22"
+          turningPointTimecode="5:56"
+          endTimecode="6:03"
+          synopsis="The Smoke-Stack Twins wait for Hogwood, the landowner of the sawmill to arrive so they can purchase it from him."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "Wait for Hogwood to arrive.",
+              subtext: "∅"
+            },
+            {
+              character: SinnersCast.Stack,
+              explicit: "”",
+              subtext: "”"
+            },
+          ]}
+          conflict="The twins are waiting for someone, and it seems they have a tense relationship with him."
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Brace himself for trouble, ready to fight if necessary."
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: "”"
+            },
+          ]}
+          turningPoint="Hogwood’s car becomes visible, the twins brace themselves for his arrival."
+          outcome="Hogwood arrives."
+          storyContribution="Seeing Stack hand and light a cigarette for Smoke, we get a sense of the twins close bond."
+        />
+        <H5>Match Cut on “Searching”</H5>
+        <P>We enter this scene off a clip of Sammie <i>searching</i> for something under his bed. Smoke begins by checking his watch, <i>searching</i> for someone who has not arrived.</P>
+
+        <H5>Masterful Visual Storytelling</H5>
+        <P>This scene holds the first strong moment of visual storytelling (of many) that this film will have. The camera begins on Smoke then rotates around to reveal Stack. Grouping them initially as 1 visual entity to show their inseparable bond.</P>
+        <P>This shot came as a suggestion from a crew member <span>(I can’t recall the interview this popped up in), and originally the shot was planned to show both twins at once (no hiding & rotation).</span></P>
+
+        <H5>Sound Design on Dramatic Beats</H5>
+        <P>I won’t directly point out all of these (because there are a lot), but at <FilmTimecode timecode="5:56" /> bass kicks in to build tension when Hogwood’s car appears. The score “hugs” around key dramatic beats in every scene,
+          embodying different characters and the emotions they are meant to convey.</P>
+
+        <H4>Hogwood Steps Out “You Boys Twins?”</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="6:03"
+          turningPointTimecode="6:20"
+          endTimecode="6:29"
+          synopsis="Hogwood drives up and gets out of his car. He asks them if they are twins, and Stack jokes that they are cousins. Hogwood gestures for them to enter the sawmill."
+          objectives={[
+            {
+              character: SinnersCast.Hogwood,
+              explicit: "I need to get more information on who these buyers are.",
+              subtext: "I want to intimidate and demean them."
+            },
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I need to get more information on who this sellers is.",
+              subtext: "I need to maintain my power and upper-hand to complete this deal."
+            },
+            {
+              character: SinnersCast.Stack,
+              explicit: "”",
+              subtext: "”"
+            },
+          ]}
+          conflict="The twins want the sawmill, but Hogwood clearly looks down on them."
+          tactics={[
+            {
+              character: SinnersCast.Hogwood,
+              tactic: "Avoidant of directly answering questions, spits on the ground in front of them."
+            },
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Plays it cool and inquisitive, with slight aggression."
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: "Make a joke “Nah’, we cousins.” Deflects Hogwood’s belittling them with humor."
+            },
+          ]}
+          turningPoint="Hogwood spits on the ground in front of the twins when asked of his name."
+          outcome="The group prepares to enter the sawmill."
+          storyContribution="Smoke reveals that he handles pressure with seriousness, Stack deflects it with humor, and Hogwood has a hatred towards the twins."
+        />
+        <H5>Speak With Actions, Not Words</H5>
+        <P>Ryan Coogler is also a master of bringing life to his characters with actions, not words. Revealing their true character in a visceral way.</P>
+        <P>When asked of his name, Hogwood spits in front of the twins, an action that makes the crowd wince at such great disrespect.</P>
+        <P>We also begin to distinguish how the twins handle tense situations. Smoke takes a more serious tone, while Stack turns to witty humor. Michael B. Jordan <A href="https://youtu.be/s72cBC-v6UE?si=pc4miaJujRCv23NT&t=108">comments on the distinction</A>:</P>
+        <Quote>
+          <b>Smoke</b> wore his trauma differently, he kind of closed up a bit. And <b>Stack</b> was a lot lighter, he’d smile through his pain. He’d smile through his trauma.
+        </Quote>
+        <P>This clear distinction is not by chance, but again, comes from methodical forethought and a deep understanding of characters’ internal world.</P>
       </div>
+
+      {/* <SceneOverview
+          className="my-4"
+          startTimecode=""
+          turningPointTimecode=""
+          endTimecode=""
+          synopsis=""
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "",
+              subtext: ""
+            },
+          ]}
+          conflict=""
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: ""
+            }
+          ]}
+          turningPoint=""
+          outcome=""
+          storyContribution=""
+        /> */}
     </div>
   )
 }

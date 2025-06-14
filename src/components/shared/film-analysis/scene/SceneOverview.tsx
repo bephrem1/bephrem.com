@@ -181,6 +181,12 @@ const SceneOverview: FunctionComponent<Props> = ({
             </tr>
           ))}
 
+          {/* Turning Point */}
+          <tr>
+            <td className="w-[120px] py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-sm font-medium text-neutral-800" style={borderStyle}>Turning Point</td>
+            <td className="py-2.5 px-3 align-top border border-solid border-neutral-200 text-neutral-600 text-sm" style={borderStyle} colSpan={3}>{turningPoint}</td>
+          </tr>
+
           {/* Scene Outcome */}
           <tr>
             <td className="w-[120px] py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-sm font-medium text-neutral-800" style={borderStyle}>Scene Outcome</td>
