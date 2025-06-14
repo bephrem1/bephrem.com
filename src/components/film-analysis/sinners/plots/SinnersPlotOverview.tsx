@@ -1,4 +1,3 @@
-import type { FunctionComponent } from "react";
 import { useEffect, useRef, useState } from "react";
 
 // Add keyframe animations and marker glow styles
@@ -72,9 +71,7 @@ const styles = `
 }
 `;
 
-interface Props { }
-
-const SinnersPlotOverview: FunctionComponent<Props> = () => {
+const SinnersPlotOverview = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [approachingMarkers, setApproachingMarkers] = useState<Set<string>>(new Set());
   const [peakMarkers, setPeakMarkers] = useState<Set<string>>(new Set());

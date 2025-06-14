@@ -10,6 +10,7 @@ import SinnersScoreOverview from "../components/film-analysis/sinners/score/Sinn
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
+import PlotTimeline from "../components/shared/film-analysis/plot/PlotTimeline";
 import SceneOverview from "../components/shared/film-analysis/scene/SceneOverview";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
@@ -300,7 +301,7 @@ const Contents = () => {
           perfecting visuals. Sound is primal & primary.</P>
         <P>Here is an overview of the score, and where each piece of music can be found in the film:</P>
         <SinnersScoreOverview className="mt-4 mb-4" />
-        <P>Just by looking at all the original (and reinterpreted) music above, you can see how explosively creative this film is.</P>
+        <P>Just by looking at all the original (and reinterpreted) music above, you can see how expansively creative this film is.</P>
 
         <H5>Housekeeping <span className="text-neutral-500">(Digital Viewing)</span></H5>
         <P>A digital copy of the film itself can be found on <A href="https://athome.fandango.com/content/browse/details/Sinners/4020075">Fandango at Home</A> (owned by Warner Brothers), <A href="https://www.amazon.com/gp/video/detail/amzn1.dv.gti.cf9ab498-91f9-4f94-80fd-ba46ac6aabd7">Amazon Prime Video</A>,
@@ -329,7 +330,7 @@ const Contents = () => {
             {
               character: SinnersCast.SammieMoore,
               explicit: "I need to attend Sunday morning service & be present so my father can see me.",
-              subtext: "I want my father to console me and tell me it’s ok to pursue my dreams as a musician."
+              subtext: "I want my father to console me and tell me it's ok to pursue my dreams as a musician."
             },
             {
               character: SinnersCast.ReverendMoore,
@@ -341,7 +342,7 @@ const Contents = () => {
           tactics={[
             {
               character: SinnersCast.SammieMoore,
-              tactic: "Quietly walks in to face his father. Eventually realizes he won’t get the consolation he wants, sobs to himself."
+              tactic: "Quietly walks in to face his father. Eventually realizes he won't get the consolation he wants, sobs to himself."
             },
             {
               character: SinnersCast.ReverendMoore,
@@ -355,13 +356,13 @@ const Contents = () => {
         <H5>Shocking the Audience to Attention</H5>
         <P>Ryan Coogler is a master of emotional contrast and pacing. Tastefully taking watchers on a rollercoaster between expectation and reality.</P>
         <P>When Sammie walks up to a beautifully painted white church, nestled in a quiet green field, with children heard singing as he walks up, we expect peace and quiet.</P>
-        <P>But then we notice Sammie’s clothes are tattered, he has a large scar on his face, and his guitar is shattered. As he walks up, we begin to feel 2 emotional extremes, only slightly developed.</P>
-        <P>Sammie enters, and Reverend Moore yells “Sammie!”. The church falls silent. We realize something is seriously wrong. The reverend begins his incantation and we can’t tell if the reverend is going to hurt him or help him.</P>
+        <P>But then we notice Sammie's clothes are tattered, he has a large scar on his face, and his guitar is shattered. As he walks up, we begin to feel 2 emotional extremes, only slightly developed.</P>
+        <P>Sammie enters, and Reverend Moore yells "Sammie!". The church falls silent. We realize something is seriously wrong. The reverend begins his incantation and we can't tell if the reverend is going to hurt him or help him.</P>
 
         <H5>Sound As Emotion</H5>
         <P>Sammie does not say a single word in this scene. Instead his emotional turmoil is conveyed through the score & <A href="https://en.wikipedia.org/wiki/Non-diegetic_insert">non-diegetic</A> sound effects
           (climaxing the turmoil with a bass wobble at <FilmTimecode timecode="3:21" /> — <ScoreTimecode timecode="2:07" scoreItem={SinnersScore.FilídhFireKeepersAndGriots} /> in score).</P>
-        <P><TurningPointTimecode timecode="3:18" /> marks a turning point where Sammie realizes he won’t get the consolation from his father that he wants. At his deepeest point of internal conflict, he clutches his
+        <P><TurningPointTimecode timecode="3:18" /> marks a turning point where Sammie realizes he won't get the consolation from his father that he wants. At his deepeest point of internal conflict, he clutches his
           shattered guitar as his hand shakes, then the scene cuts to black.</P>
 
         <H5>Precise Direction On Movements</H5>
@@ -369,20 +370,115 @@ const Contents = () => {
         <P>This scene features 2 elements that would have required precise direction and forethought to materialize:</P>
         <OrderedList>
           <ListItem>The pacing of Sammie entering the church (to hear the children singing)</ListItem>
-          <ListItem>The match cuts to Sammie’s final stand with Remmick during Reverend Moore’s incantation</ListItem>
+          <ListItem>The match cuts to Sammie's final stand with Remmick during Reverend Moore's incantation (for the jump scares)</ListItem>
         </OrderedList>
 
-        <P>For the first, Sammie’s pacing of action looks like this:</P>
-        <UnorderedList>
-          <ListItem><FilmTimecode timecode="1:52" /> Stops the car. <span className="text-neutral-500 text-sm">(audience thinks: “wow it’s so peaceful and quiet here. nature.”)</span></ListItem>
-          <ListItem><FilmTimecode timecode="1:57" /> Opens the car door. <span className="text-neutral-500 text-sm">(audience thinks: “what happened to him?”)</span></ListItem>
-          <ListItem><FilmTimecode timecode="2:16" /> Waits at the church door. <span className="text-neutral-500 text-sm">(audience gets a chance to hear the children singing)</span></ListItem>
-          <ListItem><FilmTimecode timecode="2:20" /> Opens the church door.</ListItem>
-        </UnorderedList>
-        <P>This emotional landscaping had to have been planned for, either implicitly or explicitly (unless there was great luck in the cutting room).</P>
+        <P>For the first, Sammie's pacing of action looks like this:</P>
+        <TimecodeTable>
+          <TimecodeTableRow
+            timecode="1:52"
+            content={<>Stops the car. <span className="text-neutral-500">(audience thinks: "wow it's so peaceful and quiet here. nature.")</span></>}
+          />
+          <TimecodeTableRow
+            timecode="1:57"
+            content={<>Opens the car door. <span className="text-neutral-500">(audience thinks: "what happened to him?")</span></>}
+          />
+          <TimecodeTableRow
+            timecode="2:16"
+            content={<>Waits at the church door. <span className="text-neutral-500">(audience gets a chance to hear the children singing)</span></>}
+          />
+          <TimecodeTableRow
+            timecode="2:20"
+            content="Opens the church door."
+          />
+        </TimecodeTable>
+
+        <P>For the second, the match cuts:</P>
+        <TimecodeTable>
+          <TimecodeTableRow
+            timecode="2:40"
+            content="Reverend Moore's hand open to the side, Remmick's arms wide open."
+          />
+          <TimecodeTableRow
+            timecode="2:53"
+            content="Reverend Moore's hands wide open, Remmick's arms with the same open gesture."
+          />
+          <TimecodeTableRow
+            timecode="3:10"
+            content="Reverend Moore's hands on Sammie's shoulders, Remmick grabbing his shoulder during the final battle."
+          />
+          <TimecodeTableRow
+            timecode="3:25"
+            content="On the word 'god' and a scream that sounds similar."
+          />
+          <TimecodeTableRow
+            timecode="3:27"
+            content="Sammie turns his head to his right, revealing the slash marks, a cut to Remmick inflicting the wound, slashing in the same direction."
+          />
+        </TimecodeTable>
+
+        <P>This emotional landscaping and gradual revelation of information had to have been planned for, either implicitly or explicitly (unless there was great luck in the cutting room).</P>
+
+        <H5>Cinematography</H5>
+        <P>A small book could be written on the cinematography of this film. Cinematography is a form of information compression. It is the art of conveying emotion and information, as effectively
+          as possible, to the conscious and subconscious of the watcher.</P>
+        <P>Many frames in this scene see the crucifix as a symbol in frames at various angles (initially swooping into the church, Sammie & his father interacting, Sammie clutching his guitar, etc).</P>
+        <P>Also notable is the contrast between the characters' dark skin and the white church walls (which is especially noticible a few scenes later when Sammie picks up his guitar).</P>
+        <P>These were intentional art direction decisions <span className="text-neutral-500">(there’s a Ryan Coogler interview on it somewhere)</span>. Potentially to draw a
+          contrast between the heavens and the wordly lives of the characters we will observe later.</P>
 
         <H3>Act I: Getting the Band Together</H3>
-        <P>Lorem.</P>
+        <P>After the opening scene, we begin Act I, which consists of the Smokestack Twins recruiting key members of their juke joint staff. Key turning points in the act
+          are as follows:
+        </P>
+      </div>
+      <PlotTimeline
+        startMinute={3}
+        endMinute={44}
+        rows={[
+          {
+            label: "Recruiting Juke Staff",
+            subLabel: "Act I",
+            items: [
+              { atMinute: 7, label: "Juke Joint Purchased" },
+              { atMinute: 9, label: "Sammie Joins", bump: true },
+              { atMinute: 19, label: "Grace Joins" },
+              { atMinute: 21, label: "Sammie Plays", bump: true },
+              { atMinute: 25, label: "Delta Slim Joins" },
+              { atMinute: 33, label: "Cornbread Joins" },
+              { atMinute: 40, label: "Annie Joins" },
+              { atMinute: 44, label: "Remmick Kills Bert", description: "End of Act I", bump: true },
+            ],
+          }
+        ]}
+      />
+
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H4>Sammie Picking Cotton in The Morning</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="3:40"
+          turningPointTimecode="4:16"
+          endTimecode="4:24"
+          synopsis="Sammie picks cotton early in the morning at his plantation. He finishes meeting his quota as others arrive to begin working."
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "I want to finish picking my quota of cotton early. Exchange kind words with Beatrice.",
+              subtext: "I want to create room for my pursuit of music. Conceal this desire from Beatrice to keep my father from hearing. Protect my passions."
+            },
+          ]}
+          conflict="Sammie has to meet his quota to have time to pursue music. Beatrice pokes fun with him about his music."
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: "Meets his quota early, has a polite exchange with Beatrice."
+            }
+          ]}
+          turningPoint="The father catches him and begins his incantation"
+          outcome="Sammie now has time to pursue music."
+          storyContribution="We get an introduction to the sprawling flat land of the Mississippi Delta, the poverty of sharecroppers (bare feet), and charm of Sammie."
+        />
       </div>
     </div>
   )
@@ -713,6 +809,31 @@ const TurningPointTimecode = ({ timecode, scoreItem }: { timecode: string; score
     <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-sm whitespace-nowrap">
       {pillContent}
     </span>
+  );
+};
+
+const TimecodeTable = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="w-full overflow-x-auto my-4">
+      <table className="w-full border-collapse border border-neutral-300">
+        <tbody>
+          {children}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+const TimecodeTableRow = ({ timecode, content }: { timecode: string; content: React.ReactNode }) => {
+  return (
+    <tr className="border-b border-neutral-300 last:border-b-0">
+      <td className="py-2 px-4 align-top border-r border-neutral-300">
+        <FilmTimecode timecode={timecode} />
+      </td>
+      <td className="py-2 px-4 text-neutral-950 [&>span.text-neutral-500]:text-neutral-500 [&>span.text-neutral-500]:text-sm">
+        {content}
+      </td>
+    </tr>
   );
 };
 
