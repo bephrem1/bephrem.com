@@ -562,7 +562,7 @@ const Contents = () => {
         <P>I won’t directly point out all of these (because there are a lot), but at <FilmTimecode timecode="5:56" /> bass kicks in to build tension when Hogwood’s car appears. The score “hugs” around key dramatic beats in every scene,
           embodying different characters and the emotions they are meant to convey.</P>
 
-        <H4>Hogwood Steps Out “You Boys Twins?”</H4>
+        <H4>Hogwood Steps Out <span className="text-neutral-500">(“You Boys Twins?”)</span></H4>
         <SceneOverview
           className="my-4"
           startTimecode="6:03"
@@ -614,31 +614,113 @@ const Contents = () => {
         </Quote>
         <P>This clear distinction is not by chance, but again, comes from methodical forethought and a deep understanding of characters’ internal world.</P>
 
-        <H4>In the Sawmill “Klan Don’t Exist No More”</H4>
+        <H4>In the Sawmill <span className="text-neutral-500">(“Klan Don’t Exist No More”)</span></H4>
         <SceneOverview
           className="my-4"
-          startTimecode=""
-          turningPointTimecode=""
-          endTimecode=""
-          synopsis=""
+          startTimecode="6:30"
+          turningPointTimecode="7:29"
+          endTimecode="7:55"
+          synopsis="Hogwood shows them inside the sawmill. Stack asks Hogwood why the floors are washed. After a potential confrontation, Stack gives Hogwood the money. Smoke warns him to never come back."
+          objectives={[
+            {
+              character: SinnersCast.Hogwood,
+              explicit: "I need to show the buyers around the sawmill & conceal why I am selling it to them.",
+              subtext: "I want to continue belittling them. In reality I’m going to return to kill them later."
+            },
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I need to figure out why the floors were cleaned. I need to warn them to never come back.",
+              subtext: "I need to maintain my power and control over the transaction."
+            },
+            {
+              character: SinnersCast.Stack,
+              explicit: "I will help my brother diligence and close this deal.",
+              subtext: "I need to back up my brother and keep him safe. He’ll take the lead & I’ll be right behind."
+            },
+          ]}
+          conflict="Hogwood is witholding information from them, and continuing to belittle them. The twins want to restore their sense of respect and close the deal."
+          tactics={[
+            {
+              character: SinnersCast.Hogwood,
+              tactic: "Spits on the floor in front of the twins. Conceals his true plans to kill them."
+            },
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Snaps back at Hogwood, almost resorts to violence to restore his sense of respect. Purchases the mill and warns Hogwood to never come back."
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: "Encircles Hogwood, clutching his knife. Hands Hogwood a bag of money with a smile."
+            },
+          ]}
+          turningPoint="The twins almost resort to violence, leading us to believe a fight is about to break out. Instead, Stack hands Hogwood the money to purchase the mill."
+          outcome="The twins now own the sawmill."
+          storyContribution="We get a sense for how the twins move as a unit to resolve conflict (and how they are quick to use deadly force). Hogwood’s ill intentions for the twins is also foreshadowed."
+        />
+        <H5>Drama, Anticipation, & Pacing</H5>
+        <P>This film is an excellent example of planting and pacing drama to create a constant sense of tension and anticipation. You think one thing is going to happen, but the contrary happens. This is what keeps an audience
+          on the edge of their seat, a stream of <i>meaning</i> coming their way.</P>
+        <P>Smoke asking <i>“Yall’ wash these floors”</i> sets up a dramatic question that is resolved at the end of the film. In reality, the sawmill is a trap and Hogwood will return to kill them (and everyone else involved in the juke).</P>
+        <P>We initially think the twins are going to resort to violence, then when the score turns at <FilmTimecode timecode="7:29" />, we realize they are just going to purchase the mill.</P>
+
+        <H4>Sammie Picks Up His Guitar from the Church <span className="text-neutral-500">(“You Keep Dancin’ With the Devil...”)</span></H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="7:55"
+          turningPointTimecode="9:04"
+          endTimecode="9:53"
+          synopsis="Sammie visits his father’s church to pick up his guitar. He reads a bible passage, then gestures to leave. His father warns him “You keep dancin’ with the devil, one day it’s gonna follow you home”, then Sammie exits to the sound of Smoke and Stack outside."
           objectives={[
             {
               character: SinnersCast.SammieMoore,
-              explicit: "",
-              subtext: ""
+              explicit: "I need to pick up my guitar and leave in time to meet the twins.",
+              subtext: "I need to protect my dreams from my father and show him I am diligent."
+            },
+            {
+              character: SinnersCast.ReverendMoore,
+              explicit: "I want to give my son his guitar and encourage him to come to church tomorrow.",
+              subtext: "I want to steer my son away from the devil & ruin."
             },
           ]}
-          conflict=""
+          conflict="Sammie wants his guitar so he can go play music, his father wants to discourage him from playing in the twins juke that night."
           tactics={[
             {
               character: SinnersCast.SammieMoore,
-              tactic: ""
+              tactic: "Shows his father that he is diligent and has memorized the sermon passage. Quietly listens to his father’s warning, takes it to heart, and exits."
+            },
+            {
+              character: SinnersCast.ReverendMoore,
+              tactic: "Coaches his son to read the sermon passage, warns him about playing in the juke that night."
             }
           ]}
-          turningPoint=""
-          outcome=""
-          storyContribution=""
+          turningPoint="Reverend Moore challenges his son with “Where you got to be that’s more important then bein’ in the House of God?” Sammie responds informing his father that he has been working hard all week."
+          outcome="Sammie now has his guitar and is with the Smokestack Twins."
+          storyContribution="We now have the conflict between Sammie and his father fully framed in our minds, as well as the object of Sammie’s quest in his hands (his guitar). We know what Sammie wants, and what is pulling him away from it."
         />
+        <H5>Notes</H5>
+        <TimecodeTable>
+          <TimecodeTableRow
+            timecode="8:23"
+            content="A low cello plays a mesmerizing tone, as Sammie’s guitar lay in golden light for him to take. The guitar is a symbol of Sammie’s call to go on a quest."
+          />
+          <TimecodeTableRow
+            timecode="8:55"
+            content={<P>Sammie closes the bible and recites the verse from memory, surprising his father. Again, brilliance from Coogler in direction to <i>show</i> Sammie’s diligence rather than relegating it to dialog.</P>}
+          />
+          <TimecodeTableRow
+            timecode="9:06"
+            content={<P>Reverend Moore presents to Sammie his central challenge in 1 punchy line. <i>“Where you got to be that’s more important then bein’ in the House of God?”</i> More of Cooglers masterful and punchy writing
+              that generates lines that will be memorable during and after the film.</P>}
+          />
+          <TimecodeTableRow
+            timecode="9:33"
+            content={<P>and again with <i>“Son...you keep dancin’ with the devil. One day it’s gonna follow you home.”</i></P>}
+          />
+          <TimecodeTableRow
+            timecode="9:46"
+            content="A wonderfully timed reaction shot on Sammie who takes the words to heart, then pauses long enough for the editor to layer in the Twins’ car arriving and honking."
+          />
+        </TimecodeTable>
       </div>
 
       {/* <SceneOverview
