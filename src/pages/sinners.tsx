@@ -428,7 +428,7 @@ const Contents = () => {
           contrast between the heavens and the wordly lives of the characters we will observe later.</P>
 
         <H3>Act I: Getting the Band Together</H3>
-        <P>After the opening scene, we begin Act I, which consists of the Smokestack Twins recruiting key members of their juke joint staff. Key turning points in the act
+        <P>After the opening scene, we begin Act I, which consists of the Smoke-Stack Twins recruiting key members of their juke joint staff. Key turning points in the act
           are as follows:
         </P>
       </div>
@@ -694,9 +694,21 @@ const Contents = () => {
             }
           ]}
           turningPoint="Reverend Moore challenges his son with “Where you got to be that’s more important then bein’ in the House of God?” Sammie responds informing his father that he has been working hard all week."
-          outcome="Sammie now has his guitar and is with the Smokestack Twins."
+          outcome="Sammie now has his guitar and is with the Smoke-Stack Twins."
           storyContribution="We now have the conflict between Sammie and his father fully framed in our minds, as well as the object of Sammie’s quest in his hands (his guitar). We know what Sammie wants, and what is pulling him away from it."
         />
+        <H5>About More Than Just Music</H5>
+        <P>Sammie & his father’s conflict is about more than just music, in his <A href="https://youtu.be/0mU_2VWpsmQ?si=dc9LqjeiqfkALSWm&t=624">interview with Hannah Flint</A>, Ryan Coogler says:</P>
+        <Quote>
+          <b>It was all about money.</b> It was the devil’s music, because when it was time for offering, the congregation didn’t have as much money because they spent it on drinks the night before.
+          The same people were going to the juke joint, before they came to the church. ... It wasn’t the devil’s music because they were swiveling their hips.
+        </Quote>
+        <P>He continues:</P>
+        <Quote>
+          In blues there’s no mind, body, and metaphysical separation. And in the church concept there often is. The flesh is the enemy. ... In blues the flesh is a part of you. ... Like, I hurt, my back hurts when I pick cotton all day,
+          my feet hurt, I’m hungry. I’m sexy, I want this woman. She wants me.
+        </Quote>
+
         <H5>Notes</H5>
         <TimecodeTable>
           <TimecodeTableRow
@@ -721,6 +733,41 @@ const Contents = () => {
             content="A wonderfully timed reaction shot on Sammie who takes the words to heart, then pauses long enough for the editor to layer in the Twins’ car arriving and honking."
           />
         </TimecodeTable>
+
+        <H4>Sammie Rides with Smoke and Stack</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="10:10"
+          turningPointTimecode="10:41"
+          endTimecode="10:55"
+          synopsis="Sammie rides with Smoke and Stack to pick up their other truck. Smoke lets Sammie know that Chicago is not as promising as he once thought."
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "",
+              subtext: ""
+            },
+            {
+              character: SinnersCast.Smoke,
+              explicit: "",
+              subtext: ""
+            },
+          ]}
+          conflict=""
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: ""
+            },
+            {
+              character: SinnersCast.Smoke,
+              tactic: ""
+            },
+          ]}
+          turningPoint=""
+          outcome="Sammie gets a sense that Chicago may not be as welcoming a place as he once thought."
+          storyContribution="We get an initial taste of why the Smoke-Stack Twins are back, there are some lingering tensions they hold about Chicago. We also continue to see Sammie as a figure who receives mentorship from those around him."
+        />
       </div>
 
       {/* <SceneOverview
