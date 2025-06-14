@@ -135,6 +135,7 @@ const Contents = () => {
           <ListItem>Ryan Coogler films <A href="https://www.youtube.com/watch?v=78Ru62uFM0s">promo video with Kodak</A> where he's just your homie schooling you on theater projection formats, it goes viral.</ListItem>
           <ListItem>It is single-handedly breathing life into a dying theater industry. (I literally joined AMC A-List and go every weekend after watching it)</ListItem>
           <ListItem>It's the first film to use Ultra Panavision 70 and IMAX 65mm in the same film.</ListItem>
+          <ListItem>Miles Caton has never acted in a feature film before. He even <A href="https://youtu.be/ExF7t5jrT3o?si=0TSo2IMzZUk4WHZn&t=18">learned the guitar</A> for the leading role.</ListItem>
         </UnorderedList>
         <P>Great works of art like this come once every few decades. It's so incredibly rare, because it's nearly impossible to align talent and history like this.</P>
         <P>Let's begin talking about the story.</P>
