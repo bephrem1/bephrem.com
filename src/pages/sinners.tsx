@@ -598,7 +598,7 @@ const Contents = () => {
             },
             {
               character: SinnersCast.Stack,
-              tactic: "Make a joke “Nah’, we cousins.” Deflects Hogwood’s belittling them with humor."
+              tactic: "Make a joke “Nah’, we cousins.” Deflects Hogwood’s belittling with humor."
             },
           ]}
           turningPoint="Hogwood spits on the ground in front of the twins when asked of his name."
@@ -613,6 +613,32 @@ const Contents = () => {
           <b>Smoke</b> wore his trauma differently, he kind of closed up a bit. And <b>Stack</b> was a lot lighter, he’d smile through his pain. He’d smile through his trauma.
         </Quote>
         <P>This clear distinction is not by chance, but again, comes from methodical forethought and a deep understanding of characters’ internal world.</P>
+
+        <H4>In the Sawmill “Klan Don’t Exist No More”</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode=""
+          turningPointTimecode=""
+          endTimecode=""
+          synopsis=""
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "",
+              subtext: ""
+            },
+          ]}
+          conflict=""
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: ""
+            }
+          ]}
+          turningPoint=""
+          outcome=""
+          storyContribution=""
+        />
       </div>
 
       {/* <SceneOverview
