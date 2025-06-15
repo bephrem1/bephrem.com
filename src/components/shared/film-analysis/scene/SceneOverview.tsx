@@ -1,4 +1,4 @@
-import type { FunctionComponent } from "react";
+import type { FunctionComponent, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 import type { CastItem } from "../../../film-analysis/sinners/cast";
 import CastMember from "../cast/CastMember";
@@ -15,13 +15,13 @@ interface SceneTactic {
 }
 
 interface Props {
-  synopsis: string;
+  synopsis: string | ReactNode;
   objectives: SceneObjective[];
   conflict: string;
   tactics: SceneTactic[];
   turningPoint: string;
   outcome: string;
-  storyContribution: string;
+  storyContribution: string | ReactNode;
   startTimecode?: string;
   turningPointTimecode?: string | string[];
   endTimecode?: string;
@@ -128,7 +128,9 @@ const SceneOverview: FunctionComponent<Props> = ({
           {/* Synopsis */}
           <tr>
             <td className="w-[120px] py-2.5 px-3 align-top bg-neutral-50 border border-solid border-neutral-200 text-sm font-medium text-neutral-800" style={borderStyle}>Synopsis</td>
-            <td className="py-2.5 px-3 align-top border border-solid border-neutral-200 text-neutral-600 text-sm" style={borderStyle} colSpan={3}>{synopsis}</td>
+            <td className="py-2.5 px-3 align-top border border-solid border-neutral-200 text-neutral-600 text-sm" style={borderStyle} colSpan={3}>
+              {typeof synopsis === 'string' ? synopsis : synopsis}
+            </td>
           </tr>
 
           {/* Scene Objective */}

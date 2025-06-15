@@ -224,6 +224,7 @@ export const SinnersCast = {
 	LisaChow,
 	Mary,
 	Pearline,
+	Remmick,
 	ReverendMoore,
 	SammieMoore,
 	SammieMooreOlder,

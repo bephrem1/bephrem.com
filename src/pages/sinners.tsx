@@ -333,7 +333,7 @@ const Contents = () => {
           <ListItem>Culture is immortal, it will always find a way to survive attack.</ListItem>
         </UnorderedList>
         <P>There are also strong historical notes on ownership & racism, Ryan Coogler in <A href="https://youtu.be/0mU_2VWpsmQ?si=vZNmPtdGcGTFDXah&t=431">this interview with Hanna Flint</A> comments:</P>
-        <Quote>What if the vampires didn't show up, what happens to those people? ... The reality is...everybody at that juke was gonna be dead anyway. ... The was f***ed essentially the moment they bought the mill.</Quote>
+        <Quote>What if the vampires didn't show up, what happens to those people? ... The reality is...everybody at that juke was gonna be dead anyway. ... They was f***ed essentially the moment they bought the mill.</Quote>
         <P>Which is a reference to the slew of laws and regulations at the time that disadvantaged blacks from owning and retaining property, & truly having a path to real freedom. It was always
           a losing battle in a game you didn't control the rules to.</P>
         <P>Ryan Coogler also makes a direct comment on his personal tie to the idea of fatherhood in a <A href="https://youtu.be/1lRAnlyj5YM?si=GhZ7b0_Kj5vvSqR0&t=2905">7PM in Brooklyn podcast episode</A>:</P>
@@ -946,7 +946,7 @@ const Contents = () => {
           ... and they’re completely identical. ... And I’m lookin’, and I say “Ay man, I notice y’all touching each other, close to each other ... <b>When y’all sit side-by-side, like that, is that for me? Or is that for y’all?”</b> <b>They say <i>“it’s
             for you”</i></b>. and I’m like “So you don’t need to be next to each other?” and they’re like “Nah. ... But it freaks people out when we’re not.”
         </Quote>
-        <P>The twins only split up when they want to be more of a threat to others, for intimidation.</P>
+        <P>The twins only split up when they want to be more of a threat to others, for intimidation. And individually, their character can be more distinctly developed in later scenes.</P>
 
         <H4>Watch My Truck</H4>
         <SceneOverview
@@ -1293,8 +1293,8 @@ const Contents = () => {
           storyContribution="We realize that Delta Slim is a comical character, who has been seduced by a bottle of beer. And probably has a drinking problem."
         />
         <H5>Ice Cold Beer vs Delta Slim</H5>
-        <P>This is one of my favorite scenes in the movie. It is full of impactful moments driven by the score that need no words to explain them, but still pack a punch and get the crowd laughing.</P>
-        <P>When you run out of creativity, you write dialog. When you’re full of creativity, you write a scene like this.</P>
+        <P>This is one of my favorite scenes in the movie. At <FilmTimecode timecode="24:52" /> you can <i>feel</i> how crisp and ice cold that beer is when Stack opens it and Slim reacts. It’s full of impactful
+          turns of dialogue, punctuated by the score taking the wheel at <FilmTimecode timecode="25:18" /> with the orchestra crescendoing to the final dramatic beat.</P>
 
         <H5>Slim’s Importance in Cast Design</H5>
         <P>The order in which characters were recruited into the juke’s staff is important. The order is:</P>
@@ -1367,7 +1367,7 @@ const Contents = () => {
           />
           <TimecodeTableRow
             timecode="28:31"
-            content={<P>Ryan Coogler writes in the ironic line <i>“Rot in hell, Stack,” which he ends up doing at <FilmTimecode timecode="1:20:41" /> when Mary kills him.</i></P>}
+            content={<P>Ryan Coogler writes in the ironic line <i>“Rot in hell, Stack,”</i> which he ends up doing at <FilmTimecode timecode="1:20:41" /> when Mary kills him.</P>}
           />
         </TimecodeTable>
 
@@ -1375,31 +1375,290 @@ const Contents = () => {
         <SceneOverview
           className="my-4"
           startTimecode="28:52"
-          turningPointTimecode={[]}
-          endTimecode=""
-          synopsis=""
+          turningPointTimecode={["29:20", "30:08", "30:36", "31:06"]}
+          endTimecode="32:07"
+          synopsis={<p className="leading-5">The trio crosses a <A href="https://en.wikipedia.org/wiki/Chain_gang">chaingang</A>, before Delta Slim begins a heartfelt monologue about his friend Rice who was lynched.</p>}
           objectives={[
             {
-              character: SinnersCast.SammieMoore,
-              explicit: "",
-              subtext: ""
+              character: SinnersCast.DeltaSlim,
+              explicit: "Tell them the story of my friend Rice.",
+              subtext: "Be careful and protect Sammie from the harsh truth."
             },
           ]}
-          conflict=""
+          conflict="∅"
           tactics={[
             {
-              character: SinnersCast.SammieMoore,
-              tactic: ""
+              character: SinnersCast.DeltaSlim,
+              tactic: "∅"
             }
           ]}
-          turningPoint=""
-          outcome=""
-          storyContribution=""
+          turningPoint="During Delta Slim’s telling of the story, the mood turns from lighthearted to tragic."
+          outcome="Sammie is shaken by the story."
+          storyContribution="An accurate and moving portraiture of black suffering in the American South is conveyed."
         />
-        <P>This scene was almost cut from the movie due to it’s length and biting racial commentary, but it’s important that it stayed in. It was one of the most moving scenes for some people.</P>
+        <H5>Crowd Reaction</H5>
+        <P>This scene was almost cut from the movie due to it’s length and biting racial commentary, but it’s important that it stayed in. It was one of the most moving scenes for some.</P>
+        <P>The reaction to this scene in Clarksdale, versus San Francisco, versus Oakland was very different. In Clarksdale the crowd would loudly laugh then fell dead quiet in silent recognition. In Oakland a few laughs then silence.
+          In San Francisco mostly silent throughout. Each silence had a different quality to it, as I glanced around.</P>
         <P>On my first few viewings I couldn’t discern the words through the strong southern accents, but later pieced the commentary together.</P>
-        <H5>Black Trauma</H5>
-        <P>My visit to Clarksdale was one of the first times that I truly understood black culture, in a visceral way.</P>
+
+        <H5>Racial Trauma in the South</H5>
+        <P>My visit to Clarksdale was one of the first times that I truly got an understanding of black culture, in a visceral way. When I arrived at my Airbnb at 1am (Thursday, May 29th), these paintings looked back at me in the dark:</P>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/clarksdale/paintings-1",
+            "/film-analysis/films/sinners/clarksdale/paintings-2",
+            "/film-analysis/films/sinners/clarksdale/paintings-3",
+            "/film-analysis/films/sinners/clarksdale/paintings-4",
+            "/film-analysis/films/sinners/clarksdale/paintings-5",
+          ]}
+          imageExts={["jpg", "jpg", "jpg", "jpg", "jpg"]}
+          captions={[
+            "Painting by my bedside, it felt like the eyes were staring at me as I went to bed.",
+            "A large oak tree, a graveyard, the farmland.",
+            "A musician looks out onto the cotton fields at sunset.",
+            "A small fading light in the middle, surrounded by pitch-black darkness, surrounded by a large halo of light.",
+            "Front entrance.",
+          ]}
+          height={500}
+          showArrows
+          squareCrop
+        />
+        <P>I got a sense for the silent suffering that had taken place in the land I was in. Late into the night I began doing research into the various laws and regulations that robbed black southerners of their land and
+          freedom.</P>
+        <UnorderedList>
+          <ListItem>Heirs’ Property & Partition-By-Sale Laws</ListItem>
+          <ListItem>Tax Lien and Debt Foreclosure Laws</ListItem>
+          <ListItem>Redlining & Denial of Credit</ListItem>
+          <ListItem>Employment Restrictions & Fines</ListItem>
+        </UnorderedList>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/clarksdale/parchman-farm-chain-gang",
+            "/film-analysis/films/sinners/clarksdale/laura-nelson-and-son-lynching",
+            "/film-analysis/films/sinners/clarksdale/rocky-ford-lynching",
+          ]}
+          imageExts={["jpg", "jpg", "jpg"]}
+          captions={[
+            "Parchman Farm chain gang, 1911",
+            "Laura Nelson and Son Lynching, 1911",
+            "Rocky Ford Lynching, 1925",
+          ]}
+          height={500}
+          showArrows
+          squareCrop
+        />
+        <P>When Ryan Coogler says <i>“They was f***ed essentially the moment they bought the mill.”</i>, he was talking about this inescapable oppression spanning almost 3 centuries.</P>
+        <P>And you can’t make a movie that takes these things head-on (people don’t want a grim history lesson, they want entertainment). You bury these ideas deep into the symbols and structure of the plot.</P>
+
+        <H5>Delroy Lindo’s Improv</H5>
+        <P>Delta Slim breaking into song at <FilmTimecode timecode="31:41" /> was actually improvised in the moment. From <A href="https://dangerbowie.com/2025/04/22/8-sinners-film-fun-facts">a post</A> by Desiree Bowie:</P>
+        <Quote>
+          As the weight of the memory overtakes him, Delta begins to hum a slow, aching and raw tune.
+          In that moment, grief becomes melody, and the blues is born, right before our eyes.
+        </Quote>
+
+        <H4>Recruiting Cornbread</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="32:08"
+          turningPointTimecode={["32:50", "33:05", "33:16"]}
+          endTimecode="33:26"
+          synopsis="Stack pulls up to Cornbread picking cotton in the field. He recruits Cornbread to join."
+          objectives={[
+            {
+              character: SinnersCast.Cornbread,
+              explicit: "I need to deflect Stack’s plans and focus on meeting my quota.",
+              subtext: "∅"
+            },
+            {
+              character: SinnersCast.Stack,
+              explicit: "I need to recruit Cornbread to join the juke.",
+              subtext: "I am crafty and charming."
+            },
+          ]}
+          conflict="Stack wants Cornbread to work for the juke that night, Cornbread wants to continue working on meeting his quota for the day."
+          tactics={[
+            {
+              character: SinnersCast.Cornbread,
+              tactic: "Deflecting Stack’s proposal. Prepares to fight Stack for insulting his wife."
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: "Disrespects Cornbread then bribes him into working for him."
+            }
+          ]}
+          turningPoint="Stack offers Cornbread money to work for him."
+          outcome="Cornbread joins the crew."
+          storyContribution="This is the first scene where Stack uses money to coerce others to do his bidding. Cornbread is introduced as a comical character who is commanded by his wife."
+        />
+        <P><FilmTimecode timecode="32:14" /> features the second shot in the film of bare feet, to emphasize the poverty at the time.</P>
+        <H5>“Well, F**k Yo Wife Too”</H5>
+        <P>This was the most disrespectful moment of the film, and yielded the 2nd largest laugh at <FilmTimecode timecode="33:16" /> from the audience (next to Delta Slim’s <i>“I think I just s**t
+          myself”</i> at <FilmTimecode timecode="1:27:56" />).</P>
+
+        <H5>Transition From Slim’s Humming</H5>
+        <P>Initially the transition from Delta Slim’s hum to the shot of the field played Slim’s groaning <i>“Ahh!”</i> as the field was visible (opening weekend). I believe they rearranged the shot to stay on Slim
+          a little longer so the <i>“Ahh!”</i> could finish, before cutting to the shot of the field. I was initially thinking it was a bit weird he was making that noise while I was looking at a field.
+        </P>
+
+        <H4>Outside Annie’s Shack</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="33:26"
+          turningPointTimecode={["34:17", "35:25"]}
+          endTimecode="35:46"
+          synopsis="Smoke visits Annie’s shack. He leaves flowers at his passed son’s grave. Annie walks out and they exchange words."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I want Annie to cook for the juke.",
+              subtext: "I miss my son and I miss Annie."
+            },
+            {
+              character: SinnersCast.Annie,
+              explicit: "I want to figure out why Smoke is here.",
+              subtext: "I miss Smoke and am angry he went away at an important time."
+            },
+          ]}
+          conflict="Smoke left Annie and their son died."
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Avoidant towards Annie. Gently addresses why he has returned."
+            },
+            {
+              character: SinnersCast.Annie,
+              tactic: "Prods Smoke about why he is back."
+            }
+          ]}
+          turningPoint="Annie doesn’t believe that Smoke bought the mill with clean money."
+          outcome="Smoke walks to meet Annie in her shack."
+          storyContribution="It is revealed to us that Smoke’s son has passed away. We see the first sentimental moment from Smoke. Annie hints that the twins have earned their money through illicit means. This sets up a central theme of the film: fatherhood."
+        />
+
+        <H4>Inside Annie’s Shack</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="35:46"
+          turningPointTimecode={["36:12", "36:58", "37:05", "37:21", "37:40", "39:30", "39:57", "40:34"]}
+          endTimecode="40:52"
+          synopsis="Smoke and Annie talk in the shack. Smoke comments on Annie’s hoodoo practices. Annie blesses Smoke’s amulet. They make love."
+          objectives={[
+            {
+              character: SinnersCast.Annie,
+              explicit: "I want to figure out why Smoke is here.",
+              subtext: "I miss Smoke."
+            },
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I want Annie to cook for the juke.",
+              subtext: "I miss Annie."
+            },
+          ]}
+          conflict="Smoke wants Annie to cook for the juke. Annie is angry Smoke has returned after abandoning the family."
+          tactics={[
+            {
+              character: SinnersCast.Annie,
+              tactic: "Is cold towards Smoke. Blesses Smoke’s amulet, embraces him."
+            },
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Disparages Annie’s hoodoo practices, eventually tells her he loves her. Makes love to her."
+            }
+          ]}
+          turningPoint="There are many turning points, the most dramatic being the scene ending in sex."
+          outcome="Annie joins the juke staff as a cook."
+          storyContribution="Annie’s practice of hoodoo is revealed, as well as it potentially having protected Smoke. We further reinforce the fact that Smoke’s money may be “curse money” illicitly gained. Smokes love of power & money is emphasized."
+        />
+        <H5>Hoodoo</H5>
+        <P>In this scene Smoke mocks Annie’s interest in hoodoo, but later her amulet will save his life in the Act IV battle with Stack (at <FilmTimecode timecode="1:52:36" />).</P>
+        <P>This will tie into a larger thematic point of Protestant Christianity being forced upon slaves, various religions being their original practice, which pops up in his <A href="https://youtu.be/0mU_2VWpsmQ?si=akQHPTINgQK4M3CC&t=534">Hanna Flint interview</A>.</P>
+
+        <H5>Mickey Mousing</H5>
+        <P>Great films have the visuals <i>married</i> to the score. They ebb and flow, trading control of narrative drive. A more minor interplay happens at <FilmTimecode timecode="38:28" />, when the plucking of the guitar perfectly matches
+          the 3 strikes of Annie’s matches. This is a scoring technique called <A href="https://en.wikipedia.org/wiki/Mickey_Mousing"><i>Mickey Mousing</i></A>.</P>
+        <P>It is used later when Mary stomps back into the juke after becoming a vampire at <FilmTimecode timecode="1:13:36" />.</P>
+
+        <H5>Sex Scenes</H5>
+        <P>There are 2 sex scenes in the film, Smoke & Annie’s at <FilmTimecode timecode="39:52" /> which is more explicit, and Stack & Mary’s <FilmTimecode timecode="1:18:26" /> which is more at a distance. These acutally serve a functional purpose to increase
+          the emotional range the audience experiences.</P>
+        <P>Experiencing discomfort, while still being drawn in. The more emotions (rooted in truth, not fabricated), with proper pace, the higher their highs and lower the lows, the better the film.</P>
+
+        <H4>Remmick Visits Joan & Bert</H4>
+        <Image
+          path="/film-analysis/films/sinners/stills/joan-and-berts-shack"
+          ext="jpg"
+          alt="Opening scene in Sinners, Sammie Moore entering his father's church, in tatters and distraught, clutching the neck of his shattered guitar."
+          width="100%"
+          optimize={false}
+          inspectable
+          style={{ marginTop: "12px", marginBottom: "12px" }}
+        />
+        <SceneOverview
+          className="my-4"
+          startTimecode="41:37"
+          turningPointTimecode={["41:50", "42:07", "42:23"]}
+          endTimecode="42:36"
+          synopsis="Remmick crash lands on Joan & Bert’s porch in a state of injury and confusion. He offers them gold to shelter him."
+          objectives={[
+            {
+              character: SinnersCast.Remmick,
+              explicit: "I need to get shelter from the Indians that are after me.",
+              subtext: "I want to get inside their house so I can kill them."
+            },
+            {
+              character: SinnersCast.Bert,
+              explicit: "I need to figure out who this guy is.",
+              subtext: "∅"
+            },
+            {
+              character: SinnersCast.Joan,
+              explicit: "I need to figure out who this guy is.",
+              subtext: "∅"
+            },
+          ]}
+          conflict="Remmick wants to get inside Joan and Bert’s house to hide from Indians that are apparently after him. Joan and Bert are skeptical."
+          tactics={[
+            {
+              character: SinnersCast.Remmick,
+              tactic: "Feign confusion and helplessness. Begs, pleads, and offers them gold."
+            },
+            {
+              character: SinnersCast.Bert,
+              tactic: "Skeptical then sympathetic."
+            },
+            {
+              character: SinnersCast.Joan,
+              tactic: "Skeptical then sympathetic."
+            },
+          ]}
+          turningPoint="Remmick offers the couple gold and they let him in."
+          outcome="Remmick is let in the house."
+          storyContribution={<p className="leading-5">A main antagonist Remmick is introduced. He bribes Joan and Bert for shelter <span className="text-neutral-500">(this will later lead to their demise)</span>. Remmick’s capacity for charm and deceit is portrayed.</p>}
+        />
+        <H5>An Irish Vampire</H5>
+        <P>Instead of writing a cinema cliché and making the primary antoganist White American, Ryan Coogler chooses an Irish vampire. The Irish being a group that were also persecuted by the KKK for their Catholicism, alongside blacks.</P>
+        <P>This is a strong moment of visual storytelling, because Remmick lands like a steaming spaceship from another planet <span className="text-neutral-500">(having been burned by the sun because vampires can’t tolerate sunlight)</span>.</P>
+        <P>Ryan Coogler in <A href="https://youtu.be/yP-4Yhn8I_g?si=Rx2wi-lFQj8UATyR&t=1148">an interview with IndieWire</A> comments:</P>
+        <Quote>
+          <b>It was very important that our master vampire in this movie was unique.</b> ... It was important to me that he was old. But also that he came from a time that pre-existed these racial definitions that existed in these place
+          that he showed up in. So that <b>he would be extremely odd. <i>And it would all seem odd to him.</i></b> But also that he would see it for what it was. And offer a sweet deal. ... And that the music was just as beautiful.
+        </Quote>
+        <P>The score turns curious and we hear an inflection at <FilmTimecode timecode="41:42" />, almost to question alongside us <i>“...Who is that?”</i>.</P>
+
+        <H5>“Injuns”</H5>
+        <P>Bert says <i>“Ain’t no Injuns around here for miles,”</i> after 20 times watching the film I always thought this line was “engines” (as in, there are no cars closeby). I now only realize this after watching with captions.</P>
+        <P>According to ChatGPT:</P>
+        <Quote>
+          The word ”Injuns” is a derogatory, phonetic mispronunciation of "Indians" (referring to Native Americans) and was commonly used in 19th- and early 20th-century American literature and speech, especially in Westerns and frontier stories. It was:
+          Frequently used by white American characters, especially cowboys, settlers, or soldiers, to refer dismissively to Native Americans.
+        </Quote>
+
+
+
+
+
 
 
       </div>
@@ -1509,7 +1768,7 @@ const Aside = ({ children, brighter }: { children: React.ReactNode, brighter?: b
 const Quote = ({ children }: { children: React.ReactNode }) => {
   return <div className="flex pb-4 rounded-lg">
     <QuoteIcon className="h-6 w-6 shrink-0 fill-neutral-700 mr-4" />
-    <div className="text-neutral-800 mt-0.5 italic">{children}</div>
+    <div className="text-neutral-800 mt-0.5 italic text-justify">{children}</div>
   </div>
 }
 
