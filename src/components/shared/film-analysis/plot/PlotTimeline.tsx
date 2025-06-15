@@ -78,6 +78,7 @@ export interface PlotTimelineItem {
   description?: string;
   color?: string;
   bump?: boolean;
+  doublebump?: boolean;
   withLine?: boolean;
 }
 
@@ -238,11 +239,11 @@ const PlotTimeline = ({ startMinute, endMinute, rows }: PlotTimelineProps) => {
                   // Calculate top offset for the text container
                   let textTop = '';
                   if (item.label && item.description) {
-                    textTop = item.bump ? '-top-[98px]' : '-top-20';
+                    textTop = item.doublebump ? '-top-[115px]' : item.bump ? '-top-[98px]' : '-top-20';
                   } else if (item.label) {
-                    textTop = item.bump ? '-top-[82px]' : '-top-16';
+                    textTop = item.doublebump ? '-top-[99px]' : item.bump ? '-top-[82px]' : '-top-16';
                   } else if (item.description) {
-                    textTop = item.bump ? '-top-[62px]' : '-top-[52px]';
+                    textTop = item.doublebump ? '-top-[79px]' : item.bump ? '-top-[62px]' : '-top-[52px]';
                   }
 
                   return (

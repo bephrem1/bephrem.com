@@ -1655,9 +1655,79 @@ const Contents = () => {
           Frequently used by white American characters, especially cowboys, settlers, or soldiers, to refer dismissively to Native Americans.
         </Quote>
 
+        <H4>The Choctaw Visit</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="42:37"
+          turningPointTimecode={["42:55", "43:23"]}
+          endTimecode="43:55"
+          synopsis=""
+          objectives={[
+            {
+              character: SinnersCast.Chayton,
+              explicit: "I need to warn them of what they’re dealing with.",
+              subtext: "I need to protect my people."
+            },
+            {
+              character: SinnersCast.Joan,
+              explicit: "I need to figure out who this guy is.",
+              subtext: "I need to protect Bert."
+            },
+          ]}
+          conflict="Chayton wants to warn Joan she is dealing with evil, but she doesn’t believe him."
+          tactics={[
+            {
+              character: SinnersCast.Chayton,
+              tactic: "Warns Joan then leaves"
+            },
+            {
+              character: SinnersCast.Joan,
+              tactic: "Holds Chayton at gunpoint and ignores him."
+            }
+          ]}
+          turningPoint="Chayton decides to leave because the sun is going down."
+          outcome="Chayton leaves."
+          storyContribution="We get an uneasy feeling that the story is going to take a turn for the worst."
+        />
+        <H5>The Name “Sinners”</H5>
+        <P>I’ve personally wondered whether the film is named “Sinners” because the sin goes beyond the individual characters’ actions (like greed, lust, etc), but actually expands to cover the dark past of America itself.</P>
+        <P>The displacement of Native Indians from their land, African-American slavery, etc. Chayton (the Choctaw man) was foreshadowing the danger they were in.</P>
 
+        <H4>Joan Discovers Bert</H4>
+        <P>We get a dark hallway scene (Ryan Coogler has said <i>“I love dark hallway [scenes]”</i>), then discover that Remmick has killed Bert. This ends Act I.</P>
+      </div>
 
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>Act II: Juke Joint Grand Opening</H3>
+        <P>The juke joint has its grand opening. Things take a supernatural turn and Stack dies at the end of the act. Key turning points are as follows:</P>
+      </div>
+      <PlotTimeline
+        startMinute={45}
+        endMinute={79}
+        rows={[
+          {
+            label: "Grand Opening",
+            subLabel: "Act II",
+            items: [
+              { atMinute: 45, label: "Pearline Arrives." },
+              { atMinute: 46, label: "Mary Arrives.", bump: true },
+              { atMinute: 50, label: "Stack Confronts Mary.", doublebump: true },
+              { atMinute: 55, label: "Sammie Plays" },
+              { atMinute: 61, label: "Remmick Appears" },
+              { atMinute: 73, label: "Mary Turns", doublebump: true },
+              { atMinute: 75, label: "Cornbread Turns", bump: true },
+              { atMinute: 79, label: "Mary Kills Stack" },
+            ],
+          }
+        ]}
+      />
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H4>Electrical Pole Bit</H4>
+        <P>We have a small scene where a patron is helping set up the electricity for the juke joint and triggers an electrical spark. Although a funny bit, this scene serves a functional purpose, to lighten up the mood after the
+          dramatic close of Act I. We are now ahead of the protagonists and take humor that they have no idea what’s coming for them.</P>
 
+        <H4>Lorem Ipsum</H4>
+        <P>Lorem ipsum</P>
 
 
 
