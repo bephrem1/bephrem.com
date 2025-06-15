@@ -889,6 +889,7 @@ const Contents = () => {
         </UnorderedList>
         <P>During the scene, the audience is thinking: <i>“That’s definitely not how I would have handled a rattlesnake popping out at me. I would have paused and used a branch, or just run away.”</i></P>
 
+
         <H4>The Twins Bicker <span className="text-neutral-500">(“We Been Gone a Long Time Stack”)</span></H4>
         <SceneOverview
           className="my-4"
@@ -936,6 +937,16 @@ const Contents = () => {
         <P>Part of the ingenious design of this story, is that the twins <i>need</i> each other. This acts as an engine for drama because later, Ryan Coogler will tear them apart, to teach us a lesson.</P>
         <P>Because they are so close and interdependent, it offers constant fuel for drama and meaning-making in the story. We also see this tactic employed in the Stack-Mary, Smoke-Annie, Sammie-Pearline romance subplots.</P>
         <P>Characters that need each other keep banging heads to get what they want, but it just doesn’t happen the way they expect it to. More on this concept <A href="https://youtu.be/esO2C0V12jI?si=AgCBGNIFehDaD2ta&t=150">here</A>.</P>
+
+        <H5>Twins Splitting Up Under Threat</H5>
+        <P>The twins end up splitting up after this scene is actually rooted in an observation by Ryan Coogler from working with actual twins during pre-production.</P>
+        <P>In an interview on The Breakfast Club <A href="https://youtu.be/YWqTXowtqJg?si=xyN_TKjIXVMuJdXg&t=923">he says</A>:</P>
+        <Quote>
+          I’ve been knowing [Noah & Logan] for over a decade and I had them come over to my house. ... Just to kind of work through some stuff with Mike, and I’ll never forget this. They came to sit down on my couch, and they sit side-by-side.
+          ... and they’re completely identical. ... And I’m lookin’, and I say “Ay man, I notice y’all touching each other, close to each other ... <b>When y’all sit side-by-side, like that, is that for me? Or is that for y’all?”</b> <b>They say <i>“it’s
+            for you”</i></b>. and I’m like “So you don’t need to be next to each other?” and they’re like “Nah. ... But it freaks people out when we’re not.”
+        </Quote>
+        <P>The twins only split up when they want to be more of a threat to others, for intimidation.</P>
 
         <H4>Watch My Truck</H4>
         <SceneOverview
@@ -1309,6 +1320,88 @@ const Contents = () => {
           height={800}
           showArrows={true}
         />
+
+        <H4>Mary Confronts Stack</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="27:22"
+          turningPointTimecode={["27:54", "28:15"]}
+          endTimecode="28:51"
+          synopsis="Mary confronts Stack about his absence from her life. She tells him her mother has died."
+          objectives={[
+            {
+              character: SinnersCast.Stack,
+              explicit: "I need to deflect Mary’s questioning.",
+              subtext: "I don’t want to reveal my true feelings for Mary. I still love her."
+            },
+            {
+              character: SinnersCast.Mary,
+              explicit: "I need to confront Stack about his love for me.",
+              subtext: "I still love him and hate that he disappeared from my life."
+            },
+          ]}
+          conflict="Mary confronts Stack about his absence from her life."
+          tactics={[
+            {
+              character: SinnersCast.Stack,
+              tactic: "Acts heavily avoidant towards Mary."
+            },
+            {
+              character: SinnersCast.Mary,
+              tactic: "Confronts Stack aggressively then insults him."
+            },
+          ]}
+          turningPoint="Mary tells Stack that her mother has died. There is a moment of sympathy from Stack."
+          outcome="Mary storms away, angry."
+          storyContribution="Stack’s avoidant character is further developed. The conflict with Mary is introduced. Her mixed race is also mentioned."
+        />
+        <H5>Notes</H5>
+        <TimecodeTable>
+          <TimecodeTableRow
+            timecode="27:18"
+            content="2 Love Story subplots are introduced side-by-side, for audience comprehension & pace."
+          />
+          <TimecodeTableRow
+            timecode="27:54"
+            content={<P>Mary’s sass + the word <i>“cooze”</i> creates a fan favorite moment.</P>}
+          />
+          <TimecodeTableRow
+            timecode="28:31"
+            content={<P>Ryan Coogler writes in the ironic line <i>“Rot in hell, Stack,” which he ends up doing at <FilmTimecode timecode="1:20:41" /> when Mary kills him.</i></P>}
+          />
+        </TimecodeTable>
+
+        <H4>Slim’s Monologue</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="28:52"
+          turningPointTimecode={[]}
+          endTimecode=""
+          synopsis=""
+          objectives={[
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "",
+              subtext: ""
+            },
+          ]}
+          conflict=""
+          tactics={[
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: ""
+            }
+          ]}
+          turningPoint=""
+          outcome=""
+          storyContribution=""
+        />
+        <P>This scene was almost cut from the movie due to it’s length and biting racial commentary, but it’s important that it stayed in. It was one of the most moving scenes for some people.</P>
+        <P>On my first few viewings I couldn’t discern the words through the strong southern accents, but later pieced the commentary together.</P>
+        <H5>Black Trauma</H5>
+        <P>My visit to Clarksdale was one of the first times that I truly understood black culture, in a visceral way.</P>
+
+
       </div>
 
       {/* <SceneOverview
