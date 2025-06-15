@@ -1206,35 +1206,35 @@ const Contents = () => {
         <SceneOverview
           className="my-4"
           startTimecode="19:42"
-          turningPointTimecode={[]}
+          turningPointTimecode={["20:32", "21:35"]}
           endTimecode="22:00"
-          synopsis=""
+          synopsis="Sammie and Stack ride in the car together. Stack gives Sammie some sex tips. Sammie learns that Smoke killed their father. Sammie plays his guitar for Stack, impressing him."
           objectives={[
             {
               character: SinnersCast.SammieMoore,
               explicit: "I want to figure out what happened to Smoke & Stack’s Dad. I want to play the guitar for Stack.",
-              subtext: "I need to show Stack how good I am to impress him."
+              subtext: "I need to show Stack how good I am at guitar to impress him."
             },
             {
               character: SinnersCast.Stack,
-              explicit: "",
-              subtext: ""
+              explicit: "I want to answer Sammie’s question in a polite way. I want to see if Sammie can really play.",
+              subtext: "I want to protect Sammie from the harsh truth."
             },
           ]}
-          conflict=""
+          conflict="Sammie wants to know what happened to Smoke & Stack’s Dad."
           tactics={[
             {
               character: SinnersCast.SammieMoore,
-              tactic: ""
+              tactic: "Politely asks and listens. Plays his heart out on the guitar to impress his brother."
             },
             {
               character: SinnersCast.Stack,
-              tactic: ""
+              tactic: "Casually breaks the bad news to Sammie of what happened to their father. Gets excited to see Sammie play so well."
             },
           ]}
-          turningPoint=""
-          outcome=""
-          storyContribution="We further develop Stack’s character as the more playful of the twins. The audience (and Stack) realize that Sammie can sing really, really, well."
+          turningPoint="Sammie plays his guitar, showing off his voice for Stack."
+          outcome="Stack realizes that Sammie has incredible talents that will make the juke money."
+          storyContribution="We further develop Stack’s character as the more playful of the twins. The audience (and Stack) realize that Sammie is incredibly talented at singing."
         />
         <H5>Plant and Payoff</H5>
         <P>Ryan Coogler is also a master at planting ideas in minute 10, that later end up having major importance 1 hour later. A commanding grasp of the story to weave ideas “long range” across acts.</P>
