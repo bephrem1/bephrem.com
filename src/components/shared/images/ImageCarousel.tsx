@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Image from '../elements/Image';
 
 type ImageExtension = 'svg' | 'png' | 'gif' | 'jpg';
 
@@ -10,6 +11,7 @@ interface ImageCarouselProps {
   height?: number;
   showArrows?: boolean;
   squareCrop?: boolean;
+  inspectable?: boolean;
 }
 
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({
@@ -19,6 +21,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   height = 400,
   showArrows = true,
   squareCrop = false,
+  inspectable = false,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -141,12 +144,38 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
                   {style.fadeDirection === 'right' && (
                     <div className="absolute right-0 top-0 bottom-0 w-[20%] pointer-events-none z-10 bg-gradient-to-l from-neutral-50/60 to-transparent" />
                   )}
-                  <img
-                    src={fullImagePath}
-                    alt={caption || `Image ${index + 1}`}
-                    className={`w-full ${squareCrop ? 'h-full object-cover' : 'h-auto object-contain'}`}
-                    draggable={false}
-                  />
+                  <button
+                    type="button"
+                    className="w-full h-full focus:outline-none focus:ring-2 focus:ring-black/10"
+                    onClick={(e) => {
+                      if (e.target === e.currentTarget) {
+                        moveToIndex(index);
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (e.target === e.currentTarget) {
+                          moveToIndex(index);
+                        }
+                      }
+                    }}
+                  >
+                    <Image
+                      path={imagePath}
+                      ext={imageExts[index]}
+                      alt={caption || `Image ${index + 1}`}
+                      width="100%"
+                      height={squareCrop ? "100%" : "auto"}
+                      optimize={false}
+                      inspectable={index === currentIndex}
+                      style={{
+                        objectFit: squareCrop ? 'cover' : 'contain',
+                        width: '100%',
+                        height: squareCrop ? '100%' : 'auto'
+                      }}
+                    />
+                  </button>
                 </div>
                 {caption && (
                   <p className="mt-2 text-sm text-neutral-400">

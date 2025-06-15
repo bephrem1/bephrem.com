@@ -13,6 +13,7 @@ import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
 import PlotTimeline from "../components/shared/film-analysis/plot/PlotTimeline";
 import SceneOverview from "../components/shared/film-analysis/scene/SceneOverview";
 import { ImageCarousel } from "../components/shared/images/ImageCarousel";
+import VideoPlayer from "../components/shared/video/VideoPlayer";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
 import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
@@ -978,13 +979,13 @@ const Contents = () => {
           objectives={[
             {
               character: SinnersCast.Smoke,
-              explicit: "",
-              subtext: ""
+              explicit: "I want to find Bo Chow so I can get Grace Chow’s help.",
+              subtext: "I’m excited to see my friend I haven’t seen in a while."
             },
             {
               character: SinnersCast.BoChow,
-              explicit: "",
-              subtext: ""
+              explicit: "I want to help my friend Smoke.",
+              subtext: "∅"
             },
             {
               character: SinnersCast.LisaChow,
@@ -992,24 +993,24 @@ const Contents = () => {
               subtext: "I need to keep an eye on him and protect my Dad."
             },
           ]}
-          conflict=""
+          conflict="Smoke hasn’t seen his friend Bo Chow in a while, Lil’ Lisa is a bit apprehensive about his visit. Someone is trying to rob Smoke’s truck outside."
           tactics={[
             {
               character: SinnersCast.Smoke,
-              tactic: ""
+              tactic: "Glares at Lil’ Lisa. Begins to move outside to check on his truck."
             },
             {
               character: SinnersCast.BoChow,
-              tactic: ""
+              tactic: "Hugs and welcomes Smoke."
             },
             {
               character: SinnersCast.LisaChow,
-              tactic: ""
+              tactic: "Glares at Smoke. Stays mostly quiet."
             }
           ]}
-          turningPoint=""
-          outcome=""
-          storyContribution=""
+          turningPoint="Smoke sees his friend Bo Chow for the first time in years, he embraces him. Someone is trying to rob his truck outside."
+          outcome="Smoke makes his way outside."
+          storyContribution="We learn that Smoke and Bo are long-time friends. Lisa is introduced to the story (she will be a minor dramatic element much later)."
         />
         <H4>“Bo Chow!”</H4>
         <P>Instead of having Smoke labor through robotic dialog like <i>“Good seeing you my old friend! It’s been a long time Bo!”</i>... Ryan Coogler writes a simple <i>“Bo Chow!”</i>, a long pause after Bo comes out of the door, and a <i>big</i> hug.</P>
@@ -1032,16 +1033,190 @@ const Contents = () => {
         />
         <P>Catfish, it turns out, has long been a staple of southern black and white working-class cuisine (though it wasn’t widely commercialized until the late 1950s/early 1960s, 30 years after this film takes place).</P>
 
-        {/* <H4>Truck Robbers Outside</H4>
+        <H4>Lil’ Lisa & The Chow Family</H4>
+        <ImageWithCaption
+          src="/images/film-analysis/films/sinners/clarksdale/gilroy-chow.jpg"
+          width={400}
+          height={400}
+          caption="Gilroy Chow is an actual resident of Clarksdale."
+          alt="Gilroy & Sally Chow, the actual Chow family."
+        />
+        <P><A href="https://www.cityofclarksdale.org/leaders/chow/">Gilroy</A> & Sally Chow are actual residents of Clarksdale. They act as advocates for the heritage of the Chinese community in the Mississippi Delta.</P>
+        <P>Although their names acted as inspiration for Grace & Bo’s, their daughter’s actual name is in-fact, Lisa.</P>
+
+        <H4>Investigating the Truck Break-In</H4>
         <SceneOverview
           className="my-4"
           startTimecode="16:20"
-          turningPointTimecode="15:50"
-          endTimecode="16:16"
-          synopsis="Smoke meets his old friend, shop owner Bo Chow. He hears the horn of his truck outside, indicating that someone is trying to rob it."
+          turningPointTimecode={["16:33", "16:41", "17:10"]}
+          endTimecode="17:29"
+          synopsis="Smoke goes outside to see who is robbing his truck. He ends up shooting his friend in the leg, then a small boy in the knee."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I need to find out who is robbing my truck.",
+              subtext: "I need to maintain my power and reputation as a feared man."
+            },
+          ]}
+          conflict="Smoke ends up shooting an old friend in the leg, then shoots a small boy in the knee."
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Shoots the robber before knowing who it was. Shoots a helpless boy in the knee."
+            }
+          ]}
+          turningPoint="Smoke ends up shooting an old friend, then a small boy."
+          outcome="Smoke has neutralized the threat."
+          storyContribution="Smoke is now clearly a very violent character, almost to a comical degree. This scene is a climax on Smoke’s character development in this regard."
+        />
+        <P>This scene turns multiple times:</P>
+        <TimecodeTable>
+          <TimecodeTableRow
+            timecode="16:33"
+            content="Smoke ends up shooting his friend Terry in the leg. When his friend turns around he has a distinctly lazy left eye, indicating that Smoke should recognize him quickly."
+          />
+          <TimecodeTableRow
+            timecode="17:00"
+            content="We are afraid that Smoke is going to shoot him again."
+          />
+          <TimecodeTableRow
+            timecode="17:10"
+            content="We see a scared little boy and think he’s in the clear."
+          />
+          <TimecodeTableRow
+            timecode="17:11"
+            content={<P>Ryan Coogler <i>doubles down</i> on Smoke’s violence to punctuate the scene. He shoots the boy in the knee.</P>}
+          />
+        </TimecodeTable>
+        <H5>Mixing Comedy & Violence</H5>
+        <P>You can’t just put your audience through an emotional wringer with no reward, with no space to breathe. Despite Smoke’s violent acts, there is always an air of absurdity and comedy to the violence.
+          Enough where you can think to yourself <i>“this is just a movie”</i>, without losing dramatic impact.</P>
+        <P>I could always feel the energy in the room turn a bit dark towards Smoke after the 2nd gunshot. But the comedy makes the violence palatable.</P>
+        <P>The <i>“N***a I need help”</i> line heard from the little boy as Smoke returns to Bo’s store is one of the great initial laughs the audience experiences. When under pressure, we seek comedic relief.</P>
+
+        <H4>Grace Walks Over <span className="text-neutral-500">(Long-Take, “Oner”)</span></H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="17:53"
+          turningPointTimecode={["17:38", "17:54", "18:36"]}
+          endTimecode="18:50"
+          synopsis="Bo asks his daughter Lisa to get Grace from her store."
+          objectives={[
+            {
+              character: SinnersCast.GraceChow,
+              explicit: "I need to go find out what Bo wants.",
+              subtext: "I want to support Bo."
+            },
+            {
+              character: SinnersCast.LisaChow,
+              explicit: "I need to go grab my mom.",
+              subtext: "∅"
+            },
+          ]}
+          conflict="∅"
+          tactics={[
+            {
+              character: SinnersCast.GraceChow,
+              tactic: "Grace walks over, giving a concerned glance to the 2 men who were shot outside."
+            },
+            {
+              character: SinnersCast.LisaChow,
+              tactic: "Politely walks over to her mom’s shop and tells her Bo wants her."
+            },
+          ]}
+          turningPoint="During the long take on Grace we silently wonder if Chinese people actually existed in the American South in 1932. The lingering take on Grace says a loud but quiet “Yes”."
+          outcome="Grace enters Bo’s shop."
+          storyContribution="We get a feel for the enterprising nature of Clarksdale residents, each owning their own shops. We also get a long look at the fact that Chinese immigrants were an important part of the Delta community."
+        />
+        <H5>Wide Streets</H5>
+        <P>During my visit to Clarksdale, the first thing I noticed was that the streets downtown were <i>wide</i>.</P>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/clarksdale/downtown-streets-day",
+            "/film-analysis/films/sinners/clarksdale/downtown-streets-night",
+            "/film-analysis/films/sinners/clarksdale/downtown-clarksdale-map",
+          ]}
+          imageExts={["jpg", "jpg", "jpg"]}
+          captions={["Downtown street during the day.", "Street corner the night I arrived.", "The downtown is very small. Only maybe 6-by-12 blocks of independently-owned shops."]}
+          height={400}
+          showArrows={true}
+          squareCrop={true}
+        />
+        <P>Downtown Clarksdale is maybe 6-by-12 blocks, with streets lined by independently-owned shops <span className="text-neutral-500">(most of which were closed when I visited)</span>. The community is very
+          tight-knit, everyone knows each other and you’ll recognize the same people within a day or two.</P>
+        <Aside>
+          Ryan Coogler comments on <span className="text-neutral-400">(I lost the interview)</span> the self-enterprising nature of the people in the community. So it only makes sense that Bo owns his own shop, Grace owns her own shop, etc.
+        </Aside>
+
+        <H5>Chinese in the Delta</H5>
+        <P>This gave the perfect opportunity for a strong storytelling moment. We see a long tracking shot of Lisa walking to Grace’s store, then Grace walking back over to Bo’s.</P>
+        <P>The Grace tracking shot spans from <FilmTimecode timecode="18:25" /> to <FilmTimecode timecode="18:51" />. <b>26 seconds!</b> This is an eternity for one shot to hold, and speaks volumes to this scene’s storytelling importance.</P>
+        <P>By <FilmTimecode timecode="18:37" /> we know <i>there’s something more to this shot than just the contents</i>. The <i>storyteller</i> is trying to say something to us. Specifically, that Chinese immigrants did exist
+          in the American South during this time (and played a <A href="https://youtu.be/2NMrqGHr5zE?si=R8cIXbIXDmOAFGAa&t=67">pivotal role</A> in the Delta community).</P>
+        <P>This moment also lets us get aquainted to the commotion of the town, setting up the next scene where Grace mentions the 2 men that have been shot outside.</P>
+
+        <H4>Negotiating for Grace’s Help</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="18:52"
+          turningPointTimecode={["19:11", "19:21", "19:31", "19:39"]}
+          endTimecode="19:42"
+          synopsis="Grace enters Bo’s shop asking why 2 men outside were shot. She negotiates a deal with Smoke for her sign painting services."
+          objectives={[
+            {
+              character: SinnersCast.GraceChow,
+              explicit: "I need to figure out what’s going on here. I need to negotiate a good deal for my sign painting services.",
+              subtext: "I need to protect Bo & my daughter Lisa. I’m not getting ripped off by this troublemaker."
+            },
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I need to get Grace to help me at the cheapest price possible.",
+              subtext: "I need to maintain my power and get Grace to bend to my will."
+            },
+          ]}
+          conflict="Smoke wants Grace to paint a sign for the juke joint in a hurry. Grace will only help for the right price."
+          tactics={[
+            {
+              character: SinnersCast.GraceChow,
+              tactic: "Negotiates in a short back-and-forth with Smoke."
+            },
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Negotiates in a short back-and-forth with Grace."
+            },
+          ]}
+          turningPoint="Grace negotiates a deal with Smoke for her sign painting services."
+          outcome="Grace agrees to paint a sign for Smoke."
+          storyContribution="We further develop Smoke’s character as a hard-headed negotiator. Grace & Bo join the venture."
+        />
+        <H5>What Color Ya’ Got? Red.</H5>
+        <P><A href="https://maps.app.goo.gl/Bna7tT3YnLRgLCjaA">Red’s</A> is actually the name of one of the final real juke joints that exist in Clarksdale. The other main one
+          being <A href="https://maps.app.goo.gl/4gzx22dGSXdDcqZq6">Ground Zero Blues Club</A> (founded by Morgan Freeman in 2001).</P>
+        <VideoPlayer
+          className="mt-5"
+          src="/images/film-analysis/films/sinners/clarksdale/reds-juke-joint.mp4"
+          autoPlay
+          loop
+          muted
+        />
+        <p className="text-neutral-400 text-sm mt-2 mb-4">Red’s only takes cash. This weaves into Smoke later demanding that juke patrons pay with cash-only.</p>
+        <P>This also foreshadows the supernatural mayhem that is soon to come.</P>
+
+        <H4>Sammie and Stack Ride Along</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="19:42"
+          turningPointTimecode={[]}
+          endTimecode="22:00"
+          synopsis=""
           objectives={[
             {
               character: SinnersCast.SammieMoore,
+              explicit: "I want to figure out what happened to Smoke & Stack’s Dad. I want to play the guitar for Stack.",
+              subtext: "I need to show Stack how good I am to impress him."
+            },
+            {
+              character: SinnersCast.Stack,
               explicit: "",
               subtext: ""
             },
@@ -1051,18 +1226,28 @@ const Contents = () => {
             {
               character: SinnersCast.SammieMoore,
               tactic: ""
-            }
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: ""
+            },
           ]}
           turningPoint=""
           outcome=""
-          storyContribution=""
-        /> */}
+          storyContribution="We further develop Stack’s character as the more playful of the twins. The audience (and Stack) realize that Sammie can sing really, really, well."
+        />
+        <H5>Plant and Payoff</H5>
+        <P>Ryan Coogler is also a master at planting ideas in minute 10, that later end up having major importance 1 hour later. A commanding grasp of the story to weave ideas “long range” across acts.</P>
+        <P>Smokes sex ed lesson with Sammie at <FilmTimecode timecode="19:42" /> ends up tying back 40 minutes later at <FilmTimecode timecode="1:00:34" />, when Stack overhears Pearline moaning in the juke’s
+          backroom <span className="text-neutral-500">(due to Sammie’s taking the lesson to heart)</span>.</P>
+
+
       </div>
 
       {/* <SceneOverview
           className="my-4"
           startTimecode=""
-          turningPointTimecode=""
+          turningPointTimecode={[]}
           endTimecode=""
           synopsis=""
           objectives={[
