@@ -1702,6 +1702,7 @@ const Contents = () => {
         <P>The juke joint has its grand opening. Things take a supernatural turn and Stack dies at the end of the act. Key turning points are as follows:</P>
       </div>
       <PlotTimeline
+        className="mt-6 mb-1"
         startMinute={45}
         endMinute={79}
         rows={[

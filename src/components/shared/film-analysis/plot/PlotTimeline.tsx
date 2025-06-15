@@ -92,12 +92,13 @@ export interface PlotTimelineProps {
   startMinute: number;
   endMinute: number;
   rows: PlotTimelineRow[];
+  className?: string;
 }
 
 const DEFAULT_MARKER_COLOR = "rgb(82 82 82)";
 const DEFAULT_MARKER_SIZE = 13;
 
-const PlotTimeline = ({ startMinute, endMinute, rows }: PlotTimelineProps) => {
+const PlotTimeline = ({ startMinute, endMinute, rows, className }: PlotTimelineProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [approachingMarkers, setApproachingMarkers] = useState<Set<string>>(new Set());
   const [peakMarkers, setPeakMarkers] = useState<Set<string>>(new Set());
@@ -198,7 +199,7 @@ const PlotTimeline = ({ startMinute, endMinute, rows }: PlotTimelineProps) => {
   };
 
   return (
-    <div className="w-full py-4">
+    <div className={`w-full py-4 ${className || ''}`}>
       <style>{styles}</style>
       <div className="relative w-full space-y-20" ref={containerRef}>
         <div className="timeline-scan-line" />
