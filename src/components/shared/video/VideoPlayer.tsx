@@ -28,6 +28,9 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(muted);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   const updateProgress = useCallback(() => {
     if (videoRef.current && progressRef.current) {
@@ -133,6 +136,8 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
       togglePlay();
     }
   };
+
+  if (!mounted) return null;
 
   return (
     <div className={`${styles.videoPlayer} ${className}`}>

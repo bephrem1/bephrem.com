@@ -1242,6 +1242,73 @@ const Contents = () => {
           backroom <span className="text-neutral-500">(due to Sammie’s taking the lesson to heart)</span>.</P>
 
 
+        <H4>Delta Slim’s Patch</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="22:28"
+          turningPointTimecode={["22:50", "23:36", "24:26", "24:52", "25:21", "25:38"]}
+          endTimecode="25:38"
+          synopsis="Sammie and Smoke walk up to Delta Slim’s playing spot. They bribe him with beer to have him come play that night."
+          objectives={[
+            {
+              character: SinnersCast.Stack,
+              explicit: "Get Slim to join the juke staff as a musician.",
+              subtext: "I need to show that I’m crafty and clever."
+            },
+            {
+              character: SinnersCast.DeltaSlim,
+              explicit: "I need to do the most stable thing so I’m not out of a job.",
+              subtext: "I want to maintain that I’m the best blues player around."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "I want to have Slim join us as a musician.",
+              subtext: "I want a mentor."
+            },
+          ]}
+          conflict="Stack wants Delta Slim to play at the juke, Slim doubts that Stack will pay him consistently."
+          tactics={[
+            {
+              character: SinnersCast.Stack,
+              tactic: "Bribes Slim with beer. It works."
+            },
+            {
+              character: SinnersCast.DeltaSlim,
+              tactic: "Pokes fun at Sammie. Is mesmerized by the ice cold irish beer. Takes it and joins."
+            },
+          ]}
+          turningPoint="Delta Slim is bribed with an offering of beer and joins."
+          outcome="Delta Slim joins the juke staff."
+          storyContribution="We realize that Delta Slim is a comical character, who has been seduced by a bottle of beer. And probably has a drinking problem."
+        />
+        <H5>Ice Cold Beer vs Delta Slim</H5>
+        <P>This is one of my favorite scenes in the movie. It is full of impactful moments driven by the score that need no words to explain them, but still pack a punch and get the crowd laughing.</P>
+        <P>When you run out of creativity, you write dialog. When you’re full of creativity, you write a scene like this.</P>
+
+        <H5>Slim’s Importance in Cast Design</H5>
+        <P>The order in which characters were recruited into the juke’s staff is important. The order is:</P>
+        <OrderedList>
+          <ListItem>Sammie <span className="text-neutral-500 text-sm">(core protagonist)</span></ListItem>
+          <ListItem>Grace & Bo</ListItem>
+          <ListItem>Delta Slim <span className="text-neutral-500 text-sm">(comedy character)</span></ListItem>
+          <ListItem>Cornbread <span className="text-neutral-500 text-sm">(comedy character)</span></ListItem>
+          <ListItem>Annie <span className="text-neutral-500 text-sm">(more serious maternal figure)</span></ListItem>
+        </OrderedList>
+        <P>Note how the comedy characters are saved for a bit later, once the crowd warms up and is more bought into the characters and its world.</P>
+        <P>Delta Slim and Cornbread are the comedy characters of the cast and balance out the more serious nature of Smoke & Annie.</P>
+
+        <H5>Messengers Pool Hall</H5>
+        <P>Delta Slim mentions playing at a current location called “Messengers”. This is an <A href="https://maps.app.goo.gl/6jU8HWrAdeg4LK5R7">actual bar and pool hall</A> in Clarksdale.</P>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/clarksdale/messengers",
+            "/film-analysis/films/sinners/clarksdale/ice-cold-beer-reds",
+          ]}
+          imageExts={["jpg", "jpg"]}
+          captions={["Messenger’s Pool Hall.", "Ice Cold Beer at Red’s Juke Joint. Just how Delta Slim would like it."]}
+          height={800}
+          showArrows={true}
+        />
       </div>
 
       {/* <SceneOverview
@@ -1508,7 +1575,7 @@ const HiddenAside = ({
 const FilmTimecode = ({ timecode }: { timecode: string }) => {
   return (
     <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-neutral-100 text-neutral-600 rounded-full text-sm whitespace-nowrap">
-      <div className="w-4 h-4 rounded-full bg-neutral-600 flex items-center justify-center">
+      <span className="w-4 h-4 rounded-full bg-neutral-600 flex items-center justify-center">
         <svg
           viewBox="0 0 24 24"
           fill="white"
@@ -1518,7 +1585,7 @@ const FilmTimecode = ({ timecode }: { timecode: string }) => {
           <title>Film</title>
           <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z" />
         </svg>
-      </div>
+      </span>
       {timecode}
     </span>
   );
@@ -1527,7 +1594,7 @@ const FilmTimecode = ({ timecode }: { timecode: string }) => {
 const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: ScoreItem }) => {
   const pillContent = (
     <>
-      <div className="w-4 h-4 rounded-full bg-emerald-600 flex items-center justify-center">
+      <span className="w-4 h-4 rounded-full bg-emerald-600 flex items-center justify-center">
         <svg
           viewBox="0 0 24 24"
           fill="white"
@@ -1537,7 +1604,7 @@ const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: 
           <title>Music</title>
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
         </svg>
-      </div>
+      </span>
       {timecode}
     </>
   );
@@ -1565,7 +1632,7 @@ const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: 
 const TurningPointTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: ScoreItem }) => {
   const pillContent = (
     <>
-      <div className="w-4 h-4 rounded-full bg-orange-600 flex items-center justify-center">
+      <span className="w-4 h-4 rounded-full bg-orange-600 flex items-center justify-center">
         <svg
           viewBox="0 0 24 24"
           fill="white"
@@ -1575,7 +1642,7 @@ const TurningPointTimecode = ({ timecode, scoreItem }: { timecode: string; score
           <title>Turning Point</title>
           <path d="M12 2L8 6h3v4H5l-3 3 3 3h6v4h3l4-4h-3v-4h6l3-3-3-3h-6V6h3L12 2z" />
         </svg>
-      </div>
+      </span>
       {timecode}
     </>
   );
