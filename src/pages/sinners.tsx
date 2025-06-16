@@ -12,6 +12,7 @@ import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
 import PlotTimeline from "../components/shared/film-analysis/plot/PlotTimeline";
 import SceneOverview from "../components/shared/film-analysis/scene/SceneOverview";
+import SceneTimeline from "../components/shared/film-analysis/scene/SceneTimeline";
 import { ImageCarousel } from "../components/shared/images/ImageCarousel";
 import VideoPlayer from "../components/shared/video/VideoPlayer";
 import { isEmpty } from "../helpers/empty";
@@ -2064,7 +2065,14 @@ const Contents = () => {
           optimize={false}
           inspectable
         />
-        <p className="text-neutral-500 text-sm mt-2 mb-4">My favorite frame in the entire movie.</p>
+        <p className="text-neutral-500 text-sm mt-2 mb-2">My favorite frame in the entire movie.</p>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:09:11"
+          turningPointTimecode={["1:11:21", "1:11:47", "1:12:34", "1:12:58"]}
+          endTimecode="1:13:00"
+        />
+
         <H5>“Will Ye Go, Lassie, Go?”</H5>
         <P>Like <A href="https://en.wikipedia.org/wiki/Siren_(mythology)">sirens</A>, the vampires stand outside and beckon Mary towards them with song. Joan’s solo at <FilmTimecode timecode="1:09:41" /> is piercingly beautiful.</P>
         <P>The <A href="https://en.wikipedia.org/wiki/Wild_Mountain_Thyme">Scottish/Irish folk song</A> dates back to the late 1700s and is a romantic <A href="https://en.wikipedia.org/wiki/Pastoral">pastoral</A> rooted in themes of love, longing, and connection to land.</P>
@@ -2085,10 +2093,26 @@ const Contents = () => {
           version he encountered while traveling in Scotland, blurring the line between authorship and folk inheritance.</P>
         <P>So when Ryan Coogler said his research <i>“made [him] question everything”</i> he knew about music, this is what he meant.</P>
 
+        <H5>Deal With the Devil</H5>
+        <P>The moment Mary accepts money from Remmick at <FilmTimecode timecode="1:11:17" />, it’s over. This is Ryan Coogler silently reiterating <i>“<b>the moment s**t becomes a business, somebody’s getting f***ed.</b>”</i> And after this moment,
+          the rest of the film, everyone gets f****d.</P>
 
-
-
-
+        <H5>Triple-Meaning</H5>
+        <P>By this point, it’s clear to us that Coogler loves writing in layered & <s>double</s>triple-meanings. At <FilmTimecode timecode="1:11:43" />, Remmick says <i>“’Cus you in some deep deep pain, that money can’t fix.”</i> as Bert tilts his
+          neck like a predator.</P>
+        <P>The dramatic suspense is maintained, because this can mean one of 2 things:</P>
+        <UnorderedList>
+          <ListItem><b>“Mary, you’re in a lot of emotional pain with Stack and your mother.”</b> It’s true, and money actually can’t fix these things.</ListItem>
+          <ListItem><b>“Mary, we’re about to kill you.”</b> This is also true, but we don’t know if this will be the case yet.</ListItem>
+        </UnorderedList>
+        <P>And, 3rd, we have irony in that the vampires are also looking for “fellowship and love”. Vampires are lonley creatures because they’re:</P>
+        <UnorderedList>
+          <ListItem><b>Immortal</b>: Outliving everyone they love creates deep isolation.</ListItem>
+          <ListItem><b>Separated from humanity</b>: They’re often outsiders, unable to fully participate in normal human life.</ListItem>
+          <ListItem><b>Face moral conflict</b>: If they retain a conscience, feeding on humans can make them feel monstrous or ashamed.</ListItem>
+          <ListItem><b>Fear closeness</b>: Getting close to others might put them in danger or reveal their secret.</ListItem>
+          <ListItem><b>Longing for love</b>: Many vampire stories emphasize eternal longing for love they can’t fully have.</ListItem>
+        </UnorderedList>
 
 
       </div>
