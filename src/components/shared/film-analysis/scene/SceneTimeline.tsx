@@ -141,10 +141,16 @@ const SceneTimeline: FunctionComponent<Props> = ({
           {turningPointTimecodes.map((timecode, index) => {
             const isAtEnd = timecode === endTimecode;
             const { percent, row, leftPx } = pillPositions[index];
-            // Horizontal position
-            const leftStyle = isAtEnd
-              ? { right: 0 }
-              : { left: `calc(${percent}% - 48px * ${percent / 100})` };
+            // Edge overflow handling
+            const pillHalfWidthPercent = (PILL_WIDTH / 2) / containerWidth * 100;
+            let leftStyle: React.CSSProperties;
+            if (percent <= pillHalfWidthPercent) {
+              leftStyle = { left: 0 };
+            } else if (percent >= 100 - pillHalfWidthPercent) {
+              leftStyle = { right: 0 };
+            } else {
+              leftStyle = { left: `calc(${percent}% - 48px * ${percent / 100})` };
+            }
             // Vertical position
             const verticalOffset = row * (PILL_HEIGHT + PILL_MIN_GAP); // px
             const topStyle = row === 0

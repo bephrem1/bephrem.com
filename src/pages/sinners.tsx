@@ -2118,7 +2118,7 @@ const Contents = () => {
         <SceneTimeline
           className="mb-4"
           startTimecode="1:13:01"
-          turningPointTimecode={["1:13:54", "1:14:43", "1:15:45", "1:16:20", "1:16:24", "1:16:48", "1:19:16", "1:19:34"]}
+          turningPointTimecode={["1:13:54", "1:14:43", "1:15:45", "1:16:20", "1:16:24", "1:16:48", "1:17:55", "1:19:16", "1:19:34", "1:19:44"]}
           endTimecode="1:20:04"
         />
         <P>The next sequence picks up pace, moving faster and faster as Pearline sings <ScoreTimecode scoreItem={SinnersScore.PalePaleMoon} label="Pale Pale Moon" />.</P>
@@ -2144,7 +2144,17 @@ const Contents = () => {
         <P>The stomping at <FilmTimecode timecode="1:16:57" /> in IMAX was something else. And we match cut on the same concept to the man getting stomped in the back room. And of course, <FilmTimecode timecode="1:17:09" /> it ain’t none of Grace’s business.</P>
         <P>Autumn Durald Arkapaw chooses to go handheld for a shot on Pearline’s shoes to emphasize the commotion.</P>
         <H5>Leaning Over</H5>
-        <P>Next Pearline begins a sequence where she crawls stage-left, mirroring the sequence happening in the back room.</P>
+        <P>Next <FilmTimecode timecode="1:17:22" /> Pearline begins a sequence where she crawls stage-left, mirroring the sequence happening in the back room:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:17:23" content={<p className="text-left">Getting down to the ground, pivoting stage-left.</p>} />
+          <TimecodeTableRow timecode="1:17:42" content={<p className="text-left">Sliding stage-left.</p>} />
+          <TimecodeTableRow timecode="1:17:52" content={<p className="text-left">A demonic laugh knowing Stack’s demise is coming.</p>} />
+        </TimecodeTable>
+        <H5>Delta Slim’s “Oh He Busy Huh?”</H5>
+        <P>We bring some humor back, and have Sammie check the back room where Smoke and Mary are having sex. <FilmTimecode timecode="1:18:30" /> yields the 3rd or 4th largest laugh from the audience.</P>
+
+
+
 
 
 
