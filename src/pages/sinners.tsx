@@ -55,7 +55,7 @@ const LeftColumnContents = () => {
       <div className="mt-4">
         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 ml-[-12px]">
           <p className="text-neutral-500 text-sm mb-1"><b>Controlling Idea</b> <span className="text-neutral-400 text-xs">(Theme)</span></p>
-          <p className="text-neutral-600 text-sm text-left">“Greed and hunger for power destroys community. Culture and it's expression can never be destroyed.”</p>
+          <p className="text-neutral-600 text-sm text-left">“Greed and hunger for power destroys community. Culture and it’s expression can never be destroyed.”</p>
         </div>
       </div>
       <div className="mt-4">
@@ -133,7 +133,7 @@ const Contents = () => {
           <ListItem>Michael B. Jordan plays <i>2 characters</i>, through a slew of acting & technical complications.</ListItem>
           <ListItem>The cinematography is breathtaking, every frame is memorable. <A href="https://www.autumndurald.com/">Autumn Durald Arkapaw</A> makes history as the first woman to shoot a film in large-format IMAX 65mm.</ListItem>
           <ListItem>Ryan Coogler makes history as the first black director to shoot in large-format IMAX 65mm.</ListItem>
-          <ListItem>The writing and story are incredibly layered, original, and historically accurate — avoiding cinema tropes and clichés left & right. The film crosses genre boundaries of Supernatural Horror, Love Story, Drama, Musical, Comedy, & Western. </ListItem>
+          <ListItem>The writing and story are incredibly layered, original, and historically accurate — avoiding cinema tropes and clichés left & right. The film <A href="https://youtu.be/Pjb_eH0C_vQ?si=plG7O-mGPO_48cae&t=462">crosses genre boundaries</A> of Supernatural Horror, Love Story, Drama, Musical, Comedy, & Western. </ListItem>
           <ListItem>If features a stellar cast, most of which can act, sing, and dance.</ListItem>
           <ListItem>It <s>is breaking</s> broke <A href="https://www.the-numbers.com/movie/Sinners-(2025)">box office</A> records (soon to be #5 <A href="https://www.the-numbers.com/box-office-records/worldwide/all-movies/genres/horror">highest grossing horror</A> film
             of <i>all time</i>) — all with a Southern American-tied plotline (weaker worldwide appeal)</ListItem>
@@ -1918,36 +1918,122 @@ const Contents = () => {
           startTimecode="1:01:04"
           turningPointTimecode={["1:01:11", "1:02:33", "1:03:06", "1:04:24"]}
           endTimecode="1:04:51"
-          synopsis=""
+          synopsis="Remmick walks up to the juke front door with Bert and Joan. He tries to get into the juke joint, especially to get at Sammie. Smoke turns them away."
           objectives={[
             {
               character: SinnersCast.Remmick,
-              explicit: "",
-              subtext: ""
+              explicit: "I want to get into the juke joint to kill all of them.",
+              subtext: "I want Sammie for his culture and soul."
             },
             {
               character: SinnersCast.Smoke,
-              explicit: "",
-              subtext: ""
+              explicit: "I want them to go away.",
+              subtext: "I need to protect my patrons."
             },
           ]}
-          conflict=""
+          conflict="Remmick wants to get into the juke joint, Smoke wants them to go away."
+          tactics={[
+            {
+              character: SinnersCast.Remmick,
+              tactic: "Walks up and casually chats with them. Plays a song, obliges and walks away."
+            },
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Unamused, turns them away."
+            },
+          ]}
+          turningPoint="The vampires break out into song. Smoke eventually dismisses them."
+          outcome="The Remmick, Bert, and Joan leave."
+          storyContribution="The vampire’s desire to enter the juke is made explicit. Thematic contribution explained below."
+        />
+        <H4>What Remmick Really Wants</H4>
+        <P>On the surface an innocent moment of humor and light song, this scene has enormous contribution to the film’s intended meaning.</P>
+        <P>We notice that at <FilmTimecode timecode="1:02:29" /> Remmick is enamored with Sammie’s voice when he emerges from the group, and singles him out saying <i>“Oh. And you...must be that voice I heard from out here. It was beautiful.”</i></P>
+        <P>The irony is that Smoke asks Remmick at <FilmTimecode timecode="1:02:51" /> <i>“Yall’ Klan?”</i>, thinking Remmick wants to hurt them for their race. But the reality is that he wants Sammie’s music.</P>
+        <P>Sammie is a metaphor for culture (specifically black culture, the blues, in this case), and Remmick, a vampire, wants to suck it out of him.</P>
+        <P>Ryan Coogler comments on the metaphor of vampirism and ownership <A href="https://youtu.be/0mU_2VWpsmQ?si=jk9dB0udoV0kxu72&t=970">here</A>:</P>
+        <Quote>
+          <b>The more I learned about the blues, the more I found songs that nobody knows who wrote them.</b> I would say alright, Howlin’ Wolf is the first song where the concept Smokestack Lightning was uttered.
+          And then I go find a song that was recorded 20 years earlier, where somebody says “Smokestack Lightning”. It’s called “Dark Road Blues”, I think the artist’s name is Willie Lofton. ... I was like
+          “Oh he got it from this person. Oh, where did he get it from?” <b>At this time there was no ownership. We were a people who came from a place where that’s not how s**t worked. Music was not to be bought
+            and sold, it was a way of life.</b> ... Comin’ from where I’m from, <b>the moment s**t becomes a business, somebody’s getting f***ed.</b>
+        </Quote>
+
+        <P>2 more important moments where Remmick doubles-down on what he really wants:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="59:38" content={<Quote>
+            Sammie! You the one I came for. I sensed you. I wanna see my people again. I’m trapped here. But your gifts can bring ’em to me.”
+            Y’all give him to me now. Just give me little Sammie...we’ll let y’all live.
+          </Quote>} />
+          <TimecodeTableRow timecode="1:51:06" content={<Quote>I want your stories. And I want your songs. And you gon’ have mine.</Quote>} />
+        </TimecodeTable>
+        <P>Note how gradually Ryan Coogler writes in this revelation, not rushing to get to the thematic point. Letting the full story mature before fully unraveling it.</P>
+
+        <H4>Pick Poor Robin Clean</H4>
+        <P>The original author of “Pick Poor Robin Clean” <i>is not known</i>. The earliest <i>recordings</i> are known, one by Geeshie Wiley in 1930  <ScoreTimecode link="https://open.spotify.com/track/0Utsr56pOqhWnuHFi00CcG?si=9071364e79474c14" label="Pick Poor Robin Clean (Geeshie Wiley, 1930)" /> and
+          another by Luke Jordan in 1927 <ScoreTimecode link="https://open.spotify.com/track/4ohioAEDyvR2nh2QVB5Bg7" label="Pick Poor Robin Clean (Luke Jordan, 1927)" />. Before being recorded, it was likely a traditional or folk blues song passed orally
+          through Black communities in the South.</P>
+        <P>This scene delivers layers and layers and layers of meaning, all at once.</P>
+
+        <H4><i>“How’d She Get In”?</i></H4>
+        <P>Mary is more than a token mixed-race character, she is an intentionally placed metaphor to add narrative drive about race tensions in the Deep South. At <FilmTimecode timecode="1:04:10" /> Remmick asks <i>“How’d she get in?”</i>, pointing to her.</P>
+        <P>Annie holds her hand up and says <i>“She here, cus’ she family.”</i> Which Mary will later parrot as a vampire back at her at <FilmTimecode timecode="1:42:43" />. This, is excellent writing.</P>
+
+        <H4>The Group Debriefs</H4>
+        <P>Coogler writes in more irony at <FilmTimecode timecode="1:04:55" /> when Smoke asks <i>“You think they brought company?”</i> and Stack says <i>“I doubt it.”</i>. At <FilmTimecode timecode="1:05:05" /> Mary adds <i>“Y’all don’t need the trunk. There was
+          just three of ’em.”</i></P>
+        <P>Well, there will actually be dozens of them by the end of the night <FilmTimecode timecode="1:45:37" />.</P>
+
+        <H4>Private Chats Upstairs</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="1:05:43"
+          turningPointTimecode={["1:07:49", "1:08:15", "1:08:52"]}
+          endTimecode="1:09:11"
+          synopsis="Smoke/Sammie & Stack/Mary talk privately upstairs. Sammie tells Smoke of his desire to go to Chicago. Stack tells Mary the juke is financially unsustainable."
+          objectives={[
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I need to convince Sammie to leave this lifestyle and go to Mound Bayou.",
+              subtext: "I want to clean myself of this lifestyle I’m trapped in."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "I want to mention to Smoke that I’m going to Chicago to pursue music.",
+              subtext: "I want to make my brother proud."
+            },
+          ]}
+          conflict="Sammie wants to go to Chicago to play music, Smoke wants him to go to Mound Bayou, live a clean life, and play church music."
           tactics={[
             {
               character: SinnersCast.Smoke,
-              tactic: ""
-            }
+              tactic: "Draws a gun on Sammie then puts it away."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: "Backs away."
+            },
           ]}
-          turningPoint=""
-          outcome=""
-          storyContribution=""
+          turningPoint="Smoke draws a gun on Sammie, warning him to not play for other juke clubs."
+          outcome="Smoke threatens Sammie to not play for other juke clubs, Mary goes outside to see if Remmick has money."
+          storyContribution="We learn that Smoke feels he’s trapped by an illicit lifestyle, and that Sammie is about to leave for Chicago."
         />
-        <H4>Pick Poor Robin Clean</H4>
-        <P>On the surface an innocent moment of humor and light song, this scene has enormous contribution to the film’s intended meaning. Here’s the original song <ScoreTimecode link={SinnersScore.PickPoorRobinClean} /></P>
+        <H5>Word on Pacing</H5>
+        <P>This is the most “boring” scene in the movie <span className="text-neutral-500 text-sm">(in my opinion)</span> for 2 reasons:</P>
+        <UnorderedList>
+          <ListItem><b>Accents Lose Attention:</b> The accents are so strong that it’s hard to tell what they’re saying at times. Smoke mentions the real town “Mound Bayou”, but watchers won’t know what that is. Sammie uses period dialect
+            saying <i>“That sound like a crock”</i> <FilmTimecode timecode="1:07:14" /> (crock a period term for “lie”).</ListItem>
+          <ListItem><b>Turns Late:</b> Ryan averages a scene turning point every 30 seconds to 1 minute. The scene has no turning points for <i>2 minutes</i>. There is no reason to pay keen attention.</ListItem>
+        </UnorderedList>
+        <P>But it’s packed with narritive importance. There’s always a balance between substance and drama.</P>
 
+        <H5>Visual Metaphor</H5>
+        <P>At <FilmTimecode timecode="1:08:27" /> Mary backs up against Stack, their silhouettes framed body-to-body as a visual metaphor of their romance. Smoke holsters his gun to her leg. Seeding sexual tension in the back of the viewers mind.</P>
 
-
-
+        <H5>“I’m a Soldier Boy”</H5>
+        <P>At <FilmTimecode timecode="1:09:01" /> Smoke says <i>“I’m a soldier boy. And you just gave me a command.”</i> Ryan Coogler comments on how Smoke <A href="https://youtu.be/1lRAnlyj5YM?si=oTn_AdcLc9UAO6wa&t=3040">thinks he’s a soldier</A>, but
+          he’s actually a father.</P>
+        <P>This is one of my favorite lines in the movie.</P>
 
 
       </div>
