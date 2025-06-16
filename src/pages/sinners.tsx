@@ -1946,7 +1946,7 @@ const Contents = () => {
           outcome="The Remmick, Bert, and Joan leave."
           storyContribution="The vampire’s desire to enter the juke is made explicit. Thematic contribution explained below."
         />
-        <H4>What Remmick Really Wants</H4>
+        <H5>What Remmick Really Wants</H5>
         <P>On the surface an innocent moment of humor and light song, this scene has enormous contribution to the film’s intended meaning.</P>
         <P>We notice that at <FilmTimecode timecode="1:02:29" /> Remmick is enamored with Sammie’s voice when he emerges from the group, and singles him out saying <i>“Oh. And you...must be that voice I heard from out here. It was beautiful.”</i></P>
         <P>The irony is that Smoke asks Remmick at <FilmTimecode timecode="1:02:51" /> <i>“Yall’ Klan?”</i>, thinking Remmick wants to hurt them for their race. But the reality is that he wants Sammie’s music.</P>
@@ -1969,17 +1969,37 @@ const Contents = () => {
         </TimecodeTable>
         <P>Note how gradually Ryan Coogler writes in this revelation, not rushing to get to the thematic point. Letting the full story mature before fully unraveling it.</P>
 
-        <H4>Pick Poor Robin Clean</H4>
+        <H5>Pick Poor Robin Clean</H5>
+        <P>There are 3 layers of meaning to unpack with this song:</P>
+        <H6>Racism & Exploitation</H6>
+        <P>The phrase <i>“pick poor Robin clean”</i> refers to taking everything from someone—robbing them of all they have, like plucking a bird of all its feathers. Exploit someone until they have nothing left.</P>
+        <H6>Ownership & Authorship</H6>
         <P>The original author of “Pick Poor Robin Clean” <i>is not known</i>. The earliest <i>recordings</i> are known, one by Geeshie Wiley in 1930  <ScoreTimecode link="https://open.spotify.com/track/0Utsr56pOqhWnuHFi00CcG?si=9071364e79474c14" label="Pick Poor Robin Clean (Geeshie Wiley, 1930)" /> and
           another by Luke Jordan in 1927 <ScoreTimecode link="https://open.spotify.com/track/4ohioAEDyvR2nh2QVB5Bg7" label="Pick Poor Robin Clean (Luke Jordan, 1927)" />. Before being recorded, it was likely a traditional or folk blues song passed orally
           through Black communities in the South.</P>
-        <P>This scene delivers layers and layers and layers of meaning, all at once.</P>
+        <H6>Juxtaposition With Family</H6>
+        <P>The original recorded version by Geeshie Wiley has the lyrics <span className="text-neutral-500 text-sm">(which were truncated out)</span>:</P>
+        <div className="mb-2">
+          <div className="pl-4 border-l border-neutral-300">
+            <p className="text-sm italic"><b>Get off my money, and don't get funny</b></p>
+            <p className="text-sm italic">'Cause I'm a n****r, don't cut no figure</p>
+            <p className="text-sm italic">Then old Miss Sadie, she is my baby</p>
+            <p className="text-sm italic"><b>And I'm a hustling coon, that's just what I am</b></p>
+          </div>
+        </div>
+        <P><span className="text-neutral-500 text-sm">(before the eventual line)</span></P>
+        <div className="mb-2">
+          <div className="pl-4 border-l border-neutral-300">
+            <p className="text-sm italic">And I'll be satisfied having a family.</p>
+          </div>
+        </div>
+        <P>This final line sounds sincere, but in the context of the broader song, it’s irony. It reveals how people can cloak selfishness in the language of love and loyalty while quietly taking everything from someone else. It’s cultural criticism.</P>
 
         <H4><i>“How’d She Get In”?</i></H4>
         <P>Mary is more than a token mixed-race character, she is an intentionally placed metaphor to add narrative drive about race tensions in the Deep South. At <FilmTimecode timecode="1:04:10" /> Remmick asks <i>“How’d she get in?”</i>, pointing to her.</P>
         <P>Annie holds her hand up and says <i>“She here, cus’ she family.”</i> Which Mary will later parrot as a vampire back at her at <FilmTimecode timecode="1:42:43" />. This, is excellent writing.</P>
 
-        <H4>The Group Debriefs</H4>
+        <H5>The Group Debriefs</H5>
         <P>Coogler writes in more irony at <FilmTimecode timecode="1:04:55" /> when Smoke asks <i>“You think they brought company?”</i> and Stack says <i>“I doubt it.”</i>. At <FilmTimecode timecode="1:05:05" /> Mary adds <i>“Y’all don’t need the trunk. There was
           just three of ’em.”</i></P>
         <P>Well, there will actually be dozens of them by the end of the night <FilmTimecode timecode="1:45:37" />.</P>
@@ -2034,6 +2054,41 @@ const Contents = () => {
         <P>At <FilmTimecode timecode="1:09:01" /> Smoke says <i>“I’m a soldier boy. And you just gave me a command.”</i> Ryan Coogler comments on how Smoke <A href="https://youtu.be/1lRAnlyj5YM?si=oTn_AdcLc9UAO6wa&t=3040">thinks he’s a soldier</A>, but
           he’s actually a father.</P>
         <P>This is one of my favorite lines in the movie.</P>
+
+        <H4>Mary Walks Outside</H4>
+        <Image
+          path="/film-analysis/films/sinners/stills/mary-side-profile"
+          ext="jpg"
+          alt="Opening scene in Sinners, Sammie Moore entering his father's church, in tatters and distraught, clutching the neck of his shattered guitar."
+          width="100%"
+          optimize={false}
+          inspectable
+        />
+        <p className="text-neutral-500 text-sm mt-2 mb-4">My favorite frame in the entire movie.</p>
+        <H5>“Will Ye Go, Lassie, Go?”</H5>
+        <P>Like <A href="https://en.wikipedia.org/wiki/Siren_(mythology)">sirens</A>, the vampires stand outside and beckon Mary towards them with song. Joan’s solo at <FilmTimecode timecode="1:09:41" /> is piercingly beautiful.</P>
+        <P>The <A href="https://en.wikipedia.org/wiki/Wild_Mountain_Thyme">Scottish/Irish folk song</A> dates back to the late 1700s and is a romantic <A href="https://en.wikipedia.org/wiki/Pastoral">pastoral</A> rooted in themes of love, longing, and connection to land.</P>
+        <ImageCarousel
+          images={[
+            "/film-analysis/films/sinners/other/scottish-heathers",
+            "/film-analysis/films/sinners/other/wild-thyme"
+          ]}
+          imageExts={["jpg", "jpg"]}
+          captions={["Wild heather plant in Scotland.", "Wild thyme."]}
+          height={400}
+          showArrows
+          squareCrop
+        />
+        <P>More irony, the vampires long for what they once had, their land and life itself. They want it from Sammie.</P>
+        <H6>The Author Is Unknown</H6>
+        <P>In the 1950s, Belfast musician Francis McPeake reworked and popularized the version now widely known, which was first recorded by his family. Though McPeake copyrighted the song, he acknowledged it as an arrangement of a traditional
+          version he encountered while traveling in Scotland, blurring the line between authorship and folk inheritance.</P>
+        <P>So when Ryan Coogler said his research <i>“made [him] question everything”</i> he knew about music, this is what he meant.</P>
+
+
+
+
+
 
 
       </div>

@@ -11,7 +11,6 @@ interface ImageCarouselProps {
   height?: number;
   showArrows?: boolean;
   squareCrop?: boolean;
-  inspectable?: boolean;
 }
 
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({
@@ -20,8 +19,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   captions,
   height = 400,
   showArrows = true,
-  squareCrop = false,
-  inspectable = false,
+  squareCrop = false
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
