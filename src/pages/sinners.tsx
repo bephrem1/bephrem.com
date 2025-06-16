@@ -25,7 +25,7 @@ const SinnersFilmAnalysisPage = () => {
   return <div className="flex flex-col w-full min-h-svh items-center bg-neutral-50">
     <div className="flex w-full max-w-[1400px]">
       {/* Left fixed column */}
-      <div className="hidden sm:block w-[250px] fixed top-16 left-4 p-2">
+      <div className="hidden sm:block w-[275px] fixed top-16 left-4 p-2">
         <LeftColumnContents />
       </div>
 
@@ -53,7 +53,10 @@ const LeftColumnContents = () => {
         inspectable
       />
       <div className="mt-4">
-        <p className="text-neutral-500 text-sm mb-2.5"><b>Controlling Idea</b> (Theme): "Greed and hunger for power destroys community. Culture and it's expression can never be destroyed."</p>
+        <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 ml-[-12px]">
+          <p className="text-neutral-500 text-sm mb-1"><b>Controlling Idea</b> <span className="text-neutral-400 text-xs">(Theme)</span></p>
+          <p className="text-neutral-600 text-sm text-left">“Greed and hunger for power destroys community. Culture and it's expression can never be destroyed.”</p>
+        </div>
       </div>
       <div className="mt-4">
         <p className="text-neutral-500 text-xs mb-2.5"><b>Main Protagonists</b></p>
@@ -61,9 +64,12 @@ const LeftColumnContents = () => {
         <p className="text-neutral-500 text-xs mb-2.5 mt-8"><b>Main Antagonists</b></p>
         <CastMembers cast={SinnersCast.Antagonists} avatarSize={50} />
 
-        <a href="https://www.imdb.com/title/tt31193180/fullcredits/" target="_blank" rel="noopener noreferrer" className="block mt-8">
-          <p className="text-neutral-400 text-xs">full cast & crew — IMDB ↗</p>
-        </a>
+        <CastCrewPill className="mt-6" href="https://www.imdb.com/title/tt31193180/fullcredits/" />
+      </div>
+      <div className="mt-4">
+        <p className="text-neutral-500 text-xs mb-2.5"><b>Score</b></p>
+        <ScoreTimecode className="mb-1" link="https://open.spotify.com/album/6PQXsiHd4AjrAqhWLd5HyT" label="Ludwig Göransson's Album" />
+        <ScoreTimecode link="https://open.spotify.com/album/0zjAqh1Fr7XQWy1SlzGhMn" label="Sinners Movie Album" />
       </div>
     </div>
   )
@@ -182,7 +188,7 @@ const Contents = () => {
         </div>
         <P>Sinners is organized into 5 acts along it's main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & the Smoke-Stack Twins.</P>
         <P>Both are seeking freedom in some regard. The Smoke-Stack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father's wishes).</P>
-        <P>The following diagram marks major <b>turning points</b> (“points of no return”) which separate acts for central plot and subplots:</P>
+        <P>The following diagram marks major <b>turning points</b> ("points of no return") which separate acts for central plot and subplots:</P>
       </div>
       <SinnersPlotOverview />
       <div className="px-4 sm:px-2 sm:pr-12">
@@ -287,8 +293,8 @@ const Contents = () => {
         <P>Our protagonists change greatly over the course of the film, and if we take a closer look, so do the images we see them within. What are they wearing? How are they acting? Does the framing change? Do colors change?</P>
         <P>And most of all, <i>why does this change happen?</i> Our Controlling Idea sits behind this question.</P>
 
-        <H5>Smoke & Stack’s Visual Change</H5>
-        <P>The Smoke-Stack twins begin the film in crispy 3-piece suits, with a sharp, clean look. It’s daylight and they’re brimming with confidence to pursue their juke joint venture.</P>
+        <H5>Smoke & Stack's Visual Change</H5>
+        <P>The Smoke-Stack twins begin the film in crispy 3-piece suits, with a sharp, clean look. It's daylight and they're brimming with confidence to pursue their juke joint venture.</P>
         <ImageCarousel
           images={[
             "/film-analysis/films/sinners/stills/smoke-and-stack-image-system-start",
@@ -303,9 +309,9 @@ const Contents = () => {
         <P>But what happens by the end? Well Stack ends up dead on the floor shirtless in the juke club at the end of Act II. Smoke ends up completely alone, almost everyone he loves dead, in front of a rusted sawmill,
           in a rust-colored and oily tank top, rolling a cigarette with shaking hands. The composition central and wide to frame his isolation.</P>
 
-        <H4>Sammie’s Visual Change</H4>
+        <H4>Sammie's Visual Change</H4>
         <P>
-          Sammie begins the film with wide-eyed idealism and a sense of purpose. He’s on a mission to pursue his music dreams, and he’s full of hope and optimism.
+          Sammie begins the film with wide-eyed idealism and a sense of purpose. He's on a mission to pursue his music dreams, and he's full of hope and optimism.
         </P>
         <ImageCarousel
           images={[
@@ -323,7 +329,7 @@ const Contents = () => {
           showArrows={true}
           squareCrop={true}
         />
-        <P>By the end, Sammie’s clothing is torn to shreds, his guitar is shattered, and he has a large scar on his face. He sheepishly stumbles into church, seeking his father’s comfort <span className="text-neutral-500">(which he does not get)</span>.</P>
+        <P>By the end, Sammie's clothing is torn to shreds, his guitar is shattered, and he has a large scar on his face. He sheepishly stumbles into church, seeking his father's comfort <span className="text-neutral-500">(which he does not get)</span>.</P>
         <P>In the 2nd to last shot of the film he drives off, crying and clutching his shattered guitar to his chest. The only survivor of the weekend.</P>
 
         <H4>Controlling Idea(s)</H4>
@@ -406,8 +412,8 @@ const Contents = () => {
               tactic: "Barks a prayer at Sammie, then embraces him."
             },
           ]}
-          turningPoint="Sammie realizes that is father won’t give in one bit. He will have to make a choice, and is internally conflicted."
-          outcome="Sammie has to make a choice on leaving to pursue music or staying. (but we don’t know this is the choice yet)"
+          turningPoint="Sammie realizes that is father won't give in one bit. He will have to make a choice, and is internally conflicted."
+          outcome="Sammie has to make a choice on leaving to pursue music or staying. (but we don't know this is the choice yet)"
           storyContribution="This scene foreshadows the supernatural elements that will come into play later in the film, as well as our protagonists eventual ruin."
         />
         <H5>Shocking the Audience to Attention</H5>
@@ -481,7 +487,7 @@ const Contents = () => {
           as possible, to the conscious and subconscious of the watcher.</P>
         <P>Many frames in this scene see the crucifix as a symbol in frames at various angles (initially swooping into the church, Sammie & his father interacting, Sammie clutching his guitar, etc).</P>
         <P>Also notable is the contrast between the characters' dark skin and the white church walls (which is especially noticible a few scenes later when Sammie picks up his guitar).</P>
-        <P>These were intentional art direction decisions <span className="text-neutral-500">(there’s a Ryan Coogler interview on it somewhere)</span>. Potentially to draw a
+        <P>These were intentional art direction decisions <span className="text-neutral-500">(there's a Ryan Coogler interview on it somewhere)</span>. Potentially to draw a
           contrast between the heavens and the wordly lives of the characters we will observe later.</P>
 
         <H3>Act I: Getting the Band Together</H3>
@@ -539,13 +545,13 @@ const Contents = () => {
         <H5>Vast Expanses and Isolation</H5>
         <P>The Mississippi Delta is very flat. In <A href="https://youtu.be/itAQolHej2k?si=Sp1jBa30thtwcQKO&t=480">a conversation</A> with his Director of Photography Autumn Durald Arkapaw, Ryan Coogler says:</P>
         <Quote>
-          One of the visual themes of the film we talked about is <b>isolation</b>. ... You’ll drive for what seems like hours before you get to the next building. And you’re driving through all this agricultural landscape.
-          There’s a cotton farm, a pecan farm. And you might not see a car, [or] another person for a long time. ... And just that experience of, seeing these characters, on these massive expanses of isolated landscapes.
+          One of the visual themes of the film we talked about is <b>isolation</b>. ... You'll drive for what seems like hours before you get to the next building. And you're driving through all this agricultural landscape.
+          There's a cotton farm, a pecan farm. And you might not see a car, [or] another person for a long time. ... And just that experience of, seeing these characters, on these massive expanses of isolated landscapes.
           It just clicked that this would be the way. <b>And also how big the sky can feel out there.</b> And [in] that 1.43:1, full-frame, ratio.
         </Quote>
 
         <H5>Cycles of Poverty</H5>
-        <P>Shots of Sammie’s bare feet are displayed to communicate the poverty that sharecroppers lived in, farming land they would never own.</P>
+        <P>Shots of Sammie's bare feet are displayed to communicate the poverty that sharecroppers lived in, farming land they would never own.</P>
         <P>Shots of workers feet also appear a 2nd time in the scene when Stack goes to recruit Cornbread to join the juke staff.</P>
 
         <H4>Sammie Goes to His Cabin</H4>
@@ -554,7 +560,7 @@ const Contents = () => {
           startTimecode="4:24"
           turningPointTimecode="5:10"
           endTimecode="5:21"
-          synopsis="Sammie walks back to his cabin in the sharecropper’s village. He wakes up his siblings in his cabin, then looks out at the vast expanses of the Mississippi Delta. He searches for something under his bed."
+          synopsis="Sammie walks back to his cabin in the sharecropper's village. He wakes up his siblings in his cabin, then looks out at the vast expanses of the Mississippi Delta. He searches for something under his bed."
           objectives={[
             {
               character: SinnersCast.SammieMoore,
@@ -562,7 +568,7 @@ const Contents = () => {
               subtext: "I am getting ready to pursue my dreams."
             },
           ]}
-          conflict="Sammie initially is reluctant to decide to pursue his love of music, but he looks out to the fields and decides today’s the day he’s going to make it happen."
+          conflict="Sammie initially is reluctant to decide to pursue his love of music, but he looks out to the fields and decides today's the day he's going to make it happen."
           tactics={[
             {
               character: SinnersCast.SammieMoore,
@@ -571,7 +577,7 @@ const Contents = () => {
           ]}
           turningPoint="Sammie goes from neutral, to determined and hopeful as he looks out at the fields."
           outcome="Sammie realizes his guitar is missing."
-          storyContribution="We get more of a taste of Sammie’s playful personality, the vast expanses of land, and sense that Sammie is hopeful for something."
+          storyContribution="We get more of a taste of Sammie's playful personality, the vast expanses of land, and sense that Sammie is hopeful for something."
         />
 
         <H4>Smoke and Stack Wait for Hogwood</H4>
@@ -1026,6 +1032,7 @@ const Contents = () => {
         <H4>“Bo Chow!”</H4>
         <P>Instead of having Smoke labor through robotic dialog like <i>“Good seeing you my old friend! It’s been a long time Bo!”</i>... Ryan Coogler writes a simple <i>“Bo Chow!”</i>, a long pause after Bo comes out of the door, and a <i>big</i> hug.</P>
         <P>More brilliant visual storytelling. We immediately understand they’ve known each other for a long time, and that they have a close relationship that goes way back, with no additional dialog needed.</P>
+        <P>Another snappy moment at <FilmTimecode timecode="19:06" /> when in 1 motion Smoke holds up the money to answer Grace’s <i>“How you payin’ for this?”</i>, then Bo follows-on immediately with <i>“and...”</i>. 1 fluid motion of visual speech.</P>
 
         <H4>Catfish</H4>
         <P>Smoke says <i>“I need catfish, for 100 people”</i>. During my visit to Clarksdale, I didn’t remember this line, until someone recommended that I go eat some catfish <A href="https://maps.app.goo.gl/zHB42QnAoNtAhGRR9">by the crossroads</A>.</P>
@@ -1689,9 +1696,10 @@ const Contents = () => {
           outcome="Chayton leaves."
           storyContribution="We get an uneasy feeling that the story is going to take a turn for the worst."
         />
-        <H5>The Name “Sinners”</H5>
-        <P>I’ve personally wondered whether the film is named “Sinners” because the sin goes beyond the individual characters’ actions (like greed, lust, etc), but actually expands to cover the dark past of America itself.</P>
+        <H5>The Title “Sinners”</H5>
+        <P>I’ve wondered whether the film is named “Sinners” because the sin goes beyond the individual characters’ actions (like greed, lust, etc), but actually expands to cover the dark past of America itself.</P>
         <P>The displacement of Native Indians from their land, African-American slavery, etc. Chayton (the Choctaw man) was foreshadowing the danger they were in.</P>
+        <Aside><span className="text-neutral-500">Ryan Coogler comments on the title <A href="https://youtu.be/3zfqPIZrzU4?si=FkgFS47fI_ffgNiY&t=463">here</A>.</span></Aside>
 
         <H4>Joan Discovers Bert</H4>
         <P>We get a dark hallway scene (Ryan Coogler has said <i>“I love dark hallway [scenes]”</i>), then discover that Remmick has killed Bert. This ends Act I.</P>
@@ -1727,8 +1735,218 @@ const Contents = () => {
         <P>We have a small scene where a patron is helping set up the electricity for the juke joint and triggers an electrical spark. Although a funny bit, this scene serves a functional purpose, to lighten up the mood after the
           dramatic close of Act I. We are now ahead of the protagonists and take humor that they have no idea what’s coming for them.</P>
 
-        <H4>Lorem Ipsum</H4>
-        <P>Lorem ipsum</P>
+        <H4>Character & World-Building</H4>
+        <P>Bringing the audience into a new environment, we want to show them around to orient them. So Ryan Coogler & Michael P. Shawver <span className="text-neutral-500">(Coogler’s longtime editor)</span> take us around the juke
+          club.</P>
+        <P>From <FilmTimecode timecode="45:07" /> to <FilmTimecode timecode="50:03" /> we cut between 4 layers of activity:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="45:22" content={<P><b>Dance Floor:</b> Delta Slim plays for the people dancing.</P>} />
+          <TimecodeTableRow timecode="45:28" content={<P><b>Kitchen & Bar:</b> The juke joint kitchen and bar.</P>} />
+          <TimecodeTableRow timecode="45:58" content={<P><b>Front Door:</b> Pearline <FilmTimecode timecode="45:58" /> and Mary <FilmTimecode timecode="46:34" /> enter.</P>} />
+          <TimecodeTableRow timecode="46:06" content={<P><b>Back Room:</b> The back room <span className="text-neutral-500 text-sm">(where Stack is eventually killed by Mary)</span>.</P>} />
+        </TimecodeTable>
+        <P>More character development moments:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="46:08" content="We observe Smoke’s exacting nature around finances." />
+          <TimecodeTableRow timecode="47:09" content="Sammie growing in confidence and hitting on Pearline." />
+        </TimecodeTable>
+        <P>And other moments:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="47:35" content={<P>A moment of irony as Cornbread beats up a juke-goer for $2 after letting Mary in for free.</P>} />
+          <TimecodeTableRow timecode="47:40" content={
+            <div>
+              <P>Match cut on the idea of prostitution, cutting from the backroom conversation on “sellin a**” to Pearline asking <i>“You gon’ pay?”</i> to Sammie.</P>
+              <P>Sammie replies <i>“You gon’ sing?”</i> and Pearline replies <i>“We’ll see where the night takes us.”</i></P>
+              <P>More planting of irony in Coogler’s writing, as Pearline ends up “singing” while Sammie performs oral sex later.</P>
+            </div>
+          } />
+        </TimecodeTable>
+
+        <H4>Mary & Sammie Have a Drink</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="49:00"
+          turningPointTimecode={["49:20", "49:42"]}
+          endTimecode="50:35"
+          synopsis="Mary and Sammie sit down at the bar to catch up. Mary tells Sammie about her past with the twins. Smoke comes out of the back room and dismisses the conversation."
+          objectives={[
+            {
+              character: SinnersCast.Mary,
+              explicit: "I want to catch up with Sammie.",
+              subtext: "I want to get closer to making Stack care about me."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              explicit: "I want to figure out who this person is.",
+              subtext: "∅"
+            },
+            {
+              character: SinnersCast.Smoke,
+              explicit: "I want to stop this conversation.",
+              subtext: "I want to protect my brother and patrons from race troubles breaking out."
+            },
+          ]}
+          conflict="Mary feels resentment towards the twins for abandoning her. Smoke wants her out of the juke joint."
+          tactics={[
+            {
+              character: SinnersCast.Mary,
+              tactic: "Addresses Smoke with resentment."
+            },
+            {
+              character: SinnersCast.SammieMoore,
+              tactic: "Quietly listens."
+            },
+            {
+              character: SinnersCast.Smoke,
+              tactic: "Dismisses Sammie to end the conversation."
+            },
+          ]}
+          turningPoint="Smoke comes out of the back room to confront Mary."
+          outcome="Mary is more frustrated with the twins."
+          storyContribution="We learn more about Mary’s race and backstory. We also further develop Smoke’s character as emotionally hardened and unfeeling."
+        />
+        <H5>Seamless Perspective Change</H5>
+        <P>At <FilmTimecode timecode="49:42" /> Smoke comes out of the back room and the camera angle switches to assume his POV (blurring Mary in the foreground for continuity). This is called <A href="https://en.wikipedia.org/wiki/Point-of-view_shot"><i>subjective POV</i></A>.</P>
+        <P>The closer you align with a character’s line of vision, the more the watcher persoanlly identifies with that character’s perspective. Here we fully assume Sammie’s eyesight for this transition.</P>
+
+        <H4>Mary Confronts Stack</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="50:35"
+          turningPointTimecode={["50:55", "51:46", "52:01"]}
+          endTimecode="52:48"
+          synopsis="Mary confronts Stack about his love for her. Stack admits to it."
+          objectives={[
+            {
+              character: SinnersCast.Mary,
+              explicit: "Stay in the juke joint to keep getting at the twins.",
+              subtext: "I want him to confess he still loves me."
+            },
+            {
+              character: SinnersCast.Stack,
+              explicit: "Get Mary out of the juke joint.",
+              subtext: "I still love her."
+            },
+          ]}
+          conflict="Mary wants answers from Stack about whether he still cares for her."
+          tactics={[
+            {
+              character: SinnersCast.Mary,
+              tactic: "Directly confronts Stack about his love for her."
+            },
+            {
+              character: SinnersCast.Stack,
+              tactic: "Stack at first dances around the topic, eventually admits he cares."
+            },
+          ]}
+          turningPoint="Stack admits that he still loves Mary, but couldn’t be with her."
+          outcome="Mary tears up and walks away. "
+          storyContribution="We learn that Stack could never be with Mary due to the race-related danger it would pose to her."
+        />
+        <H5>Talking Guitars</H5>
+        <P>If you listen closely you will hear the score decorate the dialogue at emotional moments to accentuate them, almost like a conversation of guitars:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="51:31" content={<P>Stack: <i>“...put they hands on you”</i></P>} />
+          <TimecodeTableRow timecode="51:36" content={<P>Mary: <i>“...so you’ll kill for me?”</i> (the word “kill” deserves a low, eerie note)</P>} />
+          <TimecodeTableRow timecode="51:41" content={<P>Mary: <i>“But you still won’t tell me the truth.”</i></P>} />
+          <TimecodeTableRow timecode="51:46" content={<P>A guitar plucks a bit before Mary’s haunted <i>“I waited...I waited a long time.”</i></P>} />
+          <TimecodeTableRow timecode="52:02" content={<P>Smoke: <i>“Say what? ... hm?”</i> (the guitar begins picking up before Stack’s admitting he still loves her)</P>} />
+          <TimecodeTableRow timecode="52:18" content="Captures Mary’s silent reaction, the guitar does the talking." />
+        </TimecodeTable>
+
+
+        <H4>Sammie Prepares to Play</H4>
+        <P>At <FilmTimecode timecode="53:10" /> we transition to the scene before Sammie plays. We establish the standing position of 5 characters:</P>
+        <UnorderedList>
+          <ListItem><b>Sammie & Pearline:</b> By the bar. <span className="text-neutral-500">(they’re consistently framed in shots together to build the association)</span></ListItem>
+          <ListItem><b>Stack:</b> Against a wooden beam near them. <span className="text-neutral-500">(a bit to their left)</span></ListItem>
+          <ListItem><b>Smoke:</b> Further along, stage-right, in the crowd.</ListItem>
+          <ListItem><b>Mary:</b> Center audience.</ListItem>
+        </UnorderedList>
+        <P>During Sammie’s performance there is a reaction “triangle” formed at <FilmTimecode timecode="55:25" /> between Stack poking fun at Smoke & Sammie playing.</P>
+
+        <H4>Surreal Montage</H4>
+        <Image
+          path="/film-analysis/films/sinners/stills/surreal-montage-climax"
+          ext="jpg"
+          alt="Opening scene in Sinners, Sammie Moore entering his father's church, in tatters and distraught, clutching the neck of his shattered guitar."
+          height="100"
+          optimize={false}
+          inspectable
+          style={{ paddingTop: "4px", paddingBottom: "16px" }}
+        />
+        <H5>Delta Slim’s Preface</H5>
+        <P>Before Sammie conjurs the spirits of the past & future in the montage scene, Delta Slim says:</P>
+        <Quote>
+          Blues wasn’t forced on us like that religion. Nah son, we brought this with us from home.
+          It’s magic what we do. It’s sacred...and big.
+        </Quote>
+        <P>The religion Slim is referencing is Protestant Christianity. Quoting from ChatGPT <span className="text-neutral-500 text-sm">(this is a deep topic I’m not qualified to be an authority on)</span>:</P>
+        <Quote>
+          In the American South, enslaved Africans were forced to adopt Protestant Christianity, often under a version tailored to enforce obedience and submission. Yet behind closed
+          doors, many blended this imposed faith with their own African spiritual traditions, giving rise to a powerful, hidden theology rooted in resistance, hope, and cultural survival.
+        </Quote>
+        <H5>Montage</H5>
+        <P>This scene needs no words or explanation. I’ve wondered to myself if Ryan Coogler’s background in football gave him an advantage in creating “play-by-play” schematics for this scene. I believe he said it took them
+          3 months to plan it.
+        </P>
+        <P>My favorite portion is the drummer speaking <A href="https://en.wikipedia.org/wiki/Mandinka_people">Mandinka</A> at <FilmTimecode timecode="56:57" />, then floating over to the group twerking at the bar
+          as the bass kicks in <FilmTimecode timecode="57:04" />. In Clarksdale during one screening half a row in front of me got up and danced to it.</P>
+        <P>Also a huge fan of Grace’s little walk at <FilmTimecode timecode="57:11" />. And Bo leaving his card game at <FilmTimecode timecode="57:22" />.</P>
+        <P>Then <FilmTimecode timecode="58:12" /> is an epic cinematic moment. The sound editors take watchers to another world. This is the very climax of the whole movie, then it’s downhill from here.</P>
+        <P><FilmTimecode timecode="58:31" /> is an earpiercing note that was never pleaseant to listen too. I wonder if they kept that in to create a sense of separation from the following scene.</P>
+
+        <H4>Dramatic Pressure</H4>
+        <P>As we move towards the Act II climax, Ryan Coogler constantly builds dramatic tension then releases it, keeping us on the edge of our seats <span className="text-neutral-500 text-sm">(and humored)</span>. Paces builds and builds:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="59:38" content={<P><b>Remmick Eyeing the Juke Club → <span className="text-neutral-500 text-xs">[CUT TO]</span>  Sammie & Pearline Kissing In the Back Room</b></P>} />
+          <TimecodeTableRow timecode="1:03:06" content={<P><b>Remmick Draws His... → Banjo Up To Play</b></P>} />
+          <TimecodeTableRow timecode="1:12:58" content={<P><b>Remmick Gets Up To Attack Mary → <span className="text-neutral-500 text-xs">[CUT TO]</span> Pearline Wailing In Song</b></P>} />
+          <TimecodeTableRow timecode="1:15:11" content={<P><b>Loud Juke Club Interior → <span className="text-neutral-500 text-xs">[CUT TO]</span> Pitch Black Darkness As Cornbread Runs To Pee</b></P>} />
+          <TimecodeTableRow timecode="1:15:47" content={<P><b>Cornbread Before Getting Attacked → <span className="text-neutral-500 text-xs">[CUT TO]</span> Smoke Pushing Through Curtains</b></P>} />
+        </TimecodeTable>
+        <P>Some of these transitions seem like they could have been conceived in post-production, rather than being baked in the screenplay.</P>
+
+        <H4>Sammie Eating Out Pearline</H4>
+        <P>This scene made people uncomfortable, but the key is you always want to balance it out with some other emotion rather quickly.</P>
+        <P>We bring in humor at <FilmTimecode timecode="1:00:48" /> when Stack overhears the couple and smirks. This received the 3rd largest laugh of the movie (behind Slim’s <i>“I think I just shat
+          myself”</i> at <FilmTimecode timecode="1:27:57" /> and <i>“Well fuck ya wife too”</i> from Stack to Cornbread at <FilmTimecode timecode="32:50" />).</P>
+
+        <H4>Remmick Walks Up</H4>
+        <SceneOverview
+          className="my-4"
+          startTimecode="1:01:04"
+          turningPointTimecode={["1:01:11", "1:02:33", "1:03:06", "1:04:24"]}
+          endTimecode="1:04:51"
+          synopsis=""
+          objectives={[
+            {
+              character: SinnersCast.Remmick,
+              explicit: "",
+              subtext: ""
+            },
+            {
+              character: SinnersCast.Smoke,
+              explicit: "",
+              subtext: ""
+            },
+          ]}
+          conflict=""
+          tactics={[
+            {
+              character: SinnersCast.Smoke,
+              tactic: ""
+            }
+          ]}
+          turningPoint=""
+          outcome=""
+          storyContribution=""
+        />
+        <H4>Pick Poor Robin Clean</H4>
+        <P>On the surface an innocent moment of humor and light song, this scene has enormous contribution to the film’s intended meaning. Here’s the original song <ScoreTimecode link={SinnersScore.PickPoorRobinClean} /></P>
+
+
+
 
 
 
@@ -2014,7 +2232,19 @@ const FilmTimecode = ({ timecode }: { timecode: string }) => {
   );
 };
 
-const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: ScoreItem }) => {
+const ScoreTimecode = ({
+  className,
+  timecode,
+  scoreItem,
+  label,
+  link
+}: {
+  className?: string;
+  timecode?: string;
+  scoreItem?: ScoreItem;
+  label?: string;
+  link?: string;
+}) => {
   const pillContent = (
     <>
       <span className="w-4 h-4 rounded-full bg-emerald-600 flex items-center justify-center">
@@ -2028,17 +2258,22 @@ const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: 
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
         </svg>
       </span>
-      {timecode}
+      {label || timecode}
     </>
   );
 
-  if (scoreItem) {
+  const href = link || scoreItem?.spotifyLink;
+
+  if (href) {
     return (
       <a
-        href={scoreItem.spotifyLink}
+        href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm whitespace-nowrap hover:bg-emerald-100 transition-colors"
+        className={twMerge(
+          "inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm whitespace-nowrap hover:bg-emerald-100 transition-colors",
+          className
+        )}
       >
         {pillContent}
       </a>
@@ -2046,7 +2281,10 @@ const ScoreTimecode = ({ timecode, scoreItem }: { timecode: string; scoreItem?: 
   }
 
   return (
-    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm whitespace-nowrap">
+    <span className={twMerge(
+      "inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm whitespace-nowrap",
+      className
+    )}>
       {pillContent}
     </span>
   );
@@ -2112,6 +2350,23 @@ const TimecodeTableRow = ({ timecode, content }: { timecode: string; content: Re
         {content}
       </td>
     </tr>
+  );
+};
+
+const CastCrewPill = ({ href, className }: { href: string; className?: string }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={twMerge(
+        "inline-flex items-center gap-1.5 px-2 py-1 bg-neutral-100 text-neutral-600 rounded-full text-sm hover:bg-neutral-200 transition-colors whitespace-nowrap",
+        className
+      )}
+    >
+      <p className="text-xs text-neutral-600">Full Cast & Crew</p>
+      <span className="text-xs">↗</span>
+    </a>
   );
 };
 
