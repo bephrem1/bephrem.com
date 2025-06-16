@@ -1,4 +1,5 @@
 import type { FunctionComponent } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 interface Props {
   startTimecode?: string;
@@ -63,6 +64,10 @@ const TurningPointTimecode = ({ timecode }: { timecode: string }) => {
   );
 };
 
+const PILL_WIDTH = 96; // px, rough width of a pill
+const PILL_HEIGHT = 32; // px, rough height of a pill
+const PILL_MIN_GAP = 2; // px, minimum gap between pills
+
 const SceneTimeline: FunctionComponent<Props> = ({
   startTimecode,
   turningPointTimecode,
@@ -90,12 +95,38 @@ const SceneTimeline: FunctionComponent<Props> = ({
     return 0;
   });
 
+  // --- Responsive container width ---
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(1000); // default fallback
+  useLayoutEffect(() => {
+    if (containerRef.current) {
+      setContainerWidth(containerRef.current.offsetWidth);
+    }
+  }, []);
+
+  // --- Overlap detection and row assignment ---
+  // We'll keep track of the rightmost edge of each row (in px)
+  const rows: number[] = [];
+  const pillPositions = turningPointPercentages.map((percent, i) => {
+    const leftPx = (percent / 100) * containerWidth;
+    let row = 0;
+    while (true) {
+      if (!rows[row] || leftPx - rows[row] > PILL_WIDTH + PILL_MIN_GAP) {
+        rows[row] = leftPx;
+        break;
+      }
+      row++;
+    }
+    return { percent, row, leftPx };
+  });
+  const maxRow = Math.max(0, ...pillPositions.map(p => p.row));
+
   return (
     <div className={className}>
       {startTimecode && endTimecode ? (
-        <div className="relative w-full flex items-center" style={{ minHeight: 40 }}>
+        <div ref={containerRef} className="relative w-full flex items-center" style={{ minHeight: 40 + maxRow * (PILL_HEIGHT + PILL_MIN_GAP) }}>
           {/* Line */}
-          <div className="absolute left-0 right-0 top-1/2 h-1 bg-neutral-200 rounded-full" style={{ zIndex: 0, transform: 'translateY(-50%)' }} />
+          <div className="absolute left-0 right-0 top-1/2 h-1 bg-neutral-200 rounded-full" style={{ zIndex: 1, transform: 'translateY(-50%)' }} />
           {/* Start pill */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
             <FilmTimecode timecode={startTimecode} />
@@ -108,16 +139,58 @@ const SceneTimeline: FunctionComponent<Props> = ({
           )}
           {/* Turning point pills */}
           {turningPointTimecodes.map((timecode, index) => {
-            // If this turning point is at the end, use the same position as the end pill
             const isAtEnd = timecode === endTimecode;
+            const { percent, row, leftPx } = pillPositions[index];
+            // Horizontal position
+            const leftStyle = isAtEnd
+              ? { right: 0 }
+              : { left: `calc(${percent}% - 48px * ${percent / 100})` };
+            // Vertical position
+            const verticalOffset = row * (PILL_HEIGHT + PILL_MIN_GAP); // px
+            const topStyle = row === 0
+              ? { top: '50%', transform: 'translateY(-50%)' }
+              : { top: `calc(50% - ${verticalOffset}px)`, transform: 'translateY(-50%)' };
+            // For connector line
+            const showConnector = row > 0;
+            // Calculate the exact pixel position for the connector line
+            // The pill's center is at leftPx, the timeline is at the same leftPx, verticalOffset is the distance
             return (
-              <div
-                key={timecode}
-                className="absolute top-1/2 -translate-y-1/2 z-20"
-                style={isAtEnd ? { right: 0 } : { left: `calc(${turningPointPercentages[index]}% - 48px * ${turningPointPercentages[index] / 100})` }}
-              >
-                <TurningPointTimecode timecode={timecode} />
-              </div>
+              <>
+                {showConnector && verticalOffset > 0 && (
+                  <svg
+                    key={`line-${timecode}-${row}`}
+                    width={2}
+                    height={verticalOffset}
+                    style={{
+                      position: 'absolute',
+                      left: isAtEnd ? undefined : `calc(${percent}% - 1px)`,
+                      right: isAtEnd ? 0 : undefined,
+                      top: `calc(50% - ${verticalOffset}px)`,
+                      zIndex: 0,
+                      transform: isAtEnd ? undefined : 'translateX(-50%)',
+                      pointerEvents: 'none',
+                    }}
+                    aria-hidden="true"
+                  >
+                    <line
+                      x1="1"
+                      y1={0}
+                      x2="1"
+                      y2={verticalOffset}
+                      stroke="#FDBA74"
+                      strokeWidth="2"
+                      strokeDasharray="4 2"
+                    />
+                  </svg>
+                )}
+                <div
+                  key={`${timecode}-${row}`}
+                  className="absolute z-10"
+                  style={{ ...leftStyle, ...topStyle }}
+                >
+                  <TurningPointTimecode timecode={timecode} />
+                </div>
+              </>
             );
           })}
         </div>

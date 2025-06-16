@@ -2114,6 +2114,41 @@ const Contents = () => {
           <ListItem><b>Longing for love</b>: Many vampire stories emphasize eternal longing for love they can’t fully have.</ListItem>
         </UnorderedList>
 
+        <H4>Juke Ascends Into Euphoria</H4>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:13:01"
+          turningPointTimecode={["1:13:54", "1:14:43", "1:15:45", "1:16:20", "1:16:24", "1:16:48", "1:19:16", "1:19:34"]}
+          endTimecode="1:20:04"
+        />
+        <P>The next sequence picks up pace, moving faster and faster as Pearline sings <ScoreTimecode scoreItem={SinnersScore.PalePaleMoon} label="Pale Pale Moon" />.</P>
+        <H5>Layering Dramatic Subplots</H5>
+        <P>This ascent sequence layers 4 mini-subplots that all <span className="text-neutral-500 text-sm">(except Cornbread’s)</span> snap at the climax of Stack dying. It is highly coordinated and would have required tight collaboration between director, composer, editor, and choreography:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:13:01" content={<p className="text-left"><b>Main Stage</b> <span className="text-neutral-500 text-sm">(Pearline Singing)</span></p>} />
+          <TimecodeTableRow timecode="1:14:17" content={<p className="text-left"><b>Cornbread Going Outside to Pee</b></p>} />
+          <TimecodeTableRow timecode="1:14:20" content={<p className="text-left"><b>The Gambling Side-Room</b> <span className="text-neutral-500 text-sm">(Fight Over Loaded Dice Breaks Out)</span></p>} />
+          <TimecodeTableRow timecode="1:16:16" content={<p className="text-left"><b>The Back Room</b> <span className="text-neutral-500 text-sm">(Stack & Mary Make Love)</span></p>} />
+        </TimecodeTable>
+        <H5>“So You Rob Trains and Banks?...”</H5>
+        <P>It’s important that you give the audience lines that they can take home, that stick with them. At <FilmTimecode timecode="1:14:20" />, Mary says asks <i>“So you rob trains and banks?...But you can’t steal this p****y for a night?”</i>. This
+          is one of them.</P>
+        <H5>Ready to Snap</H5>
+        <P>At <FilmTimecode timecode="1:16:06" />, once Stack goes into the back room, we know our understanding of the situation is about to meet the characters’ own. We’re ready to snap each of the dramatic subplots:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:16:20" content={<p className="text-left"><b>Mary Kisses Stack</b> <span className="text-neutral-500 text-sm">(The Back Room)</span></p>} />
+          <TimecodeTableRow timecode="1:16:24" content={<p className="text-left"><b>Smoke Hits the Loaded Dice Offender</b> <span className="text-neutral-500 text-sm">(The Gambling Side-Room)</span></p>} />
+          <TimecodeTableRow timecode="1:16:48" content={<p className="text-left"><b>Pearline & the Crowd Roar</b> <span className="text-neutral-500 text-sm">(Main Stage)</span></p>} />
+        </TimecodeTable>
+        <H5>Stomping</H5>
+        <P>The stomping at <FilmTimecode timecode="1:16:57" /> in IMAX was something else. And we match cut on the same concept to the man getting stomped in the back room. And of course, <FilmTimecode timecode="1:17:09" /> it ain’t none of Grace’s business.</P>
+        <P>Autumn Durald Arkapaw chooses to go handheld for a shot on Pearline’s shoes to emphasize the commotion.</P>
+        <H5>Leaning Over</H5>
+        <P>Next Pearline begins a sequence where she crawls stage-left, mirroring the sequence happening in the back room.</P>
+
+
+
+
 
       </div>
 
