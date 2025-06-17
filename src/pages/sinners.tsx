@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 import { SinnersCast } from "../components/film-analysis/sinners/cast";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
 import { type ScoreItem, SinnersScore } from "../components/film-analysis/sinners/score";
-import SinnersScoreOverview from "../components/film-analysis/sinners/score/SinnersScoreOverview";
+import SinnersScoreOverview, { ScoreItemPill } from "../components/film-analysis/sinners/score/SinnersScoreOverview";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
@@ -199,7 +199,7 @@ const Contents = () => {
           <CastMembers cast={[SinnersCast.Annie, SinnersCast.Mary, SinnersCast.Pearline]} avatarSize={50} />
         </div>
 
-        <P>In addition, there are 3 "Love Story" subplots, which all contribute narritive force to the Controlling Idea.</P>
+        <P>In addition, there are 3 "Love Story" subplots, which all contribute narrative force to the Controlling Idea.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12 pb-2">
@@ -2052,7 +2052,7 @@ const Contents = () => {
             saying <i>“That sound like a crock”</i> <FilmTimecode timecode="1:07:14" /> (crock a period term for “lie”).</ListItem>
           <ListItem><b>Turns Late:</b> Ryan averages a scene turning point every 30 seconds to 1 minute. The scene has no turning points for <i>2 minutes</i>. There is no reason to pay keen attention.</ListItem>
         </UnorderedList>
-        <P>But it’s packed with narritive importance. There’s always a balance between substance and drama.</P>
+        <P>But it’s packed with narrative importance. There’s always a balance between substance and drama.</P>
 
         <H5>Visual Metaphor</H5>
         <P>At <FilmTimecode timecode="1:08:27" /> Mary backs up against Stack, their silhouettes framed body-to-body as a visual metaphor of their romance. Smoke holsters his gun to her leg. Seeding sexual tension in the back of the viewers mind.</P>
@@ -2542,10 +2542,23 @@ const Contents = () => {
         <Aside brighter>After Smoke’s <i>“Boy who told you that?”</i> <FilmTimecode timecode="1:56:00" />, Sammie waits a full <b>4 seconds</b> before responding with <i>“Stack.”</i> <FilmTimecode timecode="1:56:04" />. Being a heavier emotional moment
           the exchange is paced to draw out, the characters are exhausted and haven’t slept.</Aside>
 
-
-
-
-
+        <H4>The Shootout (Climax)</H4>
+        <SceneTimeline
+          className="mt-4 mb-5"
+          startTimecode="1:58:31"
+          turningPointTimecode={[]}
+          endTimecode=""
+        />
+        <H5>The Score Takes Over</H5>
+        <H6>Score Transformation</H6>
+        <P>The score piece <ScoreTimecode scoreItem={SinnersScore.GrandClosin} label="Grand Closin’" timecode="1:58:31" /> represents a transformation from the gentle guitar strumming we experience at the start of the
+          film  <ScoreTimecode scoreItem={SinnersScore.SmokestackTwins} label="Smoke-Stack Twins" timecode="4:14" />. Eventually involving the electric guitar. Instead of an evolving image system, we have an evolving “score system”.</P>
+        <Aside brighter>Ludwig Göransson touches on this transformation in an <A href="https://youtu.be/Ccmg8Bzjdis?si=IJUb-VhTUftbZzkr&t=409">interview with Classical FM</A>. It happens to be one of his favorite parts too!</Aside>
+        <H6>Narrative Drive</H6>
+        <P>The score takes the wheel in this sequence, speaking us through who and what to pay attention to:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:56:38" content={<p className="text-left">Lorem.</p>} />
+        </TimecodeTable>
 
 
 
