@@ -10,6 +10,7 @@ import SinnersScoreOverview from "../components/film-analysis/sinners/score/Sinn
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
+import DramaticIntensityPlot from "../components/shared/film-analysis/plot/DramaticIntensityPlot";
 import PlotTimeline from "../components/shared/film-analysis/plot/PlotTimeline";
 import SceneOverview from "../components/shared/film-analysis/scene/SceneOverview";
 import SceneTimeline from "../components/shared/film-analysis/scene/SceneTimeline";
@@ -1586,7 +1587,11 @@ const Contents = () => {
         <H5>Mickey Mousing</H5>
         <P>Great films have the visuals <i>married</i> to the score. They ebb and flow, trading control of narrative drive. A more minor interplay happens at <FilmTimecode timecode="38:28" />, when the plucking of the guitar perfectly matches
           the 3 strikes of Annie’s matches. This is a scoring technique called <A href="https://en.wikipedia.org/wiki/Mickey_Mousing"><i>Mickey Mousing</i></A>.</P>
-        <P>It is used later when Mary stomps back into the juke after becoming a vampire at <FilmTimecode timecode="1:13:36" />.</P>
+        <P>It is used later in 2 places:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:13:36" content={<p className="text-left">Mary stomps back into the juke after becoming a vampire. <span className="text-neutral-500 text-sm">(the drum matching her footsteps)</span></p>} />
+          <TimecodeTableRow timecode="1:24:20" content={<p className="text-left">Cornbread walks back to the juke (secretly a vampire) and cricks his neck before speaking. <span className="text-neutral-500 text-sm">(the cello finishing it’s note right as he does it)</span></p>} />
+        </TimecodeTable>
 
         <H5>Sex Scenes</H5>
         <P>There are 2 sex scenes in the film, Smoke & Annie’s at <FilmTimecode timecode="39:52" /> which is more explicit, and Stack & Mary’s <FilmTimecode timecode="1:18:26" /> which is more at a distance. These acutally serve a functional purpose to increase
@@ -2152,7 +2157,135 @@ const Contents = () => {
         </TimecodeTable>
         <H5>Delta Slim’s “Oh He Busy Huh?”</H5>
         <P>We bring some humor back, and have Sammie check the back room where Smoke and Mary are having sex. <FilmTimecode timecode="1:18:30" /> yields the 3rd or 4th largest laugh from the audience.</P>
+        <H5>Story Hole</H5>
+        <P>Why does Mary run out of the juke at <FilmTimecode timecode="1:19:57" /> when she could’ve just killed them all? <span className="text-neutral-500 text-sm">(running outside will make her need permission to get back in)</span></P>
+        <P>Doesn’t really matter since we move our attention to a dying Stack.</P>
 
+        <H4>Stack Dies</H4>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:20:04"
+          turningPointTimecode={["1:20:42", "1:22:08"]}
+          endTimecode="1:24:10"
+        />
+        <H5>Michael B. Jordan’s Stellar Acting</H5>
+        <P>At <FilmTimecode timecode="1:20:56" /> Smoke glances between Annie & Stack’s dead body, his eyes red with tears, choked up at the throat, a vein on his forehead, eyes darting. It’s incredibly intense and authentic acting. He had to have gone to a
+          special place mentally to perform like that.</P>
+        <H5>Southern Accents</H5>
+        <P>A few lines I now understand watching with captions:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:22:30" content={<p className="text-left">Annie says “This a <A href="https://en.wikipedia.org/wiki/Haint_blue#Etymology">haint</A> we’re dealin’ with, Smoke.” I always thought she was saying <b><i>“hate”</i></b>.</p>} />
+          <TimecodeTableRow timecode="1:22:41" content={<p className="text-left">Smoke says <i>“This ain’t no dead body. This Stack. He’s stayin’ here with me.”</i> I always thought he was
+            saying <i>“This ain’t no dead body. This Stack. <b>Stack the ol’ man.</b>”</i>.</p>} />
+        </TimecodeTable>
+
+        <H4>Cornbread Returns</H4>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:24:11"
+          turningPointTimecode={["1:25:28", "1:27:16"]}
+          endTimecode="1:28:01"
+        />
+        <H5>Notes</H5>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:25:34" content={<p className="text-left"><b>2nd Largest Laugh</b>: Delta Slim’s swig of his flask yields the 2nd largest laugh from the audience. A laugh to break the nervous energy because we know what’s coming next.</p>} />
+          <TimecodeTableRow timecode="1:25:42" content={<p className="text-left">Love Cornbreads line: <i>“Woman, this man showed me kindness. Employed me. Grabbed me out the field!”</i></p>} />
+          <TimecodeTableRow timecode="1:26:07" content={<p className="text-left"><b>“Bein’ Kind to One-Another”</b>: This line suprisingly yielded few laughs, despite being pretty funny. Once you get the main laugh from the moment before, the audience needs time to recharge.</p>} />
+          <TimecodeTableRow timecode="1:27:16" content={<p className="text-left">This is the first jump scare of the movie. It is so emotionally intense that the first slow-motion shots are used to add gravity.</p>} />
+          <TimecodeTableRow timecode="1:27:56" content={<p className="text-left"><b>Delta Slim’s “I Think I Just Shat Myself”</b>: The largest laugh in the movie. Everyone cracks up. No exceptions.</p>} />
+        </TimecodeTable>
+
+        <H4>Stack Attacks</H4>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:28:01"
+          turningPointTimecode={["1:28:03", "1:28:15", "1:30:09"]}
+          endTimecode="1:30:41"
+        />
+        <H5>Back-To-Back Dramatic Sequences</H5>
+        <P>Coogler’s a master of pacing & emotional variety. He decides to keep the pressure high with <i>another</i> dramatic sequence immediately following Cornbread’s attack:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:28:03" content={<p className="text-left">Stack knocks on the backroom door.</p>} />
+          <TimecodeTableRow timecode="1:28:15" content={<p className="text-left">A knife jabs through the door. <span className="text-neutral-500 text-sm">(after <b>4 seconds</b> of Sammie’s ear to the door)</span></p>} />
+          <TimecodeTableRow timecode="1:28:34" content={<p className="text-left">Smoke’s eye comes right to the hole in the door. <span className="text-neutral-500 text-sm">(only in the movies!)</span></p>} />
+          <TimecodeTableRow timecode="1:30:03" content={<p className="text-left">Sammie brings it even closer, 1-2 inches away. Sammie holds it there for <b>5 seconds</b>. <span className="text-neutral-500 text-sm">(now the audience is yelling at the screen)</span></p>} />
+          <TimecodeTableRow timecode="1:30:08" content={<p className="text-left">We get a shot <i>right down the hole</i> (peak audience angst).</p>} />
+          <TimecodeTableRow timecode="1:30:09" content={<p className="text-left">Then Stack breaks through.</p>} />
+        </TimecodeTable>
+        <DramaticIntensityPlot
+          title="Dramatic Intensity"
+          points={[
+            {
+              timecode: "1:28:03",
+              intensity: 20,
+              label: "Stack Knocks",
+            },
+            {
+              timecode: "1:28:15",
+              intensity: 80,
+              label: "Knife Jabs Through The Door"
+            },
+            {
+              timecode: "1:28:34",
+              intensity: 60,
+              label: "Smoke's Eye At The Hole"
+            },
+            {
+              timecode: "1:30:03",
+              intensity: 80,
+              label: "Sammie Goes Right Up To The Hole"
+            },
+            {
+              timecode: "1:30:09",
+              intensity: 100,
+              label: "Stack Breaks Through"
+            }
+          ]}
+        />
+        <H5>Visual Metaphor: Separation</H5>
+        <P>A door now separates the twins. Life on one side, death on the other. Stack is torn between his desire to be a brother, and a desire to keep himself safe. This furthers his internal conflict, since what he really is, is a caring father.</P>
+        <H5>Twin Character Design</H5>
+        <P>As I mentioned before, the twin character design is an engine for conflict. They need each other, and at this moment in time, they couldn’t be farther away from each other. Smoke fundamentally can’t get the companionship he wants from Stack,
+          since Stack wants to kill him.</P>
+        <H5>Pickled Garlic</H5>
+        <P>Annie uses the only jar of pickled garlic on Stack to fend him off <FilmTimecode timecode="1:30:12" />, Grace later asks <i>“You don’t got none of the pickled ones?”</i> at <FilmTimecode timecode="1:36:38" />. More long-range connection of
+          concepts in Coogler’s script.</P>
+
+        <H4>Annie Explains the Situation</H4>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:30:41"
+          turningPointTimecode={["1:32:32"]}
+          endTimecode="1:33:01"
+        />
+        <H5>Annie Educates</H5>
+        <P>You never have a character explain to another character what they already know in dialog. Rather, here Annie educates not just other characters, but us, the audience, on the ground-rules of how vampires work <span className="text-neutral-500">(and how the rest of the
+          movie will work)</span>.</P>
+        <P>This scene doesn’t turn at all, but it doesn’t need to since we just got 2 large dramatic sequences in a row <span className="text-neutral-500">(but if you’re rewatching, this is the 2nd most boring part of the movie)</span>.</P>
+        <H5>“She Bit Me Everywhere, but Me Neck”</H5>
+        <P>Delta Slim’s line at <FilmTimecode timecode="1:32:32" /> <i>“I had a gal once, vampire. She was light skinneded too. That gal bit me everywhere but my neck.”</i> was the <b>3rd largest laugh</b> in the movie.</P>
+        <P>In Clarksdale, Ryan Coogler mentioned that this came up spontaneously in a recording studio when <A href="https://en.wikipedia.org/wiki/Bobby_Rush_(musician)">Bobby Rush</A> quoted it while telling a story. He then incorporated it into the script.</P>
+
+        <H4><i>The</i> Irish Jig Scene</H4>
+        <Image
+          path="/film-analysis/films/sinners/stills/irish-jig-scene"
+          ext="jpg"
+          alt="The Irish Jig Scene"
+          width="100%"
+          optimize={false}
+          inspectable
+        />
+        <p className="text-neutral-500 text-sm mt-2 mb-2">My favorite scene in the entire movie.</p>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:33:47"
+          turningPointTimecode={[]}
+          endTimecode=""
+        />
+        <Aside brighter>This is my favorite scene in the movie. I have heard it maybe 20+ times in the theater, and after movies finish, I try to see if I can catch <i>just this scene</i> playing in other theaters.</Aside>
+        <H5>Continuity Error</H5>
+        <P>The only seam, in this seamless movie, is the transition at <FilmTimecode timecode="1:33:36" />. Where Grace screams at finding the man passed out on the floor. Smoke an Annie immediately appear in the next shot, without context on how they got there so quickly.</P>
+        <P>It’s a convenient transition, but Annie & Smoke didn’t react to a bloodcurdling scream they could obviously hear while in that backroom.</P>
 
 
 
