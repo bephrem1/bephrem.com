@@ -2543,21 +2543,54 @@ const Contents = () => {
           the exchange is paced to draw out, the characters are exhausted and haven’t slept.</Aside>
 
         <H4>The Shootout (Climax)</H4>
-        <SceneTimeline
-          className="mt-4 mb-5"
-          startTimecode="1:58:31"
-          turningPointTimecode={[]}
-          endTimecode=""
+        <Image
+          path="/film-analysis/films/sinners/stills/smoke-kkk-shootout"
+          ext="jpg"
+          alt="Smoke and the KKK shootout"
+          width="100%"
+          optimize={false}
+          inspectable
         />
+        <p className="text-neutral-500 text-sm mt-2 mb-2">Smoke, in an aggressive center-frame composition, lingered on for 6 intense seconds (<i>1:59:57</i> - <i>2:00:03</i>).</p>
+        <SceneTimeline
+          className="mt-6 mb-7"
+          startTimecode="1:58:31"
+          turningPointTimecode={["1:59:33", "2:00:31", "2:01:56", "2:02:48"]}
+          endTimecode="2:03:52"
+        />
+        <P>Before Smoke first begins shooting <span className="text-neutral-500">(he initially hides in the underbrush as the KKK roll up)</span>:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:58:40" content={<p className="text-left">We flashback to Smoke warning Hogwood to never return, as the KKK cars roll up. Explicitly tying the two points in narrative.</p>} />
+          <TimecodeTableRow timecode="1:58:51" content={<div>
+            <p className="text-left">Loved the layering and how authentic the Klansman voices sounded getting out of their cars:</p>
+            <div className="pl-4 border-l border-neutral-300 mt-2 mb-2">
+              <p className="text-sm italic">“Lil’ coon huntin’ this morning boys”</p>
+              <p className="text-sm italic">“Love skinnin’ me a n****r, first thing of the day.”</p>
+              <p className="text-sm italic">“Gettin’ a little too uppity around here.”</p>
+              <p className="text-sm italic">“Time to teach these boys a lesson.”</p>
+            </div>
+            <p className="text-left">The voiceover sessions must have been fun.</p>
+          </div>} />
+          <TimecodeTableRow timecode="1:59:00" content={<p className="text-left">Hogwood’s line <i>“Club Juke, huh? Grand openin’, and grand closin’.”</i>. <span className="text-neutral-500 text-sm">(I always thought he was saying <i>“Club Juke, huh? Grand openin’, <b><i>or</i></b> grand closin’?”</i>)</span></p>} />
+          <TimecodeTableRow timecode="1:59:07" content={<div>
+            <p className="text-left">We’re right on the edge of our seats, terrified of what’s about to happen. But right as the henchman opens the door, we match cut seamlessly to Sammie
+              opening the church doors. Making progress on his subplot & cooling dramtic tension.</p>
+            <div className="pl-4 border-l border-neutral-300 mt-2 mb-2">
+              <p className="text-neutral-500 text-sm italic">I have a strong feeling Coogler must have wrote this in the screenplay, as it would be a cue for production design to design the sets with this cut in-mind.</p>
+            </div>
+          </div>} />
+        </TimecodeTable>
         <H5>The Score Takes Over</H5>
         <H6>Score Transformation</H6>
         <P>The score piece <ScoreTimecode scoreItem={SinnersScore.GrandClosin} label="Grand Closin’" timecode="1:58:31" /> represents a transformation from the gentle guitar strumming we experience at the start of the
-          film  <ScoreTimecode scoreItem={SinnersScore.SmokestackTwins} label="Smoke-Stack Twins" timecode="4:14" />. Eventually involving the electric guitar. Instead of an evolving image system, we have an evolving “score system”.</P>
-        <Aside brighter>Ludwig Göransson touches on this transformation in an <A href="https://youtu.be/Ccmg8Bzjdis?si=IJUb-VhTUftbZzkr&t=409">interview with Classical FM</A>. It happens to be one of his favorite parts too!</Aside>
+          film  <ScoreTimecode scoreItem={SinnersScore.SmokestackTwins} label="Smoke-Stack Twins" timecode="4:14" />. Eventually involving the electric guitar.</P>
+        <P>Instead of an evolving image system, we have an evolving “score system”.</P>
+        <Aside brighter>Ludwig Göransson touches on this transformation in an <A href="https://youtu.be/Ccmg8Bzjdis?si=IJUb-VhTUftbZzkr&t=409">interview with Classical FM</A> and <A href="https://youtu.be/Rz3xHhOLK6M?si=SUvh46RPi0XyHJjj&t=918">NME</A>.
+          It happens to be one of his & Coogler’s favorite parts too.</Aside>
         <H6>Narrative Drive</H6>
         <P>The score takes the wheel in this sequence, speaking us through who and what to pay attention to:</P>
         <TimecodeTable>
-          <TimecodeTableRow timecode="1:56:38" content={<p className="text-left">Lorem.</p>} />
+          <TimecodeTableRow timecode="1:59:22" content={<p className="text-left">Lorem.</p>} />
         </TimecodeTable>
 
 
