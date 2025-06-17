@@ -2493,13 +2493,17 @@ const Contents = () => {
       <PlotTimeline
         className="mt-6 mb-1"
         startMinute={115}
-        endMinute={124}
+        endMinute={123}
         rows={[
           {
             label: "The Last Stand",
             subLabel: "Act V",
             items: [
-              { atMinute: 115, label: "Lorem." },
+              { atMinute: 118, label: "KKK Arrive." },
+              { atMinute: 119, label: "Smoke Appears.", bump: true },
+              { atMinute: 121, label: "Smoke Dies." },
+              { atMinute: 122, label: "Hogwood Dies.", bump: true },
+              { atMinute: 123, label: "Sammie Leaves for Chicago." },
             ],
           }
         ]}
@@ -2630,14 +2634,30 @@ const Contents = () => {
         <P>There is great irony here, Sammie & Father Moore’s relationship as a father-son battle is actually a narrative cloak over what Ryan Coogler is really saying.</P>
 
         <H5>Everything Comes Together</H5>
-        <P>Between <FilmTimecode timecode="2:00:53" /> the whole meaning of the film resolves at once.</P>
+        <P>Between <FilmTimecode timecode="2:00:53" /> and the end where Sammie drives away to Chicago, the whole meaning of the film resolves at once.</P>
 
+        <H6>Ancestral Religion vs Inherited Christianity</H6>
+        <P>Reverend Moore as a character represents the forces that forced Christianity upon Southern Blacks as a means to control them. Sammie as a character represents the soul of Southern Black culture.</P>
+        <P>Reverend Moore would like to tie him down and force him to practice the religion he adopted, but Sammie decides to take his own path, preserve the culture, and go north to Chicago.</P>
+        <P>We have noted previously where major plot points subvert religious control and favor ancestral religious roots <span className="text-neutral-500">(practice of <A href="https://en.wikipedia.org/wiki/Hoodoo_(spirituality)">Hoodoo</A>)</span>.</P>
+        <Aside brighter>
+          <span className="block mb-2">I saw this YouTube video titled <A href="https://www.youtube.com/watch?v=OpvIlVlxdcg">“Sinners is Anti-Christian”</A> and was initially taken aback/confused by the title. But, after completing this analysis,
+            I see where it’s coming from.</span> <span className="block">But the message isn’t about the contents of Christianity itself. The message is centered around <i>cultural control</i>. Religion just happens to be the means of control.</span>
+        </Aside>
 
+        <H6>Racism and Slavery</H6>
+        <P>Smoke <span className="text-neutral-500">(in one facet of character)</span> represents the Southern Black people. His revenge in the final scene over the KKK mobsters, and brutal killing of Hogwood by
+          machine gun <FilmTimecode timecode="2:02:48" /> —— is <span className="font-medium">Grand Cinema Payback</span> for centuries of slavery and oppression.</P>
+        <P>Final and total justice, immortalized on film.</P>
 
-
-
-
-
+        <H6>Parenthood</H6>
+        <P>At <FilmTimecode timecode="2:03:07" /> Smoke accepts his baby from Annie after his death. <b>He is now the father he always wanted to be.</b></P>
+        <P><b>But he has lost his life</b>, due to his ways of the past. Robert McKee talks about film endings in his book <i>“Story”</i>:</P>
+        <Quote>
+          [the writer] from the way he tells his story [at] the beginning, whispers to the audience: <i>“Expect an up-ending”</i> or <i>“Expect a down-ending”</i> or <b><i>“Expect irony.”</i></b>
+          <span className="block">Having pledged a certain emotion, it’d be ruinous not to deliver. So <b>we give the audience the experience we’ve promised, but not in the way it expects</b>.</span>
+        </Quote>
+        <P>Smoke has gotten what he always wanted, but has lost it all at the same time.</P>
       </div>
 
 
