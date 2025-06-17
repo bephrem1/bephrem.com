@@ -81,7 +81,7 @@ const Contents = () => {
   return (
     <div className="pt-16 pb-80">
       <div className="px-4 sm:px-2 sm:pr-12">
-        <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-19" />
+        <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners,” By Ryan Coogler" date="2025-06-19" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
           <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As a filmmaker (not that I consider myself one yet), sometimes you watch things
@@ -2580,6 +2580,7 @@ const Contents = () => {
             </div>
           </div>} />
         </TimecodeTable>
+
         <H5>The Score Takes Over</H5>
         <H6>Score Transformation</H6>
         <P>The score piece <ScoreTimecode scoreItem={SinnersScore.GrandClosin} label="Grand Closin’" timecode="1:58:31" /> represents a transformation from the gentle guitar strumming we experience at the start of the
@@ -2587,11 +2588,50 @@ const Contents = () => {
         <P>Instead of an evolving image system, we have an evolving “score system”.</P>
         <Aside brighter>Ludwig Göransson touches on this transformation in an <A href="https://youtu.be/Ccmg8Bzjdis?si=IJUb-VhTUftbZzkr&t=409">interview with Classical FM</A> and <A href="https://youtu.be/Rz3xHhOLK6M?si=SUvh46RPi0XyHJjj&t=918">NME</A>.
           It happens to be one of his & Coogler’s favorite parts too.</Aside>
+
         <H6>Narrative Drive</H6>
         <P>The score takes the wheel in this sequence, speaking us through who and what to pay attention to:</P>
         <TimecodeTable>
-          <TimecodeTableRow timecode="1:59:22" content={<p className="text-left">Lorem.</p>} />
+          <TimecodeTableRow timecode="1:59:30" content={<p className="text-left">We get a radical pluck of the electric guitar as Sammie holds his broken guitar in-hand. So as to say <i>”This is what’s at stake. Culture.“</i></p>} />
+          <TimecodeTableRow timecode="1:59:38" content={<p className="text-left">Smoke appears and the low synths smash down.</p>} />
+          <TimecodeTableRow timecode="1:59:43" content={<div>
+            <p className="text-left mb-2">In this epic moment, the orchestra begins to repeat a descending progression. Hurried, but steady. So as to represent Stack’s determination to unleash his
+              wrath on the adversaries.</p>
+            <p className="text-left">Raining down punishment.</p>
+          </div>} />
+          <TimecodeTableRow timecode="1:59:50" content={<div>
+            <p className="text-left mb-2">Smoke switches from a semi-automatic <span className="text-neutral-500">(one shot per trigger pull)</span>, to an
+              automatic <span className="text-neutral-500">(continuous fire)</span> weapon.</p>
+            <p className="text-left">I’m pretty sure this is a pacing decision to have 2 discrete emotional intensities Smoke moves between.</p>
+          </div>} />
+          <TimecodeTableRow timecode="1:59:53" content={<p className="text-left">The 2nd use of slow-motion in the film. <span className="text-neutral-500">(the first was at Cornbread’s attack at <FilmTimecode timecode="1:27:16" />)</span></p>} />
+          <TimecodeTableRow timecode="2:00:17" content={<p className="text-left">The orchestra begins a crescendo as Smoke unpins a grenade. Things are getting intense.</p>} />
+          <TimecodeTableRow timecode="2:00:31" content={<p className="text-left">The electric guitar wails out a note. Almost like it’s saying <i>Oww.</i> —— <i>“that hurt”</i>.</p>} />
+          <TimecodeTableRow timecode="2:00:36" content={<p className="text-left">A 2nd wailing note, doubling down on the importance of Smoke getting hit.</p>} />
+          <TimecodeTableRow timecode="2:00:39" content={<div>
+            <p className="text-left mb-2">We hear a high-pitched synth scoop up. It tells us there’s a new entity to pay attention to.</p>
+            <p className="text-left">Beforehand, at <FilmTimecode timecode="2:00:32" /> we hear Hogwood crawling away <span className="text-neutral-500">(very much backgrounded)</span>. Only at <FilmTimecode timecode="2:00:41" /> do we actually see him.</p>
+          </div>} />
         </TimecodeTable>
+
+        <H5>Drop the Guitar Samuel <span className="text-neutral-500">(In the Name of Gawd!)</span></H5>
+        <div className="mb-6">
+          <CastMembers cast={[SinnersCast.ReverendMoore]} />
+        </div>
+        <P>Saul Williams put on an incredible performance as Reverend Moore. At <FilmTimecode timecode="2:00:53" />, he <i>rips</i> through Sammie with his voice <i>saturated</i> in <i>piercing</i> religious fervor.</P>
+        <div className="pl-4 border-l border-neutral-300 mt-2 mb-4">
+          <p className="text-sm italic">Drop the guitar, Samuel. Put it down. In the name of God!</p>
+          <p className="text-sm italic">You tell them...</p>
+          <p className="text-sm italic">My heart...my voice...my soul...</p>
+          <p className="text-sm italic">Belong’eth, to the Lord!</p>
+        </div>
+        <Aside brighter>This is a moment I come back to the theater for too, 2nd in line to the Irish Jig scene.</Aside>
+        <P>Sammie stands there, unable to accept his father’s words. Completely and totally conflicted. Physically & emotionally injured.</P>
+        <P>There is great irony here, Sammie & Father Moore’s relationship as a father-son battle is actually a narrative cloak over what Ryan Coogler is really saying.</P>
+
+        <H5>Everything Comes Together</H5>
+        <P>Between <FilmTimecode timecode="2:00:53" /> the whole meaning of the film resolves at once.</P>
+
 
 
 
