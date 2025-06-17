@@ -57,7 +57,7 @@ const LeftColumnContents = () => {
       <div className="mt-4">
         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 ml-[-12px]">
           <p className="text-neutral-500 text-sm mb-1"><b>Controlling Idea</b> <span className="text-neutral-400 text-xs">(Theme)</span></p>
-          <p className="text-neutral-600 text-sm text-left">“Greed and hunger for power destroys community. Culture and it’s expression can never be destroyed.”</p>
+          <p className="text-neutral-600 text-sm text-left">“Greed and hunger for power destroys community. Culture and its expression can never be destroyed.”</p>
         </div>
       </div>
       <div className="mt-4">
@@ -338,7 +338,7 @@ const Contents = () => {
         <H4>Controlling Idea(s)</H4>
         <P>Combining major protagonist choices, with the conditions they ultimately end up in, we can estimate Controlling Idea<span className="text-neutral-500">(s)</span> as:</P>
         <UnorderedList>
-          <ListItem>Excessive greed for money and power will destory family, community, and self.</ListItem>
+          <ListItem>Excessive greed for money and power will destroy family, community, and self.</ListItem>
           <ListItem>Culture is immortal, it will always find a way to survive attack.</ListItem>
         </UnorderedList>
         <P>There are also strong historical notes on ownership & racism, Ryan Coogler in <A href="https://youtu.be/0mU_2VWpsmQ?si=vZNmPtdGcGTFDXah&t=431">this interview with Hanna Flint</A> comments:</P>
@@ -1660,6 +1660,7 @@ const Contents = () => {
           that he showed up in. So that <b>he would be extremely odd. <i>And it would all seem odd to him.</i></b> But also that he would see it for what it was. And offer a sweet deal. ... And that the music was just as beautiful.
         </Quote>
         <P>The score turns curious and we hear an inflection at <FilmTimecode timecode="41:42" />, almost to question alongside us <i>“...Who is that?”</i>.</P>
+        <Aside>Ryan Coogler comments on <A href="https://youtu.be/Pjb_eH0C_vQ?si=McG6qkT0sBqMRRz5&t=729">why he used vampires</A> as a narrative device.</Aside>
 
         <H5>“Injuns”</H5>
         <P>Bert says <i>“Ain’t no Injuns around here for miles,”</i> after 20 times watching the film I always thought this line was “engines” (as in, there are no cars closeby). I now only realize this after watching with captions.</P>
@@ -2526,7 +2527,7 @@ const Contents = () => {
           endTimecode="1:58:31"
         />
         <H6>Emotional Build-Up</H6>
-        <P>Since we’re about to go through a fight sequence, the editor takes us through a series of shots to take use through Smoke’s internal state of welling up
+        <P>Since we’re about to go through a fight sequence, the editor takes us through a series of shots to take us through Smoke’s internal state of welling up
           emotion <span className="text-neutral-500">(while also teeing up the Sammie church confrontation subplot)</span>:</P>
         <TimecodeTable>
           <TimecodeTableRow timecode="1:56:38" content={<p className="text-left">We see the first shot of the movie, with Sammie driving up to church. We are now experiencing it in real-time.</p>} />
