@@ -2452,8 +2452,69 @@ const Contents = () => {
           endTimecode="1:55:18"
         />
         <P>There’s a lot going on so I’ll just timecode various thoughts:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:47:46" content={<p className="text-left">We get a dog whimper/bark sound-effect when Delta Slim punches Joan.</p>} />
+          <TimecodeTableRow timecode="1:47:52" content={<p className="text-left">Incredible gunmanship from Smoke.</p>} />
+          <TimecodeTableRow timecode="1:47:57" content={<p className="text-left">Grace in a flaming ball of fire after having staked a man, why not.</p>} />
+          <TimecodeTableRow timecode="1:48:09" content={<p className="text-left">Annie says <i>“Smoke! They feel his pain.”</i> I always thought she was saying <i>“Smoke! They feelin’ pain.”</i></p>} />
+          <TimecodeTableRow timecode="1:48:29" content={<p className="text-left">Smoke’s <i>“Everything gon’ be all right now”</i> was surreal to see in an IMAX theater. The coloring made it look like a nightmare.</p>} />
+          <TimecodeTableRow timecode="1:48:50" content={<p className="text-left">The main vampires <span className="text-neutral-500">(Remmick, Stack, Mary)</span> come to attention before the major event of Smoke <span className="text-neutral-500">(re)</span>killing Annie.</p>} />
+          <TimecodeTableRow timecode="1:49:15" content={<p className="text-left">There’s a loud and low bass hit you can’t hear on digital, right when Smoke stabs Annie with the stake. To add width & volume to the action.</p>} />
+          <TimecodeTableRow timecode="1:49:49" content={<p className="text-left">Delta Slim scraping his forearm with the shattered bottle for blood always made the audience uneasy.</p>} />
+          <TimecodeTableRow timecode="1:50:40" content={<p className="text-left">Sammie’s jump from 2-stories high to the ground always made the audience laugh and wince. I think they kept that in since it was just plain funny & impractical.</p>} />
+        </TimecodeTable>
+
+        <H5>The Last Stand</H5>
+        <P><FilmTimecode timecode="1:50:55" /> marks the last stands of our 2 main protagonists <span className="text-neutral-500">(Sammie & Smoke)</span>. At <FilmTimecode timecode="1:51:13" /> Sammie begins a prayer of <i>“Our Father,”</i> and the score changes
+          to high strings in <ScoreTimecode scoreItem={SinnersScore.ThyKingdomCome} label="Thy Kingdom Come" timecode="1:38" />.</P>
+        <P>All the chips are on the table. The protagonists have nothing left to lose <span className="text-neutral-500">(but their lives)</span>. This is an impossible situation for both of them.</P>
+        <Aside brighter>When Sammie broke out into prayer, one crowd even broke into laughter because it was so comical.</Aside>
+        <P>Remmick parrots back in prayer at <FilmTimecode timecode="1:51:20" />, and the crowd of vampires closes in. There is less and less air to breathe.</P>
+
+        <H5>Christianity vs Hoodoo</H5>
+        <P>At <FilmTimecode timecode="1:51:48" /> Remmick says:</P>
+        <div className="mt-2 mb-4">
+          <div className="pl-4 border-l border-neutral-300">
+            <p className="text-sm italic">Long ago...the men who stole my father’s land forced these words upon us.</p>
+            <p className="text-sm italic">I hated those men but the words still bring me comfort.</p>
+          </div>
+        </div>
+        <P>In this great moment of irony, Remmick is repeating back to Sammie the cultural condition Southern Blacks found themselves in. Land stolen, a religion of Protestant Christianity forced upon them — as he dips Sammie
+          in a baptism of water.</P>
+        <P>In <i>another</i> great moment of irony, while Sammie’s prayer is ineffective on Remmick, Smoke’s amulet saves his life from Stack’s bite at <FilmTimecode timecode="1:52:36" /> <span className="text-neutral-500">(after he ridiculed
+          Annie for her hoodoo practice the whole film)</span>.</P>
       </div>
 
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>Act V: The Last Stand</H3>
+        <P>Now that Remmick is dead, Smoke has a different kind of devil to face, and Sammie has to catch Sunday Service.</P>
+        <P>Key turning points are as follows:</P>
+      </div>
+      <PlotTimeline
+        className="mt-6 mb-1"
+        startMinute={115}
+        endMinute={124}
+        rows={[
+          {
+            label: "The Last Stand",
+            subLabel: "Act V",
+            items: [
+              { atMinute: 115, label: "Lorem." },
+            ],
+          }
+        ]}
+      />
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H4>KKK Shootout</H4>
+        <SceneTimeline
+          className="mt-4 mb-5"
+          startTimecode=""
+          turningPointTimecode={[]}
+          endTimecode=""
+        />
+        <H5>Character Framing</H5>
+        <P>To frame this scene for Smoke, he has lost <i>everything</i>. His friends, his wife, his business, his twin brother. He has nothing left to lose.</P>
+      </div>
 
 
       {/* <SceneOverview
@@ -2762,7 +2823,7 @@ const ScoreTimecode = ({
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
         </svg>
       </span>
-      {label || timecode}
+      {label && timecode ? `${label} (${timecode})` : label || timecode}
     </>
   );
 
