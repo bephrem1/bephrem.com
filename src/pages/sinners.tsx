@@ -2266,7 +2266,7 @@ const Contents = () => {
         <P>Delta Slim’s line at <FilmTimecode timecode="1:32:32" /> <i>“I had a gal once, vampire. She was light skinneded too. That gal bit me everywhere but my neck.”</i> was the <b>3rd largest laugh</b> in the movie.</P>
         <P>In Clarksdale, Ryan Coogler mentioned that this came up spontaneously in a recording studio when <A href="https://en.wikipedia.org/wiki/Bobby_Rush_(musician)">Bobby Rush</A> quoted it while telling a story. He then incorporated it into the script.</P>
 
-        <H4><i>The</i> Irish Jig Scene</H4>
+        <H4>The Irish Jig Scene</H4>
         <Image
           path="/film-analysis/films/sinners/stills/irish-jig-scene"
           ext="jpg"
@@ -2283,9 +2283,35 @@ const Contents = () => {
           endTimecode=""
         />
         <Aside brighter>This is my favorite scene in the movie. I have heard it maybe 20+ times in the theater, and after movies finish, I try to see if I can catch <i>just this scene</i> playing in other theaters.</Aside>
+
         <H5>Continuity Error</H5>
         <P>The only seam, in this seamless movie, is the transition at <FilmTimecode timecode="1:33:36" />. Where Grace screams at finding the man passed out on the floor. Smoke an Annie immediately appear in the next shot, without context on how they got there so quickly.</P>
         <P>It’s a convenient transition, but Annie & Smoke didn’t react to a bloodcurdling scream they could obviously hear while in that backroom.</P>
+
+        <H5>Remmick’s Irish Jig</H5>
+        <P>This scene <i>captivated</i> the audience. When we talk about cinematic moments, it’s when your attention and imagination are fully captured and entertained. And this <span className="text-neutral-500"><i>(outlandish)</i></span> scene did that.</P>
+        <P>Remmick’s actor Jack O’Connell actually even had <A href="https://youtu.be/SLpzfFCYz8E?si=oGAMyc-v3N29YJba&t=50">irish dance lessons</A> as a child, and sung irish folk music like this in bars.</P>
+        <P>My favorite moments:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:34:45" content={<p className="text-left">It’s important to notice that the direction for the extras is to act like mindless zombies. They nod their heads around like they almost don’t control their bodies.</p>} />
+          <TimecodeTableRow timecode="1:35:05" content={<p className="text-left">The cue is brilliant, and the mob roars in response to his command. The attack on “<b><i>hunt</i></b> the hare” in theaters is something else.</p>} />
+          <TimecodeTableRow timecode="1:35:10" content={<p className="text-left">If you listen closely, there is a bass hit in the score right before Remmick breaks into his jig (before <i>“the boys of Liverpool”</i>).
+            It cues the emotional impact of the moment, hitting low in our emotional register.</p>} />
+        </TimecodeTable>
+
+        <H5>Principle of Antagonism</H5>
+        <P>The best stories, have forces of antagonism so strong, that we put into question whether the protagonists will achieve the object of their quest.</P>
+        <P>Author Robert McKee calls this the <i>Principle of Antagonism</i>:</P>
+        <Quote>
+          <b>THE PRINCIPLE OF ANTAGONISM</b>: A protagonist and
+          his story can only be as intellectually fascinating and
+          emotionally compelling as the forces of antagonism
+          make them.
+        </Quote>
+        <P>When we see a giant mob of vampires doing a stylish jig outside, we’re almost on the side of the vampires by the end <i>(“where’d he learn to dance like that?”)</i>. The odds keep stacking and stacking against our protagonists.</P>
+
+
+
 
 
 
