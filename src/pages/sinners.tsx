@@ -1055,14 +1055,15 @@ const Contents = () => {
         <P>Catfish, it turns out, has long been a staple of southern black and white working-class cuisine (though it wasn’t widely commercialized until the late 1950s/early 1960s, 30 years after this film takes place).</P>
 
         <H4>Lil’ Lisa & The Chow Family</H4>
-        <ImageWithCaption
-          src="/images/film-analysis/films/sinners/clarksdale/gilroy-chow.jpg"
-          width={400}
-          height={400}
-          caption="Gilroy Chow is an actual resident of Clarksdale."
+        <Image
+          path="/film-analysis/films/sinners/clarksdale/gilroy-chow"
+          ext="jpg"
           alt="Gilroy & Sally Chow, the actual Chow family."
+          width="100%"
+          optimize={false}
+          inspectable
         />
-        <P><A href="https://www.cityofclarksdale.org/leaders/chow/">Gilroy</A> & Sally Chow are actual residents of Clarksdale. They act as advocates for the heritage of the Chinese community in the Mississippi Delta.</P>
+        <p className="text-neutral-500 text-sm mt-2 mb-4"><A href="https://www.cityofclarksdale.org/leaders/chow/">Gilroy</A> & Sally Chow are actual residents of Clarksdale. They act as advocates for the heritage of the Chinese community in the Mississippi Delta.</p>
         <P>Although their names acted as inspiration for Grace & Bo’s, their daughter’s actual name is in-fact, Lisa.</P>
 
         <H4>Investigating the Truck Break-In</H4>
@@ -2658,34 +2659,59 @@ const Contents = () => {
           [the writer] from the way he tells his story [at] the beginning, whispers to the audience: <i>“Expect an up-ending”</i> or <i>“Expect a down-ending”</i> or <b><i>“Expect irony.”</i></b>
           <span className="block">Having pledged a certain emotion, it’d be ruinous not to deliver. So <b>we give the audience the experience we’ve promised, but not in the way it expects</b>.</span>
         </Quote>
-        <P>Smoke has gotten what he always wanted, but has lost it all at the same time.</P>
+        <P>In the same exact moment, Smoke receives everything he ever wanted, and loses it all.</P>
       </div>
 
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>Post-Credits</H3>
+        <div className="mb-11">
+          <CastMembers cast={[SinnersCast.SammieMooreOlder, SinnersCast.Stack, SinnersCast.Mary]} />
+        </div>
+        <P>Later Stack and Mary visit old Sammie <span className="text-neutral-500">(Buddy Guy)</span> in Chicago for a post-credits scene. They offer him immortality as a vampire, and he declines.</P>
+        <SceneTimeline
+          className="mt-4 mb-5"
+          startTimecode="2:05:34"
+          turningPointTimecode={["2:06:08", "2:07:28", "2:09:38"]}
+          endTimecode="2:10:39"
+        />
+        <H5>Closing Out Final Subplot</H5>
+        <P>This resolves the dramatic question of <i>“what happened to Stack?”</i> after Smoke had him at stake-point at <FilmTimecode timecode="1:52:55" />.</P>
+        <Aside brighter>At <FilmTimecode timecode="2:07:13" />, Stack says <i>“It won’t be long for you, huh?”</i>. I always thought this was <i>“Won’t be long till’ you gone.”</i>.</Aside>
+        <P>Outtro to <ScoreTimecode scoreItem={SinnersScore.FreeForADay} label="Free for a Day" />.</P>
+      </div>
+      <div className="px-4 sm:px-2 sm:pr-12 mt-5">
+        <Image
+          path="/film-analysis/films/sinners/stills/smoke-stack-twins"
+          ext="jpg"
+          alt="Opening scene in Sinners, Sammie Moore entering his father's church, in tatters and distraught, clutching the neck of his shattered guitar."
+          width="100%"
+          optimize={false}
+          inspectable
+        />
+        <p className="text-neutral-500 text-sm mt-2 mb-2">The end.</p>
+      </div>
 
-      {/* <SceneOverview
-          className="my-4"
-          startTimecode=""
-          turningPointTimecode={[]}
-          endTimecode=""
-          synopsis=""
-          objectives={[
-            {
-              character: SinnersCast.SammieMoore,
-              explicit: "",
-              subtext: ""
-            },
-          ]}
-          conflict=""
-          tactics={[
-            {
-              character: SinnersCast.SammieMoore,
-              tactic: ""
-            }
-          ]}
-          turningPoint=""
-          outcome=""
-          storyContribution=""
-        /> */}
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>Key Takeaways</H3>
+        <P>There are a lot of things that only stuck out to me after painstakingly going second-by-second, scene-by-scene, through the film. Ryan Coogler is more than a great director, he’s a great <i>screenwriter</i>.</P>
+        <P>Here are a few disparate notes:</P>
+        <UnorderedList>
+          <ListItem><b>Scene Length:</b> In Acts I & II keep scenes to 1-2 minutes.</ListItem>
+          <ListItem><b>Turning Scenes:</b> In Acts I & II, turn scenes every 30 seconds to 1 minute. A scene that doesn’t turn <span className="text-neutral-500">(and has no drama)</span> should go in the trash.</ListItem>
+          <ListItem><b>Gradually Increase Pace:</b> In later acts, pace increases and scenes turn faster.</ListItem>
+          <ListItem><b>Develop Character With Actions:</b> Take what you’d say in words, and show it in character action. It is much more powerful.</ListItem>
+          <ListItem><b>No Meaning? Cut It.</b> Every line of dialog should move to a scene turning point, build character, and/or thematic significance. If that is not directly the case, cut it.</ListItem>
+          <ListItem><b>Double/Triple Meanings</b> Explore moments in scenes where words or actions can have double or triple meanings. Making the audience not sure how to feel.</ListItem>
+          <ListItem><b>Know Your World</b> Deeply research the inner and outer world of your story and know it cold. Build scenes from inside-out.</ListItem>
+          <ListItem><b>Emotional Dynamic Range</b> Take the audience between various intensities of various emotions, at varied pace.</ListItem>
+          <ListItem><b>Plant and Payoff</b> Know your script from the <FilmTimecode timecode="1:00" /> mark, to the <FilmTimecode timecode="2:00:00" /> mark. Plant ideas and resolve them sensibly.</ListItem>
+        </UnorderedList>
+      </div>
+
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>More Resources</H3>
+        <H4>Ryan Coogler Interviews</H4>
+      </div>
     </div>
   )
 }
