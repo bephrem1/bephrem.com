@@ -2505,15 +2505,53 @@ const Contents = () => {
         ]}
       />
       <div className="px-4 sm:px-2 sm:pr-12">
-        <H4>KKK Shootout</H4>
+        <H4>Before the Shootout</H4>
+        <Image
+          path="/film-analysis/films/sinners/stills/smoke-image-system-end"
+          ext="jpg"
+          alt="Smoke sits alone before the shootout"
+          width="100%"
+          optimize={false}
+          inspectable
+        />
+        <p className="text-neutral-500 text-sm mt-2 mb-2">Smoke is alone, hands shaking, rolling his own cigarette.</p>
         <SceneTimeline
           className="mt-4 mb-5"
-          startTimecode=""
+          startTimecode="1:55:18"
           turningPointTimecode={[]}
-          endTimecode=""
+          endTimecode="1:58:31"
         />
+        <H6>Emotional Build-Up</H6>
+        <P>Since we’re about to go through a fight sequence, the editor takes us through a series of shots to take use through Smoke’s internal state of welling up
+          emotion <span className="text-neutral-500">(while also teeing up the Sammie church confrontation subplot)</span>:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="1:56:38" content={<p className="text-left">We see the first shot of the movie, with Sammie driving up to church. We are now experiencing it in real-time.</p>} />
+          <TimecodeTableRow timecode="1:57:14" content={<p className="text-left">Smoke rolls his own cigarette, something that Stack used to help him with. <span className="text-neutral-500 text-sm">(we see a cut to the daylight scene of Stack handing and lighting for him)</span></p>} />
+          <TimecodeTableRow timecode="1:57:29" content={<p className="text-left">Flashback sequence to all those who he loved and helped him open the juke joint.</p>} />
+          <TimecodeTableRow timecode="1:58:17" content={<p className="text-left">More irony, Smoke takes off his amulet at <FilmTimecode timecode="1:58:17" />, and later dies in the KKK shootout without its protection.</p>} />
+        </TimecodeTable>
+
         <H5>Character Framing</H5>
-        <P>To frame this scene for Smoke, he has lost <i>everything</i>. His friends, his wife, his business, his twin brother. He has nothing left to lose.</P>
+        <P>To frame this scene for Smoke, he has lost <i>everything</i>. His friends, his wife, his business, and his twin brother. He has nothing left to lose.</P>
+        <P>So going into this battle he will be fierce, but also helpless and vulnerable.</P>
+
+        <H5>Charlie Patton’s Guitar</H5>
+        <P>Earlier in the movie <FilmTimecode timecode="21:02" />, Stack told Sammie that they gave him <A href="https://en.wikipedia.org/wiki/Charley_Patton">Charlie Patton</A>’s old guitar. At <FilmTimecode timecode="1:55:56" />, Smoke dismisses this claim
+          saying <i>“What? Boy who told you that?”</i>. Sammie says <i>“Stack.”</i> Smoke says <i>“Lyin’ son of a b***h”</i> <span className="text-neutral-500">(I always thought this was <i>“my a soul bitchin,”</i> I could never discern the words)</span>.</P>
+        <P>More long-range plant-and-payoff from Coogler.</P>
+        <Aside brighter>After Smoke’s <i>“Boy who told you that?”</i> <FilmTimecode timecode="1:56:00" />, Sammie waits a full <b>4 seconds</b> before responding with <i>“Stack.”</i> <FilmTimecode timecode="1:56:04" />. Being a heavier emotional moment
+          the exchange is paced to draw out, the characters are exhausted and haven’t slept.</Aside>
+
+
+
+
+
+
+
+
+
+
+
       </div>
 
 
