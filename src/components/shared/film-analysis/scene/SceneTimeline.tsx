@@ -124,7 +124,7 @@ const SceneTimeline: FunctionComponent<Props> = ({
   return (
     <div className={className}>
       {startTimecode && endTimecode ? (
-        <div ref={containerRef} className="relative w-full flex items-center" style={{ minHeight: 40 + maxRow * (PILL_HEIGHT + PILL_MIN_GAP) }}>
+        <div ref={containerRef} className="relative w-full flex items-center" style={{ minHeight: 20 + (maxRow * (PILL_HEIGHT + PILL_MIN_GAP)) / 2 }}>
           {/* Line */}
           <div className="absolute left-0 right-0 top-1/2 h-1 bg-neutral-200 rounded-full" style={{ zIndex: 1, transform: 'translateY(-50%)' }} />
           {/* Start pill */}

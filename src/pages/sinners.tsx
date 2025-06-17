@@ -81,7 +81,7 @@ const Contents = () => {
   return (
     <div className="pt-16 pb-80">
       <div className="px-4 sm:px-2 sm:pr-12">
-        <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-14" />
+        <Header className="mb-4 sm:mb-4" title="Sinners Film Analysis" date="2025-06-19" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
           <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As a filmmaker (not that I consider myself one yet), sometimes you watch things
@@ -131,7 +131,7 @@ const Contents = () => {
         <P>Too much to really cover here, but I'll list a few things that come to mind that make this film head-and-shoulders remarkable:</P>
         <UnorderedList>
           <ListItem>One of the best film composers in the world, Ludwig Göransson, put down the most ambitious score of his life.</ListItem>
-          <ListItem>One of the best directors in the world, Ryan Coogler, releases the first original movie of his 5 feature-length film career.</ListItem>
+          <ListItem>One of the best writer/directors in the world, Ryan Coogler, releases the first original movie of his 5 feature-length film career.</ListItem>
           <ListItem>Michael B. Jordan plays <i>2 characters</i>, through a slew of acting & technical complications.</ListItem>
           <ListItem>The cinematography is breathtaking, every frame is memorable. <A href="https://www.autumndurald.com/">Autumn Durald Arkapaw</A> makes history as the first woman to shoot a film in large-format IMAX 65mm.</ListItem>
           <ListItem>Ryan Coogler makes history as the first black director to shoot in large-format IMAX 65mm.</ListItem>
@@ -146,7 +146,8 @@ const Contents = () => {
           <ListItem>It's the first film to use Ultra Panavision 70 and IMAX 65mm in the same film.</ListItem>
           <ListItem>Miles Caton has never acted in a feature-length film before. He even <A href="https://youtu.be/ExF7t5jrT3o?si=0TSo2IMzZUk4WHZn&t=18">learned the guitar</A> for the leading role.</ListItem>
         </UnorderedList>
-        <P>Great works of art like this come once every few decades. It's so incredibly rare, because it's nearly impossible to align talent and history like this.</P>
+        <P>Great works of art like this come once every few decades. This film threads dozens of creative needles.</P>
+        <P>It's so incredibly rare, because it's nearly impossible to align talent and history like this.</P>
         <P>Let's begin talking about the story.</P>
       </div>
 
@@ -1503,8 +1504,8 @@ const Contents = () => {
         />
         <P><FilmTimecode timecode="32:14" /> features the second shot in the film of bare feet, to emphasize the poverty at the time.</P>
         <H5>“Well, F**k Yo Wife Too”</H5>
-        <P>This was the most disrespectful moment of the film, and yielded the 2nd largest laugh at <FilmTimecode timecode="33:16" /> from the audience (next to Delta Slim’s <i>“I think I just s**t
-          myself”</i> at <FilmTimecode timecode="1:27:56" />).</P>
+        <P>This was the most disrespectful moment of the film, and yielded the 4th largest laugh at <FilmTimecode timecode="33:16" /> from the audience (with Delta Slim’s <i>“I think I just s**t
+          myself”</i> at <FilmTimecode timecode="1:27:56" /> later taking #1).</P>
 
         <H5>Transition From Slim’s Humming</H5>
         <P>Initially the transition from Delta Slim’s hum to the shot of the field played Slim’s groaning <i>“Ahh!”</i> as the field was visible (opening weekend). I believe they rearranged the shot to stay on Slim
@@ -2072,7 +2073,7 @@ const Contents = () => {
         />
         <p className="text-neutral-500 text-sm mt-2 mb-2">My favorite frame in the entire movie.</p>
         <SceneTimeline
-          className="mb-4"
+          className="mt-10 mb-5"
           startTimecode="1:09:11"
           turningPointTimecode={["1:11:21", "1:11:47", "1:12:34", "1:12:58"]}
           endTimecode="1:13:00"
@@ -2121,7 +2122,7 @@ const Contents = () => {
 
         <H4>Juke Ascends Into Euphoria</H4>
         <SceneTimeline
-          className="mb-4"
+          className="mt-24 mb-5"
           startTimecode="1:13:01"
           turningPointTimecode={["1:13:54", "1:14:43", "1:15:45", "1:16:20", "1:16:24", "1:16:48", "1:17:55", "1:19:16", "1:19:34", "1:19:44"]}
           endTimecode="1:20:04"
@@ -2156,14 +2157,14 @@ const Contents = () => {
           <TimecodeTableRow timecode="1:17:52" content={<p className="text-left">A demonic laugh knowing Stack’s demise is coming.</p>} />
         </TimecodeTable>
         <H5>Delta Slim’s “Oh He Busy Huh?”</H5>
-        <P>We bring some humor back, and have Sammie check the back room where Smoke and Mary are having sex. <FilmTimecode timecode="1:18:30" /> yields the 3rd or 4th largest laugh from the audience.</P>
+        <P>We bring some humor back, and have Sammie check the back room where Smoke and Mary are having sex. <FilmTimecode timecode="1:18:30" /> yields the 3rd largest laugh from the audience.</P>
         <H5>Story Hole</H5>
         <P>Why does Mary run out of the juke at <FilmTimecode timecode="1:19:57" /> when she could’ve just killed them all? <span className="text-neutral-500 text-sm">(running outside will make her need permission to get back in)</span></P>
         <P>Doesn’t really matter since we move our attention to a dying Stack.</P>
 
         <H4>Stack Dies</H4>
         <SceneTimeline
-          className="mb-4"
+          className="mt-4 mb-5"
           startTimecode="1:20:04"
           turningPointTimecode={["1:20:42", "1:22:08"]}
           endTimecode="1:24:10"
@@ -2205,7 +2206,7 @@ const Contents = () => {
       <div className="px-4 sm:px-2 sm:pr-12">
         <H4>Cornbread Returns</H4>
         <SceneTimeline
-          className="mb-4"
+          className="mt-4 mb-5"
           startTimecode="1:24:11"
           turningPointTimecode={["1:25:28", "1:27:16"]}
           endTimecode="1:28:01"
@@ -2221,7 +2222,7 @@ const Contents = () => {
 
         <H4>Stack Attacks</H4>
         <SceneTimeline
-          className="mb-4"
+          className="mt-10 mb-4"
           startTimecode="1:28:01"
           turningPointTimecode={["1:28:03", "1:28:15", "1:30:09"]}
           endTimecode="1:30:41"
@@ -2277,7 +2278,7 @@ const Contents = () => {
 
         <H4>Annie Explains the Situation</H4>
         <SceneTimeline
-          className="mb-4"
+          className="mt-4 mb-5"
           startTimecode="1:30:41"
           turningPointTimecode={["1:32:32"]}
           endTimecode="1:33:01"
@@ -2287,7 +2288,7 @@ const Contents = () => {
           movie will work)</span>.</P>
         <P>This scene doesn’t turn at all, but it doesn’t need to since we just got 2 large dramatic sequences in a row <span className="text-neutral-500">(but if you’re rewatching, this is the 2nd most boring part of the movie)</span>.</P>
         <H5>“She Bit Me Everywhere, but Me Neck”</H5>
-        <P>Delta Slim’s line at <FilmTimecode timecode="1:32:32" /> <i>“I had a gal once, vampire. She was light skinneded too. That gal bit me everywhere but my neck.”</i> was the <b>3rd largest laugh</b> in the movie.</P>
+        <P>Delta Slim’s line at <FilmTimecode timecode="1:32:32" /> <i>“I had a gal once, vampire. She was light skinneded too. That gal bit me everywhere but my neck.”</i> was the <b>2nd/3rd largest laugh</b> in the movie.</P>
         <P>In Clarksdale, Ryan Coogler mentioned that this came up spontaneously in a recording studio when <A href="https://en.wikipedia.org/wiki/Bobby_Rush_(musician)">Bobby Rush</A> quoted it while telling a story. He then incorporated it into the script.</P>
 
         <H4>The Irish Jig Scene</H4>
@@ -2301,15 +2302,15 @@ const Contents = () => {
         />
         <p className="text-neutral-500 text-sm mt-2 mb-2">My favorite scene in the entire movie.</p>
         <SceneTimeline
-          className="mb-4"
+          className="mt-4 mb-5"
           startTimecode="1:33:47"
           turningPointTimecode={[]}
-          endTimecode=""
+          endTimecode="1:35:59"
         />
-        <Aside brighter>This is my favorite scene in the movie. I have heard it maybe 20+ times in the theater, and after movies finish, I try to see if I can catch <i>just this scene</i> playing in other theaters.</Aside>
+        <Aside brighter>I’ve heard this scene maybe 20+ times in the theater, and after movies finish, I try to see if I can catch <i>just this scene</i> playing in other theaters.</Aside>
 
         <H5>Continuity Error</H5>
-        <P>The only seam, in this seamless movie, is the transition at <FilmTimecode timecode="1:33:36" />. Where Grace screams at finding the man passed out on the floor. Smoke an Annie immediately appear in the next shot, without context on how they got there so quickly.</P>
+        <P>The only seam, in this seamless movie, is the transition at <FilmTimecode timecode="1:33:36" />. Where Grace screams at finding the man passed out on the floor. Smoke and Annie immediately appear in the next shot, without context on how they got there so quickly.</P>
         <P>It’s a convenient transition, but Annie & Smoke didn’t react to a bloodcurdling scream they could obviously hear while in that backroom.</P>
 
         <H5>Remmick’s Irish Jig</H5>
@@ -2338,7 +2339,7 @@ const Contents = () => {
         <H4>Garlic Circle</H4>
         <P>The survivors inside get in a circle to eat garlic to see who’s a vampire.</P>
         <SceneTimeline
-          className="mb-4"
+          className="mt-4 mb-5"
           startTimecode="1:35:59"
           turningPointTimecode={["1:37:00", "1:37:40", "1:38:07"]}
           endTimecode="1:38:17"
@@ -2347,9 +2348,9 @@ const Contents = () => {
         <P>This was the <b>2nd largest laugh</b> in the movie <span className="text-neutral-500">(losing track by now, it’s fine if it’s tied with others)</span>. Slim cements his place as the funniest character in the movie here.</P>
 
         <H4>A Man From Outside Returns</H4>
-        <P>A man from outside returns and gets eaten by Cornbread. Bo walks up and tries to get in, we realize he is a vampire. This tees up Remmick walking up next.</P>
+        <P>A man from outside returns and gets eaten by Cornbread. Bo walks up and tries to get in, we realize Bo is a vampire. This tees up Remmick walking up next.</P>
         <SceneTimeline
-          className="mb-4"
+          className="mt-4 mb-5"
           startTimecode="1:38:29"
           turningPointTimecode={["1:38:58", "1:39:52"]}
           endTimecode="1:39:56"
@@ -2357,20 +2358,100 @@ const Contents = () => {
 
         <H4>Remmick Returns</H4>
         <SceneTimeline
-          className="mb-4"
+          className="mt-4 mb-5"
           startTimecode="1:39:56"
-          turningPointTimecode={[]}
-          endTimecode=""
+          turningPointTimecode={["1:40:31", "1:41:40", "1:42:58"]}
+          endTimecode="1:44:15"
+        />
+        <H5>Raising the Stakes</H5>
+        <P>At <FilmTimecode timecode="1:40:31" /> <span className="text-neutral-500">(also one of my favorite lines)</span> Remmick says “And I want you to let us in there. <b>Or we gon’ go to the grocery store. <i>We gon’ pay Lil’ Lisa a visit.</i></b>”</P>
+        <P>Lil’ Lisa is more than just a prop character. <b>She’s a dramatic device to <i>raise the stakes</i> for Grace.</b> One of the most important things you can be asking while writing a scene is <i>how can I raise the stakes</i> for my characters. What is
+          on the line here? That will make the audience care.</P>
+        <P>On top of that, Lil’ Lisa allows Grace to step into a maternal role as <i>protector</i>, to interact with the abandoned fatherhood theme adjacent to Smoke.</P>
+
+        <H5>Taishanese</H5>
+        <P>Remmick then speaks in Taishanese, as <A href="https://www.reddit.com/r/asianamerican/comments/1k52axt/comment/moeutzv">one Reddit comment</A> points out:</P>
+        <Quote>
+          ... most of the Chinese people who were in America during the Chinese Exclusion Act descended from those who helped build the railroads, and they came from Guangdong.
+        </Quote>
+        <P>Since vampires live forever, they have the resources and time to pick up various languages during travels. Here Coogler throws that in as a surrealistic touch. The audience is now simultaneously half-terrified and half-intrigued.</P>
+
+        <H5>Foreshadowing the Final Battle</H5>
+        <P>At <FilmTimecode timecode="1:41:57" />, Remmick points out Hogwood is the leader of the KKK, and that he will return to kill them all. The potential for this was planted earlier in the movie at<FilmTimecode timecode="7:47" />. This foreshadows
+          the final act.</P>
+        <P>We’ve come late enough in the movie to begin unraveling seeds that were planted far ago. In the words of Smoke, <i>“This wasn’t no juke joint. No club. This here’s a...slaughterhouse.”</i></P>
+
+        <H5>"We Was Never Gon' Be Free"</H5>
+        <P>At <FilmTimecode timecode="1:43:33" />, we have a dialog between Smoke and Stack. Stack says:</P>
+        <div className="border-l-2 border-neutral-300 pl-3 text-md mb-4">
+          <p className="text-neutral-600"><i>"We was never gon' be free. We've been running around everywhere looking for freedom. You know damn well, you was never gonna find it."</i></p>
+        </div>
+        <P>In addition to Remmick’s previous remarks, these again point to the hopeless conditions Southern Black-Americans faced at the time. There was no real freedom to be found, no matter what rules you played
+          by <span className="text-neutral-500">(because the rules themselves were written to rob you of your land and freedom)</span>.</P>
+
+        <H4>Grace Calls the Vampires In</H4>
+        <SceneTimeline
+          className="mt-4 mb-5"
+          startTimecode="1:44:16"
+          turningPointTimecode={["1:44:53", "1:45:38", "1:46:34"]}
+          endTimecode="1:46:34"
         />
 
+        <H5>Smoke’s Internal Transformation</H5>
+        <P>We see Smoke’s hands shaking at <FilmTimecode timecode="1:44:16" />, contrast this with the Smoke we saw at the start of the film. Cool, calm, ruthless. His character is slowly breaking down as we apprach the ending act, where the final lesson
+          is delivered.</P>
 
+        <H5>“Ain’t You a Soldier?”</H5>
+        <P>Grace snaps in this scene and lets her maternal instinct take over. She wants to protect Lil’ Lisa, almost as a message for Smoke to wake up to his own fatherhood.</P>
+        <Aside brighter>When at <FilmTimecode timecode="1:44:40" /> she says <i>”That white devil spoke Chinese. He got in Bo’s mind.“</i> I always thought she was saying <i>“He got a buzz mind.”</i> (like the mind of a <A href="https://en.wikipedia.org/wiki/Common_buzzard">buzzard</A>).</Aside>
 
+        <H5>Pick Poor Robin Clean <span className="text-neutral-500">(again)</span></H5>
+        <P>The vampires close in <FilmTimecode timecode="1:45:43" /> while singing <i>“Pick Poor Robin Clean”</i> again. They’re ready to go for the kill & pick them clean.</P>
+      </div>
 
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>Act IV: Grand Juke Battle</H3>
+        <P>Now that the vampires have been invited in, everyone will fight for their lives. This act will be action-driven, with fight choreography leading the way.</P>
+        <P>Key turning points are as follows:</P>
+      </div>
+      <PlotTimeline
+        className="mt-6 mb-1"
+        startMinute={107}
+        endMinute={115}
+        rows={[
+          {
+            label: "Grand Juke Battle",
+            subLabel: "Act IV",
+            items: [
+              { atMinute: 107, label: "Remmick Walks In.", doublebump: true },
+              { atMinute: 108, label: "Stack Kills Annie.", bump: true },
+              { atMinute: 109, label: "Smoke Kills Annie (again)." },
+              { atMinute: 110, label: "Delta Slim Dies.", bump: true },
+              { atMinute: 110, label: "Pearline Dies.", doublebump: true },
+              { atMinute: 115, label: "Remmick Dies.", doublebump: true },
+            ],
+          }
+        ]}
+      />
 
-
-
-
-
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <Image
+          path="/film-analysis/films/sinners/stills/grand-juke-battle-formation"
+          ext="jpg"
+          alt="Grand Juke Battle Formation"
+          width="100%"
+          optimize={false}
+          inspectable
+        />
+        <p className="text-neutral-500 text-sm mt-2 mb-2">Smoke is front and center, leading the formation, as others arc behind.</p>
+        <P>This sequence has over a dozen turning points, each coming in quick succession:</P>
+        <SceneTimeline
+          className="mt-32"
+          startTimecode="1:46:44"
+          turningPointTimecode={["1:48:21", "1:49:16", "1:50:02", "1:50:21", "1:50:30", "1:51:13", "1:51:20", "1:52:36", "1:52:47", "1:53:06", "1:53:45"]}
+          endTimecode="1:55:18"
+        />
+        <P>There’s a lot going on so I’ll just timecode various thoughts:</P>
       </div>
 
 
