@@ -2711,6 +2711,13 @@ const Contents = () => {
       <div className="px-4 sm:px-2 sm:pr-12">
         <H3>More Resources</H3>
         <H4>Ryan Coogler Interviews</H4>
+        <H4>Ludwig Göransson Interviews</H4>
+        <H4>Other Interviews</H4>
+      </div>
+
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <Dots />
+        <P>If you made it this far thanks for reading! You should <A href={EXTERNAL_LINKS.SOCIAL.TWITTER}>reach out</A>!</P>
       </div>
     </div>
   )
