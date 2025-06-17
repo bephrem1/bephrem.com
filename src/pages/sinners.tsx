@@ -2178,7 +2178,31 @@ const Contents = () => {
           <TimecodeTableRow timecode="1:22:41" content={<p className="text-left">Smoke says <i>“This ain’t no dead body. This Stack. He’s stayin’ here with me.”</i> I always thought he was
             saying <i>“This ain’t no dead body. This Stack. <b>Stack the ol’ man.</b>”</i>.</p>} />
         </TimecodeTable>
+      </div>
 
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <H3>Act III: Facing the Vampires</H3>
+        <P>Now that Stack is dead, we quickly approach a face-to-face confrontation with the vampires. But not just yet. Key turning points are as follows:</P>
+      </div>
+      <PlotTimeline
+        className="mt-6 mb-1"
+        startMinute={79}
+        endMinute={106}
+        rows={[
+          {
+            label: "Facing the Vampires",
+            subLabel: "Act III",
+            items: [
+              { atMinute: 87, label: "Cornbread Attacks." },
+              { atMinute: 95, label: "Remmick’s Irish Jig." },
+              { atMinute: 100, label: "Remmick Returns." },
+              { atMinute: 106, label: "Grace Calls the Vampires In.", description: "End Act III" },
+            ],
+          }
+        ]}
+      />
+
+      <div className="px-4 sm:px-2 sm:pr-12">
         <H4>Cornbread Returns</H4>
         <SceneTimeline
           className="mb-4"
@@ -2294,7 +2318,7 @@ const Contents = () => {
         <P>My favorite moments:</P>
         <TimecodeTable>
           <TimecodeTableRow timecode="1:34:45" content={<p className="text-left">It’s important to notice that the direction for the extras is to act like mindless zombies. They nod their heads around like they almost don’t control their bodies.</p>} />
-          <TimecodeTableRow timecode="1:35:05" content={<p className="text-left">The cue is brilliant, and the mob roars in response to his command. The attack on “<b><i>hunt</i></b> the hare” in theaters is something else.</p>} />
+          <TimecodeTableRow timecode="1:35:05" content={<p className="text-left">The cue is brilliant, and the mob roars in response to his command. The attack on “<b><i>hunt</i></b> the hare” in theaters plays with many layers not heard on digital.</p>} />
           <TimecodeTableRow timecode="1:35:10" content={<p className="text-left">If you listen closely, there is a bass hit in the score right before Remmick breaks into his jig (before <i>“the boys of Liverpool”</i>).
             It cues the emotional impact of the moment, hitting low in our emotional register.</p>} />
         </TimecodeTable>
@@ -2309,7 +2333,35 @@ const Contents = () => {
           make them.
         </Quote>
         <P>When we see a giant mob of vampires doing a stylish jig outside, we’re almost on the side of the vampires by the end <i>(“where’d he learn to dance like that?”)</i>. The odds keep stacking and stacking against our protagonists.</P>
+        <P>Beyond being an <i>ultra</i> stylish jig, this scene is a story device with real function.</P>
 
+        <H4>Garlic Circle</H4>
+        <P>The survivors inside get in a circle to eat garlic to see who’s a vampire.</P>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:35:59"
+          turningPointTimecode={["1:37:00", "1:37:40", "1:38:07"]}
+          endTimecode="1:38:17"
+        />
+        <H5>Delta Slim’s “I’m Fine.”</H5>
+        <P>This was the <b>2nd largest laugh</b> in the movie <span className="text-neutral-500">(losing track by now, it’s fine if it’s tied with others)</span>. Slim cements his place as the funniest character in the movie here.</P>
+
+        <H4>A Man From Outside Returns</H4>
+        <P>A man from outside returns and gets eaten by Cornbread. Bo walks up and tries to get in, we realize he is a vampire. This tees up Remmick walking up next.</P>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:38:29"
+          turningPointTimecode={["1:38:58", "1:39:52"]}
+          endTimecode="1:39:56"
+        />
+
+        <H4>Remmick Returns</H4>
+        <SceneTimeline
+          className="mb-4"
+          startTimecode="1:39:56"
+          turningPointTimecode={[]}
+          endTimecode=""
+        />
 
 
 
@@ -2320,6 +2372,8 @@ const Contents = () => {
 
 
       </div>
+
+
 
       {/* <SceneOverview
           className="my-4"
