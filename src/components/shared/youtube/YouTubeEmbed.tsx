@@ -35,12 +35,12 @@ const YouTubeEmbed: FunctionComponent<Props> = ({
         >
           <div className="flex items-start justify-between gap-2">
             <div>
-              <h3 className={twMerge(
+              <p className={twMerge(
                 "text-neutral-600 text-sm font-medium group-hover:text-neutral-800 transition-colors",
                 description ? "mb-1.5" : ""
               )}>
                 {title}
-              </h3>
+              </p>
               {description && (
                 <p className="text-neutral-500 text-sm">{description}</p>
               )}

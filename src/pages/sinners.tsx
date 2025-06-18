@@ -8,6 +8,7 @@ import SinnersPlotOverview from "../components/film-analysis/sinners/plots/Sinne
 import { type ScoreItem, SinnersScore } from "../components/film-analysis/sinners/score";
 import SinnersScoreOverview from "../components/film-analysis/sinners/score/SinnersScoreOverview";
 import ProgressLine from "../components/page-segments/writing/ProgressLine";
+import TableOfContents from "../components/page-segments/writing/TableOfContents";
 import BlogGrid from "../components/shared/blog/BlogGrid";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
@@ -41,6 +42,11 @@ const SinnersFilmAnalysisPage = () => {
       <div className="flex flex-col w-full sm:w-[700px] sm:ml-[330px] min-h-svh border-r border-r-neutral-200">
         <Contents />
       </div>
+
+      {/* Right Table of Contents */}
+      <div className="hidden xl:block w-[275px] fixed top-16 right-64 p-2">
+        <TableOfContents className="w-full" primaryColor="#D9622B" />
+      </div>
     </div>
   </div>;
 };
@@ -63,7 +69,7 @@ const LeftColumnContents = () => {
       <div className="mt-4">
         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 ml-[-12px]">
           <p className="text-neutral-500 text-sm mb-1"><b>Controlling Idea</b> <span className="text-neutral-400 text-xs">(Theme)</span></p>
-          <p className="text-neutral-600 text-sm text-left">“Greed and hunger for power destroys community. Culture and its expression can never be destroyed.”</p>
+          <p className="text-neutral-600 text-sm text-left">"Greed and hunger for power destroys community. Culture and its expression can never be destroyed."</p>
         </div>
       </div>
       <div className="mt-4">
@@ -1602,8 +1608,13 @@ const Contents = () => {
         </TimecodeTable>
 
         <H5>Sex Scenes</H5>
-        <P>There are 2 sex scenes in the film, Smoke & Annie’s at <FilmTimecode timecode="39:52" /> which is more explicit, and Stack & Mary’s <FilmTimecode timecode="1:18:26" /> which is more at a distance. These acutally serve a functional purpose to increase
-          the emotional range the audience experiences.</P>
+        <P>There are 3 sex scenes in the film:</P>
+        <TimecodeTable>
+          <TimecodeTableRow timecode="39:52" content={<p className="text-left">Smoke & Annie’s <span className="text-neutral-500 text-sm">(more explicit)</span></p>} />
+          <TimecodeTableRow timecode="59:38" content={<p className="text-left">Sammie & Pearline’s <span className="text-neutral-500 text-sm">(most graphic)</span></p>} />
+          <TimecodeTableRow timecode="1:18:26" content={<p className="text-left">Stack & Mary’s <span className="text-neutral-500 text-sm">(more at a distance)</span></p>} />
+        </TimecodeTable>
+        <P>Beyond being thematically appropriate for a movie called “Sinners,” these scenes acutally serve a functional purpose to increase the emotional range the audience experiences.</P>
         <P>Experiencing discomfort, while still being drawn in. The more emotions (rooted in truth, not fabricated), with proper pace, the higher their highs and lower the lows, the better the film.</P>
 
         <H4>Remmick Visits Joan & Bert</H4>
