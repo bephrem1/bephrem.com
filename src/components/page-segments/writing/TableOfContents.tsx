@@ -18,6 +18,8 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
   const [showTopButton, setShowTopButton] = useState(false);
   const [showShadow, setShowShadow] = useState(false);
   const [showBottomButton, setShowBottomButton] = useState(false);
+  const [showTopFade, setShowTopFade] = useState(false);
+  const [showBottomFade, setShowBottomFade] = useState(false);
   const tocRef = useRef<HTMLDivElement>(null);
 
   function scrollToTop() {
@@ -110,7 +112,7 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
     };
   }, []);
 
-  // Track window scroll position for up/down arrow visibility
+  // Track window scroll position for up/down arrow and fade visibility
   useEffect(() => {
     function onScroll() {
       const scrollTop = window.scrollY;
@@ -118,6 +120,8 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
       const docHeight = document.documentElement.scrollHeight;
       setShowTopButton(scrollTop > 10);
       setShowBottomButton(scrollTop + windowHeight < docHeight - 10);
+      setShowTopFade(scrollTop > 10);
+      setShowBottomFade(scrollTop + windowHeight < docHeight - 10);
     }
     window.addEventListener('scroll', onScroll);
     onScroll();
@@ -168,7 +172,7 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
                   <button
                     onClick={() => scrollToHeading(heading.id)}
                     className={twMerge(
-                      "text-left transition-colors duration-150 w-full py-1 pl-1.5 leading-tight font-medium",
+                      "text-left transition-colors duration-150 w-full py-1 pl-1.5 pr-4 leading-tight font-normal",
                       activeHeadings.has(heading.id)
                         ? ""
                         : "text-neutral-500 hover:text-neutral-600"
@@ -187,10 +191,15 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
         {/* Bottom fade shadow */}
         <div
           className={twMerge(
-            "absolute bottom-0 left-0 right-0 h-12 pointer-events-none",
-            "bg-gradient-to-t from-white to-transparent",
-            "transition-opacity duration-200",
-            showShadow ? "opacity-100" : "opacity-0"
+            "absolute bottom-0 left-0 right-0 h-12 pointer-events-none bg-gradient-to-t from-neutral-50 to-transparent transition-opacity duration-200",
+            showBottomFade ? "opacity-100" : "opacity-0"
+          )}
+        />
+        {/* Top fade shadow */}
+        <div
+          className={twMerge(
+            "absolute top-0 left-0 right-0 h-12 pointer-events-none bg-gradient-to-b from-neutral-50 to-transparent transition-opacity duration-200",
+            showTopFade ? "opacity-100" : "opacity-0"
           )}
         />
 

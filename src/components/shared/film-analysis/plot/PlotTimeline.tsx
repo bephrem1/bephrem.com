@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 
 // Keyframe animations and marker glow styles (adapted from SinnersPlotOverview)
 const styles = `
@@ -98,7 +98,7 @@ export interface PlotTimelineProps {
 const DEFAULT_MARKER_COLOR = "rgb(82 82 82)";
 const DEFAULT_MARKER_SIZE = 13;
 
-const PlotTimeline = ({ startMinute, endMinute, rows, className }: PlotTimelineProps) => {
+const PlotTimeline = forwardRef<HTMLDivElement, PlotTimelineProps>(({ startMinute, endMinute, rows, className }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [approachingMarkers, setApproachingMarkers] = useState<Set<string>>(new Set());
   const [peakMarkers, setPeakMarkers] = useState<Set<string>>(new Set());
@@ -199,7 +199,7 @@ const PlotTimeline = ({ startMinute, endMinute, rows, className }: PlotTimelineP
   };
 
   return (
-    <div className={`w-full py-4 ${className || ''}`}>
+    <div ref={ref} className={`w-full py-4 ${className || ''}`}>
       <style>{styles}</style>
       <div className="relative w-full space-y-20" ref={containerRef}>
         <div className="timeline-scan-line" />
@@ -313,6 +313,6 @@ const PlotTimeline = ({ startMinute, endMinute, rows, className }: PlotTimelineP
       </div>
     </div>
   );
-};
+});
 
 export default PlotTimeline;

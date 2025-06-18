@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, forwardRef } from "react";
+import { twMerge } from "tailwind-merge";
 
 // Add keyframe animations and marker glow styles
 const styles = `
@@ -71,7 +72,8 @@ const styles = `
 }
 `;
 
-const SinnersPlotOverview = () => {
+const SinnersPlotOverview = forwardRef<HTMLDivElement, { className?: string }>((props, ref) => {
+  const { className, ...rest } = props;
   const containerRef = useRef<HTMLDivElement>(null);
   const [approachingMarkers, setApproachingMarkers] = useState<Set<string>>(new Set());
   const [peakMarkers, setPeakMarkers] = useState<Set<string>>(new Set());
@@ -171,7 +173,7 @@ const SinnersPlotOverview = () => {
   };
 
   return (
-    <div className="w-full py-4">
+    <div ref={ref} className={twMerge("w-full py-4", className)} {...rest}>
       {/* Add the style tag */}
       <style>{styles}</style>
 
@@ -494,6 +496,6 @@ const SinnersPlotOverview = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SinnersPlotOverview;

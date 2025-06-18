@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { SinnersCast } from "../components/film-analysis/sinners/cast";
@@ -29,26 +29,45 @@ import QuoteIcon from "../icons/lib/QuoteIcon";
 const SinnersFilmAnalysisPage = () => {
   useRestoreScrollPosition();
 
-  return <div className="flex flex-col w-full min-h-svh items-center bg-neutral-50">
+  const [hideLeftColumn, setHideLeftColumn] = useState(false);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('.left-column——avoid');
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        setHideLeftColumn(Array.from(entries).some(entry => entry.isIntersecting));
+      },
+      { threshold: 0.1 }
+    );
+    elements.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return <div className="relative w-full flex justify-center bg-neutral-50 min-h-svh">
     <ProgressLine />
 
-    <div className="flex w-full max-w-[1400px]">
-      {/* Left fixed column */}
-      <div className="hidden sm:block w-[275px] fixed top-16 left-4 p-2">
-        <LeftColumnContents />
-      </div>
-
-      {/* Main content */}
-      <div className="flex flex-col w-full sm:w-[700px] sm:ml-[330px] min-h-svh border-r border-r-neutral-200">
+    <div className="w-full max-w-[1400px] flex">
+      {/* Placeholders for left/right columns */}
+      <div className="flex-1" />
+      <div className="flex flex-col w-full max-w-[700px] min-h-svh border-r border-r-neutral-200 z-10">
         <Contents />
       </div>
-
-      {/* Right Table of Contents */}
-      <div className="hidden xl:block w-[300px] fixed top-16 right-64 p-2">
-        <TableOfContents className="w-full" primaryColor="#D9622B" />
-      </div>
+      <div className="flex-1" />
     </div>
-  </div>;
+    {/* Conditionally render the left column */}
+    <div
+      className={twMerge(
+        "hidden xl:block w-[275px] fixed top-16 left-[calc(50%-700px/2-275px-48px)] p-2 z-20 transition-opacity duration-300",
+        hideLeftColumn ? "opacity-0 pointer-events-none" : "opacity-100"
+      )}
+    >
+      <LeftColumnContents />
+    </div>
+    {/* Fixed right column */}
+    <div className="hidden xl:block w-[300px] fixed top-16 right-[calc(50%-700px/2-300px-24px)] p-2 z-20">
+      <TableOfContents className="w-full" primaryColor="#D9622B" />
+    </div>
+  </div>
 };
 
 const LeftColumnContents = () => {
@@ -69,7 +88,7 @@ const LeftColumnContents = () => {
       <div className="mt-4">
         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 ml-[-12px]">
           <p className="text-neutral-500 text-sm mb-1"><b>Controlling Idea</b> <span className="text-neutral-400 text-xs">(Theme)</span></p>
-          <p className="text-neutral-600 text-sm text-left">"Greed and hunger for power destroys community. Culture and its expression can never be destroyed."</p>
+          <p className="text-neutral-600 text-sm text-left">”Greed and hunger for power destroys community. Culture and its expression can never be destroyed”</p>
         </div>
       </div>
       <div className="mt-4">
@@ -91,7 +110,7 @@ const LeftColumnContents = () => {
 
 const Contents = () => {
   return (
-    <div className="pt-16 pb-36">
+    <div className="pt-4 md:pt-16 pb-36">
       <div className="px-4 sm:px-2 sm:pr-12">
         <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-19" />
 
@@ -205,7 +224,7 @@ const Contents = () => {
         <P>Both are seeking freedom in some regard. The Smokestack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father's wishes).</P>
         <P>The following diagram marks major <b>turning points</b> ("points of no return") which separate acts for central plot and subplots:</P>
       </div>
-      <SinnersPlotOverview />
+      <SinnersPlotOverview className="left-column——avoid" />
       <div className="px-4 sm:px-2 sm:pr-12">
         <div className="mb-6">
           <CastMembers cast={[SinnersCast.Annie, SinnersCast.Mary, SinnersCast.Pearline]} avatarSize={50} />
@@ -511,6 +530,7 @@ const Contents = () => {
         </P>
       </div>
       <PlotTimeline
+        className="left-column——avoid"
         startMinute={3}
         endMinute={44}
         rows={[
@@ -1736,7 +1756,7 @@ const Contents = () => {
         <P>The juke joint has its grand opening. Things take a supernatural turn and Stack dies at the end of the act. Key turning points are as follows:</P>
       </div>
       <PlotTimeline
-        className="mt-6 mb-1"
+        className="mt-6 mb-1 left-column——avoid"
         startMinute={45}
         endMinute={79}
         rows={[
@@ -2205,7 +2225,7 @@ const Contents = () => {
         <P>Now that Stack is dead, we quickly approach a face-to-face confrontation with the vampires. But not just yet. Key turning points are as follows:</P>
       </div>
       <PlotTimeline
-        className="mt-6 mb-1"
+        className="mt-6 mb-1 left-column——avoid"
         startMinute={79}
         endMinute={106}
         rows={[
@@ -2434,7 +2454,7 @@ const Contents = () => {
         <P>Key turning points are as follows:</P>
       </div>
       <PlotTimeline
-        className="mt-6 mb-1"
+        className="mt-6 mb-1 left-column——avoid"
         startMinute={107}
         endMinute={115}
         rows={[
@@ -2510,7 +2530,7 @@ const Contents = () => {
         <P>Key turning points are as follows:</P>
       </div>
       <PlotTimeline
-        className="mt-6 mb-1"
+        className="mt-6 mb-1 left-column——avoid"
         startMinute={115}
         endMinute={123}
         rows={[
