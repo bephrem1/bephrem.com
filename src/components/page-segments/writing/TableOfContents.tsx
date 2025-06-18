@@ -168,9 +168,9 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
                   <button
                     onClick={() => scrollToHeading(heading.id)}
                     className={twMerge(
-                      "text-left transition-colors duration-150 w-full py-1 pl-1.5 leading-tight",
+                      "text-left transition-colors duration-150 w-full py-1 pl-1.5 leading-tight font-medium",
                       activeHeadings.has(heading.id)
-                        ? "font-semibold"
+                        ? ""
                         : "text-neutral-500 hover:text-neutral-600"
                     )}
                     style={activeHeadings.has(heading.id) ? { color: primaryColor } : undefined}

@@ -44,7 +44,7 @@ const SinnersFilmAnalysisPage = () => {
       </div>
 
       {/* Right Table of Contents */}
-      <div className="hidden xl:block w-[275px] fixed top-16 right-64 p-2">
+      <div className="hidden xl:block w-[300px] fixed top-16 right-64 p-2">
         <TableOfContents className="w-full" primaryColor="#D9622B" />
       </div>
     </div>
