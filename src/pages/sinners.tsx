@@ -6,7 +6,8 @@ import { twMerge } from "tailwind-merge";
 import { SinnersCast } from "../components/film-analysis/sinners/cast";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
 import { type ScoreItem, SinnersScore } from "../components/film-analysis/sinners/score";
-import SinnersScoreOverview, { ScoreItemPill } from "../components/film-analysis/sinners/score/SinnersScoreOverview";
+import SinnersScoreOverview from "../components/film-analysis/sinners/score/SinnersScoreOverview";
+import BlogGrid from "../components/shared/blog/BlogGrid";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
 import CastMembers from "../components/shared/film-analysis/cast/CastMembers";
@@ -16,6 +17,8 @@ import SceneOverview from "../components/shared/film-analysis/scene/SceneOvervie
 import SceneTimeline from "../components/shared/film-analysis/scene/SceneTimeline";
 import { ImageCarousel } from "../components/shared/images/ImageCarousel";
 import VideoPlayer from "../components/shared/video/VideoPlayer";
+import YouTubeEmbed from "../components/shared/youtube/YouTubeEmbed";
+import YouTubeGrid from "../components/shared/youtube/YouTubeGrid";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
 import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
@@ -79,9 +82,9 @@ const LeftColumnContents = () => {
 
 const Contents = () => {
   return (
-    <div className="pt-16 pb-80">
+    <div className="pt-16 pb-36">
       <div className="px-4 sm:px-2 sm:pr-12">
-        <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners,” By Ryan Coogler" date="2025-06-19" />
+        <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-19" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
           <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As a filmmaker (not that I consider myself one yet), sometimes you watch things
@@ -2696,29 +2699,177 @@ const Contents = () => {
         <P>There are a lot of things that only stuck out to me after painstakingly going second-by-second, scene-by-scene, through the film. Ryan Coogler is more than a great director, he’s a great <i>screenwriter</i>.</P>
         <P>Here are a few disparate notes:</P>
         <UnorderedList>
-          <ListItem><b>Scene Length:</b> In Acts I & II keep scenes to 1-2 minutes.</ListItem>
-          <ListItem><b>Turning Scenes:</b> In Acts I & II, turn scenes every 30 seconds to 1 minute. A scene that doesn’t turn <span className="text-neutral-500">(and has no drama)</span> should go in the trash.</ListItem>
-          <ListItem><b>Gradually Increase Pace:</b> In later acts, pace increases and scenes turn faster.</ListItem>
-          <ListItem><b>Develop Character With Actions:</b> Take what you’d say in words, and show it in character action. It is much more powerful.</ListItem>
+          <ListItem><b>Scene Length</b>: In Acts I & II keep scenes to 1-2 minutes.</ListItem>
+          <ListItem><b>Turning Scenes</b>: In Acts I & II, turn scenes every 30 seconds to 1 minute. A scene that doesn’t turn <span className="text-neutral-500">(and has no drama)</span> should go in the trash.</ListItem>
+          <ListItem><b>Gradually Increase Pace</b>: In later acts, pace increases and scenes turn faster.</ListItem>
+          <ListItem><b>Develop Character With Actions</b>: Take what you’d say in words, and show it in character action. It is much more powerful.</ListItem>
           <ListItem><b>No Meaning? Cut It.</b> Every line of dialog should move to a scene turning point, build character, and/or thematic significance. If that is not directly the case, cut it.</ListItem>
-          <ListItem><b>Double/Triple Meanings</b> Explore moments in scenes where words or actions can have double or triple meanings. Making the audience not sure how to feel.</ListItem>
-          <ListItem><b>Know Your World</b> Deeply research the inner and outer world of your story and know it cold. Build scenes from inside-out.</ListItem>
-          <ListItem><b>Emotional Dynamic Range</b> Take the audience between various intensities of various emotions, at varied pace.</ListItem>
-          <ListItem><b>Plant and Payoff</b> Know your script from the <FilmTimecode timecode="1:00" /> mark, to the <FilmTimecode timecode="2:00:00" /> mark. Plant ideas and resolve them sensibly.</ListItem>
+          <ListItem><b>Double/Triple Meanings</b>: Explore moments in scenes where words or actions can have double or triple meanings. Making the audience not sure how to feel.</ListItem>
+          <ListItem><b>Know Your World</b>: Deeply research the inner and outer world of your story and know it cold. Build scenes from inside-out.</ListItem>
+          <ListItem><b>Emotional Dynamic Range</b>: Take the audience between various intensities of various emotions, at varied pace.</ListItem>
+          <ListItem><b>Plant and Payoff</b>: Know your script from the <FilmTimecode timecode="1:00" /> mark, to the <FilmTimecode timecode="2:00:00" /> mark. Plant ideas and resolve them sensibly.</ListItem>
+          <ListItem><b>What You Can’t Teach</b>: There are a lot of lived emotional and life experiences that Ryan Coogler has had that funnelled into this film. This film is a singular creative event, and much
+            of what created it’s contents, you can’t teach.</ListItem>
         </UnorderedList>
+      </div>
+
+      <div className="px-4 sm:px-2 sm:pr-12">
+        <Dots />
+        <P>If you made it this far, thanks for reading! You should <A href={EXTERNAL_LINKS.SOCIAL.TWITTER}>reach out</A>.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
         <H3>More Resources</H3>
         <H4>Ryan Coogler Interviews</H4>
+        <YouTubeEmbed
+          className="my-4"
+          title="Ryan Coogler × Kodak"
+          youtubeId="78Ru62uFM0s"
+          description="Viral video where Ryan Coogler talks film types and theater projection formats."
+        />
+        <YouTubeGrid
+          className="my-4"
+          videos={[
+            {
+              title: "Ryan Coogler × Hanna Flint",
+              youtubeId: "0mU_2VWpsmQ"
+            },
+            {
+              title: "Ryan Coogler × Democracy Now!",
+              youtubeId: "Pjb_eH0C_vQ"
+            },
+            {
+              title: "Ryan Coogler × 7PM in Brooklyn",
+              youtubeId: "1lRAnlyj5YM"
+            },
+            {
+              title: "Ryan Coogler × SpringHill",
+              youtubeId: "6szF0pznbfQ"
+            },
+            {
+              title: "Ryan Coogler × Angie Martinez",
+              youtubeId: "fvwhd5Kph3A"
+            },
+            {
+              title: "Ryan Coogler × IndieWire",
+              youtubeId: "yP-4Yhn8I_g"
+            },
+            {
+              title: "Ryan Coogler × Breakfast Club",
+              youtubeId: "YWqTXowtqJg"
+            },
+            {
+              title: "Ryan Coogler × ALL THE SMOKE",
+              youtubeId: "MnbRbFhJ_HU"
+            },
+            {
+              title: "Ryan Coogler × Straw Hat Goofy",
+              youtubeId: "jLcPawzbp_4"
+            },
+            {
+              title: "Ryan Coogler × SWAY’S UNIVERSE",
+              youtubeId: "9U33k4aMGsw"
+            },
+            {
+              title: "Ryan Coogler × DP/30 (Fruitvale Station, 2013)",
+              youtubeId: "Ddk2uILZWwA"
+            },
+          ]}
+        />
         <H4>Ludwig Göransson Interviews</H4>
-        <H4>Other Interviews</H4>
+        <YouTubeGrid
+          className="my-4"
+          videos={[
+            {
+              title: "Ludwig Göransson (Proximity Media)",
+              youtubeId: "uZgtm6-EMEM"
+            },
+            {
+              title: "Ludwig Göransson × Classic FM",
+              youtubeId: "Ccmg8Bzjdis"
+            },
+            {
+              title: "Ludwig Göransson × Apple Music",
+              youtubeId: "k_WTkPaUMJk"
+            },
+            {
+              title: "Ludwig Göransson × Ryan Coogler — NME",
+              youtubeId: "Rz3xHhOLK6M"
+            },
+          ]}
+        />
+        <H4>Autumn Durald Arkapaw Interviews</H4>
+        <YouTubeGrid
+          className="my-4"
+          videos={[
+            {
+              title: "Autumn Durald Arkapaw, Ryan (Proximity Media)",
+              youtubeId: "itAQolHej2k"
+            },
+            {
+              title: "Autumn Durald Arkapaw, Ryan × IMAX",
+              youtubeId: "W7BIK_pjneo"
+            },
+          ]}
+        />
+        <H4>Michael B. Jordan Interviews</H4>
+        <YouTubeGrid
+          className="my-4"
+          videos={[
+            {
+              title: "Michael B. Jordan × Proximity Media",
+              youtubeId: "fuQvwrb9gIQ"
+            },
+            {
+              title: "Michael, Ryan × The Tonight Show w/ Jimmy Fallon",
+              youtubeId: "uszxvzA88O4"
+            },
+            {
+              title: "Michael B. Jordan × DP/30 (Fruitvale Station, 2013)",
+              youtubeId: "WL6JTgvJSbg"
+            },
+          ]}
+        />
+        <H4>Michael P. Shawver Interviews</H4>
+        <YouTubeGrid
+          className="my-4"
+          videos={[
+            {
+              title: "Michael P. Shawver × Avid (2018)",
+              youtubeId: "rCb-i1IPcYM"
+            }
+          ]}
+        />
+        <H4>Warner Brothers</H4>
+        <YouTubeGrid
+          className="my-4"
+          videos={[
+            {
+              title: "Becoming the Smokestack Twins",
+              youtubeId: "s72cBC-v6UE"
+            },
+            {
+              title: "Behind the Scenes",
+              youtubeId: "wWvVQtutmVs"
+            },
+          ]}
+        />
+        <H4>Other Great Articles</H4>
+        <BlogGrid
+          className="my-4"
+          posts={[
+            {
+              title: "Pick Poor Robin Clean (One More Thing I Love About Sinners)",
+              url: "https://www.spectrecollie.com/2025/04/21/pick-poor-robin-clean-one-more-thing-i-love-about-sinners/"
+            },
+            {
+              title: "8 ‘Sinners’ Fun Facts That’ll Change How You See the Film",
+              url: "https://dangerbowie.com/2025/04/22/8-sinners-film-fun-facts/"
+            },
+          ]}
+        />
       </div>
 
-      <div className="px-4 sm:px-2 sm:pr-12">
-        <Dots />
-        <P>If you made it this far thanks for reading! You should <A href={EXTERNAL_LINKS.SOCIAL.TWITTER}>reach out</A>!</P>
-      </div>
     </div>
   )
 }
