@@ -39,7 +39,9 @@ const SinnersFilmAnalysisPage = () => {
       },
       { threshold: 0.1 }
     );
-    elements.forEach(el => observer.observe(el));
+    for (const el of elements) {
+      observer.observe(el);
+    }
     return () => observer.disconnect();
   }, []);
 
