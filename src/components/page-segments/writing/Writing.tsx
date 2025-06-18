@@ -2,12 +2,12 @@ import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
 
 import clsx from "clsx";
 import { MDXRemote } from "next-mdx-remote";
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import { twMerge } from "tailwind-merge";
 import { isEmpty } from "../../../helpers/empty";
 import { EXTERNAL_LINKS } from "../../../helpers/urls";
 import QuoteIcon from "../../../icons/lib/QuoteIcon";
-import { WritingData } from "../../../pages/[writingId]";
+import type { WritingData } from "../../../pages/[writingId]";
 import Link from "../../shared/elements/Link";
 import SiteLayout from "../../shared/layout/SiteLayout";
 import Navbar from "../../shared/navigation/Navbar";

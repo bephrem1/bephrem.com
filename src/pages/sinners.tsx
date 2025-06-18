@@ -7,6 +7,7 @@ import { SinnersCast } from "../components/film-analysis/sinners/cast";
 import SinnersPlotOverview from "../components/film-analysis/sinners/plots/SinnersPlotOverview";
 import { type ScoreItem, SinnersScore } from "../components/film-analysis/sinners/score";
 import SinnersScoreOverview from "../components/film-analysis/sinners/score/SinnersScoreOverview";
+import ProgressLine from "../components/page-segments/writing/ProgressLine";
 import BlogGrid from "../components/shared/blog/BlogGrid";
 import Image from "../components/shared/elements/Image";
 import Link from "../components/shared/elements/Link";
@@ -28,6 +29,8 @@ const SinnersFilmAnalysisPage = () => {
   useRestoreScrollPosition();
 
   return <div className="flex flex-col w-full min-h-svh items-center bg-neutral-50">
+    <ProgressLine />
+
     <div className="flex w-full max-w-[1400px]">
       {/* Left fixed column */}
       <div className="hidden sm:block w-[275px] fixed top-16 left-4 p-2">
