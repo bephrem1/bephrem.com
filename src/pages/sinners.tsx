@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
+import Head from 'next/head';
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
@@ -45,31 +46,36 @@ const SinnersFilmAnalysisPage = () => {
     return () => observer.disconnect();
   }, []);
 
-  return <div className="relative w-full flex justify-center bg-neutral-50 min-h-svh">
-    <ProgressLine />
+  return <>
+    <Head>
+      <link rel="icon" href="/images/film-analysis/films/sinners/favicon/favicon.ico" />
+    </Head>
+    <div className="relative w-full flex justify-center bg-neutral-50 min-h-svh">
+      <ProgressLine />
 
-    <div className="w-full max-w-[1400px] flex">
-      {/* Placeholders for left/right columns */}
-      <div className="flex-1" />
-      <div className="flex flex-col w-full max-w-[700px] min-h-svh border-r border-r-neutral-200 z-10">
-        <Contents />
+      <div className="w-full max-w-[1400px] flex">
+        {/* Placeholders for left/right columns */}
+        <div className="flex-1" />
+        <div className="flex flex-col w-full max-w-[700px] min-h-svh border-r border-r-neutral-200 z-10">
+          <Contents />
+        </div>
+        <div className="flex-1" />
       </div>
-      <div className="flex-1" />
+      {/* Conditionally render the left column */}
+      <div
+        className={twMerge(
+          "hidden xl:block w-[275px] fixed top-16 left-[calc(50%-700px/2-275px-48px)] p-2 z-20 transition-opacity duration-300",
+          hideLeftColumn ? "opacity-0 pointer-events-none" : "opacity-100"
+        )}
+      >
+        <LeftColumnContents />
+      </div>
+      {/* Fixed right column */}
+      <div className="hidden xl:block w-[300px] fixed top-16 right-[calc(50%-700px/2-300px-24px)] p-2 z-20">
+        <TableOfContents className="w-full" primaryColor="#D9622B" />
+      </div>
     </div>
-    {/* Conditionally render the left column */}
-    <div
-      className={twMerge(
-        "hidden xl:block w-[275px] fixed top-16 left-[calc(50%-700px/2-275px-48px)] p-2 z-20 transition-opacity duration-300",
-        hideLeftColumn ? "opacity-0 pointer-events-none" : "opacity-100"
-      )}
-    >
-      <LeftColumnContents />
-    </div>
-    {/* Fixed right column */}
-    <div className="hidden xl:block w-[300px] fixed top-16 right-[calc(50%-700px/2-300px-24px)] p-2 z-20">
-      <TableOfContents className="w-full" primaryColor="#D9622B" />
-    </div>
-  </div>
+  </>
 };
 
 const LeftColumnContents = () => {
