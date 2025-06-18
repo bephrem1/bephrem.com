@@ -178,7 +178,7 @@ const Contents = () => {
           Sunday morning, where the first scene shows Sammie driving up to a church.</P>
         <P>Sammie enters the church, crying for some reason. His father, Reverend Moore, begins a jolting incantation of prayer for his son. Sammie continues to break down,
           in a swirling mess of internal conflict, as he tightly grips his shattered guitar neck.</P>
-        <P>We hear Reverend Moore finally say "<i>Let it go Sammie.</i> <i>Put it down.</i>", before cutting to black.</P>
+        <P>We hear Reverend Moore finally say “<i>Let it go Sammie.</i> <i>Put it down.</i>”, before cutting to black.</P>
         <P>This dramatic introduction leaves us with many dramatic questions. Who is this boy? Who is the reverend? Why is he yelling at him? What were those
           dark monsters the editor cut to? Why is the guitar broken? Why is this happening in a church? <b><i>What's going to happen next?</i></b>
         </P>
@@ -186,14 +186,14 @@ const Contents = () => {
         <P>This is the <b>Inciting Incident</b> for our narrative on Sammie, where we become aware that he <i>wants something</i>, but something powerful
           is in his way. It frames him early as our main protagonist.</P>
         <P>Having watched the film, we already know why Sammie is crying and in tatters. He just narrowly avoided being killed by a supernatural demon. Everyone he knows and loves is dead. He did not obey his father the day before,
-          he "kept dancin' with the devil" and it "followed him home".</P>
+          he “kept dancin' with the devil” and it “followed him home”.</P>
 
         <H4>Five Act Structure</H4>
         <div className="mb-6">
           <CastMembers cast={[SinnersCast.SammieMoore, SinnersCast.Smoke, SinnersCast.Stack]} avatarSize={50} />
         </div>
-        <P>Sinners is organized into 5 acts along it's main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & the Smoke-Stack Twins.</P>
-        <P>Both are seeking freedom in some regard. The Smoke-Stack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father's wishes).</P>
+        <P>Sinners is organized into 5 acts along it's main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & the Smokestack Twins.</P>
+        <P>Both are seeking freedom in some regard. The Smokestack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father's wishes).</P>
         <P>The following diagram marks major <b>turning points</b> ("points of no return") which separate acts for central plot and subplots:</P>
       </div>
       <SinnersPlotOverview />
@@ -300,7 +300,7 @@ const Contents = () => {
         <P>And most of all, <i>why does this change happen?</i> Our Controlling Idea sits behind this question.</P>
 
         <H5>Smoke & Stack's Visual Change</H5>
-        <P>The Smoke-Stack twins begin the film in crispy 3-piece suits, with a sharp, clean look. It's daylight and they're brimming with confidence to pursue their juke joint venture.</P>
+        <P>The Smokestack twins begin the film in crispy 3-piece suits, with a sharp, clean look. It's daylight and they're brimming with confidence to pursue their juke joint venture.</P>
         <ImageCarousel
           images={[
             "/film-analysis/films/sinners/stills/smoke-and-stack-image-system-start",
@@ -497,7 +497,7 @@ const Contents = () => {
           contrast between the heavens and the wordly lives of the characters we will observe later.</P>
 
         <H3>Act I: Getting the Band Together</H3>
-        <P>After the opening scene, we begin Act I, which consists of the Smoke-Stack Twins recruiting key members of their juke joint staff. Key turning points in the act
+        <P>After the opening scene, we begin Act I, which consists of the Smokestack Twins recruiting key members of their juke joint staff. Key turning points in the act
           are as follows:
         </P>
       </div>
@@ -592,7 +592,7 @@ const Contents = () => {
           startTimecode="5:22"
           turningPointTimecode="5:56"
           endTimecode="6:03"
-          synopsis="The Smoke-Stack Twins wait for Hogwood, the landowner of the sawmill to arrive so they can purchase it from him."
+          synopsis="The Smokestack Twins wait for Hogwood, the landowner of the sawmill to arrive so they can purchase it from him."
           objectives={[
             {
               character: SinnersCast.Smoke,
@@ -763,7 +763,7 @@ const Contents = () => {
             }
           ]}
           turningPoint="Reverend Moore challenges his son with “Where you got to be that’s more important then bein’ in the House of God?” Sammie responds informing his father that he has been working hard all week."
-          outcome="Sammie now has his guitar and is with the Smoke-Stack Twins."
+          outcome="Sammie now has his guitar and is with the Smokestack Twins."
           storyContribution="We now have the conflict between Sammie and his father fully framed in our minds, as well as the object of Sammie’s quest in his hands (his guitar). We know what Sammie wants, and what is pulling him away from it."
         />
         <H5>About More Than Just Music</H5>
@@ -835,7 +835,7 @@ const Contents = () => {
           ]}
           turningPoint="Smoke tells Sammie that Chicago is not as promising as he once thought. Sammie takes this to heart, but still doesn’t want to believe it."
           outcome="Sammie gets a sense that Chicago may not be as welcoming a place as he once thought."
-          storyContribution="We get an initial taste of why the Smoke-Stack Twins are back, there are some lingering tensions they hold about Chicago. We also continue to see Sammie as a figure who receives mentorship from those around him."
+          storyContribution="We get an initial taste of why the Smokestack Twins are back, there are some lingering tensions they hold about Chicago. We also continue to see Sammie as a figure who receives mentorship from those around him."
         />
         <H5>Writing From Characters’ Inner World</H5>
         <P>
@@ -2593,7 +2593,7 @@ const Contents = () => {
         <H5>The Score Takes Over</H5>
         <H6>Score Transformation</H6>
         <P>The score piece <ScoreTimecode scoreItem={SinnersScore.GrandClosin} label="Grand Closin’" timecode="1:58:31" /> represents a transformation from the gentle guitar strumming we experience at the start of the
-          film  <ScoreTimecode scoreItem={SinnersScore.SmokestackTwins} label="Smoke-Stack Twins" timecode="4:14" />. Eventually involving the electric guitar.</P>
+          film  <ScoreTimecode scoreItem={SinnersScore.SmokestackTwins} label="Smokestack Twins" timecode="4:14" />. Eventually involving the electric guitar.</P>
         <P>Instead of an evolving image system, we have an evolving “score system”.</P>
         <Aside brighter>Ludwig Göransson touches on this transformation in an <A href="https://youtu.be/Ccmg8Bzjdis?si=IJUb-VhTUftbZzkr&t=409">interview with Classical FM</A> and <A href="https://youtu.be/Rz3xHhOLK6M?si=SUvh46RPi0XyHJjj&t=918">NME</A>.
           It happens to be one of his & Coogler’s favorite parts too.</Aside>
