@@ -11,6 +11,7 @@ interface ImageCarouselProps {
   height?: number;
   showArrows?: boolean;
   squareCrop?: boolean;
+  className?: string;
 }
 
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({
@@ -19,7 +20,8 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   captions,
   height = 400,
   showArrows = true,
-  squareCrop = false
+  squareCrop = false,
+  className = ""
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -86,7 +88,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full flex items-center justify-center py-8 md:py-8 md:px-16"
+      className={`relative w-full flex items-center justify-center py-8 md:py-8 md:px-16 ${className}`}
       style={{ height: height ? `${height}px` : 'auto' }}
     >
       {showArrows && (

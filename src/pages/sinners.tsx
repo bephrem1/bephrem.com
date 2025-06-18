@@ -31,12 +31,27 @@ const SinnersFilmAnalysisPage = () => {
   useRestoreScrollPosition();
 
   const [hideLeftColumn, setHideLeftColumn] = useState(false);
+  const [hideRightColumn, setHideRightColumn] = useState(false);
 
   useEffect(() => {
     const elements = document.querySelectorAll('.left-column——avoid');
     const observer = new window.IntersectionObserver(
       (entries) => {
         setHideLeftColumn(Array.from(entries).some(entry => entry.isIntersecting));
+      },
+      { threshold: 0.1 }
+    );
+    for (const el of elements) {
+      observer.observe(el);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('.right-column——avoid');
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        setHideRightColumn(Array.from(entries).some(entry => entry.isIntersecting));
       },
       { threshold: 0.1 }
     );
@@ -71,9 +86,11 @@ const SinnersFilmAnalysisPage = () => {
         <LeftColumnContents />
       </div>
       {/* Fixed right column */}
-      <div className="hidden xl:block w-[300px] fixed top-16 right-[calc(50%-700px/2-300px-24px)] p-2 z-20">
-        <TableOfContents className="w-full" primaryColor="#D9622B" />
-      </div>
+      {!hideRightColumn && (
+        <div className="hidden xl:block w-[300px] fixed top-16 right-[calc(50%-700px/2-300px-24px)] p-2 z-20">
+          <TableOfContents className="w-full" primaryColor="#D9622B" />
+        </div>
+      )}
     </div>
   </>
 };
@@ -96,7 +113,7 @@ const LeftColumnContents = () => {
       <div className="mt-4">
         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 ml-[-12px]">
           <p className="text-neutral-500 text-sm mb-1"><b>Controlling Idea</b> <span className="text-neutral-400 text-xs">(Theme)</span></p>
-          <p className="text-neutral-600 text-sm text-left">”Greed and hunger for power destroys community. Culture and its expression can never be destroyed”</p>
+          <p className="text-neutral-600 text-sm text-left">"Greed and hunger for power destroys community. Culture and its expression can never be destroyed"</p>
         </div>
       </div>
       <div className="mt-4">
@@ -214,7 +231,7 @@ const Contents = () => {
           Sunday morning, where the first scene shows Sammie driving up to a church.</P>
         <P>Sammie enters the church, crying for some reason. His father, Reverend Moore, begins a jolting incantation of prayer for his son. Sammie continues to break down,
           in a swirling mess of internal conflict, as he tightly grips his shattered guitar neck.</P>
-        <P>We hear Reverend Moore finally say “<i>Let it go Sammie.</i> <i>Put it down.</i>”, before cutting to black.</P>
+        <P>We hear Reverend Moore finally say "<i>Let it go Sammie.</i> <i>Put it down.</i>", before cutting to black.</P>
         <P>This dramatic introduction leaves us with many dramatic questions. Who is this boy? Who is the reverend? Why is he yelling at him? What were those
           dark monsters the editor cut to? Why is the guitar broken? Why is this happening in a church? <b><i>What's going to happen next?</i></b>
         </P>
@@ -222,7 +239,7 @@ const Contents = () => {
         <P>This is the <b>Inciting Incident</b> for our narrative on Sammie, where we become aware that he <i>wants something</i>, but something powerful
           is in his way. It frames him early as our main protagonist.</P>
         <P>Having watched the film, we already know why Sammie is crying and in tatters. He just narrowly avoided being killed by a supernatural demon. Everyone he knows and loves is dead. He did not obey his father the day before,
-          he “kept dancin' with the devil” and it “followed him home”.</P>
+          he "kept dancin' with the devil" and it "followed him home".</P>
 
         <H4>Five Act Structure</H4>
         <div className="mb-6">
@@ -232,7 +249,7 @@ const Contents = () => {
         <P>Both are seeking freedom in some regard. The Smokestack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father's wishes).</P>
         <P>The following diagram marks major <b>turning points</b> ("points of no return") which separate acts for central plot and subplots:</P>
       </div>
-      <SinnersPlotOverview className="left-column——avoid" />
+      <SinnersPlotOverview className="left-column——avoid right-column——avoid" />
       <div className="px-4 sm:px-2 sm:pr-12">
         <div className="mb-6">
           <CastMembers cast={[SinnersCast.Annie, SinnersCast.Mary, SinnersCast.Pearline]} avatarSize={50} />
@@ -338,6 +355,7 @@ const Contents = () => {
         <H5>Smoke & Stack's Visual Change</H5>
         <P>The Smokestack twins begin the film in crispy 3-piece suits, with a sharp, clean look. It's daylight and they're brimming with confidence to pursue their juke joint venture.</P>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/stills/smoke-and-stack-image-system-start",
             "/film-analysis/films/sinners/stills/smoke-image-system-end"
@@ -1080,6 +1098,7 @@ const Contents = () => {
         <H4>Catfish</H4>
         <P>Smoke says <i>“I need catfish, for 100 people”</i>. During my visit to Clarksdale, I didn’t remember this line, until someone recommended that I go eat some catfish <A href="https://maps.app.goo.gl/zHB42QnAoNtAhGRR9">by the crossroads</A>.</P>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/clarksdale/catfish-1",
             "/film-analysis/films/sinners/clarksdale/catfish-2",
@@ -1193,6 +1212,7 @@ const Contents = () => {
         <H5>Wide Streets</H5>
         <P>During my visit to Clarksdale, the first thing I noticed was that the streets downtown were <i>wide</i>.</P>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/clarksdale/downtown-streets-day",
             "/film-analysis/films/sinners/clarksdale/downtown-streets-night",
@@ -1362,6 +1382,7 @@ const Contents = () => {
         <H5>Messengers Pool Hall</H5>
         <P>Delta Slim mentions playing at a current location called “Messengers”. This is an <A href="https://maps.app.goo.gl/6jU8HWrAdeg4LK5R7">actual bar and pool hall</A> in Clarksdale.</P>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/clarksdale/messengers",
             "/film-analysis/films/sinners/clarksdale/ice-cold-beer-reds",
@@ -1456,6 +1477,7 @@ const Contents = () => {
         <H5>Racial Trauma in the South</H5>
         <P>My visit to Clarksdale was one of the first times that I truly got an understanding of black culture, in a visceral way. When I arrived at my Airbnb at 1am (Thursday, May 29th), these paintings looked back at me in the dark:</P>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/clarksdale/paintings-1",
             "/film-analysis/films/sinners/clarksdale/paintings-2",
@@ -1484,6 +1506,7 @@ const Contents = () => {
           <ListItem>Employment Restrictions & Fines</ListItem>
         </UnorderedList>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/clarksdale/parchman-farm-chain-gang",
             "/film-analysis/films/sinners/clarksdale/laura-nelson-and-son-lynching",
@@ -2130,6 +2153,7 @@ const Contents = () => {
         <P>Like <A href="https://en.wikipedia.org/wiki/Siren_(mythology)">sirens</A>, the vampires stand outside and beckon Mary towards them with song. Joan’s solo at <FilmTimecode timecode="1:09:41" /> is piercingly beautiful.</P>
         <P>The <A href="https://en.wikipedia.org/wiki/Wild_Mountain_Thyme">Scottish/Irish folk song</A> dates back to the late 1700s and is a romantic <A href="https://en.wikipedia.org/wiki/Pastoral">pastoral</A> rooted in themes of love, longing, and connection to land.</P>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/other/scottish-heathers",
             "/film-analysis/films/sinners/other/wild-thyme"
