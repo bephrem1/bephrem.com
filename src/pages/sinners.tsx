@@ -112,7 +112,7 @@ const LeftColumnContents = () => {
 
 const Contents = () => {
   return (
-    <div className="pt-4 md:pt-16 pb-36">
+    <div className="pt-4 pb-16 md:pt-16 md:pb-36">
       <div className="px-4 sm:px-2 sm:pr-12">
         <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-19" />
 
