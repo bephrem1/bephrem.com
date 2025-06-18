@@ -166,14 +166,28 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
                       : "after:opacity-0"
                   )}
                   style={{
-                    paddingLeft: `${(heading.level - 1) * 12}px`,
+                    paddingLeft: isAct ? '28px' : `${(heading.level - 1) * 12}px`,
                     '--toc-accent': activeHeadings.has(heading.id) ? primaryColor : 'transparent',
                   } as React.CSSProperties}
                 >
+                  {isAct && (
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
+                    >
+                      <title>Bookmark for Act</title>
+                      <path d="M3.5 2.5A1 1 0 0 1 4.5 1.5h5a1 1 0 0 1 1 1v9.086a.5.5 0 0 1-.832.374L7 9.207l-2.668 2.753A.5.5 0 0 1 3.5 11.586V2.5Z" fill="#6B7280" />
+                    </svg>
+                  )}
                   <button
                     onClick={() => scrollToHeading(heading.id)}
                     className={twMerge(
                       "text-left transition-colors duration-150 w-full py-1 pl-1.5 pr-4 leading-tight font-normal flex items-center gap-1.5",
+                      isAct ? "font-medium" : "",
                       activeHeadings.has(heading.id)
                         ? ""
                         : "text-neutral-500 hover:text-neutral-600"
@@ -181,12 +195,6 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
                     style={activeHeadings.has(heading.id) ? { color: primaryColor } : undefined}
                     type="button"
                   >
-                    {isAct && (
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-1">
-                        <title>Bookmark for Act</title>
-                        <path d="M3.5 2.5A1 1 0 0 1 4.5 1.5h5a1 1 0 0 1 1 1v9.086a.5.5 0 0 1-.832.374L7 9.207l-2.668 2.753A.5.5 0 0 1 3.5 11.586V2.5Z" fill="#B0B0B0" />
-                      </svg>
-                    )}
                     <span className="text-sm">{cleanText}</span>
                   </button>
                 </li>

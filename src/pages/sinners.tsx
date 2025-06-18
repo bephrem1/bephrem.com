@@ -551,7 +551,7 @@ const Contents = () => {
         <P>These were intentional art direction decisions <span className="text-neutral-500">(there's a Ryan Coogler interview on it somewhere)</span>. Potentially to draw a
           contrast between the heavens and the wordly lives of the characters we will observe later.</P>
 
-        <H3>Act I: Getting the Band Together</H3>
+        <H2>Act I: Getting the Band Together</H2>
         <P>After the opening scene, we begin Act I, which consists of the Smokestack Twins recruiting key members of their juke joint staff. Key turning points in the act
           are as follows:
         </P>
