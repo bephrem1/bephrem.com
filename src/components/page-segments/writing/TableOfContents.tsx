@@ -65,7 +65,7 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
 
   // Get headings from the document
   useEffect(() => {
-    const headingElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headingElements = document.querySelectorAll('h1, h2, h3, h4');
     const headingData: HeadingData[] = Array.from(headingElements)
       .filter(heading => heading.textContent !== 'References')  // Filter out "References" heading
       .map((heading) => ({
@@ -78,13 +78,13 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
 
   // Track active headings
   useEffect(() => {
-    const elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const elements = document.querySelectorAll('h1, h2, h3, h4');
     const observers: IntersectionObserver[] = [];
 
-    elements.forEach((heading) => {
+    for (const heading of elements) {
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
+          for (const entry of entries) {
             const headingId = entry.target.getAttribute('id');
             if (!headingId) return;
             setActiveHeadings((prev) => {
@@ -96,7 +96,7 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
               }
               return newSet;
             });
-          });
+          }
         },
         {
           rootMargin: "0px",
@@ -105,10 +105,10 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
       );
       observer.observe(heading);
       observers.push(observer);
-    });
+    }
 
     return () => {
-      observers.forEach((observer) => observer.disconnect());
+      for (const observer of observers) observer.disconnect();
     };
   }, []);
 
@@ -153,6 +153,7 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
               if (cleanText.endsWith('#')) {
                 cleanText = cleanText.slice(0, -1).trim();
               }
+              const isAct = cleanText.startsWith('Act ');
               return (
                 <li
                   key={heading.id}
@@ -172,7 +173,7 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
                   <button
                     onClick={() => scrollToHeading(heading.id)}
                     className={twMerge(
-                      "text-left transition-colors duration-150 w-full py-1 pl-1.5 pr-4 leading-tight font-normal",
+                      "text-left transition-colors duration-150 w-full py-1 pl-1.5 pr-4 leading-tight font-normal flex items-center gap-1.5",
                       activeHeadings.has(heading.id)
                         ? ""
                         : "text-neutral-500 hover:text-neutral-600"
@@ -180,6 +181,12 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
                     style={activeHeadings.has(heading.id) ? { color: primaryColor } : undefined}
                     type="button"
                   >
+                    {isAct && (
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-1">
+                        <title>Bookmark for Act</title>
+                        <path d="M3.5 2.5A1 1 0 0 1 4.5 1.5h5a1 1 0 0 1 1 1v9.086a.5.5 0 0 1-.832.374L7 9.207l-2.668 2.753A.5.5 0 0 1 3.5 11.586V2.5Z" fill="#B0B0B0" />
+                      </svg>
+                    )}
                     <span className="text-sm">{cleanText}</span>
                   </button>
                 </li>
@@ -204,27 +211,31 @@ const TableOfContents = ({ className, primaryColor = "text-neutral-800" }: Table
         />
 
         {/* Up and Down arrow buttons (bottom right, always occupy space) */}
-        <div className="absolute right-0 bottom-[-2.6rem] flex gap-2">
-          <button
-            onClick={scrollToTop}
-            className={twMerge(
-              "w-6 h-6 rounded-full bg-neutral-200 border border-neutral-300 flex items-center justify-center text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300 transition-colors duration-150",
-              showTopButton ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            )}
-            type="button"
-          >
-            <span className="text-sm">↑</span>
-          </button>
-          <button
-            onClick={scrollToBottom}
-            className={twMerge(
-              "w-6 h-6 rounded-full bg-neutral-200 border border-neutral-300 flex items-center justify-center text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300 transition-colors duration-150",
-              showBottomButton ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            )}
-            type="button"
-          >
-            <span className="text-sm">↓</span>
-          </button>
+        <div className={twMerge(
+          "absolute right-0 bottom-[-2.6rem] flex gap-2 justify-end"
+        )}>
+          {showTopButton && (
+            <button
+              onClick={scrollToTop}
+              className={twMerge(
+                "w-6 h-6 rounded-full bg-neutral-200 border border-neutral-300 flex items-center justify-center text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300 transition-colors duration-150"
+              )}
+              type="button"
+            >
+              <span className="text-sm">↑</span>
+            </button>
+          )}
+          {showBottomButton && (
+            <button
+              onClick={scrollToBottom}
+              className={twMerge(
+                "w-6 h-6 rounded-full bg-neutral-200 border border-neutral-300 flex items-center justify-center text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300 transition-colors duration-150"
+              )}
+              type="button"
+            >
+              <span className="text-sm">↓</span>
+            </button>
+          )}
         </div>
       </div>
     </nav>

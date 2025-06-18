@@ -374,6 +374,7 @@ const Contents = () => {
           Sammie begins the film with wide-eyed idealism and a sense of purpose. He's on a mission to pursue his music dreams, and he's full of hope and optimism.
         </P>
         <ImageCarousel
+          className="left-column——avoid right-column——avoid"
           images={[
             "/film-analysis/films/sinners/stills/sammie-before-1",
             "/film-analysis/films/sinners/stills/sammie-before-2",
@@ -556,7 +557,7 @@ const Contents = () => {
         </P>
       </div>
       <PlotTimeline
-        className="left-column——avoid"
+        className="left-column——avoid right-column——avoid"
         startMinute={3}
         endMinute={44}
         rows={[
@@ -2257,7 +2258,7 @@ const Contents = () => {
         <P>Now that Stack is dead, we quickly approach a face-to-face confrontation with the vampires. But not just yet. Key turning points are as follows:</P>
       </div>
       <PlotTimeline
-        className="mt-6 mb-1 left-column——avoid"
+        className="mt-6 mb-1 left-column——avoid right-column——avoid"
         startMinute={79}
         endMinute={106}
         rows={[
@@ -2562,7 +2563,7 @@ const Contents = () => {
         <P>Key turning points are as follows:</P>
       </div>
       <PlotTimeline
-        className="mt-6 mb-1 left-column——avoid"
+        className="mt-6 mb-1 left-column——avoid right-column——avoid"
         startMinute={115}
         endMinute={123}
         rows={[
