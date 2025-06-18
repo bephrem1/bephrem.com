@@ -113,7 +113,7 @@ const LeftColumnContents = () => {
       <div className="mt-4">
         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 ml-[-12px]">
           <p className="text-neutral-500 text-sm mb-1"><b>Controlling Idea</b> <span className="text-neutral-400 text-xs">(Theme)</span></p>
-          <p className="text-neutral-600 text-sm text-left">"Greed and hunger for power destroys community. Culture and its expression can never be destroyed"</p>
+          <p className="text-neutral-600 text-sm text-left">“Greed and hunger for power destroys community. Culture and its expression can never be destroyed”</p>
         </div>
       </div>
       <div className="mt-4">
