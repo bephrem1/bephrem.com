@@ -38,7 +38,7 @@ const SinnersFilmAnalysisPage = () => {
       </div>
 
       {/* Main content */}
-      <div className="flex flex-col w-full sm:w-[700px] sm:ml-[330px] min-h-svh border-r border-r-neutral-300">
+      <div className="flex flex-col w-full sm:w-[700px] sm:ml-[330px] min-h-svh border-r border-r-neutral-200">
         <Contents />
       </div>
     </div>
@@ -2879,24 +2879,66 @@ const Contents = () => {
 
 /* formatting (cleanup with .mdx later) */
 
-const H1 = ({ children }: { children: React.ReactNode }) => {
-  return <h1 className="text-neutral-800 text-3xl font-semibold mb-2.5">{children}</h1>
+function HeadingWithAnchor({
+  as: Tag,
+  children,
+  className = "",
+}: {
+  as: keyof JSX.IntrinsicElements;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  // Only use string for id generation
+  const text = React.Children.toArray(children).map(child => {
+    if (typeof child === 'string') return child;
+    // If child is a React element, try to extract its string children
+    if (React.isValidElement(child) && typeof child.props.children === 'string') {
+      return child.props.children;
+    }
+    return '';
+  }).join(' ');
+
+  // Generate id: kebab-case, remove non-alphanumerics except dash/space, lowercased
+  const id = text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  return (
+    <Tag id={id} className={`group scroll-mt-24 ${className}`}>
+      <span>{children}</span>
+      <a
+        href={`#${id}`}
+        className="ml-2 align-middle opacity-0 group-hover:opacity-100 transition-opacity text-neutral-400 hover:text-neutral-600"
+        style={{ fontSize: '0.85em', verticalAlign: 'middle' }}
+        aria-label="Anchor link"
+      >
+        #
+      </a>
+    </Tag>
+  );
 }
-const H2 = ({ children }: { children: React.ReactNode }) => {
-  return <h2 className="text-neutral-800 text-2xl font-semibold mb-2.5">{children}</h2>
-}
-const H3 = ({ children }: { children: React.ReactNode }) => {
-  return <h3 className="text-neutral-800 text-xl font-semibold mb-2.5">{children}</h3>
-}
-const H4 = ({ children }: { children: React.ReactNode }) => {
-  return <h4 className="text-neutral-800 text-lg font-semibold mb-2.5">{children}</h4>
-}
-const H5 = ({ children }: { children: React.ReactNode }) => {
-  return <h5 className="text-neutral-800 text-base font-semibold mb-2.5">{children}</h5>
-}
-const H6 = ({ children }: { children: React.ReactNode }) => {
-  return <h6 className="text-neutral-800 text-base font-semibold mb-2.5">{children}</h6>
-}
+
+const H1 = (props: { children: React.ReactNode }) => (
+  <HeadingWithAnchor as="h1" {...props} className="text-neutral-800 text-3xl font-semibold mb-2.5" />
+);
+const H2 = (props: { children: React.ReactNode }) => (
+  <HeadingWithAnchor as="h2" {...props} className="text-neutral-800 text-2xl font-semibold mb-2.5" />
+);
+const H3 = (props: { children: React.ReactNode }) => (
+  <HeadingWithAnchor as="h3" {...props} className="text-neutral-800 text-xl font-semibold mb-2.5" />
+);
+const H4 = (props: { children: React.ReactNode }) => (
+  <HeadingWithAnchor as="h4" {...props} className="text-neutral-800 text-lg font-semibold mb-2.5" />
+);
+const H5 = (props: { children: React.ReactNode }) => (
+  <HeadingWithAnchor as="h5" {...props} className="text-neutral-800 text-base font-semibold mb-2.5" />
+);
+const H6 = (props: { children: React.ReactNode }) => (
+  <HeadingWithAnchor as="h6" {...props} className="text-neutral-800 text-base font-semibold mb-2.5" />
+);
 const P = ({ children }: { children: React.ReactNode }) => {
   return <p className="text-neutral-950 text-justify mb-3 [&>sup]:text-neutral-400 [&>sup]:text-xs [&>sup]:relative">{children}</p>
 }
