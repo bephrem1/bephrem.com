@@ -80,36 +80,6 @@ const Writings: FunctionComponent<EmptyObject> = () => {
                   </div>
                 </Link>
               </div>
-
-              {/* Other Writings Section */}
-              <div>
-                <h2 className="text-neutral-400 text-xl font-serif italic mb-6">Other Writings</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Hardcoded posts */}
-                  <Link type="internal" dest="/body-composition" className="group block">
-                    <div className="bg-neutral-800/10 rounded-lg p-6 hover:bg-neutral-800/30 transition-all duration-300 h-full">
-                      <div className="mb-3">
-                        <span className="text-neutral-500 text-xs font-medium uppercase tracking-wide">
-                          Health & Fitness
-                        </span>
-                      </div>
-                      <h3 className="text-neutral-200 text-lg md:text-xl font-serif italic leading-tight group-hover:text-neutral-50 transition-colors mb-3">
-                        Mastering Body Composition
-                      </h3>
-                      <p className="text-neutral-400 text-sm leading-relaxed mb-4">
-                        A simple guide to understanding and optimizing body composition through science-based approaches.
-                      </p>
-                      <div className="flex items-center gap-2">
-                        <span className="text-neutral-500 text-xs">June 20, 2025</span>
-                        <span className="text-neutral-600">·</span>
-                        <span className="text-neutral-500 text-xs">
-                          Health & Fitness
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>

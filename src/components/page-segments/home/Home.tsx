@@ -1,3 +1,5 @@
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { FunctionComponent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { EXTERNAL_LINKS, INTERNAL_LINKS } from '../../../helpers/urls';
@@ -6,10 +8,12 @@ import Link from '../../shared/elements/Link';
 import Socials from '../../shared/socials/Socials';
 
 const EXPAND_DELAY = 4000; // ms
+const EMAIL = "ben@bephrem.studio";
 
 const Home: FunctionComponent<EmptyObject> = () => {
   const [isClient, setIsClient] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -30,6 +34,16 @@ const Home: FunctionComponent<EmptyObject> = () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
   }, [isClient]);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
+  };
 
   return (
     <>
@@ -121,6 +135,19 @@ const Home: FunctionComponent<EmptyObject> = () => {
                       <span className="text-neutral-400 text-xs">↗</span>
                     </div>
                   </Link>
+                  <button
+                    type="button"
+                    onClick={handleCopyEmail}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 mt-2 ml-2 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all cursor-pointer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="text-neutral-400 text-[10px]"
+                    />
+                    <span className="text-neutral-300 text-xs">
+                      {emailCopied ? "copied email!" : "drop me a line"}
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
