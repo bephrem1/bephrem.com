@@ -137,7 +137,7 @@ const Contents = () => {
   return (
     <div className="pt-4 pb-16 md:pt-16 md:pb-36">
       <div className="px-4 sm:px-2 sm:pr-12">
-        <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-19" />
+        <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-20" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
           <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As a filmmaker (not that I consider myself one yet), sometimes you watch things
@@ -176,7 +176,7 @@ const Contents = () => {
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12 pb-1.5">
-        <P>The following is a breakdown of the film "Sinners" by writer/director Ryan Coogler. This is a technical analysis of the
+        <P>The following is a breakdown of the film “Sinners” by writer/director Ryan Coogler. This is a technical analysis of the
           film that will cover story, blocking of scenes, score & sound design, cinematography, editing, and more.</P>
         <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
@@ -3205,8 +3205,7 @@ const HiddenAside = ({
       </button>
 
       <div
-        className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
-          }`}
+        className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <div className="px-4 pb-3 text-sm text-neutral-500">
           {children}
