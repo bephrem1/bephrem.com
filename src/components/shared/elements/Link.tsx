@@ -1,6 +1,6 @@
-import { FunctionComponent } from 'react';
-import { default as NextLink } from 'next/link';
 import clsx from 'clsx';
+import { default as NextLink } from 'next/link';
+import type { FunctionComponent } from 'react';
 import { isEmpty } from '../../../helpers/empty';
 
 enum LinkTypes {
@@ -15,9 +15,10 @@ export interface LinkProps {
   bold?: boolean;
   openInNewWindow?: boolean;
   underline?: boolean;
-  onClick?: (e?: any) => void;
+  onClick?: (e?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 
   fillContainer?: boolean;
+  className?: string;
   children?: React.ReactNode | Array<React.ReactNode>;
 }
 
@@ -29,6 +30,7 @@ const Link: FunctionComponent<LinkProps> = ({
   underline = false,
   onClick,
   fillContainer,
+  className,
   children
 }) => {
   if (isEmpty(dest)) {
@@ -42,7 +44,7 @@ const Link: FunctionComponent<LinkProps> = ({
     'text-amber-400 hover:text-amber-300 visited:text-amber-300': true,
     'font-bold': isBold,
     underline: underline
-  });
+  }, className);
 
   const LinkTag = (
     <a

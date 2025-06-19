@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react';
 import Head from 'next/head';
+import type { FunctionComponent } from 'react';
 import React from 'react';
 
 interface Props {
