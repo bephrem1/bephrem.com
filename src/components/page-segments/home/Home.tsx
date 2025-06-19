@@ -42,11 +42,37 @@ const Home: FunctionComponent<EmptyObject> = () => {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(EMAIL);
-      setEmailCopied(true);
-      setTimeout(() => setEmailCopied(false), 2000);
+      // Try modern clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(EMAIL);
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+        return;
+      }
+
+      // Fallback for older browsers or mobile
+      const textArea = document.createElement('textarea');
+      textArea.value = EMAIL;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+
+      if (successful) {
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+      } else {
+        throw new Error('Copy command failed');
+      }
     } catch (err) {
       console.error('Failed to copy email:', err);
+      // As a final fallback, you could show an alert with the email
+      alert(`Please copy this email: ${EMAIL}`);
     }
   };
 
@@ -104,7 +130,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center gap-1 px-2 py-1 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-2 py-1 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all cursor-pointer"
                   >
                     <FontAwesomeIcon
                       icon={faEnvelope}

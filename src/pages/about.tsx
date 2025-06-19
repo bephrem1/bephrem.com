@@ -11,10 +11,33 @@ const EMAIL = "ben@bephrem.studio";
 const About: FunctionComponent = () => {
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(EMAIL);
-      // Could add a toast notification here
+      // Try modern clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(EMAIL);
+        // Could add a toast notification here
+        return;
+      }
+
+      // Fallback for older browsers or mobile
+      const textArea = document.createElement('textarea');
+      textArea.value = EMAIL;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+
+      if (!successful) {
+        throw new Error('Copy command failed');
+      }
     } catch (err) {
       console.error('Failed to copy email:', err);
+      // As a final fallback, you could show an alert with the email
+      alert(`Please copy this email: ${EMAIL}`);
     }
   };
 
