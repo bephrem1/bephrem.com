@@ -38,7 +38,7 @@ const ProgressLine = () => {
         }}
       />
       <div
-        className="fixed top-2 left-2 z-50 text-neutral-500 font-mono hidden md:block transition-opacity duration-300 select-none"
+        className="fixed top-2 left-4 z-50 text-neutral-500 font-mono hidden md:block transition-opacity duration-300 select-none"
         style={{ opacity, fontSize: '0.65rem' }}
       >
         {Math.round(progress)}%

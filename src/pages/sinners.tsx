@@ -2419,8 +2419,85 @@ const Contents = () => {
         <P>When we see a giant mob of vampires doing a stylish jig outside, we’re almost on the side of the vampires by the end <i>(“where’d he learn to dance like that?”)</i>. The odds keep stacking and stacking against our protagonists.</P>
         <P>Beyond being an <i>ultra</i> stylish jig, this scene is a story device with real function.</P>
 
+        <H5>Rocky Road to Dublin</H5>
+        <P><A href="https://en.wikipedia.org/wiki/Rocky_Road_to_Dublin"><i>Rocky Road to Dublin</i></A> was written by D.K. Gavan in the mid-1800s. The song follows a young man’s rough journey from <b>Tuam, Galway</b> to <b>Dublin</b>, and
+          eventually to <b>Liverpool</b>, facing hardship and misadventure along the way.</P>
+        <a
+          href="https://en.wikipedia.org/wiki/Rocky_Road_to_Dublin#Lyrics"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full my-4 rounded-md bg-neutral-100 hover:bg-neutral-200 transition-colors border border-neutral-300 shadow-sm px-4 py-3 text-base font-medium text-neutral-700 flex items-center justify-between gap-3"
+        >
+          <span>Full Lyrics</span>
+          <ArrowUpRightIcon className="w-5 h-5 text-neutral-400" />
+        </a>
+        <P>Remmick essentially embodies this young man in the song, on his road of hardship and troubles to reconnect with his ancestors by killing Sammie.</P>
+        <H6>Truncation</H6>
+        <P>The film turncates the song, jumping from the beginning of the journey in Tuam, to the Liverpool portion:</P>
+        <div className="border-l-2 border-neutral-300 pl-3 text-md mb-4">
+          <div>
+            <p className="text-neutral-500 text-sm italic">
+              <b className="font-semibold">[Verse 1:</b><span> Remmick</span><b className="font-semibold">]</b>
+            </p>
+            <div>
+              <p className="text-neutral-500 text-sm italic">Well in the merry month of <b>May</b> from me home I started</p>
+              <p className="text-neutral-500 text-sm italic">Left the girls of Tuam nearly broken hearted</p>
+              <p className="text-neutral-500 text-sm italic">Saluted Father dear, kissed me darling mother</p>
+              <p className="text-neutral-500 text-sm italic">Drank a pint of beer, me grief and tears to smother</p>
+              <p className="text-neutral-500 text-sm italic">Then off to reap the corn, leave where I was born</p>
+              <p className="text-neutral-500 text-sm italic">Cut a stout blackthorn to banish ghosts and goblins</p>
+              <p className="text-neutral-500 text-sm italic">A brand new pair of brogues, rattlin' o'er the bogs</p>
+              <p className="text-neutral-500 text-sm italic">Frightened<s>in'</s> all the dogs on the rocky road to Dublin</p>
+              <p className="text-neutral-500 text-sm italic">One two three four five</p>
+            </div>
+          </div>
+
+          <div className="mt-2">
+            <p className="text-neutral-500 text-sm italic">
+              <b className="font-semibold">[Chorus:</b><span> Crowd</span><b className="font-semibold">]</b>
+            </p>
+            <div>
+              <p className="text-neutral-500 text-sm italic">Hunt the Hare and turn her down the rocky road</p>
+              <p className="text-neutral-500 text-sm italic">And all the way to Dublin, Whack fol lol le rah!</p>
+            </div>
+          </div>
+
+          <div className="my-4">
+            <p className="text-neutral-500 text-sm italic">
+              <b className="inline-flex items-center px-3 py-1 bg-neutral-400/10 border border-neutral-300/30 rounded-full text-neutral-400 text-xs hover:animate-pulse transition-colors select-none font-medium">&gt;&gt; skips forward to last verse &gt;&gt;</b>
+            </p>
+          </div>
+
+          <div>
+            <p className="text-neutral-500 text-sm italic"><b className="font-semibold">[Verse 5:</b><span> Crowd</span><b className="font-semibold">]</b></p>
+            <div>
+              <p className="text-neutral-500 text-sm italic">The boys of Liverpool, when we safely landed</p>
+              <p className="text-neutral-500 text-sm italic">Called meself a fool, I could no longer stand it</p>
+              <p className="text-neutral-500 text-sm italic">Blood began to boil, temper I was losing</p>
+              <p className="text-neutral-500 text-sm italic">Poor old Erin's isle they began abusing</p>
+              <p className="text-neutral-500 text-sm italic">"Hurrah me soul!" says I, shillelagh I let fly</p>
+              <p className="text-neutral-500 text-sm italic">Some Galway boys were nigh and saw I was a-hobblin’</p>
+              <p className="text-neutral-500 text-sm italic">With a loud "Hurray!" joined in the affray</p>
+              <p className="text-neutral-500 text-sm italic">We quickly cleared the way for the rocky road to Dublin</p>
+              <p className="text-neutral-500 text-sm italic">One two three four five</p>
+            </div>
+          </div>
+
+          <div className="mt-2">
+            <p className="text-neutral-500 text-sm italic">
+              <b className="font-semibold">[Chorus:</b><span> Crowd</span><b className="font-semibold">]</b> <span className="text-neutral-400">(repeats 3x)</span>
+            </p>
+            <div>
+              <p className="text-neutral-500 text-sm italic">Hunt the Hare and turn her down the rocky road</p>
+              <p className="text-neutral-500 text-sm italic">And all the way to Dublin, Whack fol lol le rah!</p>
+            </div>
+          </div>
+        </div>
+
+
         <H4>Garlic Circle</H4>
         <P>The survivors inside get in a circle to eat garlic to see who’s a vampire.</P>
+        <P>We hard cut from the loud euphoria of the vampires dancing outside, to the silent and tense circle of survivors inside.</P>
         <SceneTimeline
           className="mt-4 mb-5"
           startTimecode="1:35:59"
@@ -2978,7 +3055,7 @@ const LeftArrowNavigation = () => {
         className="block w-full h-full group"
       >
         <div className="w-full h-full bg-neutral-600/[0.02] backdrop-blur-[1px] border-r border-neutral-400/20 group-hover:bg-neutral-500/[0.07] transition-all duration-300 flex items-center justify-center">
-          <ArrowLeftIcon className="w-6 h-6 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300" />
+          <ArrowLeftIcon className="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300" />
         </div>
         <div className="absolute left-16 top-1/2 -translate-y-1/2 bg-neutral-900/90 text-neutral-100 px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           Return to writing
