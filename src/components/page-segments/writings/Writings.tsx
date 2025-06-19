@@ -1,81 +1,111 @@
-import React, { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { WritingInfo, WritingItems } from '../../../fixtures/writing';
-
-import { EmptyObject } from '../../../types/empty';
+import { INTERNAL_LINKS } from '../../../helpers/urls';
+import type { EmptyObject } from '../../../types/empty';
 import Link from '../../shared/elements/Link';
-import Navbar from '../../shared/navigation/Navbar';
-import SiteLayout from '../../shared/layout/SiteLayout';
-import clsx from 'clsx';
+import Socials from '../../shared/socials/Socials';
 
 const Writings: FunctionComponent<EmptyObject> = () => {
   return (
-    <SiteLayout>
-      <Navbar />
-
-      <div className="pt-4 sm:pt-10 pb-16">
-        <WritingTable />
+    <div className="min-h-svh bg-neutral-900">
+      {/* Navigation Header */}
+      <div className="fixed top-6 left-8 z-50 flex items-center h-9">
+        <span className="text-neutral-200 font-medium text-md select-none">Benyam Ephrem</span>
       </div>
-    </SiteLayout>
-  );
-};
 
-const WritingTable = () => {
-  return (
-    <div className="flex flex-col">
-      <div className="flex flex-row py-3">
-        <div className="min-w-[120px] sm:min-w-[135px]">
-          <p className="text-neutral-500 text-xs font-mono select-none">date</p>
-        </div>
-        <div className="flex flex-grow">
-          <p className="text-neutral-500 text-xs font-mono select-none">title</p>
+      {/* Top-right group: socials and navigation */}
+      <div className="fixed top-6 right-8 z-50 flex flex-col items-end gap-2">
+        <Socials compressed />
+        <div className="flex md:hidden items-center gap-2">
+          <Link type="internal" dest={INTERNAL_LINKS.HOME}>
+            <span className="text-amber-400 hover:text-amber-300 text-sm transition-colors select-none cursor-pointer">Home</span>
+          </Link>
+          <span className="text-neutral-500 text-xs select-none">·</span>
+          <Link type="internal" dest="/about">
+            <span className="text-neutral-400 hover:text-neutral-200 text-sm transition-colors select-none cursor-pointer">About</span>
+          </Link>
         </div>
       </div>
-      <DividerLine />
-      {WritingItems.map((item: WritingInfo, index) => {
-        const isLast = index === WritingItems.length - 1;
 
-        return (
-          <WritingItem
-            key={index}
-            title={item.title}
-            date={item.date}
-            path={item.path}
-            isLast={isLast}
-          />
-        );
-      })}
+      {/* Desktop centered navigation */}
+      <div className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center h-9">
+        <div className="flex items-center gap-2">
+          <Link type="internal" dest={INTERNAL_LINKS.HOME}>
+            <span className="text-amber-400 hover:text-amber-300 text-sm transition-colors select-none cursor-pointer">Home</span>
+          </Link>
+          <span className="text-neutral-500 text-xs select-none">·</span>
+          <Link type="internal" dest="/about">
+            <span className="text-neutral-400 hover:text-neutral-200 text-sm transition-colors select-none cursor-pointer">About</span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="pt-20 pb-16 px-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Featured Writings Section */}
+          <div className="mb-16">
+            <h1 className="text-neutral-200 text-4xl md:text-5xl font-serif italic mb-12">Featured Writings</h1>
+
+            {/* Main Featured - Sinners */}
+            <div className="mb-12">
+              <Link type="internal" dest="/sinners" className="group block">
+                <div className="bg-neutral-800/30 rounded-lg p-8 hover:bg-neutral-800/50 transition-all duration-300">
+                  <div className="mb-4">
+                    <span className="text-neutral-400 text-sm font-medium">Film Analysis</span>
+                  </div>
+                  <h2 className="text-neutral-100 text-3xl md:text-4xl font-serif italic leading-tight group-hover:text-neutral-50 transition-colors mb-3">
+                    Analyzing "Sinners" — By Ryan Coogler
+                  </h2>
+                  <p className="text-neutral-300 text-lg leading-relaxed">
+                    A technical breakdown of the film's story, structure, and meaning.
+                    Exploring how Ryan Coogler crafted this powerful narrative about
+                    community, culture, and the human spirit.
+                  </p>
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="text-neutral-400 text-sm">June 2025</span>
+                    <span className="text-neutral-600">·</span>
+                    <span className="text-neutral-400 text-sm">Film Analysis</span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Other Writings Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {WritingItems.map((item: WritingInfo, index) => (
+                <Link key={index} type="internal" dest={item.path} className="group block">
+                  <div className="bg-neutral-800/20 rounded-lg p-6 hover:bg-neutral-800/40 transition-all duration-300 h-full">
+                    <div className="mb-3">
+                      <span className="text-neutral-400 text-xs font-medium uppercase tracking-wide">
+                        {item.path === '/dating' ? 'Technology' : 'Health & Fitness'}
+                      </span>
+                    </div>
+                    <h3 className="text-neutral-100 text-xl md:text-2xl font-serif italic leading-tight group-hover:text-neutral-50 transition-colors mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-neutral-300 text-sm leading-relaxed mb-4">
+                      {item.path === '/dating'
+                        ? 'Exploring how technology is reshaping human connection and the future of relationships.'
+                        : 'A comprehensive guide to understanding and optimizing body composition through science-based approaches.'
+                      }
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-neutral-400 text-xs">{item.date}</span>
+                      <span className="text-neutral-600">·</span>
+                      <span className="text-neutral-400 text-xs">
+                        {item.path === '/dating' ? 'Technology' : 'Health'}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
-
-const WritingItem = ({ title, date, path, isLast }) => {
-  const className = clsx([
-    'flex flex-row items-center',
-    'py-3',
-    'hover:bg-neutral-800 hover:bg-opacity-15',
-    'hover:cursor-pointer',
-    'transition-all duration-100 ease-in-out'
-  ]);
-
-  return (
-    <>
-      <Link type="internal" dest={path} fillContainer openInNewWindow={false}>
-        <div className={className}>
-          <div className="min-w-[120px] sm:min-w-[135px]">
-            <p className="text-neutral-400 text-sm font-mono text-nowrap">{date}</p>
-          </div>
-          <div className="flex flex-grow w-full">
-            <p className="text-neutral-200 text-sm font-mono">{title}</p>
-          </div>
-        </div>
-      </Link>
-      {!isLast && <DividerLine />}
-    </>
-  );
-};
-
-const DividerLine = () => {
-  return <div className="border-t border-neutral-700 border-opacity-50" />;
 };
 
 export default Writings;

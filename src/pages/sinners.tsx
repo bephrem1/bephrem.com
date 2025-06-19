@@ -66,7 +66,7 @@ const SinnersFilmAnalysisPage = () => {
   const { SEOTags, OpenGraphTags } = useDocumentHeadComponents({
     title: "Analyzing “Sinners” — By Ryan Coogler",
     description: "A technical analysis of the film “Sinners” by writer/director Ryan Coogler.",
-    imageUrl: "/film-analysis/films/sinners/promo/sinners-poster.jpg"
+    imageUrl: "/images/film-analysis/films/sinners/og-image/sinners-og-image.jpg"
   });
 
   return <>
@@ -75,7 +75,7 @@ const SinnersFilmAnalysisPage = () => {
       {SEOTags}
       {OpenGraphTags}
     </Head>
-    <div className="relative w-full flex justify-center bg-neutral-50 min-h-svh">
+    <div className="relative w-full flex flex-col md:flex-row justify-center bg-neutral-50 min-h-svh">
       <LeftArrowNavigation />
       <ProgressLine />
 
@@ -146,8 +146,8 @@ const LeftColumnContents = () => {
 
 const Contents = () => {
   return (
-    <div className="pt-14 pb-16 md:pt-16 md:pb-36">
-      <div className="px-4 sm:px-2 sm:pr-12 mt-1">
+    <div className="pt-5 pb-16 md:pt-16 md:pb-36">
+      <div className="px-4 sm:px-2 sm:pr-12">
         <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-20" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
@@ -3059,13 +3059,13 @@ const LeftArrowNavigation = () => {
   return (
     <>
       {/* Mobile version - top bar */}
-      <div className="fixed top-0 left-0 right-0 h-10 md:hidden z-30 bg-neutral-600/[0.02] backdrop-blur-[1px] border-b border-neutral-400/20 flex items-center justify-center">
+      <div className="h-10 md:hidden z-30 bg-neutral-600/[0.02] backdrop-blur-[1px] border-b border-neutral-400/20 flex items-center justify-center">
         <Link
           type="internal"
           dest="/writing"
-          className="group hover:bg-neutral-500/[0.07] transition-all duration-300 px-4 py-1 rounded"
+          className="group hover:bg-neutral-500/[0.07] transition-all duration-300 w-full h-full"
         >
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 justify-center w-full h-full">
             <ArrowLeftIcon className="w-3.5 h-3.5 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300" />
             <span className="text-xs text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300">Back to writing</span>
           </div>
