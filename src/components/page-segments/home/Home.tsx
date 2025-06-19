@@ -192,7 +192,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
               {/* Mobile: non-clickable video */}
               <div className="md:hidden w-full">
                 <div
-                  className="relative w-full max-w-full rounded-2xl overflow-hidden bg-black h-[35vh]"
+                  className="relative w-full max-w-full rounded-2xl overflow-hidden bg-black h-[28vh]"
                 >
                   <video
                     src="/video/homepage/reel-placeholder-compressed.mp4"
