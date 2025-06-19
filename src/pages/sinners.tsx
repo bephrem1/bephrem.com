@@ -1,3 +1,4 @@
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { clsx } from "clsx";
 import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
 import Head from 'next/head';
@@ -24,6 +25,7 @@ import YouTubeEmbed from "../components/shared/youtube/YouTubeEmbed";
 import YouTubeGrid from "../components/shared/youtube/YouTubeGrid";
 import { isEmpty } from "../helpers/empty";
 import { EXTERNAL_LINKS } from "../helpers/urls";
+import { useDocumentHeadComponents } from "../hooks/page-headers";
 import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
 import QuoteIcon from "../icons/lib/QuoteIcon";
 
@@ -61,11 +63,20 @@ const SinnersFilmAnalysisPage = () => {
     return () => observer.disconnect();
   }, []);
 
+  const { SEOTags, OpenGraphTags } = useDocumentHeadComponents({
+    title: "Analyzing “Sinners” — By Ryan Coogler",
+    description: "A technical analysis of the film “Sinners” by writer/director Ryan Coogler.",
+    imageUrl: "/film-analysis/films/sinners/promo/sinners-poster.jpg"
+  });
+
   return <>
     <Head>
       <link rel="icon" href="/images/film-analysis/films/sinners/favicon/favicon.ico" />
+      {SEOTags}
+      {OpenGraphTags}
     </Head>
     <div className="relative w-full flex justify-center bg-neutral-50 min-h-svh">
+      <LeftArrowNavigation />
       <ProgressLine />
 
       <div className="w-full max-w-[1400px] flex">
@@ -2940,6 +2951,42 @@ const Contents = () => {
     </div>
   )
 }
+
+const LeftArrowNavigation = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // Show when mouse is within 100px of the left edge
+      setIsVisible(e.clientX <= 100);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  return (
+    <div
+      className={twMerge(
+        "fixed left-0 top-0 h-screen w-16 z-30 transition-transform duration-500 ease-in-out hidden md:block",
+        isVisible ? "translate-x-0" : "-translate-x-14"
+      )}
+    >
+      <Link
+        type="internal"
+        dest="/writing"
+        className="block w-full h-full group"
+      >
+        <div className="w-full h-full bg-neutral-600/[0.02] backdrop-blur-[1px] border-r border-neutral-400/20 group-hover:bg-neutral-500/[0.07] transition-all duration-300 flex items-center justify-center">
+          <ArrowLeftIcon className="w-6 h-6 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300" />
+        </div>
+        <div className="absolute left-16 top-1/2 -translate-y-1/2 bg-neutral-900/90 text-neutral-100 px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          Return to writing
+        </div>
+      </Link>
+    </div>
+  );
+};
 
 /* formatting (cleanup with .mdx later) */
 
