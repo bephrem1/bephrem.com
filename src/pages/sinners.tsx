@@ -2448,7 +2448,7 @@ const Contents = () => {
         <P>Remmick essentially embodies this young man in the song, on his road of hardship and troubles to reconnect with his ancestors by killing Sammie.</P>
         <H6>Truncation</H6>
         <P>The film turncates the song, jumping from the beginning of the journey in Tuam, to the Liverpool portion:</P>
-        <div className="border-l-2 border-neutral-300 pl-3 text-md mb-4">
+        <div className="border-l-2 border-neutral-300 pl-3 text-md mb-6">
           <div>
             <p className="text-neutral-500 text-sm italic">
               <b className="font-semibold">[Verse 1:</b><span> Remmick</span><b className="font-semibold">]</b>
