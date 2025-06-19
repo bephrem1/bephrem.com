@@ -2422,6 +2422,20 @@ const Contents = () => {
         <H5>Rocky Road to Dublin</H5>
         <P><A href="https://en.wikipedia.org/wiki/Rocky_Road_to_Dublin"><i>Rocky Road to Dublin</i></A> was written by D.K. Gavan in the mid-1800s. The song follows a young man’s rough journey from <b>Tuam, Galway</b> to <b>Dublin</b>, and
           eventually to <b>Liverpool</b>, facing hardship and misadventure along the way.</P>
+        <ImageCarousel
+          className="left-column——avoid right-column——avoid"
+          images={[
+            "/film-analysis/films/sinners/other/rrtd-tuam",
+            "/film-analysis/films/sinners/other/rrtd-mullingar",
+            "/film-analysis/films/sinners/other/rrtd-dublin",
+            "/film-analysis/films/sinners/other/rrtd-liverpool",
+          ]}
+          imageExts={["jpg", "jpg", "jpg", "jpg"]}
+          captions={["Tuam, County Galway, Ireland (the starting point)", "Mullingar, County Westmeath, Ireland", "Dublin, Ireland", "Liverpool, England (the final destination)"]}
+          height={400}
+          showArrows={true}
+          squareCrop={true}
+        />
         <a
           href="https://en.wikipedia.org/wiki/Rocky_Road_to_Dublin#Lyrics"
           target="_blank"
