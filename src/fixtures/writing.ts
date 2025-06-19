@@ -5,12 +5,6 @@ export interface WritingInfo {
 }
 
 export const Writings = {
-	// 2025
-	TheFutureOfOnlineDatingWillBeMostlyOffline: {
-		title: "The Future of Online Dating Will Be Mostly Offline",
-		date: "Jan 2025",
-		path: "/dating",
-	} as WritingInfo,
 	// 2022
 	MasteringBodyComposition: {
 		title: "Mastering Body Composition",
