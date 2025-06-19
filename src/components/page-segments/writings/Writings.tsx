@@ -52,7 +52,7 @@ const Writings: FunctionComponent<EmptyObject> = () => {
               {/* Main Featured - Sinners */}
               <div className="mb-16">
                 <Link type="internal" dest="/sinners" className="group block">
-                  <div className="bg-neutral-800/30 rounded-lg overflow-hidden">
+                  <div className="bg-neutral-800/30 hover:bg-neutral-800/50 rounded-lg overflow-hidden transition-colors duration-200">
                     <div className="w-full h-64 md:aspect-[3/1] relative">
                       <img
                         src="/images/film-analysis/films/sinners/og-image/sinners-og-image.jpg"

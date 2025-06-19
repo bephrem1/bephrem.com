@@ -142,7 +142,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                   >
                     <FontAwesomeIcon
                       icon={faEnvelope}
-                      className="text-neutral-400 text-[10px]"
+                      className="text-neutral-400 text-[10px] w-3 h-3"
                     />
                     <span className="text-neutral-300 text-xs">
                       {emailCopied ? "copied email!" : "drop me a line"}
