@@ -23,11 +23,16 @@ const Home: FunctionComponent<EmptyObject> = () => {
   // Collapse video on mouse move, expand after delay
   useEffect(() => {
     if (!isClient) return;
+
+    // Only enable collapse/expand on desktop
     const handleMouseMove = () => {
-      setCollapsed(true);
-      if (timerRef.current) clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(() => setCollapsed(false), EXPAND_DELAY);
+      if (window.innerWidth >= 768) { // md breakpoint
+        setCollapsed(true);
+        if (timerRef.current) clearTimeout(timerRef.current);
+        timerRef.current = setTimeout(() => setCollapsed(false), EXPAND_DELAY);
+      }
     };
+
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -48,11 +53,11 @@ const Home: FunctionComponent<EmptyObject> = () => {
   return (
     <>
       {/* Name in top-left */}
-      <div className="fixed top-6 left-8 z-50 flex items-center h-9">
+      <div className="fixed md:fixed absolute md:top-6 top-6 left-8 z-50 flex items-center h-9">
         <span className="text-neutral-200 font-medium text-md select-none">Benyam Ephrem</span>
       </div>
       {/* Top-right group: socials and navigation */}
-      <div className="fixed top-6 right-8 z-50 flex flex-col items-end gap-2">
+      <div className="fixed md:fixed absolute md:top-6 top-6 right-8 z-50 flex flex-col items-end gap-2">
         <Socials compressed />
         <div className="flex md:hidden items-center gap-2">
           <Link type="internal" dest={INTERNAL_LINKS.WRITING}>
@@ -76,36 +81,107 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </Link>
         </div>
       </div>
-      <div className="min-h-svh w-full flex flex-col md:flex-col justify-end md:justify-start bg-neutral-900 px-8 pt-20 pb-8">
+      <div className="min-h-svh w-full flex flex-col md:flex-col justify-end md:justify-start bg-neutral-900 px-8 pt-16 md:pt-20 pb-8">
         <div className="w-full h-full flex flex-col items-center order-2 md:order-1">
-          {isClient && (
-            <a
-              href={EXTERNAL_LINKS.SOCIAL.TWITTER}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full"
-              tabIndex={0}
-              aria-label="Go to Benyam's Twitter"
-            >
-              <div
-                className={`relative w-full max-w-full rounded-2xl overflow-hidden bg-black transition-all duration-700 ease-in-out cursor-pointer ${collapsed
-                  ? 'h-[40vh] md:h-[60vh]'
-                  : 'h-[50vh] md:h-[90vh]'
-                  }`}
-              >
-                <video
-                  src="/video/homepage/reel-placeholder-compressed.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                  style={{ pointerEvents: 'none' }}
-                />
-                {/* Overlay to darken the video */}
-                <div className="absolute top-0 left-0 w-full h-full bg-black/20 pointer-events-none" />
+          {/* Mobile compact info above video */}
+          <div className="md:hidden absolute top-28 left-8 right-8 z-40 mb-4">
+            <div className="flex flex-col gap-3">
+              {/* About - moved to top, no heading */}
+              <div>
+                <p className="text-neutral-200 text-base  mb-3">
+                  Hi, my name is Benyam Ephrem. I'm an Ethiopian-American software engineer and filmmaker.
+                </p>
+                <p className="text-neutral-200 text-base mb-5">
+                  After 10 years writing software & creating Internet products, I'm now exploring storytelling through film.
+                </p>
+                <div className="flex items-center gap-2">
+                  <Link type="internal" dest="/about" openInNewWindow>
+                    <div className="inline-flex items-center gap-1 px-2 py-1 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all">
+                      <span className="text-neutral-300 text-xs">More about me</span>
+                      <span className="text-neutral-400 text-xs">↗</span>
+                    </div>
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={handleCopyEmail}
+                    className="inline-flex items-center gap-1 px-2 py-1 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all cursor-pointer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="text-neutral-400 text-[10px] w-3 h-3"
+                    />
+                    <span className="text-neutral-300 text-xs">
+                      {emailCopied ? "copied!" : "email"}
+                    </span>
+                  </button>
+                </div>
               </div>
-            </a>
+
+              {/* Recent writing */}
+              <div className='mt-5'>
+                <p className="text-neutral-500 text-sm font-medium select-none mb-1">Recent writing</p>
+                <Link type="internal" dest="/sinners" openInNewWindow className="group">
+                  <div className="flex items-center relative">
+                    <span className="text-neutral-200 text-lg font-serif italic leading-tight hover:text-neutral-100 transition-colors cursor-pointer">
+                      Analyzing "Sinners" — By Ryan Coogler
+                    </span>
+                    <div className="absolute left-0 w-full h-[1px] bg-neutral-700 bg-opacity-60 group-hover:bg-neutral-400 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {isClient && (
+            <>
+              {/* Desktop: clickable link to Twitter */}
+              <a
+                href={EXTERNAL_LINKS.SOCIAL.TWITTER}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:block w-full"
+                tabIndex={0}
+                aria-label="Go to Benyam's Twitter"
+              >
+                <div
+                  className={`relative w-full max-w-full rounded-2xl overflow-hidden bg-black transition-all duration-700 ease-in-out cursor-pointer ${collapsed
+                    ? 'h-[40vh] md:h-[60vh]'
+                    : 'h-[35vh] md:h-[90vh]'
+                    }`}
+                >
+                  <video
+                    src="/video/homepage/reel-placeholder-compressed.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                  {/* Overlay to darken the video */}
+                  <div className="absolute top-0 left-0 w-full h-full bg-black/20 pointer-events-none" />
+                </div>
+              </a>
+
+              {/* Mobile: non-clickable video */}
+              <div className="md:hidden w-full">
+                <div
+                  className="relative w-full max-w-full rounded-2xl overflow-hidden bg-black h-[35vh]"
+                >
+                  <video
+                    src="/video/homepage/reel-placeholder-compressed.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                  {/* Overlay to darken the video */}
+                  <div className="absolute top-0 left-0 w-full h-full bg-black/20 pointer-events-none" />
+                </div>
+              </div>
+            </>
           )}
           {collapsed && (
             <div className="w-full flex flex-row items-start mt-7 md:ml-2">
