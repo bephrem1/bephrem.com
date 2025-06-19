@@ -146,8 +146,8 @@ const LeftColumnContents = () => {
 
 const Contents = () => {
   return (
-    <div className="pt-4 pb-16 md:pt-16 md:pb-36">
-      <div className="px-4 sm:px-2 sm:pr-12">
+    <div className="pt-14 pb-16 md:pt-16 md:pb-36">
+      <div className="px-4 sm:px-2 sm:pr-12 mt-1">
         <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-20" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
@@ -3057,25 +3057,42 @@ const LeftArrowNavigation = () => {
   }, []);
 
   return (
-    <div
-      className={twMerge(
-        "fixed left-0 top-0 h-screen w-16 z-30 transition-transform duration-500 ease-in-out hidden md:block",
-        isVisible ? "translate-x-0" : "-translate-x-14"
-      )}
-    >
-      <Link
-        type="internal"
-        dest="/writing"
-        className="block w-full h-full group"
+    <>
+      {/* Mobile version - top bar */}
+      <div className="fixed top-0 left-0 right-0 h-10 md:hidden z-30 bg-neutral-600/[0.02] backdrop-blur-[1px] border-b border-neutral-400/20 flex items-center justify-center">
+        <Link
+          type="internal"
+          dest="/writing"
+          className="group hover:bg-neutral-500/[0.07] transition-all duration-300 px-4 py-1 rounded"
+        >
+          <div className="flex items-center gap-1.5">
+            <ArrowLeftIcon className="w-3.5 h-3.5 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300" />
+            <span className="text-xs text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300">Back to writing</span>
+          </div>
+        </Link>
+      </div>
+
+      {/* Desktop version - side bar */}
+      <div
+        className={twMerge(
+          "fixed left-0 top-0 h-screen w-16 z-30 transition-transform duration-500 ease-in-out hidden md:block",
+          isVisible ? "translate-x-0" : "-translate-x-14"
+        )}
       >
-        <div className="w-full h-full bg-neutral-600/[0.02] backdrop-blur-[1px] border-r border-neutral-400/20 group-hover:bg-neutral-500/[0.07] transition-all duration-300 flex items-center justify-center">
-          <ArrowLeftIcon className="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300" />
-        </div>
-        <div className="absolute left-16 top-1/2 -translate-y-1/2 bg-neutral-900/90 text-neutral-100 px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          Return to writing
-        </div>
-      </Link>
-    </div>
+        <Link
+          type="internal"
+          dest="/writing"
+          className="block w-full h-full group"
+        >
+          <div className="w-full h-full bg-neutral-600/[0.02] backdrop-blur-[1px] border-r border-neutral-400/20 group-hover:bg-neutral-500/[0.07] transition-all duration-300 flex items-center justify-center">
+            <ArrowLeftIcon className="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300" />
+          </div>
+          <div className="absolute left-16 top-1/2 -translate-y-1/2 bg-neutral-900/90 text-neutral-100 px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            Return to writing
+          </div>
+        </Link>
+      </div>
+    </>
   );
 };
 
