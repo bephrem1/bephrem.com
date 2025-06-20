@@ -192,6 +192,7 @@ const Contents = () => {
         <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
           remarks will be from cursory Internet searches.</P>
+        <Aside brighter>This analysis is over 10,000 words. It’s a lot to read so I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end.</Aside>
 
         <H3>What's All the Fuss About?</H3>
         <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it's a lot of things. <i>A lot, of things.</i></P>
@@ -2864,7 +2865,7 @@ const Contents = () => {
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
-        <H3>Key Takeaways</H3>
+        <H3>Key Takeaways <span className="text-neutral-500 text-sm">(TL;DR)</span></H3>
         <P>There are a lot of things that only stuck out to me after painstakingly going second-by-second, scene-by-scene, through the film. Ryan Coogler is more than a great director, he’s a great <i>screenwriter</i>.</P>
         <P>Here are a few disparate notes:</P>
         <UnorderedList>
@@ -2872,11 +2873,11 @@ const Contents = () => {
           <ListItem><b>Turning Scenes</b>: In Acts I & II, turn scenes every 30 seconds to 1 minute. A scene that doesn’t turn <span className="text-neutral-500">(and has no drama)</span> should go in the trash.</ListItem>
           <ListItem><b>Gradually Increase Pace</b>: In later acts, pace increases and scenes turn faster.</ListItem>
           <ListItem><b>Develop Character With Actions</b>: Take what you’d say in words, and show it in character action. It is much more powerful.</ListItem>
-          <ListItem><b>No Meaning? Cut It.</b> Every line of dialog should move to a scene turning point, build character, and/or thematic significance. If that is not directly the case, cut it.</ListItem>
+          <ListItem><b>No Meaning? Cut It.</b> Every line of dialog should move towards a scene turning point, build character, and/or thematic significance. If that is not directly the case, cut it.</ListItem>
           <ListItem><b>Double/Triple Meanings</b>: Explore moments in scenes where words or actions can have double or triple meanings. Making the audience not sure how to feel.</ListItem>
           <ListItem><b>Know Your World</b>: Deeply research the inner and outer world of your story and know it cold. Build scenes from inside-out.</ListItem>
           <ListItem><b>Emotional Dynamic Range</b>: Take the audience between various intensities of various emotions, at varied pace.</ListItem>
-          <ListItem><b>Plant and Payoff</b>: Know your script from the <FilmTimecode timecode="1:00" /> mark, to the <FilmTimecode timecode="2:00:00" /> mark. Plant ideas and resolve them sensibly.</ListItem>
+          <ListItem><b>Plant and Payoff</b>: Know your script from the <FilmTimecode timecode="1:00" /> mark, to the <FilmTimecode timecode="2:00:00" /> mark. Plant ideas <span className="text-neutral-500"><i>(only of significance)</i></span> and resolve them sensibly.</ListItem>
           <ListItem><b>What You Can’t Teach</b>: There are a lot of lived emotional and life experiences that Ryan Coogler has had that funnelled into this film. This film is a singular creative event, and much
             of what created it’s contents, you can’t teach.</ListItem>
         </UnorderedList>
@@ -3161,12 +3162,14 @@ const H6 = (props: { children: React.ReactNode }) => (
 const P = ({ children }: { children: React.ReactNode }) => {
   return <p className="text-neutral-950 text-justify mb-3 [&>sup]:text-neutral-400 [&>sup]:text-xs [&>sup]:relative">{children}</p>
 }
-const A = ({ children, href }: { children: React.ReactNode, href: string }) => {
+const A = ({ children, href, newTab = true }: { children: React.ReactNode, href: string, newTab?: boolean }) => {
   return <a
     className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400"
     href={href}
-    target="_blank"
-    rel="noopener noreferrer"
+    {...newTab && {
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }}
   >
     {children}
   </a>
