@@ -2085,6 +2085,14 @@ const Contents = () => {
         </div>
         <P>This final line sounds sincere, but in the context of the broader song, it’s irony. It reveals how people can cloak selfishness in the language of love and loyalty while quietly taking everything from someone else. It’s cultural criticism.</P>
 
+        <H5>Designing Antagonists</H5>
+        <P>In a <A href="https://podcasts.apple.com/us/podcast/in-proximity/id1671236843?i=1000671950260">podcast conversation</A> with Jordan Peele, Ryan Coogler talks about antagonist design:</P>
+        <Quote>
+          <b>You want to make sure the villan wants the same thing that the protagonist wants, but for different reasons.</b> You can look at like, Heath Ledger, in The Dark Knight.
+          Both he and Batman want control of Gotham, but they want it for different reasons. But they’re going after the same thing.
+        </Quote>
+        <P><b>Remmick & Sammie’s Object of Desire are the same: <i>Cultural Connection & Expression</i>.</b> But Remmick wants Sammie’s life to get that, and Sammie wants to leave to play in Chicago to get that.</P>
+
         <H5><i>“How’d She Get In”?</i></H5>
         <P>Mary is more than a token mixed-race character, she is an intentionally placed metaphor to add narrative drive about race tensions in the Deep South. At <FilmTimecode timecode="1:04:10" /> Remmick asks <i>“How’d she get in?”</i>, pointing to her.</P>
         <P>Annie holds her hand up and says <i>“She here, cus’ she family.”</i> Which Mary will later parrot as a vampire back at her at <FilmTimecode timecode="1:42:43" />. This, is excellent writing.</P>
