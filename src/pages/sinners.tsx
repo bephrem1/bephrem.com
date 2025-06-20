@@ -1999,7 +1999,7 @@ const Contents = () => {
 
         <H4>Sammie Eating Out Pearline</H4>
         <P>This scene made people uncomfortable, but the key is you always want to balance it out with some other emotion rather quickly.</P>
-        <P>We bring in humor at <FilmTimecode timecode="1:00:48" /> when Stack overhears the couple and smirks. This received the 3rd largest laugh of the movie (behind Slim’s <i>“I think I just shat
+        <P>We bring in humor at <FilmTimecode timecode="1:00:48" /> when Stack overhears the couple and smirks. This received the 3rd largest laugh of the movie (behind Slim’s <i>“I think I just s**t
           myself”</i> at <FilmTimecode timecode="1:27:57" /> and <i>“Well fuck ya wife too”</i> from Stack to Cornbread at <FilmTimecode timecode="32:50" />).</P>
 
         <H4>Remmick Walks Up</H4>
