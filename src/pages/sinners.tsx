@@ -2231,6 +2231,10 @@ const Contents = () => {
         <H5>“So You Rob Trains and Banks?...”</H5>
         <P>It’s important that you give the audience lines that they can take home, that stick with them. At <FilmTimecode timecode="1:14:20" />, Mary says asks <i>“So you rob trains and banks?...But you can’t steal this p****y for a night?”</i>. This
           is one of them.</P>
+        <H5>A Subtle Tone</H5>
+        <P>If you listen closely, at <FilmTimecode timecode="1:16:06" /> <span className="text-neutral-500">(when Stack walks in the back room with Mary)</span>, some high strings <A href="https://en.wikipedia.org/wiki/Incidental_music">play briefly</A> right as Mary enters.
+          So as to add weight to the moment & signal that Stack has committed his final sin.</P>
+        <P>There’s one more lower draw of the violin at <FilmTimecode timecode="1:16:14" />.</P>
         <H5>Ready to Snap</H5>
         <P>At <FilmTimecode timecode="1:16:06" />, once Stack goes into the back room, we know our understanding of the situation is about to meet the characters’ own. We’re ready to snap each of the dramatic subplots:</P>
         <TimecodeTable>
