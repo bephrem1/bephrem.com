@@ -490,7 +490,7 @@ const Contents = () => {
         <P>Ryan Coogler is a master of emotional contrast and pacing. Tastefully taking watchers on a rollercoaster between expectation and reality.</P>
         <P>When Sammie walks up to a beautifully painted white church, nestled in a quiet green field, with children heard singing as he walks up, we expect peace and quiet.</P>
         <P>But then we notice Sammie's clothes are tattered, he has a large scar on his face, and his guitar is shattered. As he walks up, we begin to feel 2 emotional extremes, only slightly developed.</P>
-        <P>Sammie enters, and Reverend Moore yells "Sammie!". The church falls silent. We realize something is seriously wrong. The reverend begins his incantation and we can't tell if the reverend is going to hurt him or help him.</P>
+        <P>Sammie enters, and Reverend Moore yells “Sammie!”. The church falls silent. We realize something is seriously wrong. The reverend begins his incantation and we can't tell if the reverend is going to hurt him or help him.</P>
 
         <H5>Sound As Emotion</H5>
         <P>Sammie does not say a single word in this scene. Instead his emotional turmoil is conveyed through the score & <A href="https://en.wikipedia.org/wiki/Non-diegetic_insert">non-diegetic</A> sound effects
