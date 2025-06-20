@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { ArrowLeftIcon, Share1Icon, Share2Icon } from "@radix-ui/react-icons";
 import { clsx } from "clsx";
 import { formatDistanceToNow, isValid, parse, parseISO } from "date-fns";
 import Head from 'next/head';
@@ -28,6 +28,7 @@ import { EXTERNAL_LINKS } from "../helpers/urls";
 import { useDocumentHeadComponents } from "../hooks/page-headers";
 import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
 import QuoteIcon from "../icons/lib/QuoteIcon";
+import { useToast } from "../components/shared/shadcn/components/ui/use-toast";
 
 const SinnersFilmAnalysisPage = () => {
   useRestoreScrollPosition();
@@ -191,11 +192,11 @@ const Contents = () => {
           film that will cover story, blocking of scenes, score & sound design, cinematography, editing, and more.</P>
         <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
-          remarks will be from cursory Internet searches.</P>
+          remarks will be from brief Internet searches.</P>
         <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie. I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end for the time-conscious.</Aside>
 
         <H3>What's All the Fuss About?</H3>
-        <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it's a lot of things. <i>A lot, of things.</i></P>
+        <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it's a lot of things. <i>A lot.</i></P>
         <P>Too much to really cover here, but I'll list a few things that come to mind that make this film head-and-shoulders remarkable:</P>
         <UnorderedList>
           <ListItem>One of the best film composers in the world, Ludwig Göransson, put down the most ambitious score of his life.</ListItem>
@@ -203,7 +204,7 @@ const Contents = () => {
           <ListItem>Michael B. Jordan plays <i>2 characters</i>, through a slew of acting & technical complications.</ListItem>
           <ListItem>The cinematography is breathtaking, every frame is memorable. <A href="https://www.autumndurald.com/">Autumn Durald Arkapaw</A> makes history as the first woman to shoot a film in large-format IMAX 65mm.</ListItem>
           <ListItem>Ryan Coogler makes history as the first black director to shoot in large-format IMAX 65mm.</ListItem>
-          <ListItem>The writing and story are incredibly layered, original, and historically accurate — avoiding cinema tropes and clichés left & right. The film <A href="https://youtu.be/Pjb_eH0C_vQ?si=plG7O-mGPO_48cae&t=462">crosses genre boundaries</A> of Supernatural Horror, Love Story, Drama, Musical, Comedy, & Western. </ListItem>
+          <ListItem>The writing and story are incredibly layered, original, and historically accurate — avoiding cinema tropes and clichés left & right. The film crosses genre boundaries of Supernatural Horror, Love Story, Drama, Musical, Comedy, & Western. </ListItem>
           <ListItem>If features a stellar cast, most of which can act, sing, and dance.</ListItem>
           <ListItem>It <s>is breaking</s> broke <A href="https://www.the-numbers.com/movie/Sinners-(2025)">box office</A> records (soon to be #5 <A href="https://www.the-numbers.com/box-office-records/worldwide/all-movies/genres/horror">highest grossing horror</A> film
             of <i>all time</i>) — all with a Southern American-tied plotline (weaker worldwide appeal)</ListItem>
@@ -214,9 +215,7 @@ const Contents = () => {
           <ListItem>It's the first film to use Ultra Panavision 70 and IMAX 65mm in the same film.</ListItem>
           <ListItem>Miles Caton has never acted in a feature-length film before. He even <A href="https://youtu.be/ExF7t5jrT3o?si=0TSo2IMzZUk4WHZn&t=18">learned the guitar</A> for the leading role.</ListItem>
         </UnorderedList>
-        <P>Great works of art like this come once every few decades. This film threads dozens of creative needles.</P>
-        <P>It's so incredibly rare, because it's nearly impossible to align talent and history like this.</P>
-        <P>Let's begin talking about the story.</P>
+        <P>Great works of art like this come once every few decades. This film threads dozens of creative needles, aligning world-class talent in every major cast and crew role.</P>
       </div>
 
       <div className="px-4 sm:px-2 sm:pr-12">
@@ -3557,11 +3556,60 @@ const Header = ({
   className,
 }: { title: string; date: string; className?: string }) => {
   const relativeDate = formatDateToRelative({ date });
+  const { toast } = useToast();
+
+  const handleShare = async () => {
+    try {
+      // Try modern clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(window.location.href);
+        toast({
+          description: "Copied!",
+          className: "bg-neutral-100 border-neutral-200 text-neutral-800",
+        });
+        return;
+      }
+  
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = window.location.href;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+  
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+  
+      if (successful) {
+        toast({
+          description: "Copied!",
+          className: "bg-neutral-100 border-neutral-200 text-neutral-800",
+        });
+      } else {
+        throw new Error('Copy command failed');
+      }
+    } catch (err) {
+      console.error('Failed to copy URL:', err);
+      // Fallback alert
+      alert(`Please copy this URL: ${window.location.href}`);
+    }
+  };
 
   return (
     <div className={twMerge("flex flex-col", className)}>
-      <div className="mb-1 sm:mb-2">
-        <p className="text-neutral-800 text-2xl font-semibold">{title}</p>
+      <div className="mb-1 sm:mb-2 flex items-start justify-between">
+        <p className="text-neutral-800 text-2xl font-semibold flex-1 pr-4">{title}</p>
+        <button
+          type="button"
+          onClick={handleShare}
+          className="flex-shrink-0 w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors flex items-center justify-center"
+          aria-label="Share this page"
+        >
+          <Share2Icon className="w-4 h-4 text-neutral-600" />
+        </button>
       </div>
       <div className="flex flex-row items-center">
         <Link
