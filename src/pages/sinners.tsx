@@ -152,16 +152,16 @@ const Contents = () => {
         <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-20" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
-          <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As a filmmaker (not that I consider myself one yet), sometimes you watch things
-            that move you so deeply, that you say "<i>That</i>. <b>That's it</b>. That's what this is all about."</p>
+          <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As an aspiring filmmaker, sometimes you watch things
+            that move you so deeply, that you say “<i>That</i>. <b>That's it</b>. That’s seamless. That’s perfection.”</p>
           <p className="leading-5 text-neutral-500 text-justify">
-            Albeit, Sinners is a $90M blockbuster with hundreds of craftspeople involved, & working relationships spanning decades — and I make videos where the
-            primary production expenses are $10 Uber rides. There is still an internal recognition when you're watching something <s className="mr-1">great</s>
-            timeless. Something that has maximized the power of its <span className="text-neutral-400">(incredibly challenging)</span> medium.
+            Albeit, Sinners is a $90M blockbuster with hundreds of craftspeople involved, working relationships spanning decades — and I make videos where the
+            primary production expenses are $20 Uber rides. There is still an internal recognition when you're watching something timeless. Something that has
+            gone far in a medium where so many others fall short.
           </p>
-          <p className="leading-5 text-neutral-500 text-justify mt-2">Growing up I didn't watch many movies. When I did, I enjoyed them, but nothing deeply resonated within me. My sister
-            would watch "Entertainment Tonight" downstairs and my eyes would glaze over as the latest star with lip surgery crossed the red carpet.
-            "Why did they matter? Why were we idolizing regular and flawed people, just like us?" I saw movies as entertainment, and entertainment was
+          <p className="leading-5 text-neutral-500 text-justify mt-2">Growing up I didn’t watch many movies. When I did, I enjoyed them, but nothing deeply resonated within me. My sister
+            would watch “Entertainment Tonight” downstairs and my eyes would glaze over as the latest star with lip surgery crossed the red carpet.
+            “Why did they matter? Why were we idolizing regular and flawed people, just like us?” I saw movies as entertainment, and entertainment was
             a waste of time.</p>
           <p className="leading-5 text-neutral-500 text-justify mt-2">At 16 I was upstairs programming. Making apps for Android phones, then running them downstairs to show my parents.
             Programming and striving to be the best engineer was all I knew. It has constituted the past 10 years of my work. I've been loosely interested in video
@@ -170,19 +170,14 @@ const Contents = () => {
             up in my YouTube feed. I watched it and decided to buy a ticket for the first IMAX showing (on April 18th). I would watch the film 2 more times that weekend.
             Then 2 times the next week. Then 3 the next.</p>
           <p className="leading-5 text-neutral-500 text-justify mt-2">This eventually gave way to an obsession. Any free evening I'd get, I would try to see the movie
-            in 70mm at Grand Lake Theater in Oakland, CA <span className="text-neutral-400">(Ryan Coogler's hometown theater)</span>, or at AMC Metreon 16 in San Francisco, CA <span className="text-neutral-400">(the film inevitably returned to IMAX for a week)</span>.
+            in 70mm at <A href="https://www.renaissancerialto.com/">Grand Lake Theater</A> in Oakland, CA <span className="text-neutral-400">(Ryan Coogler's hometown theater)</span>, or at AMC Metreon 16 in San Francisco.
           </p>
           <p className="leading-5 text-neutral-500 text-justify mt-2"> For a few weeks I was following <a href="https://www.usatoday.com/story/entertainment/movies/2025/05/01/clarksdale-mississippi-sinners-movie-theaters-cast-visit/83387768007/" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">the story</a> that
             they might be screening the film in the town of Clarksdale, Mississippi <span className="text-neutral-400">(where the film took place)</span>. The town has no local movie theater in operation, the closest theater being 1 1/2 hrs away in Memphis, TN.
-            Later, when I saw it was <a href="https://www.mpbonline.org/blogs/news/ryan-coogler-is-bringing-sinners-home-to-clarksdale-for-a-series-of-screenings-qa/" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">confirmed</a>, I <i>had</i> to book a flight to Mississippi.
-            To see where the film took place & understand how the story was constructed.
+            Later, when I saw it was <a href="https://www.mpbonline.org/blogs/news/ryan-coogler-is-bringing-sinners-home-to-clarksdale-for-a-series-of-screenings-qa/" className="text-indigo-600 hover:text-indigo-700 visited:text-indigo-400" target="_blank" rel="noopener noreferrer">confirmed</a>, I booked a flight to Mississippi.
           </p>
           <p className="leading-5 text-neutral-500 text-justify mt-2">
-            At the time of this writing I have watched the film ~20 times, I will probably watch it many more times in my lifetime, but at this point content-wise it is etched
-            into my mind.
-          </p>
-          <p className="leading-5 text-neutral-500 text-justify mt-2">
-            The following is a technical breakdown of the film, with a focus on story, structure, and meaning.
+            To date, I’ve watched the film about 25 times in the past 3 months. 22 in theaters, then ~3 for this analysis.
           </p>
         </HiddenAside>
       </div>
@@ -1578,7 +1573,7 @@ const Contents = () => {
         />
         <P><FilmTimecode timecode="32:14" /> features the second shot in the film of bare feet, to emphasize the poverty at the time.</P>
         <H5>“Well, F**k Yo Wife Too”</H5>
-        <P>This was the most disrespectful moment of the film, and yielded the 4th largest laugh at <FilmTimecode timecode="33:16" /> from the audience (with Delta Slim’s <i>“I think I just s**t
+        <P>This scene delivered one of the film’s most brazenly disrespectful moments, and yielded the 4th largest laugh at <FilmTimecode timecode="33:16" /> from the audience (with Delta Slim’s <i>“I think I just s**t
           myself”</i> at <FilmTimecode timecode="1:27:56" /> later taking #1).</P>
 
         <H5>Transition From Slim’s Humming</H5>
