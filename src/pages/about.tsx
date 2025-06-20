@@ -33,7 +33,7 @@ const About: FunctionComponent = () => {
       </div>
 
       {/* Main Content - Top-aligned Image */}
-      <div className="min-h-svh w-full flex items-start justify-center bg-neutral-900 px-6 md:px-0 pt-28 md:pt-32 pb-32">
+      <div className="min-h-svh w-full flex items-start justify-center bg-neutral-900 px-6 md:px-0 pt-28 md:pt-24 pb-32">
         <div className="max-w-md md:max-w-2xl mx-auto">
           <Image
             path="me/ben"
@@ -57,11 +57,16 @@ const About: FunctionComponent = () => {
 
           <div className="mt-6">
             <p className="text-neutral-100 text-base text-justify leading-relaxed">
-              I'm a software engineer and filmmaker based in San Francisco, California. I've been programming and creating Internet products since 16, but recently I've been studying the field of film.
+              I'm a software engineer and filmmaker based in San Francisco, California. I've been programming and creating Internet products since 16. Recently I've been studying the field of film.
             </p>
           </div>
+        </div>
+      </div>
 
-          <div className="flex flex-row gap-1 justify-center pt-6 pb-2">
+      {/* Below the fold content */}
+      <div className="w-full bg-neutral-900 px-6 md:px-0 pb-32">
+        <div className="max-w-md md:max-w-2xl mx-auto">
+          <div className="flex flex-row gap-1 justify-center pt-16 pb-2">
             <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
             <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
             <div className="h-0.5 w-0.5 bg-neutral-500 rounded-full" />
