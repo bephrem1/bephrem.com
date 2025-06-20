@@ -1,9 +1,8 @@
-import { EmptyObject } from '../types/empty';
-import { FunctionComponent } from 'react';
 import Head from 'next/head';
+import type { FunctionComponent } from 'react';
 import Home from '../components/page-segments/home/Home';
-import PageBase from '../components/shared/page/PageBase';
 import { useDocumentHeadComponents } from '../hooks/page-headers';
+import type { EmptyObject } from '../types/empty';
 
 const RootHomePage: FunctionComponent<EmptyObject> = () => {
   const { SEOTags } = useDocumentHeadComponents({
@@ -12,10 +11,10 @@ const RootHomePage: FunctionComponent<EmptyObject> = () => {
   });
 
   return (
-    <PageBase>
+    <>
       <Head>{SEOTags}</Head>
       <Home />
-    </PageBase>
+    </>
   );
 };
 

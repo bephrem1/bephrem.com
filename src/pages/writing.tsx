@@ -1,5 +1,5 @@
-import { EmptyObject } from '../types/empty';
-import { FunctionComponent } from 'react';
+import type { EmptyObject } from '../types/empty';
+import type { FunctionComponent } from 'react';
 import Head from 'next/head';
 import PageBase from '../components/shared/page/PageBase';
 import Writings from '../components/page-segments/writings/Writings';
