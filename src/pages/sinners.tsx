@@ -192,7 +192,7 @@ const Contents = () => {
         <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
         <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
           remarks will be from cursory Internet searches.</P>
-        <Aside brighter>This analysis is over 10,000 words. It’s a lot to read so I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end.</Aside>
+        <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie. I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end for the time-conscious.</Aside>
 
         <H3>What's All the Fuss About?</H3>
         <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it's a lot of things. <i>A lot, of things.</i></P>
