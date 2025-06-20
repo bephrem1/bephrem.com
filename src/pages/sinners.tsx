@@ -186,7 +186,8 @@ const Contents = () => {
         <P>The following is a breakdown of the film “Sinners” by writer/director Ryan Coogler. This is a technical analysis of the
           film that will cover story structure, character design & motivation, score & sound design, cinematography, editing, and more.</P>
         <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh in-mind. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
-        <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie. I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end summarizing some insights.</Aside>
+        <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie with personal notes. I created a TL;DR section at
+        the end summarizing some <A href="#key-takeaways-tldr">key takeaways</A>.</Aside>
 
         <H3>Why Sinners is a Big Deal</H3>
         <P>A few things that come to mind that make this film head-and-shoulders remarkable:</P>
@@ -2879,7 +2880,7 @@ const Contents = () => {
         <P>There are a lot of things that only stuck out to me after painstakingly going second-by-second, scene-by-scene, through the film. Ryan Coogler is more than a great director, he’s a great <i>screenwriter</i>.</P>
         <P>Here are a few disparate notes:</P>
         <UnorderedList>
-          <ListItem><b>Scene Length</b>: In Acts I & II keep scenes to 1-2 minutes.</ListItem>
+          <ListItem><b>Scene Length</b>: In Acts I & II keep scenes to 1-2 minutes, this keeps high-pace in the exposition.</ListItem>
           <ListItem><b>Turning Scenes</b>: In Acts I & II, turn scenes every 30 seconds to 1 minute. A scene that doesn’t turn <span className="text-neutral-500">(and has no drama)</span> should go in the trash.</ListItem>
           <ListItem><b>Gradually Increase Pace</b>: In later acts, pace increases and scenes turn faster.</ListItem>
           <ListItem><b>Develop Character With Actions</b>: Take what you’d say in words, and show it in character action. It is much more powerful.</ListItem>
