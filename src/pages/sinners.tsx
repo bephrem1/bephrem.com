@@ -691,7 +691,7 @@ const Contents = () => {
         <H5>Match Cut on “Searching”</H5>
         <P>We enter this scene off a clip of Sammie <i>searching</i> for something under his bed. Smoke begins by checking his watch, <i>searching</i> for someone who has not arrived.</P>
 
-        <H5>Masterful Visual Storytelling</H5>
+        <H5>Rotating Around the Twins</H5>
         <P>This scene holds the first strong moment of visual storytelling (of many) that this film will have. The camera begins on Smoke then rotates around to reveal Stack. Grouping them initially as 1 visual entity to show their inseparable bond.</P>
         <P>This shot came as a suggestion from a crew member <span>(I can’t recall the interview this popped up in), and originally the shot was planned to show both twins at once (no hiding & rotation).</span></P>
 
@@ -2324,7 +2324,7 @@ const Contents = () => {
           endTimecode="1:30:41"
         />
         <H5>Back-To-Back Dramatic Sequences</H5>
-        <P>Coogler’s a master of pacing & emotional variety. He decides to keep the pressure high with <i>another</i> dramatic sequence immediately following Cornbread’s attack:</P>
+        <P>Coogler decides to keep the pressure high with <i>another</i> dramatic sequence immediately following Cornbread’s attack:</P>
         <TimecodeTable>
           <TimecodeTableRow timecode="1:28:03" content={<p className="text-left">Stack knocks on the backroom door.</p>} />
           <TimecodeTableRow timecode="1:28:15" content={<p className="text-left">A knife jabs through the door. <span className="text-neutral-500 text-sm">(after <b>4 seconds</b> of Sammie’s ear to the door)</span></p>} />
