@@ -221,17 +221,27 @@ const Contents = () => {
           href="https://en.wikipedia.org/wiki/Sinners_(2025_film)#Plot"
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full my-4 rounded-md bg-neutral-100 hover:bg-neutral-200 transition-colors border border-neutral-300 shadow-sm px-4 py-3 text-base font-medium text-neutral-700 flex items-center justify-between gap-3"
+          className="block w-full mt-4 mb-6 rounded-md bg-neutral-100 hover:bg-neutral-200 transition-colors border border-neutral-300 shadow-sm px-4 py-3 text-base font-medium text-neutral-700 flex items-center justify-between gap-3"
         >
           <span>Plot Summary <span className="text-neutral-400 text-sm">(primer)</span></span>
           <ArrowUpRightIcon className="w-5 h-5 text-neutral-400" />
         </a>
 
+        <Image
+          path="/film-analysis/films/sinners/stills/sammie-sunday-morning"
+          ext="jpg"
+          alt="Sammie Moore standing outside his father’s church Sunday morning."
+          width="100%"
+          optimize={false}
+          inspectable
+        />
+        <p className="text-neutral-500 text-sm mt-2 mb-2">Sammie Moore standing outside his father’s church Sunday morning.</p>
+
         <H3>Narrative Structure</H3>
         <div className="mb-6">
           <CastMembers cast={[SinnersCast.Annie, SinnersCast.SammieMoore, SinnersCast.ReverendMoore]} avatarSize={50} />
         </div>
-        <P>The film takes place in Clarksdale, Mississippi over 2 days in October 1932 — the 15th (Saturday) & 16th (Sunday). It begins with a voiceover from Annie, then a <A href="https://en.wikipedia.org/wiki/Flashforward" >flash-forward</A> to
+        <P>Sinners takes place in Clarksdale, Mississippi over 2 days in October 1932 — the 15th (Saturday) & 16th (Sunday). It begins with a voiceover from Annie, then a <A href="https://en.wikipedia.org/wiki/Flashforward" >flash-forward</A> to
           Sunday morning, where the first scene shows Sammie driving up to a church.</P>
         <P>Sammie enters the church, crying for some reason. His father, Reverend Moore, begins a jolting incantation of prayer for his son. Sammie continues to break down,
           in a swirling mess of internal conflict, as he tightly grips his shattered guitar neck.</P>
