@@ -184,13 +184,11 @@ const Contents = () => {
 
       <div className="px-4 sm:px-2 sm:pr-12 pb-1.5">
         <P>The following is a breakdown of the film “Sinners” by writer/director Ryan Coogler. This is a technical analysis of the
-          film that will cover story, blocking of scenes, score & sound design, cinematography, editing, and more.</P>
-        <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh at-hand. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
-        <P>I will try my best with historical context, but I have not conducted the in-depth research to do justice the serious and lengthy history the film is based on. Most historical
-          remarks will be from brief Internet searches.</P>
-        <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie. I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end for the time-conscious.</Aside>
+          film that will cover story structure, character design & motivation, score & sound design, cinematography, editing, and more.</P>
+        <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh in-mind. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
+        <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie. I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end summarizing some insights.</Aside>
 
-        <H3>What's All the Fuss About?</H3>
+        <H3>Why Sinners is a Big Deal</H3>
         <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it's a lot of things. <i>A lot.</i></P>
         <P>Too much to really cover here, but I'll list a few things that come to mind that make this film head-and-shoulders remarkable:</P>
         <UnorderedList>
