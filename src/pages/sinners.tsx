@@ -297,9 +297,9 @@ const Contents = () => {
           dress; education and occupation; personality and nervosity; values
           and attitudes-all aspects of humanity we could know by taking
           notes on someone day in and day out. ... <b>TRUE CHARACTER</b> is revealed in
-          the choices a human being makes under pressure-the greater the pressure,
+          the choices a human being makes under pressure. <b>The greater the pressure,
           the deeper the revelation, the truer the choice to the
-          character's essential nature.
+          character's essential nature.</b>
         </Quote>
         <P>So what choices do our protagonists make? What crisis do they face?</P>
 
@@ -311,7 +311,7 @@ const Contents = () => {
           the grave of his passed son.</P>
         <P>In the very last moments of Act V, he dies from a gunshot wound suffered in his shootout with the KKK. Annie appears from heaven to present him with his son. He pauses, before deciding
           to take the baby in his arms.</P>
-        <P>In an "on the nose" line, Ryan Coogler scripts Hogwood to say "Hey...I've got money", offering money to Smoke, then Smoke sends a flurry of bullets his way.</P>
+        <P>In an “on the nose” line, Ryan Coogler scripts Hogwood to say “Hey...I've got money”, offering money to Smoke, then Smoke sends a flurry of bullets his way.</P>
         <P>This is a moment of irreversible change for Smoke, and ironic as well, because he has now finally become what he always wanted to be: <b>a father</b>. But due
           to his past actions, his greed cost him the lives of everyone he loved, as well as his own.
         </P>
@@ -324,17 +324,17 @@ const Contents = () => {
           advises him on how the world really works outside of the Delta, and Delta Slim acts as a guardian and Blues mentor.
         </P>
         <P>Throughout the film, Sammie presents as a modest, deferential character. As the night wears on, he slowly transforms into a charismatic and confident character.
-          After his performance that "conjurs the spirits of the past and future", he eventually "tries something" with Pearline.
+          After his performance that “conjurs the spirits of the past and future”, he eventually “tries something” with Pearline.
         </P>
         <P>Sammie's moment of crisis comes not when Remmick is about to kill him (at the end of Act IV), because no choice was made there. It comes the next day, Sunday
-          morning, when he stumbles into church and Reverend Moore's yell burns through him with religious fervor.
+          morning, when he stumbles into church and Reverend Moore’s yell burns through him with religious fervor.
         </P>
         <P>Sammie makes the choice to defy his father and leave Clarksdale to pursue music, as we see in the scene right after Smoke's death. Later, his older self is
           played by Buddy Guy (in Chicago).
         </P>
-        <Aside>It's also important to note Sammie was the only survivor after the weekend concluded.</Aside>
+        <Aside>It’s also important to note Sammie was the only survivor after the weekend concluded.</Aside>
 
-        <H5>Stack's Character-Defining Choices</H5>
+        <H5>Stack’s Character-Defining Choices</H5>
         <div className="mb-4">
           <CastMembers cast={[SinnersCast.Stack, SinnersCast.Mary]} avatarSize={50} />
         </div>
@@ -411,8 +411,7 @@ const Contents = () => {
         </UnorderedList>
         <P>There are also strong historical notes on ownership & racism, Ryan Coogler in <A href="https://youtu.be/0mU_2VWpsmQ?si=vZNmPtdGcGTFDXah&t=431">this interview with Hanna Flint</A> comments:</P>
         <Quote>What if the vampires didn't show up, what happens to those people? ... The reality is...everybody at that juke was gonna be dead anyway. ... They was f***ed essentially the moment they bought the mill.</Quote>
-        <P>Which is a reference to the slew of laws and regulations at the time that disadvantaged blacks from owning and retaining property, & truly having a path to real freedom. It was always
-          a losing battle in a game you didn't control the rules to.</P>
+        <P>Which is a reference to the slew of laws and regulations at the time that disadvantaged blacks from owning and retaining property, & truly having a path to real freedom.</P>
         <P>Ryan Coogler also makes a direct comment on his personal tie to the idea of fatherhood in a <A href="https://youtu.be/1lRAnlyj5YM?si=GhZ7b0_Kj5vvSqR0&t=2905">7PM in Brooklyn podcast episode</A>:</P>
         <Quote>
           Making this movie as a father...I put a lot of myself into it. ... I went through these characters and I tried to define, like, what are these guys? If you held them
