@@ -189,20 +189,19 @@ const Contents = () => {
         <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie. I created a <A href="#key-takeaways-tldr" newTab={false}>TL;DR</A> section at the end summarizing some insights.</Aside>
 
         <H3>Why Sinners is a Big Deal</H3>
-        <P>Why is Sinners such a big deal? Why are people so passionate about this film? Well, it's a lot of things. <i>A lot.</i></P>
-        <P>Too much to really cover here, but I'll list a few things that come to mind that make this film head-and-shoulders remarkable:</P>
+        <P>A few things that come to mind that make this film head-and-shoulders remarkable:</P>
         <UnorderedList>
           <ListItem>One of the best film composers in the world, Ludwig Göransson, put down the most ambitious score of his life.</ListItem>
           <ListItem>One of the best writer/directors in the world, Ryan Coogler, releases the first original movie of his 5 feature-length film career.</ListItem>
           <ListItem>Michael B. Jordan plays <i>2 characters</i>, through a slew of acting & technical complications.</ListItem>
-          <ListItem>The cinematography is breathtaking, every frame is memorable. <A href="https://www.autumndurald.com/">Autumn Durald Arkapaw</A> makes history as the first woman to shoot a film in large-format IMAX 65mm.</ListItem>
+          <ListItem>The cinematography is breathtaking, every frame memorable. <A href="https://www.autumndurald.com/">Autumn Durald Arkapaw</A> makes history as the first woman to shoot a film in large-format IMAX 65mm.</ListItem>
           <ListItem>Ryan Coogler makes history as the first black director to shoot in large-format IMAX 65mm.</ListItem>
           <ListItem>The writing and story are incredibly layered, original, and historically accurate — avoiding cinema tropes and clichés left & right. The film crosses genre boundaries of Supernatural Horror, Love Story, Drama, Musical, Comedy, & Western. </ListItem>
           <ListItem>If features a stellar cast, most of which can act, sing, and dance.</ListItem>
-          <ListItem>It <s>is breaking</s> broke <A href="https://www.the-numbers.com/movie/Sinners-(2025)">box office</A> records (soon to be #5 <A href="https://www.the-numbers.com/box-office-records/worldwide/all-movies/genres/horror">highest grossing horror</A> film
+          <ListItem>It’s broken <A href="https://www.the-numbers.com/movie/Sinners-(2025)">box office</A> records (soon to be #5 <A href="https://www.the-numbers.com/box-office-records/worldwide/all-movies/genres/horror">highest grossing horror</A> film
             of <i>all time</i>) — all with a Southern American-tied plotline (weaker worldwide appeal)</ListItem>
           <ListItem>...after Variety & the New York Times <A href="https://www.nytimes.com/2025/04/20/business/media/sinners-box-office.html">raised doubts</A> over it's ability to even breakeven.</ListItem>
-          <ListItem>Ryan Coogler secured a deal with Warner Brothers for first-dollar gross, final cut, and rights reversion after 25 years. Which is unheard of.</ListItem>
+          <ListItem>Ryan Coogler secured a deal with Warner Brothers for first-dollar gross, final cut, and rights reversion after 25 years. A rare concession.</ListItem>
           <ListItem>Ryan Coogler films <A href="https://www.youtube.com/watch?v=78Ru62uFM0s">promo video with Kodak</A> where he's just your homie schooling you on theater projection formats, it goes viral.</ListItem>
           <ListItem>It is single-handedly breathing life into a dying theater industry. (I joined AMC A-List and go every weekend after watching it)</ListItem>
           <ListItem>It's the first film to use Ultra Panavision 70 and IMAX 65mm in the same film.</ListItem>
