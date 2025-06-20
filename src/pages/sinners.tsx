@@ -250,7 +250,7 @@ const Contents = () => {
         <P>This is the <b>Inciting Incident</b> for our narrative on Sammie, where we become aware that he <i>wants something</i>, but something powerful
           is in his way. It frames him early as our main protagonist.</P>
         <P>Having watched the film, we already know why Sammie is crying and in tatters. He just narrowly avoided being killed by a supernatural demon. Everyone he knows and loves is dead. He did not obey his father the day before,
-          he "kept dancin' with the devil" and it "followed him home".</P>
+          he <i>”kept dancin’ with the devil“</i> and it <i>“followed him home”</i>.</P>
 
         <H4>Five Act Structure</H4>
         <div className="mb-6">
@@ -258,7 +258,7 @@ const Contents = () => {
         </div>
         <P>Sinners is organized into 5 acts along it's main plotline. The story weaves the hero journeys of <b>2 main protagonist forces</b>: Sammie Moore & the Smokestack Twins.</P>
         <P>Both are seeking freedom in some regard. The Smokestack Twins are seeking to open their juke club and leave their troubled past in Chicago behind. Sammie hopes to play music and make a living doing so (against his father's wishes).</P>
-        <P>The following diagram marks major <b>turning points</b> ("points of no return") which separate acts for central plot and subplots:</P>
+        <P>The following diagram marks major <b>turning points</b> (“points of no return”) which separate acts for central plot and subplots:</P>
       </div>
       <SinnersPlotOverview className="left-column——avoid right-column——avoid" />
       <div className="px-4 sm:px-2 sm:pr-12">
@@ -275,7 +275,6 @@ const Contents = () => {
           ultimately <b>changing</b> in a revelatory way.</P>
         <P>We empathize with the character (identify with & see ourselves in them), reason about how and why that change happened, then internalize
           the lesson to our own model of truth about the world.</P>
-        <P>New stories lead to new meanings, new meanings lead to new realities.</P>
         <P>In his book "Story", Robert McKee says:</P>
         <Quote>
           STORYTELLING is the <b>creative demonstration of truth</b>. A
@@ -284,7 +283,7 @@ const Contents = () => {
           by which you first express, then prove your idea ...
           without explanation.
         </Quote>
-        <P>Every moment in the final master of the film is imbued with meaning. Nothing is left in by chance. Every moment in every scene serves a central
+        <P>Every moment in the final master of the film is imbued with meaning. <b>Nothing is left in by chance.</b> Every moment in every scene serves a central
           theme (or "Controlling Idea").</P>
 
         <H4>Finding Controlling Idea (Jumping to the End)</H4>
