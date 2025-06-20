@@ -2086,7 +2086,7 @@ const Contents = () => {
         <P>This final line sounds sincere, but in the context of the broader song, it’s irony. It reveals how people can cloak selfishness in the language of love and loyalty while quietly taking everything from someone else. It’s cultural criticism.</P>
 
         <H5>Designing Antagonists</H5>
-        <P>In a <A href="https://podcasts.apple.com/us/podcast/in-proximity/id1671236843?i=1000671950260">podcast conversation</A> with Jordan Peele, Ryan Coogler talks about antagonist design:</P>
+        <P>In a <A href="https://youtu.be/BkRqByFwkgI?si=wB7_7aCiQEVpFe8J&t=266">podcast conversation</A> with Jordan Peele, Ryan Coogler talks about antagonist design:</P>
         <Quote>
           <b>You want to make sure the villan wants the same thing that the protagonist wants, but for different reasons.</b> You can look at like, Heath Ledger, in The Dark Knight.
           Both he and Batman want control of Gotham, but they want it for different reasons. But they’re going after the same thing.
