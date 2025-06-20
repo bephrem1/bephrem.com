@@ -2532,6 +2532,15 @@ const Contents = () => {
         />
 
         <H4>Remmick Returns</H4>
+        <Image
+          path="/film-analysis/films/sinners/stills/remmick-returns"
+          ext="jpg"
+          alt="Remmick returns to confront Smoke and the survivors."
+          width="100%"
+          optimize={false}
+          inspectable
+        />
+        <p className="text-neutral-500 text-sm mt-2 mb-2">Remmick returns to confront Smoke and the survivors.</p>
         <SceneTimeline
           className="mt-4 mb-5"
           startTimecode="1:39:56"
