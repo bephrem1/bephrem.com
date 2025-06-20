@@ -743,7 +743,7 @@ const Contents = () => {
           storyContribution="Smoke reveals that he handles pressure with seriousness, Stack deflects it with humor, and Hogwood has a hatred towards the twins."
         />
         <H5>Speak With Actions, Not Words</H5>
-        <P>Ryan Coogler is also a master of bringing life to his characters with actions, not words. Revealing their true character in a visceral way.</P>
+        <P>Ryan Coogler brings life to his characters with actions, not words. Revealing their true character in a visceral way.</P>
         <P>When asked of his name, Hogwood spits in front of the twins, an action that makes the crowd wince.</P>
         <P>We also begin to distinguish how the twins handle tense situations. Smoke takes a more serious tone, while Stack turns to witty humor. Michael B. Jordan <A href="https://youtu.be/s72cBC-v6UE?si=pc4miaJujRCv23NT&t=108">comments on the distinction</A>:</P>
         <Quote>
