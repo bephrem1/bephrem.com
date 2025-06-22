@@ -20,6 +20,7 @@ import PlotTimeline from "../components/shared/film-analysis/plot/PlotTimeline";
 import SceneOverview from "../components/shared/film-analysis/scene/SceneOverview";
 import SceneTimeline from "../components/shared/film-analysis/scene/SceneTimeline";
 import { ImageCarousel } from "../components/shared/images/ImageCarousel";
+import { useToast } from "../components/shared/shadcn/components/ui/use-toast";
 import VideoPlayer from "../components/shared/video/VideoPlayer";
 import YouTubeEmbed from "../components/shared/youtube/YouTubeEmbed";
 import YouTubeGrid from "../components/shared/youtube/YouTubeGrid";
@@ -28,7 +29,6 @@ import { EXTERNAL_LINKS } from "../helpers/urls";
 import { useDocumentHeadComponents } from "../hooks/page-headers";
 import ArrowUpRightIcon from "../icons/lib/ArrowUpRightIcon";
 import QuoteIcon from "../icons/lib/QuoteIcon";
-import { useToast } from "../components/shared/shadcn/components/ui/use-toast";
 
 const SinnersFilmAnalysisPage = () => {
   useRestoreScrollPosition();
@@ -150,6 +150,7 @@ const Contents = () => {
     <div className="pt-5 pb-16 md:pt-16 md:pb-36">
       <div className="px-4 sm:px-2 sm:pr-12">
         <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-20" />
+        <YouTubeEmbed youtubeId="RLvT0pgq_KI" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
           <p className="leading-5 text-neutral-500 text-justify mb-2">Sinners is a film that has rocked my world. As an aspiring filmmaker, sometimes you watch things
@@ -187,7 +188,7 @@ const Contents = () => {
           film that will cover story structure, character design & motivation, score & sound design, cinematography, editing, and more.</P>
         <P>This is best read after watching the film, or during subsequent rewatches, so that the characters & plot are fresh in-mind. I will be referencing very specific moments in certain scenes (most of which I cannot display with an accompanying still frame, for copyright reasons).</P>
         <Aside brighter>This analysis is over 10,000 words since I go over every scene in the movie with personal notes. I created a TL;DR section at
-        the end summarizing some <A href="#key-takeaways-tldr">key takeaways</A>.</Aside>
+          the end summarizing some <A href="#key-takeaways-tldr">key takeaways</A>.</Aside>
 
         <H3>Why Sinners is a Big Deal</H3>
         <P>A few things that come to mind that make this film head-and-shoulders remarkable:</P>
@@ -301,8 +302,8 @@ const Contents = () => {
           and attitudes-all aspects of humanity we could know by taking
           notes on someone day in and day out. ... <b>TRUE CHARACTER</b> is revealed in
           the choices a human being makes under pressure. <b>The greater the pressure,
-          the deeper the revelation, the truer the choice to the
-          character's essential nature.</b>
+            the deeper the revelation, the truer the choice to the
+            character's essential nature.</b>
         </Quote>
         <P>So what choices do our protagonists make? What crisis do they face?</P>
 
@@ -3570,7 +3571,7 @@ const Header = ({
         });
         return;
       }
-  
+
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
       textArea.value = window.location.href;
@@ -3580,10 +3581,10 @@ const Header = ({
       document.body.appendChild(textArea);
       textArea.focus();
       textArea.select();
-  
+
       const successful = document.execCommand('copy');
       document.body.removeChild(textArea);
-  
+
       if (successful) {
         toast({
           description: "Copied!",
