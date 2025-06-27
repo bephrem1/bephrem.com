@@ -149,7 +149,7 @@ const Contents = () => {
   return (
     <div className="pt-5 pb-16 md:pt-16 md:pb-36">
       <div className="px-4 sm:px-2 sm:pr-12">
-        <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-20" />
+        <Header className="mb-4 sm:mb-4" title="Analyzing “Sinners” — By Ryan Coogler" date="2025-06-22" />
         <YouTubeEmbed youtubeId="RLvT0pgq_KI" />
 
         <HiddenAside title="Personal Preface" defaultOpen={false}>
