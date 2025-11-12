@@ -103,8 +103,8 @@ const Home: FunctionComponent<EmptyObject> = () => {
             <span className="text-amber-600 hover:text-amber-700 text-sm transition-colors select-none cursor-pointer">Writing</span>
           </Link>
           <span className="text-neutral-400 text-xs select-none">·</span>
-          <Link type="internal" dest="/about">
-            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">About</span>
+          <Link type="internal" dest={INTERNAL_LINKS.WORK}>
+            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">Work</span>
           </Link>
         </div>
       </div>
@@ -115,8 +115,8 @@ const Home: FunctionComponent<EmptyObject> = () => {
             <span className="text-amber-600 hover:text-amber-700 text-sm transition-colors select-none cursor-pointer">Writing</span>
           </Link>
           <span className="text-neutral-400 text-xs select-none">·</span>
-          <Link type="internal" dest="/about">
-            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">About</span>
+          <Link type="internal" dest={INTERNAL_LINKS.WORK}>
+            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">Work</span>
           </Link>
         </div>
       </div>

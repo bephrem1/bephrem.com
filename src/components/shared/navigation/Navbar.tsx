@@ -13,7 +13,7 @@ const Navbar: FunctionComponent<EmptyObject> = () => {
 
   const links = [
     ...(!onWriting ? [{ name: 'Writing', dest: INTERNAL_LINKS.WRITING }] : []),
-    ...(!onHomepage ? [{ name: 'About', dest: INTERNAL_LINKS.HOME }] : [])
+    { name: 'Work', dest: INTERNAL_LINKS.WORK }
   ];
 
   return (

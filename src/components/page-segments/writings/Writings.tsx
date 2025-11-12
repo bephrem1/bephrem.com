@@ -6,85 +6,74 @@ import Socials from '../../shared/socials/Socials';
 
 const Writings: FunctionComponent<EmptyObject> = () => {
   return (
-    <div className="min-h-svh bg-neutral-900">
-      <div className="w-full max-w-7xl mx-auto px-8">
-        {/* Navigation Header */}
-        <div className="absolute top-6 left-8 z-50 flex items-center h-9">
+    <>
+      {/* Navigation Header */}
+      <div className="fixed md:fixed absolute top-6 md:top-7 left-8 z-50 flex items-center h-9">
+        <Link type="internal" dest={INTERNAL_LINKS.HOME}>
+          <span className="text-neutral-800 font-medium text-md select-none cursor-pointer hover:text-neutral-900 transition-colors">Benyam Ephrem</span>
+        </Link>
+      </div>
+
+      {/* Top-right group: socials and navigation */}
+      <div className="fixed md:fixed absolute md:top-6 top-6 right-8 z-50 flex flex-col items-end gap-2">
+        <Socials compressed />
+        <div className="flex md:hidden items-center gap-2">
           <Link type="internal" dest={INTERNAL_LINKS.HOME}>
-            <span className="text-neutral-200 font-medium text-md select-none cursor-pointer hover:text-neutral-100 transition-colors">Benyam Ephrem</span>
+            <span className="text-amber-600 hover:text-amber-700 text-sm transition-colors select-none cursor-pointer">Home</span>
+          </Link>
+          <span className="text-neutral-400 text-xs select-none">·</span>
+          <Link type="internal" dest={INTERNAL_LINKS.WORK}>
+            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">Work</span>
           </Link>
         </div>
+      </div>
 
-        {/* Top-right group: socials and navigation */}
-        <div className="absolute top-6 right-8 z-50 flex flex-col items-end gap-2">
-          <Socials compressed />
-          <div className="flex md:hidden items-center gap-2">
-            <Link type="internal" dest={INTERNAL_LINKS.HOME}>
-              <span className="text-amber-400 hover:text-amber-300 text-sm transition-colors select-none cursor-pointer">Home</span>
-            </Link>
-            <span className="text-neutral-500 text-xs select-none">·</span>
-            <Link type="internal" dest="/about">
-              <span className="text-neutral-400 hover:text-neutral-200 text-sm transition-colors select-none cursor-pointer">About</span>
-            </Link>
-          </div>
+      {/* Desktop centered navigation */}
+      <div className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center h-9">
+        <div className="flex items-center gap-2">
+          <Link type="internal" dest={INTERNAL_LINKS.HOME}>
+            <span className="text-amber-600 hover:text-amber-700 text-sm transition-colors select-none cursor-pointer">Home</span>
+          </Link>
+          <span className="text-neutral-400 text-xs select-none">·</span>
+          <Link type="internal" dest={INTERNAL_LINKS.WORK}>
+            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">Work</span>
+          </Link>
         </div>
+      </div>
 
-        {/* Desktop centered navigation */}
-        <div className="hidden md:flex absolute top-6 left-1/2 -translate-x-1/2 z-50 items-center h-9">
-          <div className="flex items-center gap-2">
-            <Link type="internal" dest={INTERNAL_LINKS.HOME}>
-              <span className="text-amber-400 hover:text-amber-300 text-sm transition-colors select-none cursor-pointer">Home</span>
-            </Link>
-            <span className="text-neutral-500 text-xs select-none">·</span>
-            <Link type="internal" dest="/about">
-              <span className="text-neutral-400 hover:text-neutral-200 text-sm transition-colors select-none cursor-pointer">About</span>
-            </Link>
+      <div className="min-h-svh w-full flex flex-col px-8 pt-24 md:pt-32 pb-16" style={{ backgroundColor: '#fafaf9' }}>
+        <div className="w-full max-w-3xl mx-auto">
+          {/* Page Title */}
+          <div className="mb-16">
+            <h1 className="text-neutral-800 text-3xl md:text-4xl font-serif italic leading-tight mb-2">Writing</h1>
+            <p className="text-neutral-500 text-sm">Essays on film, craft, and storytelling</p>
           </div>
-        </div>
 
-        {/* Main Content */}
-        <div className="pt-24 pb-16">
-          <div className="max-w-4xl mx-auto">
-            {/* Featured Writings Section */}
-            <div className="mb-16">
-              <h2 className="text-neutral-200 text-2xl font-serif italic mb-6 md:mb-8">Featured</h2>
-
-              {/* Main Featured - Sinners */}
-              <div className="mb-16">
-                <Link type="internal" dest="/sinners" className="group block">
-                  <div className="bg-neutral-800/30 hover:bg-neutral-800/50 rounded-lg overflow-hidden transition-colors duration-200">
-                    <div className="w-full h-64 md:aspect-[3/1] relative">
-                      <img
-                        src="/images/film-analysis/films/sinners/og-image/sinners-og-image.jpg"
-                        alt="Sinners Film Analysis"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-8">
-                      <div className="mb-4">
-                        <span className="text-neutral-400 text-sm font-medium">Film Analysis</span>
-                        <span className="text-neutral-600 mx-2">·</span>
-                        <span className="text-neutral-400 text-sm">June 20, 2025</span>
-                      </div>
-                      <h2 className="text-neutral-100 text-2xl md:text-3xl lg:text-4xl font-serif italic leading-tight group-hover:text-neutral-50 transition-colors mb-3">
-                        Analyzing "Sinners" — By Ryan Coogler
-                      </h2>
-                      <p className="text-neutral-400 text-base md:text-lg leading-[1.4] mb-4">
-                        A technical breakdown of the film's story, structure, and meaning.
-                        Exploring how Ryan Coogler crafted this powerful narrative about
-                        community, culture, and the human spirit.
-                      </p>
-                      <div className="flex items-center justify-end">
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+          {/* Writings List */}
+          <div className="space-y-12">
+            {/* Sinners Analysis */}
+            <Link type="internal" dest="/sinners" className="group block">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="text-neutral-500 font-medium">Film Analysis</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="text-neutral-400">June 20, 2025</span>
+                </div>
+                <div className="relative">
+                  <h2 className="text-neutral-800 text-2xl md:text-3xl font-serif italic leading-tight group-hover:text-neutral-900 transition-colors">
+                    Analyzing "Sinners" — By Ryan Coogler
+                  </h2>
+                  <div className="absolute left-0 w-full h-[1.5px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '8px' }} />
+                </div>
+                <p className="text-neutral-600 text-base leading-relaxed mt-2">
+                  A technical breakdown of the film’s story, structure, and meaning. Exploring how Ryan Coogler crafted a powerful narrative about community, culture, and the human spirit.
+                </p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

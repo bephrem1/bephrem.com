@@ -3,6 +3,7 @@ import { NextRouter } from "next/router";
 export const INTERNAL_LINKS = {
 	HOME: "/",
 	WRITING: "/writing",
+	WORK: "/work",
 };
 
 export const EXTERNAL_LINKS = {
