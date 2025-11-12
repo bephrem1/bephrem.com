@@ -15,7 +15,7 @@ const RECENT_WORK_ITEMS = [
     type: 'external' as const,
   },
   {
-    title: 'Interview: Arlan Rakhmetzhanov',
+    title: 'Interview: Arlan',
     url: 'https://youtu.be/7hukPKD4Bhs?si=omds06dHoFgcqzKf',
     type: 'external' as const,
   },
@@ -92,18 +92,18 @@ const Home: FunctionComponent<EmptyObject> = () => {
     <>
       {/* Name in top-left */}
       <div className="fixed md:fixed absolute md:top-6 top-6 left-8 z-50 flex items-center h-9">
-        <span className="text-neutral-200 font-medium text-md select-none">Benyam Ephrem</span>
+        <span className="text-neutral-800 font-medium text-md select-none">Benyam Ephrem</span>
       </div>
       {/* Top-right group: socials and navigation */}
       <div className="fixed md:fixed absolute md:top-6 top-6 right-8 z-50 flex flex-col items-end gap-2">
         <Socials compressed />
         <div className="flex md:hidden items-center gap-2">
           <Link type="internal" dest={INTERNAL_LINKS.WRITING}>
-            <span className="text-amber-400 hover:text-amber-300 text-sm transition-colors select-none cursor-pointer">Writing</span>
+            <span className="text-amber-600 hover:text-amber-700 text-sm transition-colors select-none cursor-pointer">Writing</span>
           </Link>
-          <span className="text-neutral-500 text-xs select-none">·</span>
+          <span className="text-neutral-400 text-xs select-none">·</span>
           <Link type="internal" dest="/about">
-            <span className="text-neutral-400 hover:text-neutral-200 text-sm transition-colors select-none cursor-pointer">About</span>
+            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">About</span>
           </Link>
         </div>
       </div>
@@ -111,34 +111,34 @@ const Home: FunctionComponent<EmptyObject> = () => {
       <div className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center h-9">
         <div className="flex items-center gap-2">
           <Link type="internal" dest={INTERNAL_LINKS.WRITING}>
-            <span className="text-amber-400 hover:text-amber-300 text-sm transition-colors select-none cursor-pointer">Writing</span>
+            <span className="text-amber-600 hover:text-amber-700 text-sm transition-colors select-none cursor-pointer">Writing</span>
           </Link>
-          <span className="text-neutral-500 text-xs select-none">·</span>
+          <span className="text-neutral-400 text-xs select-none">·</span>
           <Link type="internal" dest="/about">
-            <span className="text-neutral-400 hover:text-neutral-200 text-sm transition-colors select-none cursor-pointer">About</span>
+            <span className="text-neutral-600 hover:text-neutral-800 text-sm transition-colors select-none cursor-pointer">About</span>
           </Link>
         </div>
       </div>
-      <div className="min-h-svh w-full flex flex-col md:flex-col justify-end md:justify-start bg-neutral-900 px-8 pt-16 md:pt-20 pb-8">
+      <div className="min-h-svh w-full flex flex-col md:flex-col justify-end md:justify-start px-8 pt-16 md:pt-20 pb-8" style={{ backgroundColor: '#fafaf9' }}>
         <div className="w-full h-full flex flex-col items-center order-2 md:order-1">
           {/* Mobile compact info above video */}
           <div className="md:hidden absolute top-28 left-8 right-8 z-40 mb-4">
             <div className="flex flex-col gap-3">
               {/* About - moved to top, no heading */}
               <div>
-                <p className="text-neutral-200 text-base  mb-3">
+                <p className="text-neutral-800 text-base  mb-3">
                   My name is Benyam Ephrem. I'm an Ethiopian-American director & producer.
                 </p>
-                <p className="text-neutral-200 text-base mb-5">
-                  After a decade building software & Internet products, I’m now making films.
+                <p className="text-neutral-800 text-base mb-5">
+                  After a decade building software & Internet products, I'm now making films.
                 </p>
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center px-3 py-1.5 backdrop-blur-sm bg-white/5 hover:bg-white/10 border border-dashed border-neutral-500/40 hover:border-neutral-400/60 rounded-full transition-all cursor-pointer"
+                    className="inline-flex items-center px-3 py-1.5 backdrop-blur-sm bg-neutral-100 hover:bg-neutral-200 border border-dashed border-neutral-300 hover:border-neutral-400 rounded-full transition-all cursor-pointer"
                   >
-                    <span className="text-neutral-200 text-[0.675rem] font-mono">
+                    <span className="text-neutral-800 text-[0.675rem] font-mono">
                       {emailCopied ? "copied!" : EMAIL}
                     </span>
                   </button>
@@ -150,10 +150,10 @@ const Home: FunctionComponent<EmptyObject> = () => {
                 <p className="text-neutral-500 text-sm font-medium select-none mb-1">Recent writing</p>
                 <Link type="internal" dest="/sinners" openInNewWindow className="group">
                   <div className="flex items-center relative">
-                    <span className="text-neutral-200 text-lg font-serif italic leading-tight hover:text-neutral-100 transition-colors cursor-pointer">
+                    <span className="text-neutral-800 text-lg font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer">
                       Analyzing "Sinners" — By Ryan Coogler
                     </span>
-                    <div className="absolute left-0 w-full h-[1px] bg-neutral-700 bg-opacity-60 group-hover:bg-neutral-400 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
+                    <div className="absolute left-0 w-full h-[1px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
                   </div>
                 </Link>
               </div>
@@ -165,10 +165,10 @@ const Home: FunctionComponent<EmptyObject> = () => {
                   {RECENT_WORK_ITEMS.map((item) => (
                     <Link key={item.title} type={item.type} dest={item.url} openInNewWindow className="group">
                       <div className="flex items-center relative">
-                        <span className="text-neutral-200 text-sm font-serif italic leading-tight hover:text-neutral-100 transition-colors cursor-pointer whitespace-nowrap">
+                        <span className="text-neutral-800 text-sm font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer whitespace-nowrap">
                           {item.title}
                         </span>
-                        <div className="absolute left-0 w-full h-[1px] bg-neutral-700 bg-opacity-60 group-hover:bg-neutral-400 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
+                        <div className="absolute left-0 w-full h-[1px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
                       </div>
                     </Link>
                   ))}
@@ -232,46 +232,46 @@ const Home: FunctionComponent<EmptyObject> = () => {
           {collapsed && (
             <div className="w-full flex flex-row items-start mt-7 md:ml-2">
               <div className="flex flex-col items-start">
-                <p><span className="text-neutral-400 text-sm font-medium select-none">Recent writing</span></p>
+                <p><span className="text-neutral-600 text-sm font-medium select-none">Recent writing</span></p>
                 <Link type="internal" dest="/sinners" openInNewWindow className="group mt-4">
                   <div className="flex items-center relative">
-                    <span className="text-neutral-200 text-2xl font-serif italic leading-none hover:text-neutral-100 transition-colors cursor-pointer">
+                    <span className="text-neutral-800 text-2xl font-serif italic leading-none hover:text-neutral-900 transition-colors cursor-pointer">
                       Analyzing "Sinners" — By Ryan Coogler
                     </span>
-                    <div className="absolute left-0 w-full h-[1.5px] bg-neutral-700 bg-opacity-60 group-hover:bg-neutral-400 transition-colors" style={{ top: '100%', marginTop: '8px' }} />
+                    <div className="absolute left-0 w-full h-[1.5px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '8px' }} />
                   </div>
                 </Link>
               </div>
               <div className="hidden md:block ml-16">
-                <p><span className="text-neutral-400 text-sm font-medium select-none">About</span></p>
+                <p><span className="text-neutral-600 text-sm font-medium select-none">About</span></p>
                 <div className="mt-4 max-w-sm">
-                  <p className="text-neutral-200 text-opacity-95 text-sm leading-relaxed mb-2">
+                  <p className="text-neutral-800 text-opacity-95 text-sm leading-relaxed mb-2">
                     My name is Benyam Ephrem. I'm an Ethiopian-American director & producer.
                   </p>
-                  <p className="text-neutral-200 text-opacity-95 text-sm leading-relaxed mb-3">
+                  <p className="text-neutral-800 text-opacity-95 text-sm leading-relaxed mb-3">
                     After a decade building software & Internet products, I'm now making films.
                   </p>
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center px-3 py-1.5 mt-2 backdrop-blur-sm bg-white/5 hover:bg-white/10 border border-dashed border-neutral-500/40 hover:border-neutral-400/60 rounded-full transition-all cursor-pointer"
+                    className="inline-flex items-center px-3 py-1.5 mt-2 backdrop-blur-sm bg-neutral-100 hover:bg-neutral-200 border border-dashed border-neutral-300 hover:border-neutral-400 rounded-full transition-all cursor-pointer"
                   >
-                    <span className="text-neutral-200 text-[0.675rem] font-mono">
+                    <span className="text-neutral-800 text-[0.675rem] font-mono">
                       {emailCopied ? "copied email!" : EMAIL}
                     </span>
                   </button>
                 </div>
               </div>
               <div className="hidden md:block ml-16">
-                <p><span className="text-neutral-400 text-sm font-medium select-none">Recent work</span></p>
+                <p><span className="text-neutral-600 text-sm font-medium select-none">Recent work</span></p>
                 <div className="mt-4 max-w-sm flex flex-col gap-6">
                   {RECENT_WORK_ITEMS.map((item) => (
                     <Link key={item.title} type={item.type} dest={item.url} openInNewWindow className="group">
                       <div className="flex items-center relative py-0.5">
-                        <span className="text-neutral-200 text-2xl font-serif italic leading-none hover:text-neutral-100 transition-colors cursor-pointer">
+                        <span className="text-neutral-800 text-2xl font-serif italic leading-none hover:text-neutral-900 transition-colors cursor-pointer">
                           {item.title}
                         </span>
-                        <div className="absolute left-0 w-full h-[1.5px] bg-neutral-700 bg-opacity-60 group-hover:bg-neutral-400 transition-colors" style={{ top: '100%', marginTop: '8px' }} />
+                        <div className="absolute left-0 w-full h-[1.5px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '8px' }} />
                       </div>
                     </Link>
                   ))}

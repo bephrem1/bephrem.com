@@ -41,7 +41,7 @@ const SocialLink = ({ type, url, compressed }) => {
               'w-2.5 h-2.5': compressed,
               'w-3 h-3': !compressed
             })}
-            stroke="fill-white"
+            stroke="fill-neutral-800"
           />
         );
       case 'youtube':
@@ -49,7 +49,7 @@ const SocialLink = ({ type, url, compressed }) => {
           <FontAwesomeIcon
             icon={faYoutube}
             className={clsx({
-              'text-neutral-400': true,
+              'text-neutral-600': true,
               'w-3.5 h-3.5': compressed,
               'w-4 h-4': !compressed
             })}
@@ -60,7 +60,7 @@ const SocialLink = ({ type, url, compressed }) => {
           <FontAwesomeIcon
             icon={faLinkedin}
             className={clsx({
-              'text-neutral-400': true,
+              'text-neutral-600': true,
               'w-3.5 h-3.5': compressed,
               'w-4 h-4': !compressed
             })}
@@ -80,8 +80,8 @@ const SocialLink = ({ type, url, compressed }) => {
   });
   const containerClassName = clsx({
     'flex flex-row items-center justify-center': true,
-    'bg-neutral-900 hover:bg-neutral-800': true,
-    'border border-solid border-neutral-800': true,
+    'hover:bg-neutral-100': true,
+    'border border-solid border-neutral-200': true,
     'w-8 h-8 sm:w-7 sm:h-7': compressed,
     'w-9 h-9 sm:w-7 sm:h-7': !compressed,
     'rounded-lg': true
