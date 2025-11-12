@@ -8,6 +8,24 @@ import Socials from '../../shared/socials/Socials';
 const EXPAND_DELAY = 4000; // ms
 const EMAIL = "ben@bephrem.studio";
 
+const RECENT_WORK_ITEMS = [
+  {
+    title: 'Analysis: "Keep Thinking"',
+    url: 'https://x.com/notbenyam/status/1987937022120783964',
+    type: 'external' as const,
+  },
+  {
+    title: 'Interview: Arlan Rakhmetzhanov',
+    url: 'https://youtu.be/7hukPKD4Bhs?si=omds06dHoFgcqzKf',
+    type: 'external' as const,
+  },
+  {
+    title: 'Documentary: Juxta',
+    url: 'https://youtu.be/VsERidFUBZs?si=jiqUdwNHF8lPJ57v',
+    type: 'external' as const,
+  },
+];
+
 const Home: FunctionComponent<EmptyObject> = () => {
   const [isClient, setIsClient] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
@@ -139,6 +157,23 @@ const Home: FunctionComponent<EmptyObject> = () => {
                   </div>
                 </Link>
               </div>
+
+              {/* Recent work */}
+              <div className='mt-4'>
+                <p className="text-neutral-500 text-sm font-medium select-none mb-2">Recent work</p>
+                <div className="grid gap-y-4" style={{ gridTemplateColumns: 'max-content max-content', columnGap: '1rem' }}>
+                  {RECENT_WORK_ITEMS.map((item) => (
+                    <Link key={item.title} type={item.type} dest={item.url} openInNewWindow className="group">
+                      <div className="flex items-center relative">
+                        <span className="text-neutral-200 text-sm font-serif italic leading-tight hover:text-neutral-100 transition-colors cursor-pointer whitespace-nowrap">
+                          {item.title}
+                        </span>
+                        <div className="absolute left-0 w-full h-[1px] bg-neutral-700 bg-opacity-60 group-hover:bg-neutral-400 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -166,7 +201,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                     loop
                     muted
                     playsInline
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-cover md:object-[center_35%]"
                     style={{ pointerEvents: 'none' }}
                   />
                   {/* Overlay to darken the video */}
@@ -214,7 +249,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                     My name is Benyam Ephrem. I'm an Ethiopian-American director & producer.
                   </p>
                   <p className="text-neutral-200 text-opacity-95 text-sm leading-relaxed mb-3">
-                    After a decade building software & Internet products, I’m now making films.
+                    After a decade building software & Internet products, I'm now making films.
                   </p>
                   <button
                     type="button"
@@ -225,6 +260,21 @@ const Home: FunctionComponent<EmptyObject> = () => {
                       {emailCopied ? "copied email!" : EMAIL}
                     </span>
                   </button>
+                </div>
+              </div>
+              <div className="hidden md:block ml-16">
+                <p><span className="text-neutral-400 text-sm font-medium select-none">Recent work</span></p>
+                <div className="mt-4 max-w-sm flex flex-col gap-6">
+                  {RECENT_WORK_ITEMS.map((item) => (
+                    <Link key={item.title} type={item.type} dest={item.url} openInNewWindow className="group">
+                      <div className="flex items-center relative py-0.5">
+                        <span className="text-neutral-200 text-2xl font-serif italic leading-none hover:text-neutral-100 transition-colors cursor-pointer">
+                          {item.title}
+                        </span>
+                        <div className="absolute left-0 w-full h-[1.5px] bg-neutral-700 bg-opacity-60 group-hover:bg-neutral-400 transition-colors" style={{ top: '100%', marginTop: '8px' }} />
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
