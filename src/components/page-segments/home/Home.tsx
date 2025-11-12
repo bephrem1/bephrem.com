@@ -91,8 +91,9 @@ const Home: FunctionComponent<EmptyObject> = () => {
   return (
     <>
       {/* Name in top-left */}
-      <div className="fixed md:fixed absolute md:top-6 top-6 left-8 z-50 flex items-center h-9">
+      <div className="fixed md:fixed absolute top-6 md:top-7 left-8 z-50 flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2">
         <span className="text-neutral-800 font-medium text-md select-none">Benyam Ephrem</span>
+        <span className="text-neutral-400 text-xs select-none">director, producer</span>
       </div>
       {/* Top-right group: socials and navigation */}
       <div className="fixed md:fixed absolute md:top-6 top-6 right-8 z-50 flex flex-col items-end gap-2">
@@ -205,14 +206,21 @@ const Home: FunctionComponent<EmptyObject> = () => {
                     style={{ pointerEvents: 'none' }}
                   />
                   {/* Overlay to darken the video */}
-                  <div className="absolute top-0 left-0 w-full h-full bg-black/20 pointer-events-none" />
+                  <div className="absolute top-0 left-0 w-full h-full bg-black/10 pointer-events-none" />
                 </div>
               </a>
 
-              {/* Mobile: non-clickable video */}
-              <div className="md:hidden w-full">
+              {/* Mobile: clickable link to Twitter */}
+              <a
+                href={EXTERNAL_LINKS.SOCIAL.TWITTER}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:hidden w-full"
+                tabIndex={0}
+                aria-label="Go to Benyam's Twitter"
+              >
                 <div
-                  className="relative w-full max-w-full rounded-2xl overflow-hidden bg-black h-[28vh]"
+                  className="relative w-full max-w-full rounded-2xl overflow-hidden bg-black h-[28vh] cursor-pointer"
                 >
                   <video
                     src="/video/homepage/mini-reel.mp4"
@@ -224,9 +232,9 @@ const Home: FunctionComponent<EmptyObject> = () => {
                     style={{ pointerEvents: 'none' }}
                   />
                   {/* Overlay to darken the video */}
-                  <div className="absolute top-0 left-0 w-full h-full bg-black/20 pointer-events-none" />
+                  <div className="absolute top-0 left-0 w-full h-full bg-black/10 pointer-events-none" />
                 </div>
-              </div>
+              </a>
             </>
           )}
           {collapsed && (

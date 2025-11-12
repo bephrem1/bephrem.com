@@ -81,7 +81,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-size: 100%;
-  background-color: #171717; /* neutral-900 */
+  background-color: #fafaf9; /* neutral-50 - matches homepage */
 }
 
 #root {
