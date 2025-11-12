@@ -1,5 +1,3 @@
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { FunctionComponent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { EXTERNAL_LINKS, INTERNAL_LINKS } from '../../../helpers/urls';
@@ -20,25 +18,21 @@ const Home: FunctionComponent<EmptyObject> = () => {
     setIsClient(true);
   }, []);
 
-  // Collapse video on mouse move, expand after delay
+  // Collapse video on hover, expand after delay
+  const handleVideoHover = () => {
+    if (window.innerWidth >= 768) { // md breakpoint
+      setCollapsed(true);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => setCollapsed(false), EXPAND_DELAY);
+    }
+  };
+
+  // Cleanup timer on unmount
   useEffect(() => {
-    if (!isClient) return;
-
-    // Only enable collapse/expand on desktop
-    const handleMouseMove = () => {
-      if (window.innerWidth >= 768) { // md breakpoint
-        setCollapsed(true);
-        if (timerRef.current) clearTimeout(timerRef.current);
-        timerRef.current = setTimeout(() => setCollapsed(false), EXPAND_DELAY);
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [isClient]);
+  }, []);
 
   const handleCopyEmail = async () => {
     try {
@@ -115,29 +109,19 @@ const Home: FunctionComponent<EmptyObject> = () => {
               {/* About - moved to top, no heading */}
               <div>
                 <p className="text-neutral-200 text-base  mb-3">
-                  Hi, my name is Benyam Ephrem. I'm an Ethiopian-American software engineer and filmmaker.
+                  My name is Benyam Ephrem. I'm an Ethiopian-American director & producer.
                 </p>
                 <p className="text-neutral-200 text-base mb-5">
-                  After 10 years writing software & creating Internet products, I'm now exploring storytelling through film.
+                  After a decade building software & Internet products, I’m now making films.
                 </p>
                 <div className="flex items-center gap-2">
-                  <Link type="internal" dest="/about" openInNewWindow>
-                    <div className="inline-flex items-center gap-1 px-2 py-1 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all">
-                      <span className="text-neutral-300 text-xs">More about me</span>
-                      <span className="text-neutral-400 text-xs">↗</span>
-                    </div>
-                  </Link>
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center gap-1.5 px-2 py-1 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all cursor-pointer"
+                    className="inline-flex items-center px-3 py-1.5 backdrop-blur-sm bg-white/5 hover:bg-white/10 border border-dashed border-neutral-500/40 hover:border-neutral-400/60 rounded-full transition-all cursor-pointer"
                   >
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      className="text-neutral-400 text-[10px] w-3 h-3"
-                    />
-                    <span className="text-neutral-300 text-xs">
-                      {emailCopied ? "copied!" : "email"}
+                    <span className="text-neutral-200 text-[0.675rem] font-mono">
+                      {emailCopied ? "copied!" : EMAIL}
                     </span>
                   </button>
                 </div>
@@ -168,6 +152,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                 className="hidden md:block w-full"
                 tabIndex={0}
                 aria-label="Go to Benyam's Twitter"
+                onMouseEnter={handleVideoHover}
               >
                 <div
                   className={`relative w-full max-w-full rounded-2xl overflow-hidden bg-black transition-all duration-700 ease-in-out cursor-pointer ${collapsed
@@ -176,7 +161,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                     }`}
                 >
                   <video
-                    src="/video/homepage/reel-placeholder-compressed.mp4"
+                    src="/video/homepage/mini-reel.mp4"
                     autoPlay
                     loop
                     muted
@@ -195,7 +180,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                   className="relative w-full max-w-full rounded-2xl overflow-hidden bg-black h-[28vh]"
                 >
                   <video
-                    src="/video/homepage/reel-placeholder-compressed.mp4"
+                    src="/video/homepage/mini-reel.mp4"
                     autoPlay
                     loop
                     muted
@@ -226,28 +211,18 @@ const Home: FunctionComponent<EmptyObject> = () => {
                 <p><span className="text-neutral-400 text-sm font-medium select-none">About</span></p>
                 <div className="mt-4 max-w-sm">
                   <p className="text-neutral-200 text-opacity-95 text-sm leading-relaxed mb-2">
-                    Hi, my name is Benyam Ephrem. I'm an Ethiopian-American software engineer and filmmaker.
+                    My name is Benyam Ephrem. I'm an Ethiopian-American director & producer.
                   </p>
                   <p className="text-neutral-200 text-opacity-95 text-sm leading-relaxed mb-3">
-                    After 10 years writing software & creating Internet products, I'm now exploring storytelling through film.
+                    After a decade building software & Internet products, I’m now making films.
                   </p>
-                  <Link type="internal" dest="/about" openInNewWindow>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 mt-2 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all">
-                      <span className="text-neutral-300 text-xs">More about me</span>
-                      <span className="text-neutral-400 text-xs">↗</span>
-                    </div>
-                  </Link>
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 mt-2 ml-2 bg-neutral-700 bg-opacity-50 hover:bg-opacity-70 rounded-full transition-all cursor-pointer"
+                    className="inline-flex items-center px-3 py-1.5 mt-2 backdrop-blur-sm bg-white/5 hover:bg-white/10 border border-dashed border-neutral-500/40 hover:border-neutral-400/60 rounded-full transition-all cursor-pointer"
                   >
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      className="text-neutral-400 text-[10px] w-3 h-3"
-                    />
-                    <span className="text-neutral-300 text-xs">
-                      {emailCopied ? "copied email!" : "drop me a line"}
+                    <span className="text-neutral-200 text-[0.675rem] font-mono">
+                      {emailCopied ? "copied email!" : EMAIL}
                     </span>
                   </button>
                 </div>

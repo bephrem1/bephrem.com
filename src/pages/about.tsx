@@ -52,7 +52,7 @@ const About: FunctionComponent = () => {
             }}
           />
           <p className="text-neutral-400 text-sm mt-2.5 text-left">
-            Benyam Ephrem, June 2024 (colorized)
+            June 2024
           </p>
 
           <div className="mt-6">

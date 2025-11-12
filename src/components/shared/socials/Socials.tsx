@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
@@ -15,8 +15,7 @@ const Socials: FunctionComponent<Props> = ({ compressed = false }) => {
   const socials = {
     twitter: EXTERNAL_LINKS.SOCIAL.TWITTER,
     youtube: EXTERNAL_LINKS.SOCIAL.YOUTUBE,
-    linkedin: EXTERNAL_LINKS.SOCIAL.LINKEDIN,
-    github: EXTERNAL_LINKS.SOCIAL.GITHUB
+    linkedin: EXTERNAL_LINKS.SOCIAL.LINKEDIN
   };
 
   return (
@@ -60,17 +59,6 @@ const SocialLink = ({ type, url, compressed }) => {
         return (
           <FontAwesomeIcon
             icon={faLinkedin}
-            className={clsx({
-              'text-neutral-400': true,
-              'w-3.5 h-3.5': compressed,
-              'w-4 h-4': !compressed
-            })}
-          />
-        );
-      case 'github':
-        return (
-          <FontAwesomeIcon
-            icon={faGithub}
             className={clsx({
               'text-neutral-400': true,
               'w-3.5 h-3.5': compressed,
