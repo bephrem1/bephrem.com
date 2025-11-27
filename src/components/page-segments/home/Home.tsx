@@ -11,7 +11,7 @@ const EMAIL = "ben@bephrem.studio";
 const RECENT_WORK_ITEMS = [
   {
     title: 'Analysis: "Keep Thinking"',
-    url: 'https://x.com/notbenyam/status/1987937022120783964',
+    url: 'https://x.com/bephrem/status/1987937022120783964',
     type: 'external' as const,
   },
   {

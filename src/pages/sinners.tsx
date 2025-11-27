@@ -3620,7 +3620,7 @@ const Header = ({
           openInNewWindow
         >
           <p className="w-fit text-neutral-500 hover:text-neutral-400 hover:cursor text-sm sm:text-xs font-mono">
-            @notbenyam
+            @bephrem
           </p>
         </Link>
         <div className="h-3 bg-neutral-500 mx-2" style={{ width: "0.5px" }} />
