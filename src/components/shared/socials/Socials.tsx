@@ -1,4 +1,5 @@
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faLetterboxd } from '@fortawesome/free-brands-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
@@ -14,7 +15,9 @@ interface Props {
 const Socials: FunctionComponent<Props> = ({ compressed = false }) => {
   const socials = {
     twitter: EXTERNAL_LINKS.SOCIAL.TWITTER,
-    linkedin: EXTERNAL_LINKS.SOCIAL.LINKEDIN
+    linkedin: EXTERNAL_LINKS.SOCIAL.LINKEDIN,
+    substack: EXTERNAL_LINKS.SOCIAL.SUBSTACK,
+    letterboxd: EXTERNAL_LINKS.SOCIAL.LETTERBOXD,
   };
 
   return (
@@ -54,6 +57,27 @@ const SocialLink = ({ type, url, compressed }) => {
             })}
           />
         );
+      case 'substack':
+        return (
+          <SubstackIcon
+            className={clsx({
+              'text-neutral-600': true,
+              'w-3 h-3': compressed,
+              'w-3.5 h-3.5': !compressed
+            })}
+          />
+        );
+      case 'letterboxd':
+        return (
+          <FontAwesomeIcon
+            icon={faLetterboxd}
+            className={clsx({
+              'text-neutral-600': true,
+              'w-3.5 h-3.5': compressed,
+              'w-4 h-4': !compressed
+            })}
+          />
+        );
       default:
         return null;
     }
@@ -83,5 +107,16 @@ const SocialLink = ({ type, url, compressed }) => {
     </div>
   );
 };
+
+const SubstackIcon: FunctionComponent<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+  </svg>
+);
 
 export default Socials;
