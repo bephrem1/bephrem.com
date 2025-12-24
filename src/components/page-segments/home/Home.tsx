@@ -131,7 +131,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                   My name is Benyam Ephrem. I'm an Ethiopian-American director & producer.
                 </p>
                 <p className="text-neutral-800 text-base mb-5">
-                  After a decade building software & Internet products, I'm now making films.
+                  After a decade building software, I’m now building a film studio in San Francisco.
                 </p>
                 <div className="flex items-center gap-2">
                   <button
@@ -257,7 +257,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                     My name is Benyam Ephrem. I'm an Ethiopian-American director & producer.
                   </p>
                   <p className="text-neutral-800 text-opacity-95 text-sm leading-relaxed mb-3">
-                    After a decade building software & Internet products, I'm now making films.
+                    After a decade building software, I’m now building a film studio in San Francisco.
                   </p>
                   <button
                     type="button"
