@@ -10,7 +10,7 @@ export const EXTERNAL_LINKS = {
 	SOCIAL: {
 		TWITTER: "https://twitter.com/bephrem",
 		LINKEDIN: "https://linkedin.com/in/bephrem",
-    SUBSTACK: "https://bephrem.substack.com/archive",
+    SUBSTACK: "https://writing.bephrem.com",
     LETTERBOXD: "https://letterboxd.com/bephrem",
     
 		YOUTUBE: "https://www.youtube.com/@bephrem",
