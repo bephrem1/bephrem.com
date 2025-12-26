@@ -149,6 +149,14 @@ const Home: FunctionComponent<EmptyObject> = () => {
               {/* Recent writing */}
               <div className='mt-5'>
                 <p className="text-neutral-500 text-sm font-medium select-none mb-1">Recent writing</p>
+                <Link type="internal" dest="https://writing.bephrem.com/p/why-silicon-valley-cant-tell-its-own-stories" openInNewWindow className="group">
+                  <div className="flex items-center relative">
+                    <span className="text-neutral-800 text-lg font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer">
+                      Why Silicon Valley Can’t Tell Its Own Stories
+                    </span>
+                    <div className="absolute left-0 w-full h-[1px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
+                  </div>
+                </Link>
                 <Link type="internal" dest="/sinners" openInNewWindow className="group">
                   <div className="flex items-center relative">
                     <span className="text-neutral-800 text-lg font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer">
@@ -241,6 +249,14 @@ const Home: FunctionComponent<EmptyObject> = () => {
             <div className="w-full flex flex-row items-start mt-7 md:ml-2">
               <div className="flex flex-col items-start">
                 <p><span className="text-neutral-600 text-sm font-medium select-none">Recent writing</span></p>
+                <Link type="internal" dest="https://writing.bephrem.com/p/why-silicon-valley-cant-tell-its-own-stories" openInNewWindow className="group my-4">
+                  <div className="flex items-center relative">
+                    <span className="text-neutral-800 text-2xl font-serif italic leading-none hover:text-neutral-900 transition-colors cursor-pointer">
+                      Why Silicon Valley Can’t Tell Its Own Stories
+                    </span>
+                    <div className="absolute left-0 w-full h-[1.5px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '8px' }} />
+                  </div>
+                </Link>
                 <Link type="internal" dest="/sinners" openInNewWindow className="group mt-4">
                   <div className="flex items-center relative">
                     <span className="text-neutral-800 text-2xl font-serif italic leading-none hover:text-neutral-900 transition-colors cursor-pointer">
