@@ -148,23 +148,25 @@ const Home: FunctionComponent<EmptyObject> = () => {
 
               {/* Recent writing */}
               <div className='mt-5'>
-                <p className="text-neutral-500 text-sm font-medium select-none mb-1">Recent writing</p>
-                <Link type="internal" dest="https://writing.bephrem.com/p/why-silicon-valley-cant-tell-its-own-stories" openInNewWindow className="group">
-                  <div className="flex items-center relative">
-                    <span className="text-neutral-800 text-lg font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer">
-                      Why Silicon Valley Can’t Tell Its Own Stories
-                    </span>
-                    <div className="absolute left-0 w-full h-[1px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
-                  </div>
-                </Link>
-                <Link type="internal" dest="/sinners" openInNewWindow className="group">
-                  <div className="flex items-center relative">
-                    <span className="text-neutral-800 text-lg font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer">
-                      Analyzing "Sinners" — By Ryan Coogler
-                    </span>
-                    <div className="absolute left-0 w-full h-[1px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
-                  </div>
-                </Link>
+                <p className="text-neutral-500 text-sm font-medium select-none mb-2">Recent writing</p>
+                <div className="flex flex-col gap-3">
+                  <Link type="internal" dest="https://writing.bephrem.com/p/why-silicon-valley-cant-tell-its-own-stories" openInNewWindow className="group">
+                    <div className="flex items-center relative">
+                      <span className="text-neutral-800 text-lg font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer">
+                        Why Silicon Valley Can't Tell Its Own Stories
+                      </span>
+                      <div className="absolute left-0 w-full h-[1px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
+                    </div>
+                  </Link>
+                  <Link type="internal" dest="/sinners" openInNewWindow className="group">
+                    <div className="flex items-center relative">
+                      <span className="text-neutral-800 text-lg font-serif italic leading-tight hover:text-neutral-900 transition-colors cursor-pointer">
+                        Analyzing "Sinners" — By Ryan Coogler
+                      </span>
+                      <div className="absolute left-0 w-full h-[1px] bg-neutral-300 bg-opacity-60 group-hover:bg-neutral-600 transition-colors" style={{ top: '100%', marginTop: '2px' }} />
+                    </div>
+                  </Link>
+                </div>
               </div>
 
               {/* Recent work */}
