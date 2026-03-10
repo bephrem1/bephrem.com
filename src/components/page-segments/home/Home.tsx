@@ -59,7 +59,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
               openInNewWindow
             >
               <span className="flex w-full items-center justify-between gap-2 text-neutral-700 text-sm">
-                <span>Why Silicon Valley Can&apos;t Tell Its Own Stories</span>
+                <span>Why Silicon Valley Can’t Tell Its Own Stories</span>
                 <ArrowUpRightIcon className="w-3 h-3 text-neutral-400" />
               </span>
             </Link>
