@@ -34,7 +34,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
             <Link type="internal" dest="https://svfilm.fund/" openInNewWindow>
               <span className="text-blue-600 underline">Silicon Valley Film Fund</span>
             </Link>
-            . In his free time he enjoys reading scripts, studying cinema, reading about film, and asking Claude
+            . In his free time he enjoys studying cinema, reading scripts, reading about film, and asking Claude
             about film.
           </p>
         </div>
@@ -121,8 +121,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </div>
         </div>
       </div>
-      {/* Reel - desktop top-right, mobile full-width bottom */}
-      {/* Desktop / tablet */}
+      {/* Reel - desktop / tablet */}
       <div className="hidden md:block fixed top-6 right-4 lg:right-6 w-[780px] lg:w-[1040px] overflow-hidden bg-black rounded-lg">
         <video
           src="/video/homepage/mini-reel.mp4"
@@ -133,8 +132,8 @@ const Home: FunctionComponent<EmptyObject> = () => {
           className="w-full h-auto object-cover"
         />
       </div>
-      {/* Mobile */}
-      <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[96%] max-w-none overflow-hidden bg-black rounded-lg">
+      {/* Reel - mobile mini bottom-right */}
+      <div className="md:hidden fixed bottom-4 right-4 w-32 overflow-hidden bg-black rounded-lg shadow-md">
         <video
           src="/video/homepage/mini-reel.mp4"
           autoPlay
