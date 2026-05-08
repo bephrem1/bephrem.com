@@ -23,6 +23,18 @@ const nextConfig = {
 		];
 	},
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+	webpack: (config, { dev }) => {
+		if (dev) {
+			config.watchOptions = {
+				...config.watchOptions,
+				poll: 1000,
+				aggregateTimeout: 300,
+				ignored: ["**/.git/**", "**/.next/**", "**/node_modules/**"],
+			};
+		}
+
+		return config;
+	},
 };
 
 module.exports = withMDX(nextConfig);
