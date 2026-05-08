@@ -6,7 +6,7 @@ import Link from '../../shared/elements/Link';
 const Home: FunctionComponent<EmptyObject> = () => {
   return (
     <main className="flex min-h-svh w-full flex-col bg-[#fafafa] px-4 py-3 font-sans text-neutral-950 antialiased sm:px-6 sm:py-6">
-      <div className="flex w-full max-w-md items-baseline justify-start gap-3">
+      <div className="flex w-full max-w-md items-baseline justify-between gap-3">
         <h1 className="text-sm font-medium leading-tight tracking-normal sm:text-base">
           Benyam Ephrem
         </h1>
@@ -48,9 +48,11 @@ const Home: FunctionComponent<EmptyObject> = () => {
       </p>
 
       <section className="mt-10 max-w-md">
-        <p className="text-[0.75rem] font-medium leading-tight text-neutral-600 sm:text-[0.8125rem]">Recent writing</p>
+        <p className="text-[0.75rem] font-medium leading-tight text-neutral-600 sm:text-[0.8125rem]">
+          Recent writing
+        </p>
 
-        <div className="mt-2 -ml-2 flex flex-col gap-1 sm:-ml-3">
+        <div className="mt-2 flex flex-col gap-1">
           <a
             href="https://x.com/bephrem/status/2042701095626248225?s=20"
             target="_blank"
@@ -58,8 +60,16 @@ const Home: FunctionComponent<EmptyObject> = () => {
             className="block w-full text-inherit"
           >
             <span className="grid w-full grid-cols-[4.75rem_1fr_auto] items-baseline gap-x-6 text-[0.8125rem] leading-snug text-neutral-800 hover:text-neutral-950 sm:text-[0.875rem]">
-              <span className="block text-right tabular-nums text-neutral-600">4.10.26</span>
-              <span className="min-w-0">The Startup Content Studio: Everything You Need</span>
+              <span className="block text-left tabular-nums text-neutral-600">
+                <span className="inline-grid grid-cols-[2ch_auto_2ch_auto_2ch]">
+                  <span className="text-left">4</span>
+                  <span>.</span>
+                  <span className="text-right">10</span>
+                  <span>.</span>
+                  <span className="text-right">26</span>
+                </span>
+              </span>
+              <span className="min-w-0 truncate whitespace-nowrap">The Startup Content Studio: Everything You Need</span>
               <span className="shrink-0 text-neutral-500">↗</span>
             </span>
           </a>
@@ -70,8 +80,16 @@ const Home: FunctionComponent<EmptyObject> = () => {
             className="block w-full text-inherit"
           >
             <span className="grid w-full grid-cols-[4.75rem_1fr_auto] items-baseline gap-x-6 text-[0.8125rem] leading-snug text-neutral-800 hover:text-neutral-950 sm:text-[0.875rem]">
-              <span className="block text-right tabular-nums text-neutral-600">3.10.26</span>
-              <span className="min-w-0">Announcing: The Silicon Valley Film Fund</span>
+              <span className="block text-left tabular-nums text-neutral-600">
+                <span className="inline-grid grid-cols-[2ch_auto_2ch_auto_2ch]">
+                  <span className="text-left">3</span>
+                  <span>.</span>
+                  <span className="text-right">10</span>
+                  <span>.</span>
+                  <span className="text-right">26</span>
+                </span>
+              </span>
+              <span className="min-w-0 truncate whitespace-nowrap">Announcing: The Silicon Valley Film Fund</span>
               <span className="shrink-0 text-neutral-500">↗</span>
             </span>
           </a>
@@ -83,16 +101,32 @@ const Home: FunctionComponent<EmptyObject> = () => {
             className="block w-full text-inherit"
           >
             <span className="grid w-full grid-cols-[4.75rem_1fr_auto] items-baseline gap-x-6 text-[0.8125rem] leading-snug text-neutral-800 hover:text-neutral-950 sm:text-[0.875rem]">
-              <span className="block text-right tabular-nums text-neutral-600">12.26.25</span>
-              <span className="min-w-0">Why Silicon Valley Can’t Tell Its Own Stories</span>
+              <span className="block text-left tabular-nums text-neutral-600">
+                <span className="inline-grid grid-cols-[2ch_auto_2ch_auto_2ch]">
+                  <span className="text-left">12</span>
+                  <span>.</span>
+                  <span className="text-right">26</span>
+                  <span>.</span>
+                  <span className="text-right">25</span>
+                </span>
+              </span>
+              <span className="min-w-0 truncate whitespace-nowrap">Why Silicon Valley Can’t Tell Its Own Stories</span>
               <span className="shrink-0 text-neutral-500">↗</span>
             </span>
           </a>
 
           <NextLink href="/sinners" target="_blank" rel="noopener noreferrer" className="block w-full text-inherit">
             <span className="grid w-full grid-cols-[4.75rem_1fr_auto] items-baseline gap-x-6 text-[0.8125rem] leading-snug text-neutral-800 hover:text-neutral-950 sm:text-[0.875rem]">
-              <span className="block text-right tabular-nums text-neutral-600">6.22.25</span>
-              <span className="min-w-0">Analyzing &quot;Sinners&quot; — By Ryan Coogler</span>
+              <span className="block text-left tabular-nums text-neutral-600">
+                <span className="inline-grid grid-cols-[2ch_auto_2ch_auto_2ch]">
+                  <span className="text-left">6</span>
+                  <span>.</span>
+                  <span className="text-right">22</span>
+                  <span>.</span>
+                  <span className="text-right">25</span>
+                </span>
+              </span>
+              <span className="min-w-0 truncate whitespace-nowrap">Analyzing &quot;Sinners&quot; — By Ryan Coogler</span>
               <span className="shrink-0 text-neutral-500">↗</span>
             </span>
           </NextLink>
