@@ -12,8 +12,9 @@ const LOCALHOST_EP1_BASE = '/commercial/2026/localhost-ep-1';
 const Home: FunctionComponent<EmptyObject> = () => {
   return (
     <main className="flex min-h-svh w-full min-w-0 flex-col overflow-x-clip bg-[#fafafa] px-4 pb-3 pt-5 font-sans text-neutral-950 antialiased sm:px-6 sm:py-6">
-      <div className="grid min-h-0 w-full min-w-0 max-w-full flex-1 grid-cols-1 content-start gap-y-5 pb-3 sm:pb-4 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:items-start lg:gap-x-8 lg:gap-y-5 lg:pb-4">
-        <div className="mx-auto w-full max-w-md lg:mx-0 lg:col-start-1 lg:row-start-1">
+      <div className="grid min-h-0 w-full min-w-0 max-w-full flex-1 grid-cols-1 content-start gap-y-5 pb-3 sm:pb-4 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:items-start lg:gap-x-8 lg:gap-y-0 lg:pb-4">
+        <div className="contents lg:col-start-1 lg:row-start-1 lg:flex lg:min-w-0 lg:max-w-md lg:flex-col lg:gap-y-5 lg:self-start">
+        <div className="mx-auto w-full max-w-md lg:mx-0">
           <div className="flex w-full items-baseline justify-between gap-3">
             <h1 className="text-sm font-medium leading-tight tracking-normal sm:text-base">
               Benyam Ephrem
@@ -24,7 +25,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </div>
         </div>
 
-        <div className="mx-auto aspect-[5/3] w-full max-w-md overflow-hidden lg:mx-0 lg:col-start-1 lg:row-start-2">
+        <div className="mx-auto aspect-[5/3] w-full max-w-md overflow-hidden lg:mx-0">
           <img
             src="/images/ben/arlan-context-week.jpg"
             alt="Benyam Ephrem on set"
@@ -32,7 +33,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
           />
         </div>
 
-        <div className="mx-auto w-full max-w-md lg:mx-0 lg:col-start-1 lg:row-start-3">
+        <div className="mx-auto w-full max-w-md lg:mx-0">
           <p className="text-[0.8125rem] leading-[1.48] text-neutral-950 sm:text-[0.875rem]">
             Benyam Ephrem is an Ethiopian-American director and producer based in San Francisco. He wrote software for a
             decade. Now he produces film for startups.
@@ -60,101 +61,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </p>
         </div>
 
-        <aside className="hidden min-w-0 w-full max-w-full overflow-x-clip lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:block lg:self-start">
-          <div className="mb-4 flex shrink-0 items-center gap-2 sm:mb-5">
-            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
-            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
-              personal
-            </span>
-            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
-          </div>
-
-          <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
-            <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
-              <span className="shrink-0">Interview: Arlan Rakhmetzhanov</span>
-              <span className="shrink-0 text-neutral-400" aria-hidden>
-                ·
-              </span>
-              <span className="min-w-0">30m interview, 4 clips</span>
-              <span className="shrink-0 text-neutral-400" aria-hidden>
-                ·
-              </span>
-              <span className="min-w-0 shrink-0">
-                250k+ reach <span className="text-neutral-500">(X, YT)</span>
-              </span>
-            </div>
-            <div className="w-full min-w-0">
-              <SeriesTape base={ARLAN_INTERVIEW_BASE} clipIds={[1, 2, 3, 4]} pack="end" />
-            </div>
-          </div>
-
-          <div className="mb-4 mt-6 flex shrink-0 items-center gap-2 sm:mb-5 sm:mt-7">
-            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
-            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
-              commercial
-            </span>
-            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
-          </div>
-
-          <div className="flex w-full flex-col gap-6 sm:gap-7">
-            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
-              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
-                <span className="shrink-0">Localhost (ep.1)</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0">Series (pilot)</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0 shrink-0 text-neutral-500">in post-production</span>
-              </div>
-              <div className="w-full min-w-0">
-                <SeriesTape base={LOCALHOST_EP1_BASE} clipIds={[1, 2, 3, 4, 5, 6]} />
-              </div>
-            </div>
-
-            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
-              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
-                <span className="shrink-0">Nia Context Week</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0">6-part series</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0 shrink-0">
-                  750k+ reach <span className="text-neutral-500">(X, LinkedIn)</span>
-                </span>
-              </div>
-              <div className="w-full min-w-0">
-                <CommercialTape />
-              </div>
-            </div>
-
-            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
-              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
-                <span className="shrink-0">Mastra Series A</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0">Fundraise</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0 shrink-0">
-                  300k+ reach <span className="text-neutral-500">(X, LinkedIn)</span>
-                </span>
-              </div>
-              <div className="w-full min-w-0">
-                <SeriesTape base={MASTRA_BASE} clipIds={[1, 2, 3]} pack="end" />
-              </div>
-            </div>
-          </div>
-        </aside>
-
-        <div className="mx-auto flex min-h-0 w-full max-w-md flex-col gap-8 lg:mx-0 lg:col-start-1 lg:row-start-4 lg:gap-10">
+        <div className="mx-auto flex w-full max-w-md flex-col gap-8 lg:mx-0 lg:gap-10">
           <section>
             <p className="text-[0.75rem] font-medium leading-tight text-neutral-600 sm:text-[0.8125rem]">Recent writing</p>
 
@@ -370,6 +277,128 @@ const Home: FunctionComponent<EmptyObject> = () => {
             </div>
           </footer>
         </div>
+        </div>
+
+        <aside className="hidden min-w-0 w-full max-w-full overflow-x-clip lg:col-start-2 lg:row-start-1 lg:block lg:self-start">
+          <div className="mb-4 flex shrink-0 items-center gap-2 sm:mb-5">
+            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
+            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
+              narrative
+            </span>
+            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
+          </div>
+
+          <div className="mb-4 flex w-full justify-start sm:mb-5">
+            <article
+              className="flex w-[8rem] shrink-0 flex-col overflow-hidden border border-neutral-200 bg-white sm:w-[9.25rem]"
+              aria-label="Short film in production"
+            >
+              <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
+                <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
+                <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
+                  Shooting 2026
+                </p>
+              </div>
+              <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">
+                  In development (writing)
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div className="mb-4 flex shrink-0 items-center gap-2 sm:mb-5">
+            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
+            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
+              commercial
+            </span>
+            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
+          </div>
+
+          <div className="flex w-full flex-col gap-6 sm:gap-7">
+            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                <span className="shrink-0">Localhost (ep.1)</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0">Series (pilot)</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0 shrink-0 text-neutral-400">in post-production</span>
+              </div>
+              <div className="w-full min-w-0">
+                <SeriesTape base={LOCALHOST_EP1_BASE} clipIds={[1, 2, 3, 4, 5, 6]} />
+              </div>
+            </div>
+
+            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                <span className="shrink-0">Nia Context Week</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0">6-part series</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0 shrink-0">
+                  750k+ reach <span className="text-neutral-500">(X, LinkedIn)</span>
+                </span>
+              </div>
+              <div className="w-full min-w-0">
+                <CommercialTape />
+              </div>
+            </div>
+
+            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                <span className="shrink-0">Mastra Series A</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0">Fundraise</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0 shrink-0">
+                  300k+ reach <span className="text-neutral-500">(X, LinkedIn)</span>
+                </span>
+              </div>
+              <div className="w-full min-w-0">
+                <SeriesTape base={MASTRA_BASE} clipIds={[1, 2, 3]} pack="end" />
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-4 mt-6 flex shrink-0 items-center gap-2 sm:mb-5 sm:mt-7">
+            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
+            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
+              personal
+            </span>
+            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
+          </div>
+
+          <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+            <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+              <span className="shrink-0">Interview: Arlan Rakhmetzhanov</span>
+              <span className="shrink-0 text-neutral-400" aria-hidden>
+                ·
+              </span>
+              <span className="min-w-0">30m interview, 4 clips</span>
+              <span className="shrink-0 text-neutral-400" aria-hidden>
+                ·
+              </span>
+              <span className="min-w-0 shrink-0">
+                250k+ reach <span className="text-neutral-500">(X, YT)</span>
+              </span>
+            </div>
+            <div className="w-full min-w-0">
+              <SeriesTape base={ARLAN_INTERVIEW_BASE} clipIds={[1, 2, 3, 4]} pack="end" />
+            </div>
+          </div>
+        </aside>
       </div>
     </main>
   );
