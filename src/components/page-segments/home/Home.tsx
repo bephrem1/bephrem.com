@@ -1,5 +1,5 @@
-import type { FunctionComponent } from 'react';
 import NextLink from 'next/link';
+import type { FunctionComponent } from 'react';
 import type { EmptyObject } from '../../../types/empty';
 import Link from '../../shared/elements/Link';
 import CommercialTape from './CommercialTape';
@@ -19,11 +19,11 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </div>
         </div>
 
-        <div className="h-52 w-full max-w-md overflow-hidden sm:h-60 lg:col-start-1 lg:row-start-2">
+        <div className="aspect-[5/3] w-full max-w-md overflow-hidden lg:col-start-1 lg:row-start-2">
           <img
             src="/images/ben/arlan-context-week.jpg"
             alt="Benyam Ephrem on set"
-            className="block h-full w-full object-cover grayscale"
+            className="block h-full w-full object-cover object-center grayscale"
           />
         </div>
 
@@ -63,19 +63,19 @@ const Home: FunctionComponent<EmptyObject> = () => {
             </span>
             <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
           </div>
-          <div className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[0.75rem] font-normal leading-snug text-neutral-600 sm:mb-4 sm:text-[0.8125rem]">
+          <div className="mb-3 flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:mb-4 sm:text-[0.8125rem]">
             <span className="shrink-0">Nia Context Week</span>
             <span className="shrink-0 text-neutral-400" aria-hidden>
               ·
             </span>
-            <span className="min-w-0">series • feature campaign</span>
+            <span className="min-w-0">6-part series</span>
             <span className="shrink-0 text-neutral-400" aria-hidden>
               ·
             </span>
             <span className="min-w-0">750k+ reach (X, LinkedIn)</span>
           </div>
-          <div className="h-[6.5rem] w-full min-w-0 sm:h-[7.5rem]">
-            <CommercialTape fillHeight className="h-full" />
+          <div className="w-full min-w-0">
+            <CommercialTape />
           </div>
         </aside>
 
