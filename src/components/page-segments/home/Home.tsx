@@ -6,6 +6,7 @@ import CommercialTape from './CommercialTape';
 import SeriesTape from './SeriesTape';
 
 const MASTRA_BASE = '/commercial/2026/mastra-series-a';
+const ARLAN_INTERVIEW_BASE = '/commercial/2025/interview-arlan-rakhmetzhanov';
 
 const Home: FunctionComponent<EmptyObject> = () => {
   return (
@@ -60,6 +61,33 @@ const Home: FunctionComponent<EmptyObject> = () => {
 
         <aside className="hidden min-w-0 w-full max-w-full overflow-x-clip lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:block lg:self-start">
           <div className="mb-4 flex shrink-0 items-center gap-2 sm:mb-5">
+            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
+            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
+              personal
+            </span>
+            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
+          </div>
+
+          <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+            <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+              <span className="shrink-0">Interview: Arlan Rakhmetzhanov</span>
+              <span className="shrink-0 text-neutral-400" aria-hidden>
+                ·
+              </span>
+              <span className="min-w-0">30m interview, 4 clips</span>
+              <span className="shrink-0 text-neutral-400" aria-hidden>
+                ·
+              </span>
+              <span className="min-w-0 shrink-0">
+                250k+ reach <span className="text-neutral-500">(X, YT)</span>
+              </span>
+            </div>
+            <div className="w-full min-w-0">
+              <SeriesTape base={ARLAN_INTERVIEW_BASE} clipIds={[1, 2, 3, 4]} pack="end" />
+            </div>
+          </div>
+
+          <div className="mb-4 mt-6 flex shrink-0 items-center gap-2 sm:mb-5 sm:mt-7">
             <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
             <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
               commercial
