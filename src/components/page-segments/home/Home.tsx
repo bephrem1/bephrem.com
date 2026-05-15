@@ -3,11 +3,14 @@ import type { FunctionComponent } from 'react';
 import type { EmptyObject } from '../../../types/empty';
 import Link from '../../shared/elements/Link';
 import CommercialTape from './CommercialTape';
+import SeriesTape from './SeriesTape';
+
+const MASTRA_BASE = '/commercial/2026/mastra-series-a';
 
 const Home: FunctionComponent<EmptyObject> = () => {
   return (
     <main className="flex min-h-svh w-full min-w-0 flex-col overflow-x-clip bg-[#fafafa] px-4 pb-3 pt-5 font-sans text-neutral-950 antialiased sm:px-6 sm:py-6">
-      <div className="grid min-h-0 w-full min-w-0 max-w-full flex-1 grid-cols-1 gap-y-5 pb-3 sm:pb-4 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:items-start lg:gap-x-8 lg:gap-y-5 lg:pb-4">
+      <div className="grid min-h-0 w-full min-w-0 max-w-full flex-1 grid-cols-1 content-start gap-y-5 pb-3 sm:pb-4 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:items-start lg:gap-x-8 lg:gap-y-5 lg:pb-4">
         <div className="mx-auto w-full max-w-md lg:mx-0 lg:col-start-1 lg:row-start-1">
           <div className="flex w-full items-baseline justify-between gap-3">
             <h1 className="text-sm font-medium leading-tight tracking-normal sm:text-base">
@@ -55,31 +58,57 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </p>
         </div>
 
-        <aside className="hidden min-w-0 w-full max-w-full overflow-x-clip lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:block lg:self-start">
-          <div className="mb-3 flex shrink-0 items-center gap-2 sm:mb-4">
+        <aside className="hidden min-w-0 w-full max-w-full overflow-x-clip lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:block lg:self-start">
+          <div className="mb-4 flex shrink-0 items-center gap-2 sm:mb-5">
             <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
             <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
               commercial
             </span>
             <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
           </div>
-          <div className="mb-3 flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:mb-4 sm:text-[0.8125rem]">
-            <span className="shrink-0">Nia Context Week</span>
-            <span className="shrink-0 text-neutral-400" aria-hidden>
-              ·
-            </span>
-            <span className="min-w-0">6-part series</span>
-            <span className="shrink-0 text-neutral-400" aria-hidden>
-              ·
-            </span>
-            <span className="min-w-0">750k+ reach (X, LinkedIn)</span>
-          </div>
-          <div className="w-full min-w-0">
-            <CommercialTape />
+
+          <div className="flex w-full flex-col gap-6 sm:gap-7">
+            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                <span className="shrink-0">Nia Context Week</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0">6-part series</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0 shrink-0">
+                  750k+ reach <span className="text-neutral-500">(X, LinkedIn)</span>
+                </span>
+              </div>
+              <div className="w-full min-w-0">
+                <CommercialTape />
+              </div>
+            </div>
+
+            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                <span className="shrink-0">Mastra Series A</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0">Fundraise</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0 shrink-0">
+                  300k+ reach <span className="text-neutral-500">(X, LinkedIn)</span>
+                </span>
+              </div>
+              <div className="w-full min-w-0">
+                <SeriesTape base={MASTRA_BASE} clipIds={[1, 2, 3]} pack="end" />
+              </div>
+            </div>
           </div>
         </aside>
 
-        <div className="mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col gap-8 lg:mx-0 lg:col-start-1 lg:row-start-4 lg:gap-10">
+        <div className="mx-auto flex min-h-0 w-full max-w-md flex-col gap-8 lg:mx-0 lg:col-start-1 lg:row-start-4 lg:gap-10">
           <section>
             <p className="text-[0.75rem] font-medium leading-tight text-neutral-600 sm:text-[0.8125rem]">Recent writing</p>
 
@@ -251,7 +280,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
 
           <p className="mt-10 text-[0.8125rem] leading-snug text-neutral-700 sm:text-[0.875rem] lg:mt-0">ben@bephrem.studio</p>
 
-          <footer className="mt-auto max-w-md pt-10 text-neutral-500">
+          <footer className="max-w-md pt-10 text-neutral-500">
             <div className="flex flex-wrap items-center gap-x-2 text-[0.75rem] sm:text-[0.8125rem]">
               <Link type="external" dest="https://x.com/bephrem" openInNewWindow className="!text-neutral-500 hover:!text-neutral-700">
                 <span>X</span>
