@@ -7,6 +7,7 @@ import SeriesTape from './SeriesTape';
 
 const MASTRA_BASE = '/commercial/2026/mastra-series-a';
 const ARLAN_INTERVIEW_BASE = '/commercial/2025/interview-arlan-rakhmetzhanov';
+const LOCALHOST_EP1_BASE = '/commercial/2026/localhost-ep-1';
 
 const Home: FunctionComponent<EmptyObject> = () => {
   return (
@@ -96,6 +97,23 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </div>
 
           <div className="flex w-full flex-col gap-6 sm:gap-7">
+            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                <span className="shrink-0">Localhost (ep.1)</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0">Series (pilot)</span>
+                <span className="shrink-0 text-neutral-400" aria-hidden>
+                  ·
+                </span>
+                <span className="min-w-0 shrink-0 text-neutral-500">in post-production</span>
+              </div>
+              <div className="w-full min-w-0">
+                <SeriesTape base={LOCALHOST_EP1_BASE} clipIds={[1, 2, 3, 4, 5, 6]} />
+              </div>
+            </div>
+
             <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
               <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
                 <span className="shrink-0">Nia Context Week</span>
