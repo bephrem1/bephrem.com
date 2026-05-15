@@ -29,7 +29,13 @@ const nextConfig = {
 				...config.watchOptions,
 				poll: 1000,
 				aggregateTimeout: 300,
-				ignored: ["**/.git/**", "**/.next/**", "**/node_modules/**"],
+				ignored: [
+					"**/.git/**",
+					"**/.next/**",
+					"**/node_modules/**",
+					// Large commercial media; watching many MP4s contributes to EMFILE on macOS.
+					"**/public/commercial/**",
+				],
 			};
 		}
 
