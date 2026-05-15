@@ -6,9 +6,9 @@ import CommercialTape from './CommercialTape';
 
 const Home: FunctionComponent<EmptyObject> = () => {
   return (
-    <main className="flex min-h-svh w-full min-w-0 flex-col overflow-x-clip bg-[#fafafa] px-4 py-3 font-sans text-neutral-950 antialiased sm:px-6 sm:py-6">
+    <main className="flex min-h-svh w-full min-w-0 flex-col overflow-x-clip bg-[#fafafa] px-4 pb-3 pt-5 font-sans text-neutral-950 antialiased sm:px-6 sm:py-6">
       <div className="grid min-h-0 w-full min-w-0 max-w-full flex-1 grid-cols-1 gap-y-5 pb-3 sm:pb-4 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:items-start lg:gap-x-8 lg:gap-y-5 lg:pb-4">
-        <div className="max-w-md lg:col-start-1 lg:row-start-1">
+        <div className="mx-auto w-full max-w-md lg:mx-0 lg:col-start-1 lg:row-start-1">
           <div className="flex w-full items-baseline justify-between gap-3">
             <h1 className="text-sm font-medium leading-tight tracking-normal sm:text-base">
               Benyam Ephrem
@@ -19,7 +19,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </div>
         </div>
 
-        <div className="aspect-[5/3] w-full max-w-md overflow-hidden lg:col-start-1 lg:row-start-2">
+        <div className="mx-auto aspect-[5/3] w-full max-w-md overflow-hidden lg:mx-0 lg:col-start-1 lg:row-start-2">
           <img
             src="/images/ben/arlan-context-week.jpg"
             alt="Benyam Ephrem on set"
@@ -27,7 +27,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
           />
         </div>
 
-        <div className="max-w-md lg:col-start-1 lg:row-start-3">
+        <div className="mx-auto w-full max-w-md lg:mx-0 lg:col-start-1 lg:row-start-3">
           <p className="text-[0.8125rem] leading-[1.48] text-neutral-950 sm:text-[0.875rem]">
             Benyam Ephrem is an Ethiopian-American director and producer based in San Francisco. He wrote software for a
             decade. Now he produces film for startups.
@@ -79,7 +79,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
           </div>
         </aside>
 
-        <div className="flex min-h-0 w-full max-w-md flex-1 flex-col gap-8 lg:col-start-1 lg:row-start-4 lg:gap-10">
+        <div className="mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col gap-8 lg:mx-0 lg:col-start-1 lg:row-start-4 lg:gap-10">
           <section>
             <p className="text-[0.75rem] font-medium leading-tight text-neutral-600 sm:text-[0.8125rem]">Recent writing</p>
 
