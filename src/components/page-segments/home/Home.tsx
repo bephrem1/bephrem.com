@@ -8,6 +8,7 @@ import SeriesTape from './SeriesTape';
 const MASTRA_BASE = '/commercial/2026/mastra-series-a';
 const ARLAN_INTERVIEW_BASE = '/commercial/2025/interview-arlan-rakhmetzhanov';
 const LOCALHOST_EP1_BASE = '/commercial/2026/localhost-ep-1';
+const ROOM_TONE_POSTER = '/narrative/room-tone/poster/Room Tone Poster (7.9.26).png';
 
 const Home: FunctionComponent<EmptyObject> = () => {
   return (
@@ -379,11 +380,14 @@ const Home: FunctionComponent<EmptyObject> = () => {
             <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
           </div>
 
-          <div className="mb-4 flex w-full justify-start sm:mb-5">
+          <div className="mb-4 flex w-full justify-start gap-3 sm:mb-5">
             <article
               className="flex w-[8rem] shrink-0 flex-col overflow-hidden border border-neutral-200 bg-white sm:w-[9.25rem]"
               aria-label="Short film in production"
             >
+              <div className="border-b border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(in-development)</p>
+              </div>
               <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
                 <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
                 <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
@@ -391,9 +395,26 @@ const Home: FunctionComponent<EmptyObject> = () => {
                 </p>
               </div>
               <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
-                <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">
-                  In development (writing)
-                </p>
+                <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">Writer-Director</p>
+              </div>
+            </article>
+
+            <article
+              className="flex w-[8rem] shrink-0 flex-col overflow-hidden border border-neutral-200 bg-white sm:w-[9.25rem]"
+              aria-label="Room Tone"
+            >
+              <div className="border-b border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(in-development)</p>
+              </div>
+              <div className="aspect-[27/40] overflow-hidden">
+                <img
+                  src={ROOM_TONE_POSTER}
+                  alt="Room Tone film poster"
+                  className="block h-full w-full object-cover object-center"
+                />
+              </div>
+              <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">Executive Producer</p>
               </div>
             </article>
           </div>
