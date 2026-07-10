@@ -3,6 +3,7 @@ import type { FunctionComponent } from 'react';
 import type { EmptyObject } from '../../../types/empty';
 import Link from '../../shared/elements/Link';
 import CommercialTape from './CommercialTape';
+import PosterLightbox from './PosterLightbox';
 import SeriesTape from './SeriesTape';
 
 const MASTRA_BASE = '/commercial/2026/mastra-series-a';
@@ -407,11 +408,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
                 <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(in-development)</p>
               </div>
               <div className="aspect-[27/40] overflow-hidden">
-                <img
-                  src={ROOM_TONE_POSTER}
-                  alt="Room Tone film poster"
-                  className="block h-full w-full object-cover object-center"
-                />
+                <PosterLightbox src={ROOM_TONE_POSTER} alt="Room Tone film poster" />
               </div>
               <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
                 <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">Executive Producer</p>
