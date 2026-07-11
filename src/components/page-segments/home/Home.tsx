@@ -69,6 +69,26 @@ const Home: FunctionComponent<EmptyObject> = () => {
 
             <div className="mt-2 flex flex-col gap-1">
               <a
+                href="https://writing.bephrem.com/p/svff-cycle-1-room-tone"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-inherit"
+              >
+                <span className="grid w-full grid-cols-[4.75rem_1fr_auto] items-baseline gap-x-6 text-[0.8125rem] leading-snug text-neutral-800 hover:text-neutral-950 sm:text-[0.875rem]">
+                  <span className="block text-left tabular-nums text-neutral-600">
+                    <span className="inline-grid grid-cols-[2ch_auto_2ch_auto_2ch]">
+                      <span className="text-left">7</span>
+                      <span>.</span>
+                      <span className="text-right">10</span>
+                      <span>.</span>
+                      <span className="text-right">26</span>
+                    </span>
+                  </span>
+                  <span className="min-w-0 truncate whitespace-nowrap">SVFF Cycle 1: Room Tone</span>
+                  <span className="shrink-0 text-neutral-500">↗</span>
+                </span>
+              </a>
+              <a
                 href="https://writing.bephrem.com/p/production-design-series-b-office"
                 target="_blank"
                 rel="noopener noreferrer"
