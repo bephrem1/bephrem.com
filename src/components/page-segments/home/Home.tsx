@@ -60,6 +60,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
             src="/images/ben/arlan-context-week.jpg"
             alt="Benyam Ephrem on set"
             imgClassName="grayscale"
+            desktopOnly
           />
         </div>
 

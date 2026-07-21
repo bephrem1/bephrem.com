@@ -1,19 +1,61 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import type { FunctionComponent } from 'react';
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { Dialog, DialogClose, DialogPortal, DialogTitle, DialogTrigger } from '../../shared/shadcn/components/ui/dialog';
 import { cn } from '../../shared/shadcn/lib/utils';
+
+const DESKTOP_QUERY = '(min-width: 768px)';
+
+function subscribeDesktop(onStoreChange: () => void) {
+  const mql = window.matchMedia(DESKTOP_QUERY);
+  mql.addEventListener('change', onStoreChange);
+  return () => mql.removeEventListener('change', onStoreChange);
+}
+
+function getDesktopSnapshot() {
+  return window.matchMedia(DESKTOP_QUERY).matches;
+}
+
+function getServerDesktopSnapshot() {
+  return false;
+}
+
+function useIsDesktop() {
+  return useSyncExternalStore(subscribeDesktop, getDesktopSnapshot, getServerDesktopSnapshot);
+}
 
 type PosterLightboxProps = {
   src: string;
   alt: string;
   className?: string;
   imgClassName?: string;
+  /** When true, lightbox only opens on desktop (≥768px); mobile shows a plain image. */
+  desktopOnly?: boolean;
 };
 
-const PosterLightbox: FunctionComponent<PosterLightboxProps> = ({ src, alt, className, imgClassName }) => {
+const PosterLightbox: FunctionComponent<PosterLightboxProps> = ({
+  src,
+  alt,
+  className,
+  imgClassName,
+  desktopOnly = false
+}) => {
   const [open, setOpen] = useState(false);
+  const isDesktop = useIsDesktop();
+  const lightboxEnabled = !desktopOnly || isDesktop;
+
+  const image = (
+    <img
+      src={src}
+      alt={alt}
+      className={cn('block h-full w-full object-cover object-center', imgClassName)}
+    />
+  );
+
+  if (!lightboxEnabled) {
+    return <div className={cn('block h-full w-full', className)}>{image}</div>;
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -23,11 +65,7 @@ const PosterLightbox: FunctionComponent<PosterLightboxProps> = ({ src, alt, clas
           className={cn('block h-full w-full cursor-zoom-in', className)}
           aria-label={`View enlarged ${alt}`}
         >
-          <img
-            src={src}
-            alt={alt}
-            className={cn('block h-full w-full object-cover object-center', imgClassName)}
-          />
+          {image}
         </button>
       </DialogTrigger>
       <DialogPortal>
