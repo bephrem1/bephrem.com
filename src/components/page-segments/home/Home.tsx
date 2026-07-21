@@ -56,10 +56,10 @@ const Home: FunctionComponent<EmptyObject> = () => {
         </div>
 
         <div className="mx-auto aspect-[5/3] w-full max-w-md overflow-hidden lg:mx-0">
-          <img
+          <PosterLightbox
             src="/images/ben/arlan-context-week.jpg"
             alt="Benyam Ephrem on set"
-            className="block h-full w-full object-cover object-center grayscale"
+            imgClassName="grayscale"
           />
         </div>
 
