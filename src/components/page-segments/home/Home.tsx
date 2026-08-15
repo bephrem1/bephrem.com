@@ -73,7 +73,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
             He runs the{' '}
             <Link
               type="external"
-              dest="https://x.com/bephrem/status/2023143256385863977?s=20"
+              dest="https://luma.com/sffilmclub"
               openInNewWindow
               className="!inline !text-blue-700 underline decoration-blue-600/70 underline-offset-2 hover:decoration-blue-700 hover:!text-blue-800"
             >
@@ -93,6 +93,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
         </div>
 
         <div className="mx-auto flex w-full max-w-md flex-col gap-8 lg:mx-0 lg:gap-10">
+          <div className="mt-1 flex flex-col gap-6">
           <section>
             <p className="text-[0.75rem] font-medium leading-tight text-neutral-600 sm:text-[0.8125rem]">Recent writing</p>
 
@@ -392,6 +393,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
               </div>
             </div>
           </section>
+          </div>
 
           <p className="mt-10 text-[0.8125rem] leading-snug text-neutral-700 sm:text-[0.875rem] lg:mt-0">ben@bephrem.studio</p>
 
