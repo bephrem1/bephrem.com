@@ -67,7 +67,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
         <div className="mx-auto w-full max-w-md lg:mx-0">
           <p className="text-[0.8125rem] leading-[1.48] text-neutral-950 sm:text-[0.875rem]">
             Benyam Ephrem is an Ethiopian-American director and producer based in San Francisco. He wrote software for a
-            decade. Now he produces film for startups.
+            decade. Now he creates films on the tech industry.
           </p>
           <p className="mt-3 text-[0.8125rem] leading-[1.48] text-neutral-950 sm:text-[0.875rem]">
             He runs the{' '}
@@ -450,7 +450,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
             <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
           </div>
 
-          <div className="mb-4 flex w-full justify-start gap-3 sm:mb-5">
+          <div className="mb-4 flex w-full flex-wrap justify-start gap-3 sm:mb-5">
             <article
               className="flex w-[8rem] shrink-0 flex-col overflow-hidden border border-neutral-200 bg-white sm:w-[9.25rem]"
               aria-label="Short film in production"
@@ -461,7 +461,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
               <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
                 <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
                 <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
-                  Shooting 2026
+                  Shooting Spring ’27
                 </p>
               </div>
               <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
@@ -478,6 +478,42 @@ const Home: FunctionComponent<EmptyObject> = () => {
               </div>
               <div className="aspect-[27/40] overflow-hidden">
                 <PosterLightbox src={ROOM_TONE_POSTER} alt="Room Tone film poster" />
+              </div>
+              <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">Executive Producer</p>
+              </div>
+            </article>
+
+            <article
+              className="flex w-[8rem] shrink-0 flex-col overflow-hidden border border-neutral-200 bg-white sm:w-[9.25rem]"
+              aria-label="Short film in development"
+            >
+              <div className="border-b border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(in-development)</p>
+              </div>
+              <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
+                <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
+                <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
+                  Shooting 2026
+                </p>
+              </div>
+              <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">Executive Producer</p>
+              </div>
+            </article>
+
+            <article
+              className="flex w-[8rem] shrink-0 flex-col overflow-hidden border border-neutral-200 bg-white sm:w-[9.25rem]"
+              aria-label="Short film in development"
+            >
+              <div className="border-b border-neutral-100 px-2 py-1.5 text-center sm:py-2">
+                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(in-development)</p>
+              </div>
+              <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
+                <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
+                <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
+                  Shooting Spring ’27
+                </p>
               </div>
               <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
                 <p className="text-[0.55rem] font-normal leading-[1.45] text-neutral-500 sm:text-[0.58rem]">Executive Producer</p>
