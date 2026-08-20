@@ -88,7 +88,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
             >
               <span>Silicon Valley Film Fund</span>
             </Link>
-            . He is currently writing his first short film, shooting in 2026.
+            . He is currently writing his first short film, shooting in Spring 2027.
           </p>
         </div>
 
