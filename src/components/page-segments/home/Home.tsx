@@ -494,7 +494,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
               <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
                 <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
                 <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
-                  Shooting Spring ’27
+                  Shooting Nov ’26
                 </p>
               </div>
               <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
