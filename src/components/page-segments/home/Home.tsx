@@ -66,7 +66,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
 
         <div className="mx-auto w-full max-w-md lg:mx-0">
           <p className="text-[0.8125rem] leading-[1.48] text-neutral-950 sm:text-[0.875rem]">
-            Benyam Ephrem is an Ethiopian-American director and producer based in San Francisco. He wrote software for a
+            Benyam Ephrem is an Ethiopian-American writer, director, and producer based in San Francisco. He wrote software for a
             decade. Now he creates films on the tech industry.
           </p>
           <p className="mt-3 text-[0.8125rem] leading-[1.48] text-neutral-950 sm:text-[0.875rem]">
@@ -88,7 +88,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
             >
               <span>Silicon Valley Film Fund</span>
             </Link>
-            . He is currently writing his first short film, shooting in Spring 2027.
+            . He is currently in pre-production on his first short film, shooting in November.
           </p>
         </div>
 
@@ -445,11 +445,11 @@ const Home: FunctionComponent<EmptyObject> = () => {
               <span className="text-neutral-400">·</span>
               <Link
                 type="external"
-                dest="https://www.instagram.com/bephrem_"
+                dest="https://letterboxd.com/bephrem/"
                 openInNewWindow
                 className="!text-neutral-500 hover:!text-neutral-700"
               >
-                <span>Instagram</span>
+                <span>Letterboxd</span>
               </Link>
               <span className="text-neutral-400">·</span>
               <Link
@@ -463,11 +463,20 @@ const Home: FunctionComponent<EmptyObject> = () => {
               <span className="text-neutral-400">·</span>
               <Link
                 type="external"
-                dest="https://letterboxd.com/bephrem/"
+                dest="https://www.imdb.com/name/nm18722821/"
                 openInNewWindow
                 className="!text-neutral-500 hover:!text-neutral-700"
               >
-                <span>Letterboxd</span>
+                <span>IMDb</span>
+              </Link>
+              <span className="text-neutral-400">·</span>
+              <Link
+                type="external"
+                dest="https://www.instagram.com/bephrem_"
+                openInNewWindow
+                className="!text-neutral-500 hover:!text-neutral-700"
+              >
+                <span>Instagram</span>
               </Link>
             </div>
           </footer>
