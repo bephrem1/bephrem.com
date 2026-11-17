@@ -88,7 +88,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
             >
               <span>Silicon Valley Film Fund</span>
             </Link>
-            . He is currently in pre-production on his first short film, shooting in November.
+            . He is currently in post-production on his first short film, premiering March ’27.
           </p>
         </div>
 
@@ -495,15 +495,15 @@ const Home: FunctionComponent<EmptyObject> = () => {
           <div className="mb-4 flex w-full flex-wrap justify-start gap-3 sm:mb-5">
             <article
               className="flex w-[8rem] shrink-0 flex-col overflow-hidden border border-neutral-200 bg-white sm:w-[9.25rem]"
-              aria-label="Short film in pre-production"
+              aria-label="Short film in post-production"
             >
               <div className="border-b border-neutral-100 px-2 py-1.5 text-center sm:py-2">
-                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(pre-production)</p>
+                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(post-production)</p>
               </div>
               <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
                 <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
                 <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
-                  Shooting Nov ’26
+                  Filmed Nov ’26
                 </p>
               </div>
               <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
@@ -516,7 +516,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
               aria-label="Room Tone"
             >
               <div className="border-b border-neutral-100 px-2 py-1.5 text-center sm:py-2">
-                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(pre-production)</p>
+                <p className="text-[0.55rem] font-normal leading-[1.2] text-neutral-500 sm:text-[0.58rem]">(post-production)</p>
               </div>
               <div className="aspect-[27/40] overflow-hidden">
                 <PosterLightbox src={ROOM_TONE_POSTER} alt="Room Tone film poster" />
@@ -536,7 +536,7 @@ const Home: FunctionComponent<EmptyObject> = () => {
               <div className="flex aspect-[27/40] flex-col items-center justify-center px-1.5 py-1.5 text-center">
                 <p className="text-[0.55rem] font-medium leading-snug text-neutral-500 sm:text-[0.58rem]">Short Film:</p>
                 <p className="mt-0.5 text-[0.7rem] font-semibold leading-snug tracking-tight text-neutral-950 sm:text-[0.75rem]">
-                  Shooting 2026
+                  Shooting Spring ’27
                 </p>
               </div>
               <div className="border-t border-neutral-100 px-2 py-1.5 text-center sm:py-2">
