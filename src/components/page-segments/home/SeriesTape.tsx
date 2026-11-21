@@ -72,6 +72,8 @@ export type SeriesTapeProps = {
    * so fewer clips don’t grow wider than Nia’s frames. Ignored when `clipIds.length >= 6`.
    */
   pack?: 'full' | 'end';
+  /** Wrap the strip into rows of this many cells. Defaults to one row. */
+  columns?: number;
   className?: string;
 };
 
@@ -80,9 +82,11 @@ const SeriesTape: FunctionComponent<SeriesTapeProps> = ({
   base,
   clipIds,
   className,
+  columns,
   pack = 'full',
 }) => {
-  const gridStyle = { gridTemplateColumns: `repeat(${clipIds.length}, minmax(0, 1fr))` } as const;
+  const columnCount = columns && columns > 0 ? columns : clipIds.length;
+  const gridStyle = { gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))` } as const;
 
   const strip = (
     <div className={stripFrame} style={gridStyle}>

@@ -9,7 +9,7 @@ type CommercialTapeProps = {
 };
 
 const CommercialTape: FunctionComponent<CommercialTapeProps> = ({ className }) => (
-  <SeriesTape base={NIA_BASE} clipIds={NIA_CLIP_IDS} className={className} />
+  <SeriesTape base={NIA_BASE} clipIds={NIA_CLIP_IDS} columns={3} className={className} />
 );
 
 export default CommercialTape;
