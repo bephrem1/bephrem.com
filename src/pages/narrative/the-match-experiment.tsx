@@ -65,7 +65,7 @@ const crew: Credit[] = [
   { role: 'BTS Video (Day 4–5)', name: 'Brandon Hresko' }
 ];
 
-const post: Credit[] = [{ role: 'Editor', name: 'Mito' }];
+const post: Credit[] = [{ role: 'Editor', name: 'Mito Noharu' }];
 
 const background = [
   'Akila Rajesh',
