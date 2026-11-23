@@ -75,7 +75,7 @@ const Home: FunctionComponent<HomeProps> = ({ previsStills, scriptPages }) => {
 
           <div className="mx-auto aspect-[5/3] w-full max-w-md overflow-hidden lg:mx-0">
             <PosterLightbox
-              src="/images/ben/arlan-context-week.jpg"
+              src="/images/ben/site-hero.jpg"
               alt="Benyam Ephrem on set"
               imgClassName="grayscale"
               desktopOnly
@@ -433,89 +433,145 @@ const Home: FunctionComponent<HomeProps> = ({ previsStills, scriptPages }) => {
                 <ScriptBook pages={scriptPages} />
               </div>
               <div className="min-w-0 flex-1">
-          <div className="mb-4 flex shrink-0 items-center gap-2 sm:mb-5">
-            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
-            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
-              commercial
-            </span>
-            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
-          </div>
-
-          <div className="flex w-full flex-col gap-6 sm:gap-7">
-            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
-              <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
-                <span className="shrink-0">Localhost (ep.1)</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0">Series (pilot)</span>
-                <span className="shrink-0 text-neutral-400" aria-hidden>
-                  ·
-                </span>
-                <span className="min-w-0 shrink-0 text-neutral-400">in post-production</span>
-              </div>
-              <div className="w-full min-w-0">
-                <SeriesTape base={LOCALHOST_EP1_BASE} clipIds={[1, 2, 3, 4, 5, 6]} columns={3} />
-              </div>
-            </div>
-
-            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
-              <div className="flex w-full flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
-                <span className="shrink-0 text-neutral-500">
-                  X (
-                  {NIA_X_LINKS.map((href, i) => (
-                    <span key={href}>
-                      {i > 0 ? ', ' : null}
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={WORK_SAMPLE_LINK_CLASS}
-                      >
-                        {i + 1}
-                      </a>
-                    </span>
-                  ))}
-                  )
-                  {'\u00A0\u00A0\u00A0'}
-                  LinkedIn (
-                  {NIA_LINKEDIN_LINKS.map((href, i) => (
-                    <span key={href}>
-                      {i > 0 ? ', ' : null}
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={WORK_SAMPLE_LINK_CLASS}
-                      >
-                        {i + 1}
-                      </a>
-                    </span>
-                  ))}
-                  )
-                </span>
-                <div className="flex min-w-0 flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right">
-                  <span className="shrink-0">Nia Context Week</span>
-                  <span className="shrink-0 text-neutral-400" aria-hidden>
-                    ·
+                <div className="mb-4 flex shrink-0 items-center gap-2 sm:mb-5">
+                  <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
+                  <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
+                    commercial
                   </span>
-                  <span className="min-w-0">6-part series</span>
-                  <span className="shrink-0 text-neutral-400" aria-hidden>
-                    ·
-                  </span>
-                  <span className="min-w-0 shrink-0">750k+ reach</span>
+                  <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
                 </div>
-              </div>
-              <div className="w-full min-w-0">
-                <CommercialTape />
-              </div>
-            </div>
 
-            <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+                <div className="flex w-full flex-col gap-6 sm:gap-7">
+                  <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+                    <div className="flex w-full flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                      <span className="shrink-0">Localhost (ep.1)</span>
+                      <span className="shrink-0 text-neutral-400" aria-hidden>
+                        ·
+                      </span>
+                      <span className="min-w-0">Series (pilot)</span>
+                      <span className="shrink-0 text-neutral-400" aria-hidden>
+                        ·
+                      </span>
+                      <span className="min-w-0 shrink-0 text-neutral-400">in post-production</span>
+                    </div>
+                    <div className="w-full min-w-0">
+                      <SeriesTape base={LOCALHOST_EP1_BASE} clipIds={[1, 2, 3, 4, 5, 6]} columns={3} />
+                    </div>
+                  </div>
+
+                  <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+                    <div className="flex w-full flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                      <span className="shrink-0 text-neutral-500">
+                        X (
+                        {NIA_X_LINKS.map((href, i) => (
+                          <span key={href}>
+                            {i > 0 ? ', ' : null}
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={WORK_SAMPLE_LINK_CLASS}
+                            >
+                              {i + 1}
+                            </a>
+                          </span>
+                        ))}
+                        )
+                        {'\u00A0\u00A0\u00A0'}
+                        LinkedIn (
+                        {NIA_LINKEDIN_LINKS.map((href, i) => (
+                          <span key={href}>
+                            {i > 0 ? ', ' : null}
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={WORK_SAMPLE_LINK_CLASS}
+                            >
+                              {i + 1}
+                            </a>
+                          </span>
+                        ))}
+                        )
+                      </span>
+                      <div className="flex min-w-0 flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right">
+                        <span className="shrink-0">Nia Context Week</span>
+                        <span className="shrink-0 text-neutral-400" aria-hidden>
+                          ·
+                        </span>
+                        <span className="min-w-0">6-part series</span>
+                        <span className="shrink-0 text-neutral-400" aria-hidden>
+                          ·
+                        </span>
+                        <span className="min-w-0 shrink-0">750k+ reach</span>
+                      </div>
+                    </div>
+                    <div className="w-full min-w-0">
+                      <CommercialTape />
+                    </div>
+                  </div>
+
+                  <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
+                    <div className="flex w-full flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
+                      <span className="shrink-0 text-neutral-500">
+                        <a
+                          href="https://x.com/calcsam/status/2042287957974139245"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={WORK_SAMPLE_LINK_CLASS}
+                        >
+                          X
+                        </a>
+                        {'\u00A0\u00A0\u00A0'}
+                        <a
+                          href="https://www.linkedin.com/feed/update/urn:li:activity:7448063240703635456/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={WORK_SAMPLE_LINK_CLASS}
+                        >
+                          LinkedIn
+                        </a>
+                        {'\u00A0\u00A0\u00A0'}
+                        <a
+                          href="https://www.youtube.com/watch?v=snj7V0tFh6g"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={WORK_SAMPLE_LINK_CLASS}
+                        >
+                          YouTube
+                        </a>
+                      </span>
+                      <div className="flex min-w-0 flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right">
+                        <span className="shrink-0">Mastra Series A</span>
+                        <span className="shrink-0 text-neutral-400" aria-hidden>
+                          ·
+                        </span>
+                        <span className="min-w-0">Fundraise</span>
+                        <span className="shrink-0 text-neutral-400" aria-hidden>
+                          ·
+                        </span>
+                        <span className="min-w-0 shrink-0">300k+ reach</span>
+                      </div>
+                    </div>
+                    <div className="w-full min-w-0">
+                      <SeriesTape base={MASTRA_BASE} clipIds={[1, 2, 3]} />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mb-4 mt-6 flex shrink-0 items-center gap-2 sm:mb-5 sm:mt-7">
+                  <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
+                  <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
+                    personal
+                  </span>
+                  <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
+                </div>
+
+                <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
                   <div className="flex w-full flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
                     <span className="shrink-0 text-neutral-500">
                       <a
-                        href="https://x.com/calcsam/status/2042287957974139245"
+                        href="https://x.com/bephrem/status/1960735147952889961?s=20"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={WORK_SAMPLE_LINK_CLASS}
@@ -523,17 +579,24 @@ const Home: FunctionComponent<HomeProps> = ({ previsStills, scriptPages }) => {
                         X
                       </a>
                       {'\u00A0\u00A0\u00A0'}
-                      <a
-                        href="https://www.linkedin.com/feed/update/urn:li:activity:7448063240703635456/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={WORK_SAMPLE_LINK_CLASS}
-                      >
-                        LinkedIn
-                      </a>
+                      clips (
+                      {ARLAN_CLIP_LINKS.map((href, i) => (
+                        <span key={href}>
+                          {i > 0 ? ', ' : null}
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={WORK_SAMPLE_LINK_CLASS}
+                          >
+                            {i + 1}
+                          </a>
+                        </span>
+                      ))}
+                      )
                       {'\u00A0\u00A0\u00A0'}
                       <a
-                        href="https://www.youtube.com/watch?v=snj7V0tFh6g"
+                        href="https://youtu.be/7hukPKD4Bhs?si=P1NvuyMhiCJ_rgwY"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={WORK_SAMPLE_LINK_CLASS}
@@ -542,84 +605,21 @@ const Home: FunctionComponent<HomeProps> = ({ previsStills, scriptPages }) => {
                       </a>
                     </span>
                     <div className="flex min-w-0 flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right">
-                      <span className="shrink-0">Mastra Series A</span>
+                      <span className="shrink-0">Interview: Arlan Rakhmetzhanov</span>
                       <span className="shrink-0 text-neutral-400" aria-hidden>
                         ·
                       </span>
-                      <span className="min-w-0">Fundraise</span>
+                      <span className="min-w-0">30m interview, 4 clips</span>
                       <span className="shrink-0 text-neutral-400" aria-hidden>
                         ·
                       </span>
-                      <span className="min-w-0 shrink-0">300k+ reach</span>
+                      <span className="min-w-0 shrink-0">250k+ reach</span>
                     </div>
                   </div>
                   <div className="w-full min-w-0">
-                    <SeriesTape base={MASTRA_BASE} clipIds={[1, 2, 3]} />
-                  </div>
-            </div>
-          </div>
-
-          <div className="mb-4 mt-6 flex shrink-0 items-center gap-2 sm:mb-5 sm:mt-7">
-            <span className="h-px w-3 shrink-0 bg-neutral-300 sm:w-4" aria-hidden />
-            <span className="shrink-0 text-[0.58rem] font-medium tracking-[0.08em] text-neutral-500 sm:text-[0.6rem]">
-              personal
-            </span>
-            <span className="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden />
-          </div>
-
-          <div className="flex w-full flex-col items-stretch gap-2 sm:gap-2.5">
-                <div className="flex w-full flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-[0.75rem] font-normal leading-snug text-neutral-600 sm:text-[0.8125rem]">
-                  <span className="shrink-0 text-neutral-500">
-                    <a
-                      href="https://x.com/bephrem/status/1960735147952889961?s=20"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={WORK_SAMPLE_LINK_CLASS}
-                    >
-                      X
-                    </a>
-                    {'\u00A0\u00A0\u00A0'}
-                    clips (
-                    {ARLAN_CLIP_LINKS.map((href, i) => (
-                      <span key={href}>
-                        {i > 0 ? ', ' : null}
-                        <a
-                          href={href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={WORK_SAMPLE_LINK_CLASS}
-                        >
-                          {i + 1}
-                        </a>
-                      </span>
-                    ))}
-                    )
-                    {'\u00A0\u00A0\u00A0'}
-                    <a
-                      href="https://youtu.be/7hukPKD4Bhs?si=P1NvuyMhiCJ_rgwY"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={WORK_SAMPLE_LINK_CLASS}
-                    >
-                      YouTube
-                    </a>
-                  </span>
-                  <div className="flex min-w-0 flex-wrap items-baseline justify-end gap-x-2 gap-y-1 text-right">
-                    <span className="shrink-0">Interview: Arlan Rakhmetzhanov</span>
-                    <span className="shrink-0 text-neutral-400" aria-hidden>
-                      ·
-                    </span>
-                    <span className="min-w-0">30m interview, 4 clips</span>
-                    <span className="shrink-0 text-neutral-400" aria-hidden>
-                      ·
-                    </span>
-                    <span className="min-w-0 shrink-0">250k+ reach</span>
+                    <SeriesTape base={ARLAN_INTERVIEW_BASE} clipIds={[1, 2, 3, 4]} />
                   </div>
                 </div>
-                <div className="w-full min-w-0">
-                  <SeriesTape base={ARLAN_INTERVIEW_BASE} clipIds={[1, 2, 3, 4]} />
-                </div>
-          </div>
               </div>
             </div>
           </div>
