@@ -65,7 +65,11 @@ const crew: Credit[] = [
   { role: 'BTS Video (Day 4–5)', name: 'Brandon Hresko' }
 ];
 
-const post: Credit[] = [{ role: 'Editor', name: 'Mito' }];
+const post: Credit[] = [
+  { role: 'Editor', name: 'Mito' },
+  { role: 'Colorist', name: 'George Kamenov' },
+  { role: 'Composer', name: 'Momo Ward' },
+];
 
 const background = [
   'Akila Rajesh',
